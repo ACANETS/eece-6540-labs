@@ -48,7 +48,7 @@ BITCODES-EMU=$(KERNEL).aocx-emu
 BUILD_DIR=bin/
 ALTERA_AOCL_INC_FLAGS=-DAOCL -O2 -fPIC -Iaocl_common/inc -I/opt/intelFPGA/16.1/hld/host/include  
 ALTERA_AOCL_COMMON=aocl_common/src/AOCLUtils/opencl.cpp aocl_common/src/AOCLUtils/options.cpp 
-ALTERA_AOCL_LD_FLAGS=-L/opt/intelFPGA/16.1/hld/board/s5_ref/linux64/lib -L/opt/intelFPGA/16.1/hld/host/linux64/lib -Wl,--no-as-needed -lalteracl -laltera_s5_ref_mmd -lelf -lrt -lpthread 
+ALTERA_AOCL_LD_FLAGS=$(shell aocl linkflags)
 ALTERAOCLSDKROOT__ = ${ALTERAOCLSDKROOT}
 
 
