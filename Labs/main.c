@@ -1,3 +1,4 @@
+// Lab1 matrix addition and multiplication
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
