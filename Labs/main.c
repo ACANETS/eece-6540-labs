@@ -1,4 +1,3 @@
-// Lab1 matrix addition and multiplication
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -39,7 +38,7 @@ static float C[12] = {
   3.0f,  3.0f,  3.0f,  3.0f, 3.0f, 3.0f};
 
 // D will be Output matrix 2x6
-// D = A x B + C
+// D = A x B +C
 
 int main()
 {
@@ -146,7 +145,7 @@ int main()
     }
 
     /* Create OpenCL Kernel */
-    kernel = clCreateKernel(program, "simpleMultiply", &ret);
+    kernel = clCreateKernel(program, "simpMultiAdd", &ret);
     if (ret != CL_SUCCESS) {
       printf("Failed to create kernel.\n");
       exit(1);
@@ -160,6 +159,7 @@ int main()
 
     /* We assume A, B, C and D are float arrays which
     have been declared and initialized */
+	
     /* allocate space for Matrix A on the device */
     cl_mem bufferA = clCreateBuffer(context, CL_MEM_READ_ONLY,
            wA*hA*sizeof(float), NULL, &ret);
