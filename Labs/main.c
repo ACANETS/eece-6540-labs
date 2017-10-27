@@ -143,7 +143,7 @@ int main()
       printf("Failed to build program.\n");
       exit(1);
     }
-
+	
     /* Create OpenCL Kernel */
     kernel = clCreateKernel(program, "simpMultiAdd", &ret);
     if (ret != CL_SUCCESS) {
