@@ -9,7 +9,7 @@ __kernel void simpMultiAdd(
     int widthC,
     int heightC,	
     __global float *inputA,
-    __global float *inputB)
+    __global float *inputB,
     __global float *inputC)	
 {
     /* get global position in Y direction */
