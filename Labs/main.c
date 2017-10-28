@@ -212,7 +212,7 @@ int main()
 
     /* Copy the output data back to the host */
     clEnqueueReadBuffer(command_queue, bufferD, CL_TRUE, 0, wD*hD*sizeof(float),
-         (void *)C, 0, NULL, NULL);
+         (void *)D, 0, NULL, NULL);
 
     /* Verify result */
     for (int i = 0; i < wD*hD; i++) {
