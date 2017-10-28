@@ -12,6 +12,7 @@ __kernel void simpMultiAdd(
     __global float *inputB,
     __global float *inputC)
 {
+	
     /* get global position in Y direction */
     int row = get_global_id (1);
     /* get global position in X direction */
