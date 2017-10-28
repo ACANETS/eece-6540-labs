@@ -33,5 +33,5 @@ __kernel void simpMultiAdd(
 	// output D should be same width size as B or C		
     outputD[row*widthC + col] = sum1;  
  
-   }
+}
 
