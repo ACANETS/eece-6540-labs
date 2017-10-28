@@ -220,7 +220,7 @@ int main()
     }
 
     /* Copy the output data back to the host */
-    clEnqueueReadBuffer(command_queue, bufferC, CL_TRUE, 0, wD*hD*sizeof(float),
+    clEnqueueReadBuffer(command_queue, bufferD, CL_TRUE, 0, wD*hD*sizeof(float),
          (void *)D, 0, NULL, NULL);
 
     /* Verify result */
