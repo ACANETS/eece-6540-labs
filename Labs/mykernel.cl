@@ -1,4 +1,4 @@
-// Lab1 addition and multiplication matrix
+// Lab1 addition and multipli matrix
 /* widthA=heightB for valid matrix multiplication */
 __kernel void simpMultiAdd(
     __global float *outputD,
