@@ -156,6 +156,7 @@ int main()
       printf ("%f ", C[i]);
     }
     printf("\n");
+	
 
     /* We assume A, B, C and D are float arrays which
     have been declared and initialized */
@@ -166,13 +167,6 @@ int main()
     /* copy Matrix A to the device */
     clEnqueueWriteBuffer(command_queue, bufferA, CL_TRUE, 0,
            wA*hA*sizeof(float), (void *)A, 0, NULL, NULL);
-
-    /* allocate space for Matrix B on the device */
-    cl_mem bufferB = clCreateBuffer(context, CL_MEM_READ_ONLY,
-            wB*hB*sizeof(float), NULL, &ret);
-    /* copy Matrix B to the device */
-    clEnqueueWriteBuffer(command_queue, bufferB, CL_TRUE, 0,
-            wB*hB*sizeof(float), (void *)B, 0, NULL, NULL);
 
     /* allocate space for Matrix C on the device */
     cl_mem bufferC = clCreateBuffer(context, CL_MEM_READ_ONLY,
@@ -212,7 +206,14 @@ int main()
 
     /* Copy the output data back to the host */
     clEnqueueReadBuffer(command_queue, bufferD, CL_TRUE, 0, wD*hD*sizeof(float),
-         (void *)D, 0, NULL, NULL);
+         (void *)Dace for Matrix B on the device */
+    cl_mem bufferB = clCreateBuffer(context, CL_MEM_READ_ONLY,
+            wB*hB*sizeof(float), NULL, &ret);
+    /* copy Matrix B to the device */
+    clEnqueueWriteBuffer(command_queue, bufferB, CL_TRUE, 0,
+            wB*hB*sizeof(float), (void *)B, 0, NULL, NULL);
+
+    /* allocate sp, 0, NULL, NULL);
 
     /* Verify result */
     for (int i = 0; i < wD*hD; i++) {
