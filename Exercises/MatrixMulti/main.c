@@ -1,3 +1,8 @@
+// Courtney Ross
+// EECE 6540: Hetergenous Computing
+// 10/31/2017
+// Lab 1
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -20,15 +25,22 @@ void cleanup();
 #define DEVICE_NAME_LEN 128
 static char dev_name[DEVICE_NAME_LEN];
 
+// 2 by 4 Matrix A
 static float A[8] = {
   1.0f,  1.0f,  1.0f,  1.0f,
   1.0f,  1.0f,  1.0f,  1.0f};
 
+// 4 by 6 Matrix B
 static float B[24] = {
   2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f,
   2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f,
   2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f,
   2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f};
+
+// 2 by 6 Matrix C  
+static float C[12] = {
+  3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 3.0f,
+  3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 3.0f};
 
 int main()
 {
@@ -47,12 +59,18 @@ int main()
     char *source_str;
     size_t source_size;
 
-    int wA=4;
-    int hA=2;
-    int wB=6;
-    int hB=4;
-    int wC = wB;
-    int hC = hA;
+	// Width & Height for A
+    int wA = 4;
+    int hA = 2;
+	// Width & Height for B
+    int wB = 6;
+    int hB = 4;
+	// Width & Height for C
+	  int wC = 6;
+	  int hC = 2;
+	// Width & Height for Output Matrix (Same size as matrix C)
+    int wD = wC;
+    int hD = hC;
 
 #ifdef __APPLE__
     /* Get Platform and Device Info */
@@ -147,35 +165,49 @@ int main()
 
     /* We assume A, B, C are float arrays which
     have been declared and initialized */
+	// A
     /* allocate space for Matrix A on the device */
     cl_mem bufferA = clCreateBuffer(context, CL_MEM_READ_ONLY,
            wA*hA*sizeof(float), NULL, &ret);
     /* copy Matrix A to the device */
     clEnqueueWriteBuffer(command_queue, bufferA, CL_TRUE, 0,
            wA*hA*sizeof(float), (void *)A, 0, NULL, NULL);
-
+	
+	// B
     /* allocate space for Matrix B on the device */
     cl_mem bufferB = clCreateBuffer(context, CL_MEM_READ_ONLY,
             wB*hB*sizeof(float), NULL, &ret);
     /* copy Matrix B to the device */
     clEnqueueWriteBuffer(command_queue, bufferB, CL_TRUE, 0,
             wB*hB*sizeof(float), (void *)B, 0, NULL, NULL);
-
-    /* allocate space for Matrix C on the device */
-    cl_mem bufferC = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
+			
+	// C
+	/* allocate space for Matrix C on the device */
+    cl_mem bufferC = clCreateBuffer(context, CL_MEM_READ_ONLY,
             wC*hC*sizeof(float), NULL, &ret);
+    /* copy Matrix C to the device */
+    clEnqueueWriteBuffer(command_queue, bufferC, CL_TRUE, 0,
+            wC*hC*sizeof(float), (void *)C, 0, NULL, NULL);		
 
-    /* Set the kernel arguments */
-    clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&bufferC);
+	// D
+    /* allocate space for Matrix D on the device */
+    cl_mem bufferD = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
+            wD*hD*sizeof(float), NULL, &ret);
+
+    /* Set the kernel arguments. Modify MatrixMultiply to have an additional Buffer for D */
+    clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&bufferD);
     clSetKernelArg(kernel, 1, sizeof(cl_int), (void *)&wA);
     clSetKernelArg(kernel, 2, sizeof(cl_int), (void *)&hA);
     clSetKernelArg(kernel, 3, sizeof(cl_int), (void *)&wB);
     clSetKernelArg(kernel, 4, sizeof(cl_int), (void *)&hB);
-    clSetKernelArg(kernel, 5, sizeof(cl_mem), (void *)&bufferA);
-    clSetKernelArg(kernel, 6, sizeof(cl_mem), (void *)&bufferB);
-
+    clSetKernelArg(kernel, 5, sizeof(cl_int), (void *)&wC);
+    clSetKernelArg(kernel, 6, sizeof(cl_int), (void *)&hC);
+    clSetKernelArg(kernel, 7, sizeof(cl_mem), (void *)&bufferA);
+    clSetKernelArg(kernel, 8, sizeof(cl_mem), (void *)&bufferB);
+    clSetKernelArg(kernel, 9, sizeof(cl_mem), (void *)&bufferC);
+	
     /* Execute the kernel */
-    size_t globalws[2]={wC, hC};
+    size_t globalws[2]={wD, hD};
     size_t localws[2] = {2, 2};
     ret = clEnqueueNDRangeKernel(command_queue, kernel, 2, NULL,
       globalws, localws, 0, NULL, NULL);
@@ -188,21 +220,22 @@ int main()
     }
 
     /* Copy the output data back to the host */
-    clEnqueueReadBuffer(command_queue, bufferC, CL_TRUE, 0, wC*hC*sizeof(float),
-         (void *)C, 0, NULL, NULL);
+    clEnqueueReadBuffer(command_queue, bufferC, CL_TRUE, 0, wD*hD*sizeof(float),
+         (void *)D, 0, NULL, NULL);
 
     /* Verify result */
-    for (int i = 0; i < wC*hC; i++) {
-      printf ("%f ", C[i]);
+    for (int i = 0; i < wD*hD; i++) {
+      printf ("%f ", D[i]);
     }
     printf("\n");
 
     /* free resources */
-    free(C);
+    free(D);
 
     clReleaseMemObject(bufferA);
     clReleaseMemObject(bufferB);
     clReleaseMemObject(bufferC);
+    clReleaseMemObject(bufferD);
     clReleaseCommandQueue(command_queue);
     clReleaseKernel(kernel);
     clReleaseProgram(program);
