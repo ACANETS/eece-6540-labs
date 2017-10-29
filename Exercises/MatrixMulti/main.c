@@ -157,9 +157,9 @@ int main()
       exit(1);
     }
 
-    float *C = (float *)calloc (hC * wC ,  sizeof(float));
-    for (int i = 0; i < wC*hC; i++) {
-      printf ("%f ", C[i]);
+    float *D = (float *)calloc (hD * wD ,  sizeof(float));
+    for (int i = 0; i < wD*hD; i++) {
+      printf ("%f ", D[i]);
     }
     printf("\n");
 
