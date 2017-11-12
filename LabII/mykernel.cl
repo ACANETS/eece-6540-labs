@@ -14,9 +14,9 @@ __kernel void Pi(
 	for index = 0 : (chunk-1)
 	{
 		Cur_Val = 1/(1 + 2*index + 16*lid);
-               If mod(index,2) == 0; 					// add if even
+               if mod(index,2) == 0; 					// add if even
                               Calc_Val += Cur_Val;
-               Else // mod(index,2) == 1; 				// subtract if odd
+               else // mod(index,2) == 1; 				// subtract if odd
 			   {
                               Calc_Val += -1*Cur_Val;
 			   }
