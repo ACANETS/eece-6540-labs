@@ -156,7 +156,7 @@ int main()
 
     // Execute the kernel
      globalws[0] = work_items;
-     localws[0] = 20;
+     localws[0] = 1000;
     ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, globalws, localws, 0, NULL, NULL);
    
     /* it is important to check the return value.
