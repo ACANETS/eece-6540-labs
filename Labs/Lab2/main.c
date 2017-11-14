@@ -147,7 +147,7 @@ int main()
 
     /* allocate space for pi_div_4 on the device */
     cl_mem buffer_pi_div_4 = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
-            sizeof(float), NULL, &ret);
+            sizeof(double), NULL, &ret);
 
     // Set the kernel arguments
     clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&buffer_pi_div_4);
