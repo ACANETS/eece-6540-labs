@@ -45,7 +45,7 @@ int main()
 
 	/* Define number of work items used and number of calculations made in each work item */
     int work_items 	= 50;
-	int max_terms	= 12;
+	int max_terms	= 8;
 	
 	/* Define float for Pi so the value can be stored and output */
     float pi 		= 0.0f;   
