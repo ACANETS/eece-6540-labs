@@ -30,14 +30,21 @@ __local int mod_val;
 		// to complete the term for the calculation. If mod = 0, no -------
 		// negative sign is required. If mod = 1, the term will use a -1 --
 		
-		if (i == 0 || 2 || 4 || 6) {
-		//if (mod_val == 0) {
+		// if (i == 0 || 2 || 4 || 6) {
+		if (mod_val == 0) {
 			sum += (1.0/( 1 + max_terms * 2 * term_index + 2 * i));
+			
 		}
-		if (i == 1 || 3 || 5 || 7) {
-		//else if (mod_val == 1) {
+		// if (i == 1 || 3 || 5 || 7) {
+		else if (mod_val == 1) {
 			sum += (-1) * (1.0/( 1 + max_terms * 2 * term_index + 2 * i));
 		}
+		
+			if(term_index == 0){
+			printf ("i = %i \t", i);				
+			printf ("max_terms = %i \t", max_terms);
+			printf ("sum = %f \n", sum);
+			}
    }
   
 // -- Make sure previous processing has completed --------------------------
