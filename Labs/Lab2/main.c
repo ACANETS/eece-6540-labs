@@ -48,7 +48,7 @@ int main()
 	int max_terms	= 8;
 	
 	/* Define float for Pi so the value can be stored and output */
-    float pi 		= 0.0f;   
+    double pi 		= 0.0f;   
     size_t globalws[1], localws[1]; 
 
 #ifdef __APPLE__
@@ -141,8 +141,8 @@ int main()
       exit(1);
     }
 
-    float *pi_div_4 = (float *)calloc (1, sizeof(float));
-    printf ("%f", pi_div_4[0]);
+    double *pi_div_4 = (double *)calloc (1, sizeof(double));
+    printf ("%lf", pi_div_4[0]);
     printf("\n");
 
     /* allocate space for pi_div_4 on the device */
@@ -169,18 +169,18 @@ int main()
     }
 
     /* Copy the output data back to the host */
-    clEnqueueReadBuffer(command_queue, buffer_pi_div_4, CL_TRUE, 0, sizeof(float),
+    clEnqueueReadBuffer(command_queue, buffer_pi_div_4, CL_TRUE, 0, sizeof(double),
 	(void *)pi_div_4, 0, NULL, NULL);
 
     // Check Results & Print Outputs
-	printf ("Pi/4 =  %f", pi_div_4[0]);
+	printf ("Pi/4 =  %lf", pi_div_4[0]);
     printf("\n");
 
 	// Multiply result of Pi/4 by 4 to get the value of Pi
     pi = pi_div_4[0] * 4;
 	
 	// Print value of Pi
-    printf ("Pi = %f ", pi);
+    printf ("Pi = %lf ", pi);
     printf("\n");
 	
 	// Print additional info
