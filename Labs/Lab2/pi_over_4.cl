@@ -44,7 +44,7 @@ __local int mod_val;
 // -- After previous operations have completed, when the max term is -------
 // -- reached, move local sum value to sum, and sum to the output-----------
 	
-	printf ("Work Item = %f \t", term_index);
+	printf ("Work Item = %i \t", term_index);
 	printf ("Current Value = %f ", sum);
 	printf("\n");
 	
