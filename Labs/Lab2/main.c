@@ -44,8 +44,8 @@ int main()
     size_t source_size;
 
 	/* Define number of work items used and number of calculations made in each work item */
-    int work_items 	= 16;
-	int max_terms	= 8;
+    int work_items 	= 50;
+	int max_terms	= 12;
 	
 	/* Define float for Pi so the value can be stored and output */
     float pi 		= 0.0f;   
@@ -156,7 +156,7 @@ int main()
 
     // Execute the kernel
      globalws[0] = work_items;
-     localws[0] = 8;
+     localws[0] = 10;
     ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, globalws, localws, 0, NULL, NULL);
    
     /* it is important to check the return value.
