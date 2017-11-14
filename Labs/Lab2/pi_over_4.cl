@@ -16,6 +16,7 @@ __local int mod_val;
 // -- Define global term index and float for sum of terms ---------------
     int term_index 	= get_global_id (0);
     double sum 		= 0.0f; 
+    double sum_im 	= 0.0f;
 	
 // -- Make sure previous processing has completed ------------------------
 	barrier(CLK_LOCAL_MEM_FENCE);
@@ -79,9 +80,12 @@ __local int mod_val;
 	barrier(CLK_LOCAL_MEM_FENCE);
 	barrier(CLK_GLOBAL_MEM_FENCE);
 	
-	if(term_index == (max_terms - 1)) {  
+	// if(term_index == (max_terms - 1)) {  
+	if(term_index == 0) {  
+		
+		sum_im = sum_local[0];
 		//sum += sum_local[0];
-		sum_out[0] = sum_local[0];
+		sum_out[0] = sum_im;
 	} //end if
   
 
