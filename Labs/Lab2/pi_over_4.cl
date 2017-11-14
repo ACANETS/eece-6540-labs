@@ -51,12 +51,12 @@ __local int mod_val;
 	} //endif
 	*/
 
-
-
-	
+	/*
+	// verified that numbers track expected numbers
 	printf ("i = %i \t", i);				
 	printf ("term_index = %i \t", term_index);
 	printf ("sum = %f \n", sum);
+	*/
 		
    }// end for
   
@@ -67,15 +67,19 @@ __local int mod_val;
 // -- reached, move local sum value to sum, and sum to the output-----------
 	
 	printf ("Work Item = %i \t", term_index);
-	printf ("Current Value = %f ", sum);
+	printf ("Current Value = %f \t", sum);
+	printf("\n");
+
+// --  Put the sum into local memory to be used again ----------------------- 
+	sum_local[0] += sum; 	
+	
+	printf ("Running Value = %f", sum_local[0]);
 	printf("\n");
 	
-	
 	if(term_index == (max_terms - 1)) {  
-		sum += sum_local[0];
-		sum_out[0] = sum;
+		//sum += sum_local[0];
+		sum_out[0] = sum_local[0];
 	} //end if
   
-// --  Put the sum into local memory to be used again ----------------------- 
-	sum_local[0] = sum; 
+
 }// end main
