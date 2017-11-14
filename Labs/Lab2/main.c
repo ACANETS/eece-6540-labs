@@ -44,8 +44,8 @@ int main()
     size_t source_size;
 
 	/* Define number of work items used and number of calculations made in each work item */
-    int work_items 	= 50;
-	int max_terms	= 12;
+    int work_items 	= 8;
+	int max_terms	= 8;
 	
 	/* Define float for Pi so the value can be stored and output */
     float pi 		= 0.0f;   
