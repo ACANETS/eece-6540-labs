@@ -1,7 +1,7 @@
 // Courtney Ross
-// EECE 6540: Hetergenous Computing
-// 10/31/2017
-// Lab 1
+// Lab 2
+// 11/14/2017
+// main.c
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,23 +25,7 @@ void cleanup();
 #define DEVICE_NAME_LEN 128
 static char dev_name[DEVICE_NAME_LEN];
 
-// 2 by 4 Matrix A
-static float A[8] = {
-  1.0f,  1.0f,  1.0f,  1.0f,
-  1.0f,  1.0f,  1.0f,  1.0f};
-
-// 4 by 6 Matrix B
-static float B[24] = {
-  2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f,
-  2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f,
-  2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f,
-  2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f};
-
-// 2 by 6 Matrix C  
-static float C[12] = {
-  3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 3.0f,
-  3.0f, 3.0f, 3.0f, 3.0f, 3.0f, 3.0f};
-
+ 
 int main()
 {
     cl_uint platformCount;
@@ -49,35 +33,31 @@ int main()
     cl_device_id device_id;
     cl_uint ret_num_devices;
     cl_int ret;
-    cl_context context = NULL;
-    cl_command_queue command_queue = NULL;
-    cl_program program = NULL;
-    cl_kernel kernel = NULL;
+    cl_context context 				= NULL;
+    cl_command_queue command_queue 	= NULL;
+    cl_program program 				= NULL;
+    cl_kernel kernel 				= NULL;
 
     FILE *fp;
-    char fileName[] = "./mykernel.cl";
+    char fileName[] = "./pi_over_4.cl";
     char *source_str;
     size_t source_size;
 
-	// Width & Height for A
-    int wA = 4;
-    int hA = 2;
-	// Width & Height for B
-    int wB = 6;
-    int hB = 4;
-	// Width & Height for C
-	  int wC = 6;
-	  int hC = 2;
-	// Width & Height for Output Matrix (Same size as matrix C)
-    int wD = wC;
-    int hD = hC;
+	/* Define number of work items used and number of calculations made in each work item */
+    int work_items 	= 500;
+	int max_terms	= 8;
+	
+	/* Define float for Pi so the value can be stored and output */
+    float pi 		= 0.0f;   
+    size_t globalws[1], localws[1]; 
 
 #ifdef __APPLE__
     /* Get Platform and Device Info */
     clGetPlatformIDs(1, NULL, &platformCount);
     platforms = (cl_platform_id*) malloc(sizeof(cl_platform_id) * platformCount);
     clGetPlatformIDs(platformCount, platforms, NULL);
-    // we only use platform 0, even if there are more plantforms
+	
+    // we only use platform 0, even if there are more platforms
     // Query the available OpenCL device.
     ret = clGetDeviceIDs(platforms[0], CL_DEVICE_TYPE_DEFAULT, 1, &device_id, &ret_num_devices);
     ret = clGetDeviceInfo(device_id, CL_DEVICE_NAME, DEVICE_NAME_LEN, dev_name, NULL);
@@ -88,18 +68,22 @@ int main()
     // get all platforms
     clGetPlatformIDs(0, NULL, &platformCount);
     platforms = (cl_platform_id*) malloc(sizeof(cl_platform_id) * platformCount);
+	
     // Get the OpenCL platform.
     platforms[0] = findPlatform("Intel(R) FPGA");
+	
     if(platforms[0] == NULL) {
       printf("ERROR: Unable to find Intel(R) FPGA OpenCL platform.\n");
       return false;
     }
+	
     // Query the available OpenCL device.
     getDevices(platforms[0], CL_DEVICE_TYPE_ALL, &ret_num_devices);
     printf("Platform: %s\n", getPlatformName(platforms[0]).c_str());
     printf("Using one out of %d device(s)\n", ret_num_devices);
     ret = clGetDeviceIDs(platforms[0], CL_DEVICE_TYPE_DEFAULT, 1, &device_id, &ret_num_devices);
     printf("device name=  %s\n", getDeviceName(device_id).c_str());
+	
 #else
 #error "unknown OpenCL SDK environment"
 #endif
@@ -134,7 +118,7 @@ int main()
 
 #ifdef AOCL  /* on FPGA we need to create kernel from binary */
    /* Create Kernel Program from the binary */
-   std::string binary_file = getBoardBinaryFile("mykernel", device_id);
+   std::string binary_file = getBoardBinaryFile("pi_over_4", device_id);
    printf("Using AOCX: %s\n", binary_file.c_str());
    program = createProgramFromBinary(context, binary_file.c_str(), &device_id, 1);
 #else
@@ -151,91 +135,62 @@ int main()
     }
 
     /* Create OpenCL Kernel */
-    kernel = clCreateKernel(program, "simpleMultiply", &ret);
+    kernel = clCreateKernel(program, "pi_over_4", &ret);
     if (ret != CL_SUCCESS) {
       printf("Failed to create kernel.\n");
       exit(1);
     }
 
-    float *D = (float *)calloc (hD * wD ,  sizeof(float));
-    for (int i = 0; i < wD*hD; i++) {
-      printf ("%f ", D[i]);
-    }
+    float *pi_div_4 = (float *)calloc (1, sizeof(float));
+    printf ("%f", pi_div_4[0]);
     printf("\n");
 
-    /* We assume A, B, C are float arrays which
-    have been declared and initialized */
-	// A
-    /* allocate space for Matrix A on the device */
-    cl_mem bufferA = clCreateBuffer(context, CL_MEM_READ_ONLY,
-           wA*hA*sizeof(float), NULL, &ret);
-    /* copy Matrix A to the device */
-    clEnqueueWriteBuffer(command_queue, bufferA, CL_TRUE, 0,
-           wA*hA*sizeof(float), (void *)A, 0, NULL, NULL);
-	
-	// B
-    /* allocate space for Matrix B on the device */
-    cl_mem bufferB = clCreateBuffer(context, CL_MEM_READ_ONLY,
-            wB*hB*sizeof(float), NULL, &ret);
-    /* copy Matrix B to the device */
-    clEnqueueWriteBuffer(command_queue, bufferB, CL_TRUE, 0,
-            wB*hB*sizeof(float), (void *)B, 0, NULL, NULL);
-			
-	// C
-	/* allocate space for Matrix C on the device */
-    cl_mem bufferC = clCreateBuffer(context, CL_MEM_READ_ONLY,
-            wC*hC*sizeof(float), NULL, &ret);
-    /* copy Matrix C to the device */
-    clEnqueueWriteBuffer(command_queue, bufferC, CL_TRUE, 0,
-            wC*hC*sizeof(float), (void *)C, 0, NULL, NULL);		
+    /* allocate space for pi_div_4 on the device */
+    cl_mem buffer_pi_div_4 = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
+            sizeof(float), NULL, &ret);
 
-	// D
-    /* allocate space for Matrix D on the device */
-    cl_mem bufferD = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
-            wD*hD*sizeof(float), NULL, &ret);
+    // Set the kernel arguments
+    clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&buffer_pi_div_4);
+    clSetKernelArg(kernel, 1, sizeof(cl_int), (void *)&work_items);
+    clSetKernelArg(kernel, 2, sizeof(cl_int), (void *)&max_terms);	
 
-    /* Set the kernel arguments. Modify MatrixMultiply to have an additional Buffer for D */
-    clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&bufferD);
-    clSetKernelArg(kernel, 1, sizeof(cl_int), (void *)&wA);
-    clSetKernelArg(kernel, 2, sizeof(cl_int), (void *)&hA);
-    clSetKernelArg(kernel, 3, sizeof(cl_int), (void *)&wB);
-    clSetKernelArg(kernel, 4, sizeof(cl_int), (void *)&hB);
-    clSetKernelArg(kernel, 5, sizeof(cl_int), (void *)&wC);
-    clSetKernelArg(kernel, 6, sizeof(cl_int), (void *)&hC);
-    clSetKernelArg(kernel, 7, sizeof(cl_mem), (void *)&bufferA);
-    clSetKernelArg(kernel, 8, sizeof(cl_mem), (void *)&bufferB);
-    clSetKernelArg(kernel, 9, sizeof(cl_mem), (void *)&bufferC);
-	
-    /* Execute the kernel */
-    size_t globalws[2]={wD, hD};
-    size_t localws[2] = {2, 2};
-    ret = clEnqueueNDRangeKernel(command_queue, kernel, 2, NULL,
-      globalws, localws, 0, NULL, NULL);
+    // Execute the kernel
+     globalws[0] = work_items;
+     localws[0] = 10;
+    ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, globalws, localws, 0, NULL, NULL);
+   
     /* it is important to check the return value.
       for example, when enqueueNDRangeKernel may fail when Work group size
       does not divide evenly into global work size */
+	  
     if (ret != CL_SUCCESS) {
       printf("Failed to enqueueNDRangeKernel.\n");
       exit(1);
     }
 
     /* Copy the output data back to the host */
-    clEnqueueReadBuffer(command_queue, bufferD, CL_TRUE, 0, wD*hD*sizeof(float),
-         (void *)D, 0, NULL, NULL);
+    clEnqueueReadBuffer(command_queue, buffer_pi_div_4, CL_TRUE, 0, sizeof(float),
+	(void *)pi_div_4, 0, NULL, NULL);
 
-    /* Verify result */
-    for (int i = 0; i < wD*hD; i++) {
-      printf ("%f ", D[i]);
-    }
+    // Check Results & Print Outputs
+	printf ("Pi/4 =  %f", pi_div_4[0]);
     printf("\n");
 
-    /* free resources */
-    free(D);
+	// Multiply result of Pi/4 by 4 to get the value of Pi
+    pi = pi_div_4[0] * 4;
+	
+	// Print value of Pi
+    printf ("Pi = %f ", pi);
+    printf("\n");
+	
+	// Print additional info
+	printf ("Number of work items used = %i ", work_items);
+	printf ("Maximum number of terms used in each kernel = %i ", max_terms);
 
-    clReleaseMemObject(bufferA);
-    clReleaseMemObject(bufferB);
-    clReleaseMemObject(bufferC);
-    clReleaseMemObject(bufferD);
+    // free resources for pi_div_4
+    free(pi_div_4);
+
+    clReleaseMemObject(buffer_pi_div_4);
     clReleaseCommandQueue(command_queue);
     clReleaseKernel(kernel);
     clReleaseProgram(program);
