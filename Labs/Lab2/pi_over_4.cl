@@ -4,7 +4,7 @@
 // pi_over_4.cl
 
 __kernel void pi_over_4(
-    __global float *sum_out,
+    __global double *sum_out,
     int work_items,
 	int max_terms) 
 {
