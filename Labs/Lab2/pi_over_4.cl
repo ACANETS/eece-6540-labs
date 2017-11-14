@@ -10,12 +10,12 @@ __kernel void pi_over_4(
 {
 
 // -- Define local variables --------------------------------------------
-__local float sum_local[1]; 
+__local double sum_local[1]; 
 __local int mod_val;
 
 // -- Define global term index and float for sum of terms ---------------
     int term_index 	= get_global_id (0);
-    float sum 		= 0.0f; 
+    double sum 		= 0.0f; 
 	
 // -- Make sure previous processing has completed ------------------------
 	barrier(CLK_LOCAL_MEM_FENCE);
@@ -47,7 +47,7 @@ __local int mod_val;
 	// returns 0.754268
 	printf ("i = %i \t", i);				
 	printf ("max_terms = %i \t", max_terms);
-	printf ("sum = %f \n", sum);
+	printf ("sum = %lf \n", sum);
 	} //endif
 	*/
 
@@ -55,7 +55,7 @@ __local int mod_val;
 	// verified that numbers track expected numbers
 	printf ("i = %i \t", i);				
 	printf ("term_index = %i \t", term_index);
-	printf ("sum = %f \n", sum);
+	printf ("sum = %lf \n", sum);
 	*/
 		
    }// end for
@@ -66,14 +66,14 @@ __local int mod_val;
 // -- After previous operations have completed, when the max term is -------
 // -- reached, move local sum value to sum, and sum to the output-----------
 	
-	printf ("Work Item = %i \t", term_index);
-	printf ("Current Value = %f \t", sum);
-	printf("\n");
+	 printf ("Work Item = %i \t", term_index);
+	 printf ("Current Value = %lf \t", sum);
+	 printf("\n");
 
 // --  Put the sum into local memory to be used again ----------------------- 
 	sum_local[0] += sum; 	
 	
-	printf ("Running Value = %f", sum_local[0]);
+	printf ("Running Value = %lf", sum_local[0]);
 	printf("\n");
 	
 	if(term_index == (max_terms - 1)) {  
