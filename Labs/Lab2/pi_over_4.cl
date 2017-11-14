@@ -23,7 +23,7 @@ __local int mod_val;
 // -- Using a loop, index through terms using max terms value and work- -- 
 // -- items to correctly calculate terms in pi/4--------------------------
 
-	for (int i = 0; i < max_terms - 1; i++) {
+	for (int i = 0; i < max_terms; i++) {
 		mod_val = fmod((int)(i), (int)2);
 		
 		// using modulo base 2 operations, determine the sign required ----
