@@ -40,11 +40,20 @@ __local int mod_val;
 			sum += (-1) * (1.0/( 1 + max_terms * 2 * term_index + 2 * i));
 		}
 		
-			if(term_index == 0){
-			printf ("i = %i \t", i);				
-			printf ("max_terms = %i \t", max_terms);
-			printf ("sum = %f \n", sum);
-			}
+	if(term_index == 0){
+	// verified that this works for the term_index == 0 case
+	// returns 0.754268
+	printf ("i = %i \t", i);				
+	printf ("max_terms = %i \t", max_terms);
+	printf ("sum = %f \n", sum);
+	}
+
+	if(term_index == 1){
+	printf ("i = %i \t", i);				
+	printf ("max_terms = %i \t", max_terms);
+	printf ("sum = %f \n", sum);
+	}		
+		
    }
   
 // -- Make sure previous processing has completed --------------------------
