@@ -23,7 +23,7 @@ __local int mod_val;
 // -- Using a loop, index through terms using max terms value and work- -- 
 // -- items to correctly calculate terms in pi/4--------------------------
 
-	for (int i = 0; i < max_term - 1; i++) {
+	for (int i = 0; i < max_terms - 1; i++) {
 		mod_val = fmod((int)(i), (int)2);
 		
 		// using modulo base 2 operations, determine the sign required ----
@@ -31,10 +31,10 @@ __local int mod_val;
 		// negative sign is required. If mod = 1, the term will use a -1 --
 		
 		if (mod_val == 0) {
-			sum += (1.0/(max_term * 2 * term_index + i)
+			sum += (1.0/(max_terms * 2 * term_index + i)
 		}	
 		else if (mod_val == 1) {
-			sum += (-1) * (1.0/(max_term * 2 * term_index + i)
+			sum += (-1) * (1.0/(max_terms * 2 * term_index + i)
 		}
    }
   
@@ -44,7 +44,7 @@ __local int mod_val;
 // -- After previous operations have completed, when the max term is -------
 // -- reached, move local sum value to sum, and sum to the output-----------
 
-	if(term_index == (max_term - 1)) {  
+	if(term_index == (max_terms - 1)) {  
 		sum += sum_local[0];
 		sum_out[0] = sum;
 	} 
