@@ -34,27 +34,31 @@ __local int mod_val;
 		if (mod_val == 0) {
 			sum += (1.0/( 1 + max_terms * 2 * term_index + 2 * i));
 			
-		}
+		}// endif
+		
 		// if (i == 1 || 3 || 5 || 7) {
 		else if (mod_val == 1) {
 			sum += (-1) * (1.0/( 1 + max_terms * 2 * term_index + 2 * i));
-		}
-		
+		}// endif
+	
+	/*
 	if(term_index == 0){
 	// verified that this works for the term_index == 0 case
 	// returns 0.754268
 	printf ("i = %i \t", i);				
 	printf ("max_terms = %i \t", max_terms);
 	printf ("sum = %f \n", sum);
-	}
+	} //endif
+	*/
 
-	if(term_index == 1){
+
+
+	
 	printf ("i = %i \t", i);				
-	printf ("max_terms = %i \t", max_terms);
+	printf ("term_index = %i \t", term_index);
 	printf ("sum = %f \n", sum);
-	}		
 		
-   }
+   }// end for
   
 // -- Make sure previous processing has completed --------------------------
    barrier(CLK_LOCAL_MEM_FENCE);
@@ -70,8 +74,8 @@ __local int mod_val;
 	if(term_index == (max_terms - 1)) {  
 		sum += sum_local[0];
 		sum_out[0] = sum;
-	} 
+	} //end if
   
 // --  Put the sum into local memory to be used again ----------------------- 
 	sum_local[0] = sum; 
-}
+}// end main
