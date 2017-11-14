@@ -76,7 +76,9 @@ __local int mod_val;
 	printf ("Running Value = %lf", sum_local[0]);
 	printf("\n");
 	
-barrier(CLK_GLOBAL_MEM_FENCE);
+	barrier(CLK_LOCAL_MEM_FENCE);
+	barrier(CLK_GLOBAL_MEM_FENCE);
+	
 	if(term_index == (max_terms - 1)) {  
 		//sum += sum_local[0];
 		sum_out[0] = sum_local[0];
