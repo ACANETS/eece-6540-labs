@@ -31,10 +31,10 @@ __local int mod_val;
 		// negative sign is required. If mod = 1, the term will use a -1 --
 		
 		if (mod_val == 0) {
-			sum += (1.0/(max_terms * 2 * term_index + i))
+			sum += (1.0/(max_terms * 2 * term_index + i));
 		}	
 		else if (mod_val == 1) {
-			sum += (-1) * (1.0/(max_terms * 2 * term_index + i))
+			sum += (-1) * (1.0/(max_terms * 2 * term_index + i));
 		}
    }
   
