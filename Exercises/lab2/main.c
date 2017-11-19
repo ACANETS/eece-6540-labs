@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#define ITEMS 6144
 
 #ifdef __APPLE__
 #include <OpenCL/opencl.h>
@@ -19,8 +20,6 @@ void cleanup();
 #define MAX_SOURCE_SIZE (0x100000)
 #define DEVICE_NAME_LEN 128
 static char dev_name[DEVICE_NAME_LEN];
-
-#define TEXT_FILE "kafka.txt"
 
 int main()
 {
@@ -43,13 +42,9 @@ int main()
     char fileName[] = "./mykernel.cl";
     char *source_str;
     size_t source_size;
-
-    int result[4] = {0, 0, 0, 0};
-    char pattern[16] = {'j','u','s','t','l','o','o','k','f','e','e','l','p','a','i','n'};
-    FILE *text_handle;
-    char *text;
-    size_t text_size;
-    int chars_per_item;
+  
+    cl_float result[ITEMS] = {0};
+    cl_int iter=256;
 
 #ifdef __APPLE__
     /* Get Platform and Device Info */
@@ -145,43 +140,25 @@ int main()
     }
 
     /* Create OpenCL Kernel */
-    kernel = clCreateKernel(program, "string_search", &ret);
+    kernel = clCreateKernel(program, "pi_calculator", &ret);
     if (ret != CL_SUCCESS) {
       printf("Failed to create kernel.\n");
       exit(1);
     }
 
-    /* Read text file and place content into buffer */
-    text_handle = fopen(TEXT_FILE, "r");
-    if(text_handle == NULL) {
-       perror("Couldn't find the text file");
-       exit(1);
-    }
-    fseek(text_handle, 0, SEEK_END);
-    text_size = ftell(text_handle)-1;
-    rewind(text_handle);
-    text = (char*)calloc(text_size, sizeof(char));
-    fread(text, sizeof(char), text_size, text_handle);
-    fclose(text_handle);
-    chars_per_item = text_size / global_size + 1;
-
-    /* Create buffers to hold the text characters and count */
-    cl_mem text_buffer = clCreateBuffer(context, CL_MEM_READ_ONLY |
-          CL_MEM_COPY_HOST_PTR, text_size, text, &ret);
-    if(ret < 0) {
-       perror("Couldn't create a buffer");
-       exit(1);
-    };
-    cl_mem result_buffer = clCreateBuffer(context, CL_MEM_READ_WRITE |
+    /* Create buffers to hold the local reduced sums */
+   cl_mem result_buffer = clCreateBuffer(context, CL_MEM_READ_ONLY |
           CL_MEM_COPY_HOST_PTR, sizeof(result), result, NULL);
 
     ret = 0;
-    /* Create kernel argument */
-    ret = clSetKernelArg(kernel, 0, sizeof(pattern), pattern);
-    ret |= clSetKernelArg(kernel, 1, sizeof(cl_mem), &text_buffer);
-    ret |= clSetKernelArg(kernel, 2, sizeof(chars_per_item), &chars_per_item);
-    ret |= clSetKernelArg(kernel, 3, 4 * sizeof(int), NULL);
-    ret |= clSetKernelArg(kernel, 4, sizeof(cl_mem), &result_buffer);
+    /* Create kernel arguments */
+    ret = clSetKernelArg(kernel, 0, sizeof(cl_int), (void *)&iter);
+    if(ret < 0) {
+       printf("Couldn't set a kernel argument");
+       exit(1);
+    };
+
+     ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), &result_buffer);
     if(ret < 0) {
        printf("Couldn't set a kernel argument");
        exit(1);
@@ -204,17 +181,21 @@ int main()
        exit(1);
     }
 
+    float sum=0.0f;
+    for (int i=0; i<ITEMS; i++)
+    {
+        	sum += result[i];
+    }
     printf("\nResults: \n");
-    printf("Number of occurrences of 'just': %d\n", result[0]);
-    printf("Number of occurrences of 'look': %d\n", result[1]);
-    printf("Number of occurrences of 'feel': %d\n", result[2]);
-    printf("Number of occurrences of 'pain': %d\n", result[3]);
+    printf("Each work item does %d terms\n", iter);
+    printf("First work item result: %e\n", result[0]);
+    printf("Second work item result: %e\n", result[1]);
+    printf("Third work item result: %e\n", result[2]);
+    printf("Fourth work item result : %e\n", result[3]);
+    printf("PI using %d work items or %d terms is %e\n", ITEMS, ITEMS*iter, sum);
 
 
     /* free resources */
-    free(text);
-
-    clReleaseMemObject(text_buffer);
     clReleaseMemObject(result_buffer);
     clReleaseCommandQueue(command_queue);
     clReleaseKernel(kernel);
