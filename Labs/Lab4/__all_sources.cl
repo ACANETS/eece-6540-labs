@@ -1,0 +1,7 @@
+#include "device/channelizer.cl"
+#include "device/fft1d.cl"
+#include "device/fft_8.cl"
+#include "device/filter.cl"
+#include "device/filter_coefs.cl"
+#include "device/reorder.cl"
+#include "device/twid_radix4_8.cl"

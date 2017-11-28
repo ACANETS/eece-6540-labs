@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--
+Copyright (C) 2013-2016 Altera Corporation, San Jose, California, USA. All rights reserved.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the Software
+without restriction, including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to
+whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+This agreement shall be governed in all respects by the laws of the State of California and
+by the laws of the United States of America.
+-->
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Channelizer: Altera&reg; OpenCL&trade; Design Example</title>
+<link rel="stylesheet" href="../common/readme.css" type="text/css">
+</head>
+<body>
+<h1>
+<div class="preheading">Altera<sup>&reg;</sup> OpenCL&trade; Design Example</div>
+Channelizer
+</h1>
+
+<p>This readme file for the Channelizer OpenCL Design Example contains
+information about the design example package. For more examples, please
+visit the <a href="http://www.altera.com/support/examples/opencl/opencl.html">
+Altera OpenCL Design Examples page</a>.</p>
+<nav>
+<h2>Contents</h2>
+<ul>
+<li><a href="#Description">Description</a></li>
+<li><a href="#Software_Hardware_Requirements">Software &amp; Hardware Requirements</a></li>
+<li><a href="#Package_Contents">Package Contents</a></li>
+<li><a href="#Compiling_the_OpenCL_Kernel">Compiling the OpenCL Kernel</a></li>
+<li><a href="#Compiling_the_Host_Program">Compiling the Host Program</a></li>
+<li><a href="#Running_the_Host_Program">Running the Host Program</a></li>
+<li><a href="#Release_History">Release History</a></li>
+<li><a href="#Legal">Legal</a></li>
+<li><a href="#Contacting_Altera">Contacting Altera</a></li>
+</ul>
+</nav>
+<section>
+<a id="Description"><h2>Description</h2></a>
+<p>This benchmark demonstrates an OpenCL implementation of a channelizer design
+      on Altera FPGAs.  The channelizer combines a polyphase filter bank (PFB) with
+      a fast Fourier transform to reduce the effects of spectral leakage on the
+      resulting frequency spectrum.  The benchmark processes a stream containing
+      multiple sets of 4k real-valued samples.  The benchmark outputs the results of
+      the last stage's 4k-point FFT.</p><p>The core kernels of this benchmark (fft1d, filter, reorder) are designed to
+      operate in a streaming manner, using Altera's channels extension to the OpenCL
+      standard.  The channelizer accepts 8 real samples streaming into the PFB stage
+      and produces 8 complex FFT bins per clock cycle.  The channelizer is connected
+      to a test harness that transfers data bewteen global memory and the input and
+      output streams.  This eliminates the need for additional external hardware to
+      produce and consume streaming data.  The data_in and data_out kernels
+      implement this test harness.</p><p>A brief description of the kernels making up this example design follows:</p><table>
+      <tr>
+        <th>Kernel</th>
+        <th style="align: left">Description</th>
+      </tr>
+      <tr>
+        <td class="mono">data_in</td>
+        <td>Read sample data from global memory and push data onto the
+            channelizer's input channel at a rate of 8 real 32-bit samples 
+            per cycle.</td>
+      </tr>
+      <tr>
+        <td class="mono">filter</td>
+        <td>Implements an 8-stage polyphase filter bank which applies a
+             Hanning-windowed sinc filter to the samples.</td>
+      </tr>
+      <tr>
+        <td class="mono">reorder</td>
+        <td>Reorders the stream of data to convert in-order samples to strided 
+             samples for the FFT engine.  See the 1D FFT design example for
+             more information on the expected input format of the fft1d
+             kernel.</td>
+      </tr>
+      <tr>
+        <td class="mono">fft1d</td>
+        <td>A 4k complex single-precision floating point FFT engine.</td>
+      </tr>
+      <tr>
+        <td class="mono">data_out</td>
+        <td>Transfers data from the output channel to a buffer in global 
+             memory.  In order to reduce the memory bandwidth demands, this
+             kernel converts the complex frequency bin data into
+             magnitude-squared data for consumption by the host.</td>
+      </tr>
+      </table><p>More information about individual kernels can be found in the kernel source code.</p><p>The host application generates sample data by sampling a linear superposition of
+      three sine waves, writes these samples to DDR, and enqueues the 5 kernels and
+      tasks with enough work to precisely measure the system's bandwidth and runtime.
+      The frequency data is read back from the FPGA and compared against a software
+      implementation of the same algorithm.</p>
+</section>
+
+<section>
+<a id="Software_Hardware_Requirements"><h2>Software &amp; Hardware Requirements</h2></a>
+<p/>
+<table class="reqs">
+<thead>
+<tr>
+  <th rowspan="3">Requirement</th>
+  <th rowspan="3">Version</th>
+<th colspan="2">OpenCL Kernel</th><th colspan="4">Host Program</th></tr><tr><th rowspan="2">Hardware<br/>Compile</th><th rowspan="2">Emulation<br/>Compile</th><th colspan="2">Hardware</th><th colspan="2">Emulation</th></tr><tr><th>Compile</th><th>Run</th><th>Compile</th><th>Run</th></tr></thead><tbody><tr><td>Altera Complete Design Suite <small>(Quartus II)</small></td><td>16.0 or later</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td><td></td><td></td><td></td><td></td></tr><tr><td>Altera SDK for OpenCL</td><td>16.0 or later</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td><td class="req" rowspan="2">&#x02713;<div class="either">(either)</div></td><td class="req" rowspan="2">&#x02713;<div class="either">(either)</div></td><td class="req" rowspan="2">&#x02713;<div class="either">(either)</div></td><td class="req" rowspan="2">&#x02713;<div class="either">(either)</div></td></tr><tr><td>Altera Runtime Environment for OpenCL</td><td>16.0 or later</td><td></td><td></td></tr><tr><td>Board Support Package</td><td>16.0-compatible</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td></tr><tr><td>Board Hardware</td><td>-</td><td></td><td></td><td></td><td class="req">&#x02713;</td><td></td><td></td></tr><tr><td>gcc</td><td>4.4.7 or later</td><td></td><td></td><td class="req">&#x02713;</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td><td class="req">&#x02713;</td></tr><tr><td>GNU Make</td><td>3.8.1 or later</td><td></td><td></td><td class="req">&#x02713;</td><td></td><td class="req">&#x02713;</td><td></td></tr></tbody>
+</table>
+
+</section>
+
+<section>
+<a id="Package_Contents"><h2>Package Contents</h2></a>
+<p/>
+<table class="pkg-contents">
+<thead>
+<tr>
+  <th class="path">Path</th>
+  <th class="desc">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="path"><a href="./" style="padding-left: 0.0ex">channelizer/</a></td>
+  <td class="desc"></td>
+</tr>
+<tr class="highlight">
+  <td class="path"><a href="./channelizer.pdf" style="padding-left: 2.0ex">channelizer.pdf</a></td>
+  <td class="desc">A walkthrough of tools, concepts, and results of an FPGA channelizer design written in OpenCL.</td>
+</tr>
+<tr>
+  <td class="path"><a href="./Makefile" style="padding-left: 2.0ex">Makefile</a></td>
+  <td class="desc">Makefile for host program</td>
+</tr>
+<tr>
+  <td class="path"><a href="./bin/" style="padding-left: 2.0ex">bin/</a></td>
+  <td class="desc">Host program, AOCX files</td>
+</tr>
+<tr>
+  <td class="path"><a href="./device/" style="padding-left: 2.0ex">device/</a></td>
+  <td class="desc">OpenCL kernel files</td>
+</tr>
+<tr>
+  <td class="path"><a href="./device/channelizer.cl" style="padding-left: 4.0ex">channelizer.cl</a></td>
+  <td class="desc">Top-level OpenCL kernel file</td>
+</tr>
+<tr>
+  <td class="path"><a href="./host/" style="padding-left: 2.0ex">host/</a></td>
+  <td class="desc"></td>
+</tr>
+<tr>
+  <td class="path"><a href="./host/inc/" style="padding-left: 4.0ex">inc/</a></td>
+  <td class="desc">Host include files</td>
+</tr>
+<tr>
+  <td class="path"><a href="./host/src/" style="padding-left: 4.0ex">src/</a></td>
+  <td class="desc">Host source files</td>
+</tr>
+</tbody>
+</table>
+<h3>Additional Documentation</h3>
+<div class="doc">
+<div class="title"><a href="channelizer.pdf">FPGA Channelizer Design in OpenCL</a> <small>(PDF)</small></div>
+<div class="desc"><p>This presentation contains detailed information about this design:</p><ul>
+          <li>Overview of the application</li>
+          <li>Using Altera's channels vendor extension to efficiently pass data between kernels</li>
+          <li>Deep dive of implementation architecture</li>
+          <li>Performance and resource usage results</li>
+        </ul></div>
+</div>
+
+</section>
+
+<section>
+<a id="Compiling_the_OpenCL_Kernel"><h2>Compiling the OpenCL Kernel</h2></a>
+    <p>The top-level OpenCL kernel file is <span class="mono">device/channelizer.cl</span>.</p>
+    <p>To compile the OpenCL kernel, run:</p>
+    <div class="command">aoc device/channelizer.cl <span class="nowrap">-o</span> bin/channelizer.aocx<span class="nowrap"></span> <span class="nowrap">--fp-relaxed</span> <span class="nowrap">--fpc</span> --board <span class="highlight">&lt;<i>board</i>&gt;</span></div>
+    <p>where <span class="highlight mono">&lt;<i>board</i>&gt;</span> matches the board you want to target.
+    The <span class="mono">-o bin/channelizer.aocx</span> argument is used to place the compiled binary
+    in the location that the host program expects.
+    </p>
+<p>If you are unsure of the boards available, use the following command to list
+available boards:</p>
+<div class="command">aoc --list-boards</div>
+<section>
+<h3>Compiling for Emulator</h3>
+<p>To use the emulation flow, the compilation command just needs to be modified slightly:</p>
+<div class="command">aoc <span class="highlight nowrap">-march=emulator</span> device/channelizer.cl -o bin/channelizer.aocx<span class="nowrap"></span> <span class="nowrap">--fp-relaxed</span> <span class="nowrap">--fpc</span> --board &lt;<i>board</i>&gt;</div>
+</section>
+
+</section>
+
+<section>
+<a id="Compiling_the_Host_Program"><h2>Compiling the Host Program</h2></a>
+<p>To compile the host program, run:</p>
+<div class="command">make</div>
+<p>The compiled host program will be located at <span class="mono">bin/host</span>.</p>
+
+</section>
+
+<section>
+<a id="Running_the_Host_Program"><h2>Running the Host Program</h2></a>
+<p>Before running the host program, you should have compiled the OpenCL kernel and the host program. Refer to the above sections if you have not completed those steps.</p>
+<p>To run the host program on hardware, execute:</p>
+<div class="command">bin/host</div>
+<p>Example output of running this benchmark is shown below:</p><pre class="console-output">
+Using AOCX: channelizer.aocx
+
+Init complete!
+Launching FFT transform
+        Processing time = 933.5220ms
+        Throughput = 2.0847 Gpoints / sec
+        L2-Norm check: PASSED
+<div class="heading"><span>Output</span></div></pre><section>
+<h3>Running with the Emulator</h3>
+<p>Prior to running the emulation flow, ensure that you have compiled the kernel for emulation. 
+Refer to the above sections if you have not done so. Also, please set up your environment for
+emulation. Please see the <a href="http://www.altera.com/literature/hb/opencl-sdk/aocl_programming_guide.pdf">Altera SDK for OpenCL Programming Guide</a> for more information.</p>
+<p>For this example design, the suggested emulation command is:</p>
+<div class="command">CL_CONTEXT_EMULATOR_DEVICE_ALTERA=1 bin/host <span class="nowrap">-i=200</span></div>
+<section>
+<h3>Host Parameters</h3>
+<p>The general command-line for the host program is:</p>
+<div class="command">bin/host <span class="nowrap">[-<span class="highlight">i</span>=&lt;<i>#</i>&gt;]</span></div>
+<p>where the one parameter is:</p>
+<table class="host-params parameters">
+<thead>
+<tr>
+  <th class="name">Parameter</th>
+  <th class="type">Type</th>
+  <th class="default">Default</th>
+  <th class="desc">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="name">-<span class="highlight">i</span>=&lt;<i>#</i>&gt;</td>
+  <td class="type">Optional</td>
+  <td class="default">85 &times; 58 &times; 1024</td>
+  <td class="desc">Number of iterations; must be a multiple of 8</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h3>OpenCL Binary Selection</h3>
+<p>The host program requires a OpenCL binary (AOCX) file to run. For this example design, OpenCL binary files should be placed in the 
+<span class="mono">bin</span> directory.</p>
+
+<p>By default, the host program will look for a binary file in the following order (earlier pattern matches 
+take priority):</p>
+<ol>
+  <li>A file named <span class="mono">channelizer.aocx</span>.</li>
+  <li>A file named <span class="mono">channelizer_<span class="highlight">&lt;<i>board</i>&gt;</span>_160.aocx</span>, 
+  where <span class="highlight mono">&lt;<i>board</i>&gt;</span> is the name of the board (as passed as the 
+  <span class="mono">--board</span> argument to <span class="mono">aoc</span>).</li>
+</ol>
+</section>
+
+</section>
+
+<section>
+<a id="Release_History"><h2>Release History</h2></a>
+<p/>
+<table class="history">
+<thead>
+<tr>
+  <th class="version">Example Version</th>
+  <th class="sdk-version">SDK Version</th>
+  <th class="date">Date</th>
+  <th class="changes">Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="version">1.4</td>
+  <td class="sdk-version">16.0</td>
+  <td class="date">June 2016</td>
+  <td class="changes"><ul><li>Fixed makefile.</li></ul></td>
+</tr>
+<tr>
+  <td class="version">1.3</td>
+  <td class="sdk-version">14.1</td>
+  <td class="date">December 2014</td>
+  <td class="changes"><ul><li>New readme documentation.</li><li>Provide suggested emulation-specific arguments.</li><li>Remove <span class="mono">__attribute((task))__</span> from kernels (no longer necessary).</li><li>Updated PDF to fix animations in the source presentation.</li></ul></td>
+</tr>
+<tr>
+  <td class="version">1.2</td>
+  <td class="sdk-version">14.0</td>
+  <td class="date">July 2014</td>
+  <td class="changes"><ul><li>Update documentation for 14.0 release.</li><li>Add optional host argument to control number of iterations.</li></ul></td>
+</tr>
+<tr>
+  <td class="version">1.1</td>
+  <td class="sdk-version">13.1</td>
+  <td class="date">January 2014</td>
+  <td class="changes"><ul><li>Fix small errors in presentation.</li></ul></td>
+</tr>
+<tr>
+  <td class="version">1.0</td>
+  <td class="sdk-version">13.1</td>
+  <td class="date">December 2013</td>
+  <td class="changes"><ul><li>First release of example.</li></ul></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+<section>
+<a id="Legal"><h2>Legal</h2></a>
+<pre class="license">Copyright (C) 2013-2016 Altera Corporation, San Jose, California, USA. All rights reserved.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the Software
+without restriction, including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to
+whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+This agreement shall be governed in all respects by the laws of the State of California and
+by the laws of the United States of America.
+</pre><section><h3>Trademarks</h3><div class="trademark"><p>OpenCL and the OpenCL logo are trademarks of Apple Inc. used by permission by Khronos.</p><p>Product is based on a published Khronos Specification, and has passed the Khronos Conformance Testing Process. Current conformance status can be found at <a href="www.khronos.org/conformance">www.khronos.org/conformance</a>.</p></div></section>
+</section>
+
+<section>
+<a id="Contacting_Altera"><h2>Contacting Altera</h2></a>
+<p>Although we have made every effort to ensure that this design example works
+correctly, there might be problems that we have not encountered. If you have
+a question or problem that is not answered by the information provided in 
+this readme file or the example's documentation, please contact Altera
+support (<a href="http://www.altera.com/myaltera">myAltera</a>).</p>
+
+</section>
+
+</body>
+</html>
