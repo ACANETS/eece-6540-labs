@@ -1,0 +1,9 @@
+export ALTERAOCLSDKROOT=/opt/intelFPGA/16.1/hld
+export LD_LIBRARY_PATH=/opt/intelFPGA/16.1/hld/board/terasic/linux64/lib:/opt/intelFPGA/16.1/hld/host/linux64/lib
+export QUARTUS_ROOTDIR=/opt/intelFPGA/16.1/quartus
+export PATH=$PATH:/opt/intelFPGA/16.1/quartus/bin:/opt/intelFPGA/16.1/hld/linux64/bin:/opt/intelFPGA/16.1/hld/bin:/opt/intelFPGA/16.1/hld/board/terasic/linux64/bin/:/opt/intelFPGA/modelsim/modelsim_ae/bin
+export MODEL_TECH=/opt/intelFPGA/modelsim/modelsim_ae/bin
+export LM_LICENSE_FILE=/opt/intelFPGA/16.1/licence.dat
+export CL_SRC_DIR=/opt/intelFPGA/16.1/hld/board/terasic/tests/common/src/AOCLUtils
+export AOCL_BOARD_PACKAGE_ROOT=/opt/intelFPGA/16.1/hld/board/terasic
+
