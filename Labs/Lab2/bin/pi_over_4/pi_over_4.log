@@ -1,0 +1,1 @@
+Compiler Command: aoc -march=emulator pi_over_4.cl -o bin/pi_over_4.aocx
