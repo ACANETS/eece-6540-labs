@@ -45,6 +45,8 @@
 #include "channelizer_golden.h"
 using namespace aocl_utils;
 
+bool g_enable_notifications = true;
+
 // The set of simultaneous kernels
 enum KERNELS {
   K_READER,
