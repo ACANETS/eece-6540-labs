@@ -42,6 +42,11 @@ else
 CXXFLAGS += -O2
 endif
 
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	CXXFLAGS += -D LINUX
+endif
+
 # Compiler
 CXX := g++
 
