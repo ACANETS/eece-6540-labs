@@ -55,12 +55,12 @@ TARGET := host
 TARGET_DIR := bin
 
 # Directories
-INC_DIRS := host/inc ../common/inc
+INC_DIRS := host/inc $(CL_INC_DIR)
 LIB_DIRS := 
 
 # Files
 INCS := $(wildcard host/inc/*.h)
-SRCS := $(wildcard host/src/*.cpp ../common/src/AOCLUtils/*.cpp)
+SRCS := $(wildcard host/src/*.cpp)
 LIBS := rt
 
 # Make it all!
