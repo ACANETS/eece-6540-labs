@@ -38,38 +38,90 @@ clean:
 	rm -rf $(BUILD_DIR) mykernel.cl.h mykernel.cl.c $(EXECUTABLE) *.bc
 endif
 
-# on Linux for Altera OCL
+# on Linux for Intel FPGA OCL
 ifeq ($(UNAME_S),Linux)
-ALTERA_AOC=aoc
-EXECUTABLE=main
-KERNEL=mykernel
-BITCODES=$(KERNEL).aocx
-BITCODES-EMU=$(KERNEL).aocx-emu
-BUILD_DIR=bin/
-ALTERA_AOCL_INC_FLAGS=-DAOCL -O2 -fPIC -Iaocl_common/inc -I/opt/intelFPGA/16.1/hld/host/include  
-ALTERA_AOCL_COMMON=aocl_common/src/AOCLUtils/opencl.cpp aocl_common/src/AOCLUtils/options.cpp 
-ALTERA_AOCL_LD_FLAGS=-L/opt/intelFPGA/16.1/hld/board/s5_ref/linux64/lib -L/opt/intelFPGA/16.1/hld/host/linux64/lib -Wl,--no-as-needed -lalteracl -laltera_s5_ref_mmd -lelf -lrt -lpthread 
+
+# You must configure ALTERAOCLSDKROOT to point the root directory of the Intel(R) FPGA SDK for OpenCL(TM)
+# software installation.
+# See http://www.altera.com/literature/hb/opencl-sdk/aocl_getting_started.pdf 
+# for more information on installing and configuring the Intel(R) FPGA SDK for OpenCL(TM).
+
+ifeq ($(VERBOSE),1)
+ECHO :=
+else
+ECHO := @
+endif
+
+# Where is the Intel(R) FPGA SDK for OpenCL(TM) software?
+ifeq ($(wildcard $(ALTERAOCLSDKROOT)),)
+$(error Set ALTERAOCLSDKROOT to the root directory of the Intel(R) FPGA SDK for OpenCL(TM) software installation)
+endif
+ifeq ($(wildcard $(ALTERAOCLSDKROOT)/host/include/CL/opencl.h),)
+$(error Set ALTERAOCLSDKROOT to the root directory of the Intel(R) FPGA SDK for OpenCL(TM) software installation.)
+endif
+
+# OpenCL compile and link flags.
+AOCL_COMPILE_CONFIG := $(shell aocl compile-config ) -DAOCL -O2 -fPIC -Iaocl_common/inc
+AOCL_LINK_CONFIG := $(shell aocl link-config ) 
+
+# Compilation flags
+ifeq ($(DEBUG),1)
+CXXFLAGS += -g
+else
+CXXFLAGS += -O2
+endif
+
+# Compiler
+CXX := g++
+AOC := aoc
+
+# Target
+TARGET := main
+TARGET_DIR := bin
+
+# Directories
+INC_DIRS := ../common/inc 
+LIB_DIRS :=
 
 
-emu: $(BITCODES).emu $(EXECUTABLE)
+# Files
+INCS := $(wildcard )
+SRCS := $(wildcard *.cpp *.c ../common/src/AOCLUtils/*.cpp)
+LIBS := rt pthread
 
-fpga: $(BITCODES) $(EXECUTABLE)
+KERNEL := mykernel
+AOCX := $(KERNEL).aocx
 
-$(BITCODES).emu: $(KERNEL).cl
-	unset AOCL_BOARD_PACKAGE_ROOT
-	$(ALTERA_AOC) -march=emulator $< -o bin/$(BITCODES) 
+# Make it all!
+all : $(TARGET_DIR)/$(TARGET)
 
-$(BITCODES): $(KERNEL).cl
-	$(ALTERA_AOC) $< -o bin/$(BITCODES) --report --board c5soc_sharedonly
+# Host executable target.
+$(TARGET_DIR)/$(TARGET) : Makefile $(SRCS) $(INCS) $(TARGET_DIR)
+	$(ECHO)$(CXX) $(CPPFLAGS) $(CXXFLAGS) -fPIC $(foreach D,$(INC_DIRS),-I$D) \
+                        $(AOCL_COMPILE_CONFIG) $(SRCS) $(AOCL_LINK_CONFIG) \
+                        $(foreach D,$(LIB_DIRS),-L$D) \
+                        $(foreach L,$(LIBS),-l$L) \
+                        -o $(TARGET_DIR)/$(TARGET)
 
-$(EXECUTABLE): main.c
-	mkdir -p $(BUILD_DIR)
-	g++ $(ALTERA_AOCL_INC_FLAGS) $< $(ALTERA_AOCL_COMMON) $(ALTERA_AOCL_LD_FLAGS) -o $(BUILD_DIR)$@
+$(TARGET_DIR) :
+	$(ECHO)mkdir $(TARGET_DIR)
+        
+emu: $(KERNEL).emu $(TARGET_DIR)/$(TARGET)
+
+$(KERNEL).emu: $(KERNEL).cl
+	$(AOC) -march=emulator -board=pac_a10 $< -o $(TARGET_DIR)/$(AOCX) 
 	echo "To run the emulated device: "
-	echo "    CL_CONTEXT_EMULATOR_DEVICE_ALTERA=1 bin/main"
+	echo "    CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA=1 bin/main"
 
+fpga: $(KERNEL).aocx $(TARGET_DIR)/$(TARGET)
 
-.PHONY: clean
-clean:
-	rm -rf $(BUILD_DIR) $(EXECUTABLE) 
+$(KERNEL).aocx: $(KERNEL).cl
+	$(AOC) -board=pac_a10 --report $< -o $(TARGET_DIR)/$(AOCX) 
+
+# Standard make targets
+clean :
+	$(ECHO)rm -f $(TARGET_DIR)/$(TARGET) $(TARGET_DIR)/$(AOCX)
+
+.PHONY : all clean
+
 endif
