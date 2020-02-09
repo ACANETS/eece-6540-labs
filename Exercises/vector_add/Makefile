@@ -23,15 +23,17 @@ $(BUILD_DIR)/mykernel.cl.o: mykernel.cl.c
 	mkdir -p $(BUILD_DIR)
 	clang -c -Os -Wall -arch x86_64 -o $@ -c mykernel.cl.c
 
-$(BUILD_DIR)/main.o: main.c mykernel.cl.h
+$(BUILD_DIR)/main.o: host/src/main.cpp mykernel.cl.h
 	mkdir -p $(BUILD_DIR)
 	clang -c -Os -Wall -arch x86_64 -o $@ -c $<
 
-mykernel.cl.c mykernel.cl.h: mykernel.cl
-	$(OPENCLC) -x cl -cl-std=CL1.1 -cl-auto-vectorize-enable -emit-gcl $<
+mykernel.cl.c mykernel.cl.h: device/vector_add.cl
+	cp $< mykernel.cl
+	$(OPENCLC) -x cl -cl-std=CL1.1 -cl-auto-vectorize-enable -emit-gcl mykernel.cl
 
-mykernel.cl.%.bc: mykernel.cl
-	$(OPENCLC) -x cl -cl-std=CL1.1 -Os -arch $* -emit-llvm -o $@ -c $<
+mykernel.cl.%.bc: device/vector_add.cl
+	cp $< mykernel.c
+	$(OPENCLC) -x cl -cl-std=CL1.1 -Os -arch $* -emit-llvm -o $@ -c mykernel.cl
 
 .PHONY: clean
 clean:
