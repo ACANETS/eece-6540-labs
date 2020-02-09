@@ -37,10 +37,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
+#ifdef __APPLE__
+#include <OpenCL/opencl.h>
+#else
+#include <CL/cl.h>
+#endif
+
+#ifdef AOCL             
 #include "CL/opencl.h"
 #include "AOCLUtils/aocl_utils.h"
 
 using namespace aocl_utils;
+void cleanup();
+#endif
 
 // OpenCL runtime configuration
 cl_platform_id platform = NULL;
