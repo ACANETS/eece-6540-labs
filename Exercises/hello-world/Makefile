@@ -91,6 +91,7 @@ LIBS := rt pthread
 
 KERNEL := mykernel
 AOCX := $(KERNEL).aocx
+CMDMSG := "To run the emulated device: \n   CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA=1 bin/main"
 
 # Make it all!
 all : $(TARGET_DIR)/$(TARGET)
@@ -110,8 +111,7 @@ emu: $(KERNEL).emu $(TARGET_DIR)/$(TARGET)
 
 $(KERNEL).emu: $(KERNEL).cl
 	$(AOC) -march=emulator -board=pac_a10 $< -o $(TARGET_DIR)/$(AOCX) 
-	echo "To run the emulated device: "
-	echo "    CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA=1 bin/main"
+	echo $(CMDMSG)
 
 fpga: $(KERNEL).aocx $(TARGET_DIR)/$(TARGET)
 
@@ -120,7 +120,7 @@ $(KERNEL).aocx: $(KERNEL).cl
 
 # Standard make targets
 clean :
-	$(ECHO)rm -f $(TARGET_DIR)/$(TARGET) $(TARGET_DIR)/$(AOCX)
+	$(ECHO)rm -rf $(TARGET_DIR)/$(TARGET) $(TARGET_DIR)/$(KERNEL)*
 
 .PHONY : all clean
 
