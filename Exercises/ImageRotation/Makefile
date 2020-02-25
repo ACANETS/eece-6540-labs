@@ -16,8 +16,10 @@ EXECUTABLE=main
 KERNEL_ARCH=i386 x86_64 gpu_32 gpu_64
 BITCODES=$(patsubst %, mykernel.cl.%.bc, $(KERNEL_ARCH))
 
-$(EXECUTABLE): $(BUILD_DIR)/mykernel.cl.o $(BUILD_DIR)/main.o $(BITCODES)
-	clang -framework OpenCL -o $@ $(BUILD_DIR)/mykernel.cl.o $(BUILD_DIR)/main.o
+$(EXECUTABLE): $(BUILD_DIR)/mykernel.cl.o $(BUILD_DIR)/main.o $(BITCODES) \
+		$(BUILD_DIR)/gold.o $(BUILD_DIR)/utils.o $(BUILD_DIR)/bmp-utils.o
+	clang -framework OpenCL -o $@ $(BUILD_DIR)/mykernel.cl.o $(BUILD_DIR)/main.o \
+		$(BUILD_DIR)/gold.o $(BUILD_DIR)/utils.o $(BUILD_DIR)/bmp-utils.o
 
 $(BUILD_DIR)/mykernel.cl.o: mykernel.cl.c
 	mkdir -p $(BUILD_DIR)
@@ -25,13 +27,25 @@ $(BUILD_DIR)/mykernel.cl.o: mykernel.cl.c
 
 $(BUILD_DIR)/main.o: main.c mykernel.cl.h
 	mkdir -p $(BUILD_DIR)
-	clang -c -Os -Wall -arch x86_64 -o $@ -c $<
+	clang -c -Os -Wall -arch x86_64 -IUtils/ -o $@ -c $<
 
 mykernel.cl.c mykernel.cl.h: mykernel.cl
 	$(OPENCLC) -x cl -cl-std=CL1.1 -cl-auto-vectorize-enable -emit-gcl $<
 
 mykernel.cl.%.bc: mykernel.cl
 	$(OPENCLC) -x cl -cl-std=CL1.1 -Os -arch $* -emit-llvm -o $@ -c $<
+
+$(BUILD_DIR)/gold.o: Utils/gold.c
+	mkdir -p $(BUILD_DIR)
+	clang -c -Os -Wall -arch x86_64 $(INCDIR) -o $@ -c $<
+
+$(BUILD_DIR)/utils.o: Utils/utils.c
+	mkdir -p $(BUILD_DIR)
+	clang -c -Os -Wall -arch x86_64 $(INCDIR) -o $@ -c $<
+
+$(BUILD_DIR)/bmp-utils.o: Utils/bmp-utils.c
+	mkdir -p $(BUILD_DIR)
+	clang -c -Os -Wall -arch x86_64 $(INCDIR) -o $@ -c $<
 
 .PHONY: clean
 clean:
