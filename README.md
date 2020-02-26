@@ -11,12 +11,8 @@ if [ -f /data/intel_fpga/devcloudLoginToolSetup.sh ]; then
 fi
 ```
 
-2. set up paths necessary for OpenCL SDK. You need to run these commands every time you login in.
+2. set up paths necessary for OpenCL SDK (or other SDK). You need to run the command every time you login in to a compute node.
 
 ```
-source /glob/development-tools/versions/fpgasupportstack/a10/1.2/inteldevstack/init_env.sh
-```
-
-```
-source /glob/development-tools/versions/fpgasupportstack/a10/1.2/inteldevstack/intelFPGA_pro/hld/init_opencl.sh
+tools_setup
 ```
