@@ -212,8 +212,10 @@ int memRW(
 			acl_aligned_free(hdatain);
 		if (hdataout)
 			acl_aligned_free(hdataout);
-		if (ddatain)
+		if (ddatain) {
 			clReleaseMemObject(ddatain);
+			ddatain = NULL;
+		}
 		clFinish(queue);
 	}
 

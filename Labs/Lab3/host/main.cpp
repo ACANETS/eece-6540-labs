@@ -149,9 +149,10 @@ int main(int argc, char *argv[]) {
 	}
 	if(num_platforms != 1) {
 		printf("Found %d platforms!\n", num_platforms);
-		dump_init_error();
-		freeResources();
-		return 1;
+		printf("Use platform 0!\n");
+		//dump_init_error();
+		//freeResources();
+		//return 1;
 	}
 	status = clGetDeviceIDs(platform, CL_DEVICE_TYPE_ALL, 0, NULL, &num_devices);
 	if(num_devices <= 0) {

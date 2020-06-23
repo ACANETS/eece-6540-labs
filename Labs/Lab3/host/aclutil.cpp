@@ -111,7 +111,6 @@ cl_ulong get_max_mem_alloc_size(cl_context context, cl_command_queue queue, cl_d
 	}
  
 	test = clCreateBuffer(context, CL_MEM_READ_WRITE, high, NULL, &status);
-	clReleaseMemObject(test);
 	if (status != CL_SUCCESS)
 		high=low;
 	//printf("Do not ignore openCL notifications after this line. \n");
@@ -120,6 +119,7 @@ cl_ulong get_max_mem_alloc_size(cl_context context, cl_command_queue queue, cl_d
 	if(test)
 		clReleaseMemObject(test);
 	clFinish(queue);
+	
 	maxAlloc_size = high;
 	printf("Available max buffer size = %llu bytes.\n", maxAlloc_size);
 /************* Finished measuring maximum buffer size ******************** */	

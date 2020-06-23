@@ -24,7 +24,8 @@
 #include <assert.h>
 #include <limits.h>
 // ACL specific includes
-#include "CL/opencl.h"
+#include <CL/opencl.h>
+#include <CL/cl_ext_intelfpga.h>
 #include "aclutil.h"
 
 extern bool g_enable_notifications;

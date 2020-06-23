@@ -29,7 +29,8 @@
 
 using namespace std;
 // ACL specific includes
-#include "CL/opencl.h"
+#include <CL/opencl.h>
+#include <CL/cl_ext_intelfpga.h>
 #include "aclutil.h"
 #include "timer.h"
 #ifdef __linux__
