@@ -45,7 +45,7 @@ int main()
     size_t source_size;
 
     int result[4] = {0, 0, 0, 0};
-    char pattern[16] = {'t','h','a','t','w','i','t','h','h','a','v','e','f','r','o','m'};
+    char pattern[16] = {'j','u','s','t','l','o','o','k','f','e','e','l','p','a','i','n'};
     FILE *text_handle;
     char *text;
     size_t text_size;
@@ -205,10 +205,10 @@ int main()
     }
 
     printf("\nResults: \n");
-    printf("Number of occurrences of 'that': %d\n", result[0]);
-    printf("Number of occurrences of 'with': %d\n", result[1]);
-    printf("Number of occurrences of 'have': %d\n", result[2]);
-    printf("Number of occurrences of 'from': %d\n", result[3]);
+    printf("Number of occurrences of 'just': %d\n", result[0]);
+    printf("Number of occurrences of 'look': %d\n", result[1]);
+    printf("Number of occurrences of 'feel': %d\n", result[2]);
+    printf("Number of occurrences of 'pain': %d\n", result[3]);
 
 
     /* free resources */
