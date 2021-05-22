@@ -1,13 +1,15 @@
 # eece-6540-labs
-labs and exercises for EECE.6540 Heterogeneous Computing
+Labs and Exercises for EECE.6540 Heterogeneous Computing
 
-## set up SSH access to Intel DevCloud
+## Set up SSH access to Intel DevCloud
 
 Once you received login credentials from Intel DevCloud, please follow the instructions to setup SSH access to Intel DevCloud
 
 https://github.com/intel/FPGA-Devcloud/tree/master/main/Devcloud_Access_Instructions#devcloud-access-instructions
 
-## set up lab environment on Intel DevCloud
+## Set up lab environment on Intel DevCloud
+
+You need to be able to SSH into DevCloud before proceeding with the following steps. DevCloud has two categories of "nodes": *Head Node* and *Compute Node*. The Head Node is the landing point once you login via SSH whereas a Compute Node is where the main code development work happens. The general principle is that you should only use Compute Nodes for development tasks (compilation, testing, debugging), so running any of these tasks on the Head Node is not supported and will lead to errors.
 
 ### On Head Node
 Once you have set up the SSH key to access, you should be able to login the headnode (identified as "login-2").
@@ -32,7 +34,7 @@ For OneAPI labs please choose Option 2)
 2) Arria 10 OneAPI
 ```
 
-Either way, you will be directed to a compute node (identified as @s001-nxxx) shortly. 
+Either way, you will be directed to a compute node (identified as @s00x-nxxx) shortly. 
 
 ### On Compute Node
 Then you will need to run the following command to set up the environment variables before compilation.
