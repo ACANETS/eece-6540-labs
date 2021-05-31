@@ -20,5 +20,9 @@ __kernel void hello(__global char* string)
 	string[10] = 'l';
 	string[11] = 'd';
 	string[12] = '!';
+	string[13] = ' ';
+	string[14] = 'H';
+	string[15] = 'a';
+	string[16] = '!';
 	string[13] = '\0';
 }
