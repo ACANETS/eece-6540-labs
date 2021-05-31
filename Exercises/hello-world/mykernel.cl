@@ -24,5 +24,5 @@ __kernel void hello(__global char* string)
 	string[14] = 'H';
 	string[15] = 'a';
 	string[16] = '!';
-	string[13] = '\0';
+	string[17] = '\0';
 }
