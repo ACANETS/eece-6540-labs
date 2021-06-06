@@ -1,0 +1,19 @@
+{
+   "version": 1,
+   "platform-name" : "DCP",
+   "afu-image": {
+      "clock-frequency-high": 312,
+      "clock-frequency-low": 156,
+      "magic-no": 488605312,
+      "interface-uuid": "01234567-89AB-CDEF-0123-456789ABCDEF",
+      "power": 0,
+      "accelerator-clusters":
+         [
+            {
+               "name": "pac_a10",
+               "total-contexts": 1,
+               "accelerator-type-uuid": "63b3779b-8bdd-4f03-9ceb-0301181d6aef"
+            }
+         ]
+   }
+}

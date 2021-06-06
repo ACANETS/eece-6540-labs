@@ -1,0 +1,8 @@
+{"name":"Info","rows":[
+{"classes":["info-table"],"data":["hello_world_fpga"],"name":"Project Name"},
+{"data":["Arria 10, 10AX115S2F45I2SGES, dcp_bsp:pac_a10"],"name":"Target Family, Device, Board"},
+{"data":["19.4.0 Build 64"],"name":"AOC Version"},
+{"data":["19.2.0 Build 57 Pro"],"name":"Quartus Version"},
+{"data":["aoc device/hello_world.cl -o bin/hello_world_fpga.aocx -board=pac_a10"],"name":"Command"},
+{"data":["Sat Jun  5 10:26:34 2021"],"name":"Reports Generated At"}
+]}

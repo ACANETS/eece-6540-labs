@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2021.06.05.10:26:55"
+ outputDirectory="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Arria 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10AX115N2F40E2LG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_KERNEL_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_KERNEL_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_KERNEL_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BANK1_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BANK1_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BANK2_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BANK2_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="200000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="acl_bsp_snoop" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="kernel_clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="33" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="prSafe" value="false" />
+   <property name="readyAllowance" value="0" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="acl_bsp_snoop_data" direction="output" role="data" width="33" />
+   <port name="acl_bsp_snoop_valid" direction="output" role="valid" width="1" />
+   <port name="acl_bsp_snoop_ready" direction="input" role="ready" width="1" />
+  </interface>
+  <interface name="kernel_clk" kind="clock" start="0">
+   <property name="clockRate" value="350000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="kernel_clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="kernel_reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port
+       name="kernel_reset_reset_n"
+       direction="input"
+       role="reset_n"
+       width="1" />
+  </interface>
+  <interface name="s" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="8589934592" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="64" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="s_writedata" direction="input" role="writedata" width="512" />
+   <port name="s_read" direction="input" role="read" width="1" />
+   <port name="s_write" direction="input" role="write" width="1" />
+   <port name="s_burstcount" direction="input" role="burstcount" width="5" />
+   <port name="s_byteenable" direction="input" role="byteenable" width="64" />
+   <port name="s_waitrequest" direction="output" role="waitrequest" width="1" />
+   <port name="s_readdata" direction="output" role="readdata" width="512" />
+   <port
+       name="s_readdatavalid"
+       direction="output"
+       role="readdatavalid"
+       width="1" />
+   <port name="s_address" direction="input" role="address" width="27" />
+  </interface>
+  <interface name="acl_bsp_memorg_host" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port
+       name="acl_bsp_memorg_host_mode"
+       direction="input"
+       role="mode"
+       width="2" />
+  </interface>
+  <interface name="bank1" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="bank1_address" direction="output" role="address" width="32" />
+   <port
+       name="bank1_writedata"
+       direction="output"
+       role="writedata"
+       width="512" />
+   <port name="bank1_read" direction="output" role="read" width="1" />
+   <port name="bank1_write" direction="output" role="write" width="1" />
+   <port
+       name="bank1_burstcount"
+       direction="output"
+       role="burstcount"
+       width="5" />
+   <port
+       name="bank1_byteenable"
+       direction="output"
+       role="byteenable"
+       width="64" />
+   <port
+       name="bank1_waitrequest"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+   <port name="bank1_readdata" direction="input" role="readdata" width="512" />
+   <port
+       name="bank1_readdatavalid"
+       direction="input"
+       role="readdatavalid"
+       width="1" />
+  </interface>
+  <interface name="bank2" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="bank2_address" direction="output" role="address" width="32" />
+   <port
+       name="bank2_writedata"
+       direction="output"
+       role="writedata"
+       width="512" />
+   <port name="bank2_read" direction="output" role="read" width="1" />
+   <port name="bank2_write" direction="output" role="write" width="1" />
+   <port
+       name="bank2_burstcount"
+       direction="output"
+       role="burstcount"
+       width="5" />
+   <port
+       name="bank2_byteenable"
+       direction="output"
+       role="byteenable"
+       width="64" />
+   <port
+       name="bank2_waitrequest"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+   <port name="bank2_readdata" direction="input" role="readdata" width="512" />
+   <port
+       name="bank2_readdatavalid"
+       direction="input"
+       role="readdatavalid"
+       width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="ddr_board_acl_memory_bank_divider_0"
+   version="1.0"
+   name="ddr_board_acl_memory_bank_divider_0">
+  <parameter name="AUTO_KERNEL_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <parameter name="AUTO_BANK2_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_DEVICE" value="10AX115N2F40E2LG" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_BANK2_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_KERNEL_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_KERNEL_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_BANK1_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_BANK1_ADDRESS_WIDTH" value="-1" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/synth/ddr_board_acl_memory_bank_divider_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/synth/ddr_board_acl_memory_bank_divider_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/bsp/acl_memory_bank_divider_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/export/snoop_adapter_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/export/snoop_adapter.v" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/burst_boundary_splitter/burst_boundary_splitter_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_splitter_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_splitter.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_router_reorder.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/acl_iface_ll_fifo.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/acl_iface_address_to_bankaddress.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_avalon_mm_bridge/altera_avalon_mm_bridge_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: snoop_adapter"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: burst_boundary_splitter"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: mem_splitter"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_avalon_mm_bridge_191_45tnyma"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_febuv6y"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_yttug3i"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_vrmkvxa"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: altera_reset_controller"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="acl_memory_bank_divider"
+   version="1.0"
+   name="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y">
+  <parameter name="ADDRESS_WIDTH" value="33" />
+  <parameter name="AUTO_KERNEL_CLK_CLOCK_RATE" value="350000000" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="200000000" />
+  <parameter name="MAX_PENDING_READS" value="64" />
+  <parameter name="NUM_BANKS" value="2" />
+  <parameter name="BURST_SIZE" value="16" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="SEPARATE_RW_PORTS" value="false" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <parameter name="PIPELINE_OUTPUTS" value="false" />
+  <parameter name="DATA_WIDTH" value="512" />
+  <parameter name="AUTO_DEVICE" value="10AX115N2F40E2LG" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="9" />
+  <parameter name="SPLIT_ON_BURSTBOUNDARY" value="true" />
+  <parameter name="AUTO_KERNEL_CLK_CLOCK_DOMAIN" value="10" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="9" />
+  <parameter name="AUTO_KERNEL_CLK_RESET_DOMAIN" value="10" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/acl_memory_bank_divider_10/synth/ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/acl_memory_bank_divider_10/synth/ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/bsp/acl_memory_bank_divider_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/export/snoop_adapter_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/export/snoop_adapter.v" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/burst_boundary_splitter/burst_boundary_splitter_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_splitter_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_splitter.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_router_reorder.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/acl_iface_ll_fifo.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/acl_iface_address_to_bankaddress.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_avalon_mm_bridge/altera_avalon_mm_bridge_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0"
+     as="ddr_board_acl_memory_bank_divider_0" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: snoop_adapter"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: burst_boundary_splitter"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: mem_splitter"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_avalon_mm_bridge_191_45tnyma"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_febuv6y"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_yttug3i"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_vrmkvxa"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: altera_reset_controller"</message>
+  </messages>
+ </entity>
+ <entity kind="acl_snoop_adapter" version="11.0" name="snoop_adapter">
+  <parameter name="AUTO_KERNEL_CLK_CLOCK_RATE" value="350000000" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="200000000" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/acl_snoop_adapter_110/synth/snoop_adapter.v" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/acl_snoop_adapter_110/synth/snoop_adapter.v" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/export/snoop_adapter_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/export/snoop_adapter.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"
+     as="acl_snoop_adapter_0" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: snoop_adapter"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="burst_boundary_splitter"
+   version="1.0"
+   name="burst_boundary_splitter">
+  <parameter name="MAX_PENDING_READS" value="64" />
+  <parameter name="BURSTCOUNT_WIDTH" value="5" />
+  <parameter name="BYTEENABLE_WIDTH" value="64" />
+  <parameter name="WORD_WIDTH_A" value="27" />
+  <parameter name="WIDTH_D" value="512" />
+  <parameter name="BYTE_WIDTH_A" value="33" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/burst_boundary_splitter_10/synth/burst_boundary_splitter.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/burst_boundary_splitter_10/synth/burst_boundary_splitter.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/burst_boundary_splitter/burst_boundary_splitter_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"
+     as="burst_splitter" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: burst_boundary_splitter"</message>
+  </messages>
+ </entity>
+ <entity kind="mem_splitter" version="10.0" name="mem_splitter">
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/mem_splitter_100/synth/mem_splitter.sv" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/mem_splitter_100/synth/mem_router_reorder.sv" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/mem_splitter_100/synth/acl_iface_ll_fifo.sv" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/mem_splitter_100/synth/acl_iface_address_to_bankaddress.sv" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/mem_splitter_100/synth/mem_splitter.sv" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/mem_splitter_100/synth/mem_router_reorder.sv" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/mem_splitter_100/synth/acl_iface_ll_fifo.sv" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/mem_splitter_100/synth/acl_iface_address_to_bankaddress.sv" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_splitter_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_splitter.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/mem_router_reorder.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/acl_iface_ll_fifo.sv" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/mem_splitter/acl_iface_address_to_bankaddress.sv" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"
+     as="mem_splitter_0" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: mem_splitter"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_avalon_mm_bridge"
+   version="19.1"
+   name="ddr_board_acl_memory_bank_divider_0_altera_avalon_mm_bridge_191_45tnyma">
+  <parameter name="MAX_BURST_SIZE" value="16" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_avalon_mm_bridge_191/synth/ddr_board_acl_memory_bank_divider_0_altera_avalon_mm_bridge_191_45tnyma.v"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_avalon_mm_bridge_191/synth/ddr_board_acl_memory_bank_divider_0_altera_avalon_mm_bridge_191_45tnyma.v"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_avalon_mm_bridge/altera_avalon_mm_bridge_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"
+     as="pipe_stage_presplitter" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_avalon_mm_bridge_191_45tnyma"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_mm_interconnect"
+   version="19.1"
+   name="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_febuv6y">
+  <parameter name="AUTO_DEVICE" value="10AX115N2F40E2LG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="" />
+  <parameter
+     name="COMPOSE_CONTENTS"
+     value="add_instance {burst_splitter_master_translator} {altera_merlin_master_translator};set_instance_parameter_value {burst_splitter_master_translator} {AV_ADDRESS_W} {27};set_instance_parameter_value {burst_splitter_master_translator} {AV_DATA_W} {512};set_instance_parameter_value {burst_splitter_master_translator} {AV_BURSTCOUNT_W} {5};set_instance_parameter_value {burst_splitter_master_translator} {AV_BYTEENABLE_W} {64};set_instance_parameter_value {burst_splitter_master_translator} {UAV_ADDRESS_W} {33};set_instance_parameter_value {burst_splitter_master_translator} {UAV_BURSTCOUNT_W} {11};set_instance_parameter_value {burst_splitter_master_translator} {AV_READLATENCY} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_READ_WAIT} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {burst_splitter_master_translator} {USE_READDATA} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_READ} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_WRITE} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {burst_splitter_master_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {burst_splitter_master_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {burst_splitter_master_translator} {USE_ADDRESS} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_BURSTCOUNT} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_DEBUGACCESS} {0};set_instance_parameter_value {burst_splitter_master_translator} {USE_CLKEN} {0};set_instance_parameter_value {burst_splitter_master_translator} {USE_READDATAVALID} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {burst_splitter_master_translator} {USE_LOCK} {0};set_instance_parameter_value {burst_splitter_master_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {burst_splitter_master_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_SYMBOLS_PER_WORD} {64};set_instance_parameter_value {burst_splitter_master_translator} {AV_ADDRESS_SYMBOLS} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_CONSTANT_BURST_BEHAVIOR} {1};set_instance_parameter_value {burst_splitter_master_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {burst_splitter_master_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {burst_splitter_master_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {burst_splitter_master_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {burst_splitter_master_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {burst_splitter_master_translator} {SYNC_RESET} {0};set_instance_parameter_value {burst_splitter_master_translator} {WAITREQUEST_ALLOWANCE} {0};add_instance {acl_snoop_adapter_0_s1_translator} {altera_merlin_slave_translator};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_ADDRESS_W} {27};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_DATA_W} {512};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {UAV_DATA_W} {512};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_BURSTCOUNT_W} {5};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_BYTEENABLE_W} {64};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {UAV_BYTEENABLE_W} {64};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {UAV_ADDRESS_W} {33};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {UAV_BURSTCOUNT_W} {11};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_READLATENCY} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_READ_WAIT} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_TIMING_UNITS} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_READDATA} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_READ} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_WRITE} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_BEGINBURSTTRANSFER} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_ADDRESS} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_BURSTCOUNT} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_READDATAVALID} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_WRITEBYTEENABLE} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_LOCK} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_AV_CLKEN} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_UAV_CLKEN} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_OUTPUTENABLE} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_DEBUGACCESS} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_SYMBOLS_PER_WORD} {64};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_ADDRESS_SYMBOLS} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_REQUIRE_UNALIGNED_ADDRESSES} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_MAX_PENDING_WRITE_TRANSACTIONS} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {CHIPSELECT_THROUGH_READLATENCY} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {WAITREQUEST_ALLOWANCE} {0};set_instance_parameter_value {acl_snoop_adapter_0_s1_translator} {SYNC_RESET} {0};add_instance {burst_splitter_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {burst_splitter_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {burst_splitter_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {burst_splitter_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {burst_splitter_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {burst_splitter_reset_reset_bridge} {SYNC_RESET} {0};add_instance {clk_clk_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {clk_clk_clock_bridge} {EXPLICIT_CLOCK_RATE} {200000000};set_instance_parameter_value {clk_clk_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {burst_splitter_master_translator.avalon_universal_master_0} {acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {avalon};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {arbitrationPriority} {1};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {baseAddress} {0x0000};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {defaultConnection} {false};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {domainAlias} {};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {burst_splitter_master_translator.avalon_universal_master_0/acl_snoop_adapter_0_s1_translator.avalon_universal_slave_0} {qsys_mm.syncResets} {FALSE};add_connection {burst_splitter_reset_reset_bridge.out_reset} {burst_splitter_master_translator.reset} {reset};add_connection {burst_splitter_reset_reset_bridge.out_reset} {acl_snoop_adapter_0_s1_translator.reset} {reset};add_connection {clk_clk_clock_bridge.out_clk} {burst_splitter_master_translator.clk} {clock};add_connection {clk_clk_clock_bridge.out_clk} {acl_snoop_adapter_0_s1_translator.clk} {clock};add_connection {clk_clk_clock_bridge.out_clk} {burst_splitter_reset_reset_bridge.clk} {clock};add_interface {burst_splitter_master} {avalon} {slave};set_interface_property {burst_splitter_master} {EXPORT_OF} {burst_splitter_master_translator.avalon_anti_master_0};add_interface {acl_snoop_adapter_0_s1} {avalon} {master};set_interface_property {acl_snoop_adapter_0_s1} {EXPORT_OF} {acl_snoop_adapter_0_s1_translator.avalon_anti_slave_0};add_interface {burst_splitter_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {burst_splitter_reset_reset_bridge_in_reset} {EXPORT_OF} {burst_splitter_reset_reset_bridge.in_reset};add_interface {clk_clk} {clock} {slave};set_interface_property {clk_clk} {EXPORT_OF} {clk_clk_clock_bridge.in_clk};set_module_assignment {interconnect_id.acl_snoop_adapter_0.s1} {0};set_module_assignment {interconnect_id.burst_splitter.master} {0};" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_mm_interconnect_191/synth/ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_febuv6y.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_mm_interconnect_191/synth/ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_febuv6y.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"
+     as="mm_interconnect_0" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_febuv6y"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_mm_interconnect"
+   version="19.1"
+   name="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_yttug3i">
+  <parameter name="AUTO_DEVICE" value="10AX115N2F40E2LG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="" />
+  <parameter
+     name="COMPOSE_CONTENTS"
+     value="add_instance {acl_snoop_adapter_0_m1_translator} {altera_merlin_master_translator};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_ADDRESS_W} {33};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_DATA_W} {512};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_BURSTCOUNT_W} {5};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_BYTEENABLE_W} {64};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {UAV_ADDRESS_W} {33};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {UAV_BURSTCOUNT_W} {11};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_READLATENCY} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_READDATA} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_READ} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_WRITE} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_ADDRESS} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_BURSTCOUNT} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_DEBUGACCESS} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_CLKEN} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_READDATAVALID} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_LOCK} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_SYMBOLS_PER_WORD} {64};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_ADDRESS_SYMBOLS} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_CONSTANT_BURST_BEHAVIOR} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {1};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {SYNC_RESET} {0};set_instance_parameter_value {acl_snoop_adapter_0_m1_translator} {WAITREQUEST_ALLOWANCE} {0};add_instance {pipe_stage_presplitter_s0_translator} {altera_merlin_slave_translator};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_ADDRESS_W} {33};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_DATA_W} {512};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {UAV_DATA_W} {512};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_BURSTCOUNT_W} {5};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_BYTEENABLE_W} {64};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {UAV_BYTEENABLE_W} {64};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {UAV_ADDRESS_W} {33};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {UAV_BURSTCOUNT_W} {11};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_READLATENCY} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_READ_WAIT} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_TIMING_UNITS} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_READDATA} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_READ} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_WRITE} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_ADDRESS} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_BURSTCOUNT} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_READDATAVALID} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_WRITEBYTEENABLE} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_LOCK} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_AV_CLKEN} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_UAV_CLKEN} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_OUTPUTENABLE} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_DEBUGACCESS} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_SYMBOLS_PER_WORD} {64};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_ADDRESS_SYMBOLS} {1};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_REQUIRE_UNALIGNED_ADDRESSES} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_MAX_PENDING_WRITE_TRANSACTIONS} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {CHIPSELECT_THROUGH_READLATENCY} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {WAITREQUEST_ALLOWANCE} {0};set_instance_parameter_value {pipe_stage_presplitter_s0_translator} {SYNC_RESET} {0};add_instance {acl_snoop_adapter_0_clk_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {acl_snoop_adapter_0_clk_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {acl_snoop_adapter_0_clk_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {acl_snoop_adapter_0_clk_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {acl_snoop_adapter_0_clk_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {acl_snoop_adapter_0_clk_reset_reset_bridge} {SYNC_RESET} {0};add_instance {clk_clk_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {clk_clk_clock_bridge} {EXPLICIT_CLOCK_RATE} {200000000};set_instance_parameter_value {clk_clk_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0} {pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {avalon};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {arbitrationPriority} {1};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {baseAddress} {0x0000};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {defaultConnection} {false};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {domainAlias} {};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {acl_snoop_adapter_0_m1_translator.avalon_universal_master_0/pipe_stage_presplitter_s0_translator.avalon_universal_slave_0} {qsys_mm.syncResets} {FALSE};add_connection {acl_snoop_adapter_0_clk_reset_reset_bridge.out_reset} {acl_snoop_adapter_0_m1_translator.reset} {reset};add_connection {acl_snoop_adapter_0_clk_reset_reset_bridge.out_reset} {pipe_stage_presplitter_s0_translator.reset} {reset};add_connection {clk_clk_clock_bridge.out_clk} {acl_snoop_adapter_0_m1_translator.clk} {clock};add_connection {clk_clk_clock_bridge.out_clk} {pipe_stage_presplitter_s0_translator.clk} {clock};add_connection {clk_clk_clock_bridge.out_clk} {acl_snoop_adapter_0_clk_reset_reset_bridge.clk} {clock};add_interface {acl_snoop_adapter_0_m1} {avalon} {slave};set_interface_property {acl_snoop_adapter_0_m1} {EXPORT_OF} {acl_snoop_adapter_0_m1_translator.avalon_anti_master_0};add_interface {pipe_stage_presplitter_s0} {avalon} {master};set_interface_property {pipe_stage_presplitter_s0} {EXPORT_OF} {pipe_stage_presplitter_s0_translator.avalon_anti_slave_0};add_interface {acl_snoop_adapter_0_clk_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {acl_snoop_adapter_0_clk_reset_reset_bridge_in_reset} {EXPORT_OF} {acl_snoop_adapter_0_clk_reset_reset_bridge.in_reset};add_interface {clk_clk} {clock} {slave};set_interface_property {clk_clk} {EXPORT_OF} {clk_clk_clock_bridge.in_clk};set_module_assignment {interconnect_id.acl_snoop_adapter_0.m1} {0};set_module_assignment {interconnect_id.pipe_stage_presplitter.s0} {0};" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_mm_interconnect_191/synth/ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_yttug3i.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_mm_interconnect_191/synth/ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_yttug3i.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"
+     as="mm_interconnect_1" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_yttug3i"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_mm_interconnect"
+   version="19.1"
+   name="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_vrmkvxa">
+  <parameter name="AUTO_DEVICE" value="10AX115N2F40E2LG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="" />
+  <parameter
+     name="COMPOSE_CONTENTS"
+     value="add_instance {pipe_stage_presplitter_m0_translator} {altera_merlin_master_translator};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_ADDRESS_W} {33};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_DATA_W} {512};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_BURSTCOUNT_W} {5};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_BYTEENABLE_W} {64};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {UAV_ADDRESS_W} {33};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {UAV_BURSTCOUNT_W} {11};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_READLATENCY} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_READDATA} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_READ} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_WRITE} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_ADDRESS} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_BURSTCOUNT} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_DEBUGACCESS} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_CLKEN} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_READDATAVALID} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_LOCK} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_SYMBOLS_PER_WORD} {64};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_ADDRESS_SYMBOLS} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_CONSTANT_BURST_BEHAVIOR} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {1};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {SYNC_RESET} {0};set_instance_parameter_value {pipe_stage_presplitter_m0_translator} {WAITREQUEST_ALLOWANCE} {0};add_instance {mem_splitter_0_s_translator} {altera_merlin_slave_translator};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_ADDRESS_W} {27};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_DATA_W} {512};set_instance_parameter_value {mem_splitter_0_s_translator} {UAV_DATA_W} {512};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_BURSTCOUNT_W} {5};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_BYTEENABLE_W} {64};set_instance_parameter_value {mem_splitter_0_s_translator} {UAV_BYTEENABLE_W} {64};set_instance_parameter_value {mem_splitter_0_s_translator} {UAV_ADDRESS_W} {33};set_instance_parameter_value {mem_splitter_0_s_translator} {UAV_BURSTCOUNT_W} {11};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_READLATENCY} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_READ_WAIT} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_TIMING_UNITS} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_READDATA} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_READ} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_WRITE} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_ADDRESS} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_BURSTCOUNT} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_READDATAVALID} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_WRITEBYTEENABLE} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_LOCK} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_AV_CLKEN} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_UAV_CLKEN} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_OUTPUTENABLE} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_DEBUGACCESS} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_SYMBOLS_PER_WORD} {64};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_ADDRESS_SYMBOLS} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_REQUIRE_UNALIGNED_ADDRESSES} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_MAX_PENDING_WRITE_TRANSACTIONS} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {CHIPSELECT_THROUGH_READLATENCY} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {WAITREQUEST_ALLOWANCE} {0};set_instance_parameter_value {mem_splitter_0_s_translator} {SYNC_RESET} {0};add_instance {pipe_stage_presplitter_reset_reset_bridge} {altera_reset_bridge};set_instance_parameter_value {pipe_stage_presplitter_reset_reset_bridge} {ACTIVE_LOW_RESET} {0};set_instance_parameter_value {pipe_stage_presplitter_reset_reset_bridge} {SYNCHRONOUS_EDGES} {deassert};set_instance_parameter_value {pipe_stage_presplitter_reset_reset_bridge} {NUM_RESET_OUTPUTS} {1};set_instance_parameter_value {pipe_stage_presplitter_reset_reset_bridge} {USE_RESET_REQUEST} {0};set_instance_parameter_value {pipe_stage_presplitter_reset_reset_bridge} {SYNC_RESET} {0};add_instance {clk_clk_clock_bridge} {altera_clock_bridge};set_instance_parameter_value {clk_clk_clock_bridge} {EXPLICIT_CLOCK_RATE} {200000000};set_instance_parameter_value {clk_clk_clock_bridge} {NUM_CLOCK_OUTPUTS} {1};add_connection {pipe_stage_presplitter_m0_translator.avalon_universal_master_0} {mem_splitter_0_s_translator.avalon_universal_slave_0} {avalon};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {arbitrationPriority} {1};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {baseAddress} {0x0000};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {defaultConnection} {false};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {domainAlias} {};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.maxAdditionalLatency} {1};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.clockCrossingAdapter} {HANDSHAKE};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.insertDefaultSlave} {FALSE};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.enableInstrumentation} {FALSE};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.interconnectResetSource} {DEFAULT};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.burstAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.widthAdapterImplementation} {GENERIC_CONVERTER};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.enableEccProtection} {FALSE};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.interconnectType} {STANDARD};set_connection_parameter_value {pipe_stage_presplitter_m0_translator.avalon_universal_master_0/mem_splitter_0_s_translator.avalon_universal_slave_0} {qsys_mm.syncResets} {FALSE};add_connection {pipe_stage_presplitter_reset_reset_bridge.out_reset} {pipe_stage_presplitter_m0_translator.reset} {reset};add_connection {pipe_stage_presplitter_reset_reset_bridge.out_reset} {mem_splitter_0_s_translator.reset} {reset};add_connection {clk_clk_clock_bridge.out_clk} {pipe_stage_presplitter_m0_translator.clk} {clock};add_connection {clk_clk_clock_bridge.out_clk} {mem_splitter_0_s_translator.clk} {clock};add_connection {clk_clk_clock_bridge.out_clk} {pipe_stage_presplitter_reset_reset_bridge.clk} {clock};add_interface {pipe_stage_presplitter_m0} {avalon} {slave};set_interface_property {pipe_stage_presplitter_m0} {EXPORT_OF} {pipe_stage_presplitter_m0_translator.avalon_anti_master_0};add_interface {mem_splitter_0_s} {avalon} {master};set_interface_property {mem_splitter_0_s} {EXPORT_OF} {mem_splitter_0_s_translator.avalon_anti_slave_0};add_interface {pipe_stage_presplitter_reset_reset_bridge_in_reset} {reset} {slave};set_interface_property {pipe_stage_presplitter_reset_reset_bridge_in_reset} {EXPORT_OF} {pipe_stage_presplitter_reset_reset_bridge.in_reset};add_interface {clk_clk} {clock} {slave};set_interface_property {clk_clk} {EXPORT_OF} {clk_clk_clock_bridge.in_clk};set_module_assignment {interconnect_id.mem_splitter_0.s} {0};set_module_assignment {interconnect_id.pipe_stage_presplitter.m0} {0};" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_mm_interconnect_191/synth/ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_vrmkvxa.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_mm_interconnect_191/synth/ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_vrmkvxa.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_mm_interconnect/altera_mm_interconnect_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"
+     as="mm_interconnect_2" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_vrmkvxa"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_reset_controller"
+   version="19.1"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_reset_controller_191/synth/altera_reset_controller.v"
+       attributes="" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_reset_controller_191/synth/altera_reset_synchronizer.v"
+       attributes="" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_reset_controller_191/synth/altera_reset_controller.sdc"
+       attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_reset_controller_191/synth/altera_reset_controller.v"
+       attributes="" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_reset_controller_191/synth/altera_reset_synchronizer.v"
+       attributes="" />
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_reset_controller_191/synth/altera_reset_controller.sdc"
+       attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_acl_memory_bank_divider_10_zolcb3y"
+     as="rst_controller" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: altera_reset_controller"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_merlin_master_translator"
+   version="19.1"
+   name="ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq">
+  <parameter name="WAITREQUEST_ALLOWANCE" value="0" />
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_merlin_master_translator_191/synth/ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_merlin_master_translator_191/synth/ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_master_translator/altera_merlin_master_translator_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_febuv6y"
+     as="burst_splitter_master_translator" />
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_yttug3i"
+     as="acl_snoop_adapter_0_m1_translator" />
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_vrmkvxa"
+     as="pipe_stage_presplitter_m0_translator" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_master_translator_191_g7h47bq"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_merlin_slave_translator"
+   version="19.1"
+   name="ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki">
+  <generatedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_merlin_slave_translator_191/synth/ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u76112/zhw/A10_OPENCL_AFU/bin/hello_world_fpga/build/ip/ddr_board/ddr_board_acl_memory_bank_divider_0/altera_merlin_slave_translator_191/synth/ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/ip/altera/merlin/altera_merlin_slave_translator/altera_merlin_slave_translator_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_febuv6y"
+     as="acl_snoop_adapter_0_s1_translator" />
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_yttug3i"
+     as="pipe_stage_presplitter_s0_translator" />
+  <instantiator
+     instantiator="ddr_board_acl_memory_bank_divider_0_altera_mm_interconnect_191_vrmkvxa"
+     as="mem_splitter_0_s_translator" />
+  <messages>
+   <message level="Info" culprit="ddr_board_acl_memory_bank_divider_0">"Generating: ddr_board_acl_memory_bank_divider_0_altera_merlin_slave_translator_191_x56fcki"</message>
+  </messages>
+ </entity>
+</deploy>

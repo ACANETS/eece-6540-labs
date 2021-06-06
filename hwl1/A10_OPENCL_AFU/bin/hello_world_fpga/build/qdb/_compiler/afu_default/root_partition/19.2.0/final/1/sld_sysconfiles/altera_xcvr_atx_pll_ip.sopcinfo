@@ -1,0 +1,3464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnsembleReport
+ name="altera_xcvr_atx_pll_ip"
+ kind="altera_xcvr_atx_pll_ip"
+ version="1.0"
+ fabric="QSYS">
+ <!-- Format version 17.0 290 (Future versions may contain additional information.) -->
+ <!-- 2017.09.26.08:22:16 -->
+ <!-- A collection of modules and connections -->
+ <parameter name="AUTO_GENERATION_ID">
+  <type>java.lang.Integer</type>
+  <value>1506439336</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>GENERATION_ID</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_UNIQUE_ID">
+  <type>java.lang.String</type>
+  <value></value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>UNIQUE_ID</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE_FAMILY">
+  <type>java.lang.String</type>
+  <value>ARRIA10</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE">
+  <type>java.lang.String</type>
+  <value>10AX115N3F40E2SG</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE_SPEEDGRADE">
+  <type>java.lang.String</type>
+  <value>2</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_SPEEDGRADE</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_PLL_REFCLK0_CLOCK_RATE">
+  <type>java.lang.Long</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>CLOCK_RATE</sysinfo_type>
+  <sysinfo_arg>pll_refclk0</sysinfo_arg>
+ </parameter>
+ <parameter name="AUTO_PLL_REFCLK0_CLOCK_DOMAIN">
+  <type>java.lang.Integer</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  <sysinfo_arg>pll_refclk0</sysinfo_arg>
+ </parameter>
+ <parameter name="AUTO_PLL_REFCLK0_RESET_DOMAIN">
+  <type>java.lang.Integer</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  <sysinfo_arg>pll_refclk0</sysinfo_arg>
+ </parameter>
+ <parameter name="AUTO_RECONFIG_CLK0_CLOCK_RATE">
+  <type>java.lang.Long</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>CLOCK_RATE</sysinfo_type>
+  <sysinfo_arg>reconfig_clk0</sysinfo_arg>
+ </parameter>
+ <parameter name="AUTO_RECONFIG_CLK0_CLOCK_DOMAIN">
+  <type>java.lang.Integer</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  <sysinfo_arg>reconfig_clk0</sysinfo_arg>
+ </parameter>
+ <parameter name="AUTO_RECONFIG_CLK0_RESET_DOMAIN">
+  <type>java.lang.Integer</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  <sysinfo_arg>reconfig_clk0</sysinfo_arg>
+ </parameter>
+ <parameter name="deviceFamily">
+  <type>java.lang.String</type>
+  <value>Arria 10</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+ </parameter>
+ <parameter name="generateLegacySim">
+  <type>boolean</type>
+  <value>false</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>true</visible>
+  <valid>true</valid>
+ </parameter>
+ <module
+   name="altera_xcvr_atx_pll_ip_inst"
+   kind="altera_xcvr_atx_pll_a10"
+   version="17.0"
+   path="altera_xcvr_atx_pll_ip_inst">
+  <!-- Describes a single module. Module parameters are
+the requested settings for a module instance. -->
+  <parameter name="rcfg_debug">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_pll_reconfig">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_advanced_avmm_options">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_jtag_enable">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_separate_avmm_busy">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_enable_avmm_busy_port">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_capability_reg_enable">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_user_identifier">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_csr_soft_logic_enable">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_embedded_debug_enable">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_capability_reg_enable">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_user_identifier">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_stat_soft_logic_enable">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_ctrl_soft_logic_enable">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_file_prefix">
+   <type>java.lang.String</type>
+   <value>altera_xcvr_atx_pll_vi</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sv_file_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_h_file_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_txt_file_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_mif_file_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_multi_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_rcfg_emb_strm_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_emb_strm_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_reduced_files_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_cnt">
+   <type>int</type>
+   <value>2</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_select">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data0">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data1">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data2">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data3">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data4">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data5">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data6">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data7">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_params">
+   <type>[Ljava.lang.String;</type>
+   <value>rcfg_debug,enable_pll_reconfig,rcfg_jtag_enable,rcfg_separate_avmm_busy,rcfg_enable_avmm_busy_port,set_capability_reg_enable,set_user_identifier,set_csr_soft_logic_enable,enable_pld_atx_cal_busy_port,support_mode,prot_mode,bw_sel,refclk_cnt,refclk_index,primary_pll_buffer,enable_8G_path,enable_16G_path,enable_pcie_clk,enable_cascade_out,enable_hip_cal_done_port,set_hip_cal_en,set_output_clock_frequency,set_auto_reference_clock_frequency,set_manual_reference_clock_frequency,set_fref_clock_frequency,set_m_counter,set_ref_clk_div,set_l_counter,set_l_cascade_counter,set_l_cascade_predivider,set_k_counter,enable_mcgb,mcgb_div,enable_hfreq_clk,enable_mcgb_pcie_clksw,mcgb_aux_clkin_cnt,enable_bonding_clks,enable_fb_comp_bonding,pma_width,enable_pld_mcgb_cal_busy_port</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_labels">
+   <type>[Ljava.lang.String;</type>
+   <value>rcfg_debug,Enable dynamic reconfiguration,Enable Altera Debug Master Endpoint,Separate reconfig_waitrequest from the status of AVMM arbitration with PreSICE,Enable avmm_busy port,Enable capability registers,Set user-defined IP identifier,Enable control and status registers,enable_pld_atx_cal_busy_port,Support mode,Protocol mode,Bandwidth,Number of PLL reference clocks,Selected reference clock source,Primary PLL clock output buffer,Enable PLL GX clock output port,Enable PLL GT clock output port,Enable PCIe clock output port,Enable cascade clock output port,Enable calibration status ports for HIP,Enable PCIe hard IP calibration,PLL output frequency,PLL integer reference clock frequency,PLL fractional reference clock frequency,PLL fractional reference clock frequency,Multiply factor (M-Counter),Divide factor (N-Counter),Divide factor (L-Counter),Divide factor (L-Cascade Counter),predivide factor (L-Cascade Predivider),Fractional multiply factor (K),Include Master Clock Generation Block,Clock division factor,Enable x6/xN non-bonded high-speed clock output port,Enable PCIe clock switch interface,Number of auxiliary MCGB clock input ports.,Enable bonding clock output ports,Enable feedback compensation bonding,PMA interface width,enable_pld_mcgb_cal_busy_port</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals0">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals1">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals2">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals3">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals4">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals5">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals6">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals7">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_powerdown_mode">
+   <type>java.lang.String</type>
+   <value>powerup</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch0_src">
+   <type>java.lang.String</type>
+   <value>scratch0_src_lvpecl</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch1_src">
+   <type>java.lang.String</type>
+   <value>scratch1_src_lvpecl</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch2_src">
+   <type>java.lang.String</type>
+   <value>scratch2_src_lvpecl</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch3_src">
+   <type>java.lang.String</type>
+   <value>scratch3_src_lvpecl</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch4_src">
+   <type>java.lang.String</type>
+   <value>scratch4_src_lvpecl</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xmux_refclk_src">
+   <type>java.lang.String</type>
+   <value>src_lvpecl</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_iqclk_sel">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch0_src">
+   <type>java.lang.String</type>
+   <value>scratch0_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch1_src">
+   <type>java.lang.String</type>
+   <value>scratch1_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch2_src">
+   <type>java.lang.String</type>
+   <value>scratch2_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch3_src">
+   <type>java.lang.String</type>
+   <value>scratch3_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch4_src">
+   <type>java.lang.String</type>
+   <value>scratch4_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_refclk_select">
+   <type>java.lang.String</type>
+   <value>ref_iqclk0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_lc_refclk_select_mux_silicon_rev">
+   <type>java.lang.String</type>
+   <value>20nm5</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk0_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>ref_iqclk0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk1_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk2_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk3_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk4_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_silicon_rev">
+   <type>java.lang.String</type>
+   <value>20nm5</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_clk_divider">
+   <type>java.lang.String</type>
+   <value>div2_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_core_clk_lvpecl">
+   <type>java.lang.String</type>
+   <value>core_clk_lvpecl_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_enable_lvpecl">
+   <type>java.lang.String</type>
+   <value>lvpecl_enable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_optimal">
+   <type>java.lang.String</type>
+   <value>true</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_powerdown_mode">
+   <type>java.lang.String</type>
+   <value>powerup</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_sel_pldclk">
+   <type>java.lang.String</type>
+   <value>iqclk_sel_lvpecl</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_sup_mode">
+   <type>java.lang.String</type>
+   <value>user_mode</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_term_tristate">
+   <type>java.lang.String</type>
+   <value>tristate_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_vcm_pup">
+   <type>java.lang.String</type>
+   <value>pup_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_clkbuf_sel">
+   <type>java.lang.String</type>
+   <value>high_vcm</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_refclk_divider_iostandard">
+   <type>java.lang.String</type>
+   <value>lvpecl</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_silicon_rev">
+   <type>java.lang.String</type>
+   <value>20nm5</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_is_cascaded_pll">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_cgb_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_pma_width">
+   <type>int</type>
+   <value>64</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_lc_atb">
+   <type>java.lang.String</type>
+   <value>atb_selectdisable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_cp_compensation_enable">
+   <type>java.lang.String</type>
+   <value>true</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_cp_current_setting">
+   <type>java.lang.String</type>
+   <value>cp_current_setting33</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_cp_testmode">
+   <type>java.lang.String</type>
+   <value>cp_normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_cp_lf_3rd_pole_freq">
+   <type>java.lang.String</type>
+   <value>lf_3rd_pole_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_lf_cbig_size">
+   <type>java.lang.String</type>
+   <value>lf_cbig_setting4</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_cp_lf_order">
+   <type>java.lang.String</type>
+   <value>lf_2nd_order</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_lf_resistance">
+   <type>java.lang.String</type>
+   <value>lf_setting1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_lf_ripplecap">
+   <type>java.lang.String</type>
+   <value>lf_no_ripple</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_cal_status">
+   <type>java.lang.String</type>
+   <value>cal_in_progress</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_bonding">
+   <type>java.lang.String</type>
+   <value>pll_bonding</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_expected_lc_boost_voltage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_power_rail_et">
+   <type>int</type>
+   <value>950</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_lc_vreg_boost_scratch">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_lc_vreg1_boost_scratch">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_clk_vreg_boost_scratch">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_mcgb_vreg_boost_scratch">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_vreg_boost_step_size">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_vreg1_boost_step_size">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_clk_vreg_boost_step_size">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_mcgb_vreg_boost_step_size">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_lc_vreg_boost_expected_voltage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_lc_vreg1_boost_expected_voltage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_clk_vreg_boost_expected_voltage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dprio_mcgb_vreg_boost_expected_voltage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_clk_high_perf_voltage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_clk_mid_power_voltage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_clk_low_power_voltage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_tank_sel">
+   <type>java.lang.String</type>
+   <value>lctank1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_tank_band">
+   <type>java.lang.String</type>
+   <value>lc_band4</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_tank_voltage_coarse">
+   <type>java.lang.String</type>
+   <value>vreg_setting_coarse0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_tank_voltage_fine">
+   <type>java.lang.String</type>
+   <value>vreg_setting5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_output_regulator_supply">
+   <type>java.lang.String</type>
+   <value>vreg1v_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_overrange_voltage">
+   <type>java.lang.String</type>
+   <value>over_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_underrange_voltage">
+   <type>java.lang.String</type>
+   <value>under_setting4</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_fb_select">
+   <type>java.lang.String</type>
+   <value>direct_fb</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_d2a_voltage">
+   <type>java.lang.String</type>
+   <value>d2a_setting_4</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dsm_mode">
+   <type>java.lang.String</type>
+   <value>dsm_mode_integer</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dsm_out_sel">
+   <type>java.lang.String</type>
+   <value>pll_dsm_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dsm_ecn_bypass">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dsm_ecn_test_en">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dsm_fractional_division">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_dsm_fractional_value_ready">
+   <type>java.lang.String</type>
+   <value>pll_k_ready</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_enable_lc_calibration">
+   <type>java.lang.String</type>
+   <value>true</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_enable_lc_vreg_calibration">
+   <type>java.lang.String</type>
+   <value>true</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_iqclk_mux_sel">
+   <type>java.lang.String</type>
+   <value>iqtxrxclk0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_vco_bypass_enable">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_l_counter">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_l_counter_enable">
+   <type>java.lang.String</type>
+   <value>true</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_cascadeclk_test">
+   <type>java.lang.String</type>
+   <value>cascadetest_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_hclk_divide">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_enable_hclk">
+   <type>java.lang.String</type>
+   <value>hclk_disabled</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_m_counter">
+   <type>int</type>
+   <value>16</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_ref_clk_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_bandwidth_range_high">
+   <type>java.lang.String</type>
+   <value>0 hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_bandwidth_range_low">
+   <type>java.lang.String</type>
+   <value>0 hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_bw_sel">
+   <type>java.lang.String</type>
+   <value>high</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_calibration_mode">
+   <type>java.lang.String</type>
+   <value>cal_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_datarate">
+   <type>java.lang.String</type>
+   <value>10312500000 bps</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_device_variant">
+   <type>java.lang.String</type>
+   <value>device1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_pfd">
+   <type>java.lang.String</type>
+   <value>800000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_ref">
+   <type>java.lang.String</type>
+   <value>800000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_tank_0">
+   <type>java.lang.String</type>
+   <value>8800000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_tank_1">
+   <type>java.lang.String</type>
+   <value>11400000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_tank_2">
+   <type>java.lang.String</type>
+   <value>14400000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_vco">
+   <type>java.lang.String</type>
+   <value>14400000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_x1">
+   <type>java.lang.String</type>
+   <value>8700000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_min_pfd">
+   <type>java.lang.String</type>
+   <value>61440000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_min_ref">
+   <type>java.lang.String</type>
+   <value>61440000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_min_tank_0">
+   <type>java.lang.String</type>
+   <value>6500000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_min_tank_1">
+   <type>java.lang.String</type>
+   <value>8800000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_min_tank_2">
+   <type>java.lang.String</type>
+   <value>11400000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_min_vco">
+   <type>java.lang.String</type>
+   <value>7200000000 Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_initial_settings">
+   <type>java.lang.String</type>
+   <value>true</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_l_counter_scratch">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_lc_mode">
+   <type>java.lang.String</type>
+   <value>lccmu_normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_n_counter_scratch">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_output_clock_frequency">
+   <type>java.lang.String</type>
+   <value>5156250000 Hz</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_power_mode">
+   <type>java.lang.String</type>
+   <value>low_power</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_powerdown_mode">
+   <type>java.lang.String</type>
+   <value>powerup</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_prot_mode">
+   <type>java.lang.String</type>
+   <value>basic_tx</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_reference_clock_frequency">
+   <type>java.lang.String</type>
+   <value>322265625 Hz</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_side">
+   <type>java.lang.String</type>
+   <value>side_unknown</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_pm_speed_grade">
+   <type>java.lang.String</type>
+   <value>e3</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_sup_mode">
+   <type>java.lang.String</type>
+   <value>user_mode</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_top_or_bottom">
+   <type>java.lang.String</type>
+   <value>tb_unknown</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_vccdreg_clk">
+   <type>java.lang.String</type>
+   <value>vreg_clk5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_vccdreg_fb">
+   <type>java.lang.String</type>
+   <value>vreg_fb8</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_vccdreg_fw">
+   <type>java.lang.String</type>
+   <value>vreg_fw5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_regulator_bypass">
+   <type>java.lang.String</type>
+   <value>reg_enable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_vco_freq">
+   <type>java.lang.String</type>
+   <value>10312500000 Hz</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_vco_fractional">
+   <type>java.lang.String</type>
+   <value>0 hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_pfd_fractional">
+   <type>java.lang.String</type>
+   <value>0 hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_min_fractional_percentage">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_max_fractional_percentage">
+   <type>int</type>
+   <value>100</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_analog_mode">
+   <type>java.lang.String</type>
+   <value>user_custom</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_is_otn">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_is_sdi">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_primary_use">
+   <type>java.lang.String</type>
+   <value>hssi_x1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_fpll_refclk_selection">
+   <type>java.lang.String</type>
+   <value>select_vco_output</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_lc_to_fpll_l_counter_scratch">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_lc_to_fpll_l_counter">
+   <type>java.lang.String</type>
+   <value>lcounter_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_pfd_delay_compensation">
+   <type>java.lang.String</type>
+   <value>normal_delay</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_xcpvco_xchgpmplf_cp_current_boost">
+   <type>java.lang.String</type>
+   <value>normal_setting</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_f_max_lcnt_fpll_cascading">
+   <type>java.lang.String</type>
+   <value>1200000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_pfd_pulse_width">
+   <type>java.lang.String</type>
+   <value>pulse_width_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_enable_idle_atx_pll_support">
+   <type>java.lang.String</type>
+   <value>idle_none</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_advanced_options">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_hip_options">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_manual_configuration">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generate_docs">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generate_add_hdl_instance_example">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="device_family">
+   <type>java.lang.String</type>
+   <value>ARRIA10</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+  </parameter>
+  <parameter name="device">
+   <type>java.lang.String</type>
+   <value>10AX115N3F40E2SG</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE</sysinfo_type>
+  </parameter>
+  <parameter name="base_device">
+   <type>java.lang.String</type>
+   <value>NIGHTFURY5</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>PART_TRAIT</sysinfo_type>
+   <sysinfo_arg>BASE_DEVICE</sysinfo_arg>
+  </parameter>
+  <parameter name="test_mode">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_pld_atx_cal_busy_port">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_debug_ports_parameters">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="support_mode">
+   <type>java.lang.String</type>
+   <value>user_mode</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="message_level">
+   <type>java.lang.String</type>
+   <value>error</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pma_speedgrade">
+   <type>java.lang.String</type>
+   <value>e3</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="device_revision">
+   <type>java.lang.String</type>
+   <value>20nm5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="prot_mode">
+   <type>java.lang.String</type>
+   <value>Basic</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="prot_mode_fnl">
+   <type>java.lang.String</type>
+   <value>basic_tx</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="primary_use">
+   <type>java.lang.String</type>
+   <value>hssi_x1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="bw_sel">
+   <type>java.lang.String</type>
+   <value>high</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="refclk_cnt">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="refclk_index">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="silicon_rev">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="fb_select_fnl">
+   <type>java.lang.String</type>
+   <value>direct_fb</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="primary_pll_buffer">
+   <type>java.lang.String</type>
+   <value>GX clock output buffer</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_8G_buffer_fnl">
+   <type>java.lang.String</type>
+   <value>true</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_16G_buffer_fnl">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_8G_path">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_16G_path">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_pcie_clk">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_cascade_out">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_atx_to_fpll_cascade_out">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_hip_cal_done_port">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_hip_cal_en">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hip_cal_en">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dsm_mode">
+   <type>java.lang.String</type>
+   <value>dsm_mode_integer</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_output_clock_frequency">
+   <type>double</type>
+   <value>5156.25</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="output_clock_datarate">
+   <type>double</type>
+   <value>10312.5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="output_clock_frequency">
+   <type>java.lang.String</type>
+   <value>5156.25 MHz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="vco_freq">
+   <type>java.lang.String</type>
+   <value>10312.5 MHz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="datarate">
+   <type>java.lang.String</type>
+   <value>10312.5 Mbps</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_fractional">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_auto_reference_clock_frequency">
+   <type>double</type>
+   <value>322.265625</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_manual_reference_clock_frequency">
+   <type>double</type>
+   <value>100.0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="reference_clock_frequency_fnl">
+   <type>java.lang.String</type>
+   <value>322.265625 MHz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_fref_clock_frequency">
+   <type>double</type>
+   <value>100.0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="feedback_clock_frequency_fnl">
+   <type>double</type>
+   <value>156.25</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="select_manual_config">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="m_counter">
+   <type>int</type>
+   <value>16</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="effective_m_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_m_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="ref_clk_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_ref_clk_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="l_counter">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_l_counter">
+   <type>int</type>
+   <value>2</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="l_cascade_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_l_cascade_counter">
+   <type>int</type>
+   <value>15</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="l_cascade_predivider">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_l_cascade_predivider">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="k_counter">
+   <type>long</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_k_counter">
+   <type>long</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="auto_list">
+   <type>java.lang.String</type>
+   <value>62.123494 {m 83 effective_m 83 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 62.881098 {m 82 effective_m 82 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 63.657407 {m 81 effective_m 81 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 64.453125 {m 80 effective_m 80 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 65.268987 {m 79 effective_m 79 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 66.105769 {m 78 effective_m 78 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 66.964286 {m 77 effective_m 77 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 67.845395 {m 76 effective_m 76 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 68.750000 {m 75 effective_m 75 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 69.679054 {m 74 effective_m 74 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 70.633562 {m 73 effective_m 73 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 71.614583 {m 72 effective_m 72 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 72.623239 {m 71 effective_m 71 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 73.660714 {m 70 effective_m 70 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 74.728261 {m 69 effective_m 69 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 75.827206 {m 68 effective_m 68 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 76.958955 {m 67 effective_m 67 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 78.125000 {m 66 effective_m 66 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 79.326923 {m 65 effective_m 65 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 80.566406 {m 64 effective_m 64 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 81.845238 {m 63 effective_m 63 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 83.165323 {m 62 effective_m 62 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 84.528689 {m 61 effective_m 61 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 85.937500 {m 60 effective_m 60 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 87.394068 {m 59 effective_m 59 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 88.900862 {m 58 effective_m 58 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 90.460526 {m 57 effective_m 57 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 92.075893 {m 56 effective_m 56 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 93.750000 {m 55 effective_m 55 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 95.486111 {m 54 effective_m 54 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 97.287736 {m 53 effective_m 53 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 99.158654 {m 52 effective_m 52 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 101.102941 {m 51 effective_m 51 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 103.125000 {m 50 effective_m 50 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 105.229592 {m 49 effective_m 49 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 107.421875 {m 48 effective_m 48 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 109.707447 {m 47 effective_m 47 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 112.092391 {m 46 effective_m 46 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 114.583333 {m 45 effective_m 45 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 117.187500 {m 44 effective_m 44 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 119.912791 {m 43 effective_m 43 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 122.767857 {m 42 effective_m 42 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 124.246988 {m 83 effective_m 83 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 125.762195 {m 41 effective_m 41 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 127.314815 {m 81 effective_m 81 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 128.906250 {m 40 effective_m 40 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 130.537975 {m 79 effective_m 79 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 132.211538 {m 39 effective_m 39 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 133.928571 {m 77 effective_m 77 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 135.690789 {m 38 effective_m 38 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 137.500000 {m 75 effective_m 75 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 139.358108 {m 37 effective_m 37 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 141.267123 {m 73 effective_m 73 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 143.229167 {m 36 effective_m 36 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 145.246479 {m 71 effective_m 71 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 147.321429 {m 35 effective_m 35 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 149.456522 {m 69 effective_m 69 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 151.654412 {m 34 effective_m 34 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 153.917910 {m 67 effective_m 67 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 156.250000 {m 33 effective_m 33 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 158.653846 {m 65 effective_m 65 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 161.132812 {m 32 effective_m 32 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 163.690476 {m 63 effective_m 63 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 166.330645 {m 31 effective_m 31 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 169.057377 {m 61 effective_m 61 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 171.875000 {m 30 effective_m 30 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 174.788136 {m 59 effective_m 59 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 177.801724 {m 29 effective_m 29 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 180.921053 {m 57 effective_m 57 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 184.151786 {m 28 effective_m 28 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 187.500000 {m 55 effective_m 55 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 190.972222 {m 27 effective_m 27 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 194.575472 {m 53 effective_m 53 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 198.317308 {m 26 effective_m 26 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 202.205882 {m 51 effective_m 51 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 206.250000 {m 25 effective_m 25 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 210.459184 {m 49 effective_m 49 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 214.843750 {m 24 effective_m 24 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 219.414894 {m 47 effective_m 47 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 224.184783 {m 23 effective_m 23 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 229.166667 {m 45 effective_m 45 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 234.375000 {m 22 effective_m 22 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 239.825581 {m 43 effective_m 43 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 245.535714 {m 21 effective_m 21 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 248.493976 {m 83 effective_m 83 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 251.524390 {m 41 effective_m 41 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 254.629630 {m 81 effective_m 81 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 257.812500 {m 20 effective_m 20 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 261.075949 {m 79 effective_m 79 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 264.423077 {m 39 effective_m 39 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 267.857143 {m 77 effective_m 77 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 271.381579 {m 19 effective_m 19 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 275.000000 {m 75 effective_m 75 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 278.716216 {m 37 effective_m 37 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 282.534247 {m 73 effective_m 73 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 286.458333 {m 18 effective_m 18 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 290.492958 {m 71 effective_m 71 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 294.642857 {m 35 effective_m 35 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 298.913043 {m 69 effective_m 69 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 303.308824 {m 17 effective_m 17 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 307.835821 {m 67 effective_m 67 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 312.500000 {m 33 effective_m 33 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 317.307692 {m 65 effective_m 65 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 322.265625 {m 16 effective_m 16 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 327.380952 {m 63 effective_m 63 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 332.661290 {m 31 effective_m 31 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 338.114754 {m 61 effective_m 61 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 343.750000 {m 15 effective_m 15 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 349.576271 {m 59 effective_m 59 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 355.603448 {m 29 effective_m 29 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 361.842105 {m 57 effective_m 57 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 368.303571 {m 14 effective_m 14 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 375.000000 {m 55 effective_m 55 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 381.944444 {m 27 effective_m 27 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 389.150943 {m 53 effective_m 53 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 396.634615 {m 13 effective_m 13 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 404.411765 {m 51 effective_m 51 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 412.500000 {m 25 effective_m 25 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 420.918367 {m 49 effective_m 49 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 429.687500 {m 12 effective_m 12 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 438.829787 {m 47 effective_m 47 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 448.369565 {m 23 effective_m 23 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 458.333333 {m 45 effective_m 45 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 468.750000 {m 11 effective_m 11 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 479.651163 {m 43 effective_m 43 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 491.071429 {m 21 effective_m 21 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 496.987952 {m 83 effective_m 83 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 503.048780 {m 41 effective_m 41 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 509.259259 {m 81 effective_m 81 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 515.625000 {m 10 effective_m 10 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 522.151899 {m 79 effective_m 79 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 528.846154 {m 39 effective_m 39 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 535.714286 {m 77 effective_m 77 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 542.763158 {m 19 effective_m 19 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 550.000000 {m 75 effective_m 75 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 557.432432 {m 37 effective_m 37 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 565.068493 {m 73 effective_m 73 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 572.916667 {m 9 effective_m 9 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 580.985915 {m 71 effective_m 71 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 589.285714 {m 35 effective_m 35 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 597.826087 {m 69 effective_m 69 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 606.617647 {m 17 effective_m 17 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 615.671642 {m 67 effective_m 67 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 625.000000 {m 33 effective_m 33 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 634.615385 {m 65 effective_m 65 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 644.531250 {m 8 effective_m 8 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 654.761905 {m 63 effective_m 63 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 665.322581 {m 31 effective_m 31 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 676.229508 {m 61 effective_m 61 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 687.500000 {m 15 effective_m 15 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 699.152542 {m 59 effective_m 59 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 711.206897 {m 29 effective_m 29 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 723.684211 {m 57 effective_m 57 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 736.607143 {m 14 effective_m 14 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 750.000000 {m 55 effective_m 55 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 763.888889 {m 27 effective_m 27 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 778.301887 {m 53 effective_m 53 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 793.269231 {m 13 effective_m 13 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0}</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="manual_list">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_setting">
+   <type>java.lang.String</type>
+   <value>refclk {322.265625 MHz} m_cnt 16 n_cnt 1 l_cnt 2 k_cnt 1 l_cascade 1 l_cascade_predivider 1 outclk {5156.25 MHz}</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_fb_comp_bonding_fnl">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="check_output_ports_pll">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="iqclk_mux_sel">
+   <type>java.lang.String</type>
+   <value>iqtxrxclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_altera_xcvr_atx_pll_a10_calibration_en">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="calibration_en">
+   <type>java.lang.String</type>
+   <value>enable</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_analog_resets">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_ext_lockdetect_ports">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="atx_pll_bonding_mode">
+   <type>java.lang.String</type>
+   <value>cpri_bonding</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="lc_refclk_select">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_mcgb">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_div_fnl">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_hfreq_clk">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_mcgb_pcie_clksw">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_aux_clkin_cnt">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_in_clk_freq">
+   <type>double</type>
+   <value>5156.25</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_out_datarate">
+   <type>double</type>
+   <value>10312.5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_bonding_clks">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_fb_comp_bonding">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_enable_iqtxrxclk">
+   <type>java.lang.String</type>
+   <value>disable_iqtxrxclk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pma_width">
+   <type>int</type>
+   <value>64</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_mcgb_debug_ports_parameters">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_pld_mcgb_cal_busy_port">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="check_output_ports_mcgb">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="is_protocol_PCIe">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mapped_output_clock_frequency">
+   <type>java.lang.String</type>
+   <value>5156.25 MHz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mapped_primary_pll_buffer">
+   <type>java.lang.String</type>
+   <value>GX clock output buffer</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mapped_hip_cal_done_port">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_prot_mode">
+   <type>java.lang.String</type>
+   <value>basic_tx</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_silicon_rev">
+   <type>java.lang.String</type>
+   <value>20nm5</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_x1_div_m_sel">
+   <type>java.lang.String</type>
+   <value>divbypass</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_cgb_enable_iqtxrxclk">
+   <type>java.lang.String</type>
+   <value>disable_iqtxrxclk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_ser_mode">
+   <type>java.lang.String</type>
+   <value>sixty_four_bit</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_datarate">
+   <type>java.lang.String</type>
+   <value>10312500000 bps</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_cgb_power_down">
+   <type>java.lang.String</type>
+   <value>normal_cgb</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_observe_cgb_clocks">
+   <type>java.lang.String</type>
+   <value>observe_nothing</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_op_mode">
+   <type>java.lang.String</type>
+   <value>enabled</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_tx_ucontrol_reset_pcie">
+   <type>java.lang.String</type>
+   <value>pcscorehip_controls_mcgb</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_vccdreg_output">
+   <type>java.lang.String</type>
+   <value>vccdreg_nominal</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_input_select">
+   <type>java.lang.String</type>
+   <value>lcpll_top</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_input_select_gen3">
+   <type>java.lang.String</type>
+   <value>unused</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="gui_parameter_list">
+   <type>[Ljava.lang.String;</type>
+   <value>K counter (valid in fractional mode),L counter (valid in non-cascade mode),M counter,N counter,L cascade predivider/VCO divider(valid in cascade mode) ,L cascade counter (valid in cascade mode),PLL output frequency,vco_freq,datarate</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="gui_parameter_values">
+   <type>[Ljava.lang.String;</type>
+   <value>1,2,16,1,select_vco_output,1,5156.25 MHz,10312.5 MHz,10312.5 Mbps</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <interface name="pll_powerdown" kind="conduit_end" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>input</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>pll_powerdown</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>pll_powerdown</role>
+   </port>
+  </interface>
+  <interface name="pll_refclk0" kind="clock_sink" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>input</value>
+   </assignment>
+   <parameter name="externallyDriven">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="ptfSchematicName">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>clock</type>
+   <isStart>false</isStart>
+   <port>
+    <name>pll_refclk0</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="tx_serial_clk" kind="hssi_serial_clock_source" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="clockRate">
+    <type>long</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>hssi_serial_clock</type>
+   <isStart>true</isStart>
+   <port>
+    <name>tx_serial_clk</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="pll_locked" kind="conduit_end" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>pll_locked</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>pll_locked</role>
+   </port>
+  </interface>
+  <interface name="reconfig_clk0" kind="clock_sink" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>input</value>
+   </assignment>
+   <parameter name="externallyDriven">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="ptfSchematicName">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>clock</type>
+   <isStart>false</isStart>
+   <port>
+    <name>reconfig_clk0</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="reconfig_reset0" kind="reset_sink" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>input</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>reconfig_clk0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="synchronousEdges">
+    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
+    <value>DEASSERT</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>reset</type>
+   <isStart>false</isStart>
+   <port>
+    <name>reconfig_reset0</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>reset</role>
+   </port>
+  </interface>
+  <interface name="reconfig_avmm0" kind="avalon_slave" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>debug.param.device_revision</name>
+    <value>20nm5</value>
+   </assignment>
+   <assignment>
+    <name>debug.typeName</name>
+    <value>altera_xcvr_atx_pll_a10.slave</value>
+   </assignment>
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="addressAlignment">
+    <type>com.altera.sopcmodel.avalon.AvalonConnectionPoint$AddressAlignment</type>
+    <value>DYNAMIC</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="addressGroup">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="addressSpan">
+    <type>java.math.BigInteger</type>
+    <value>4096</value>
+    <derived>true</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="addressUnits">
+    <type>com.altera.sopcmodel.avalon.EAddrBurstUnits</type>
+    <value>WORDS</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="alwaysBurstMaxBurst">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>reconfig_clk0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value>reconfig_reset0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="bitsPerSymbol">
+    <type>int</type>
+    <value>8</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="bridgedAddressOffset">
+    <type>java.math.BigInteger</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="bridgesToMaster">
+    <type>com.altera.entityinterfaces.IConnectionPoint</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="burstOnBurstBoundariesOnly">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="burstcountUnits">
+    <type>com.altera.sopcmodel.avalon.EAddrBurstUnits</type>
+    <value>WORDS</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="constantBurstBehavior">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="explicitAddressSpan">
+    <type>java.math.BigInteger</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="holdTime">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="interleaveBursts">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="isBigEndian">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="isFlash">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="isMemoryDevice">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="isNonVolatileStorage">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="linewrapBursts">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="maximumPendingReadTransactions">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="maximumPendingWriteTransactions">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="minimumReadLatency">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="minimumResponseLatency">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="minimumUninterruptedRunLength">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="printableDevice">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="readLatency">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="readWaitStates">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="readWaitTime">
+    <type>int</type>
+    <value>1</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="registerIncomingSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="registerOutgoingSignals">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="setupTime">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="timingUnits">
+    <type>com.altera.sopcmodel.avalon.TimingUnits</type>
+    <value>Cycles</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="transparentBridge">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="waitrequestAllowance">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="wellBehavedWaitrequest">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="writeLatency">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="writeWaitStates">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="writeWaitTime">
+    <type>int</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>false</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>avalon</type>
+   <isStart>false</isStart>
+   <port>
+    <name>reconfig_write0</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>write</role>
+   </port>
+   <port>
+    <name>reconfig_read0</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>read</role>
+   </port>
+   <port>
+    <name>reconfig_address0</name>
+    <direction>Input</direction>
+    <width>10</width>
+    <role>address</role>
+   </port>
+   <port>
+    <name>reconfig_writedata0</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>writedata</role>
+   </port>
+   <port>
+    <name>reconfig_readdata0</name>
+    <direction>Output</direction>
+    <width>32</width>
+    <role>readdata</role>
+   </port>
+   <port>
+    <name>reconfig_waitrequest0</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>waitrequest</role>
+   </port>
+  </interface>
+  <interface name="pll_cal_busy" kind="conduit_end" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>pll_cal_busy</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>pll_cal_busy</role>
+   </port>
+  </interface>
+  <interface name="mcgb_rst" kind="conduit_end" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>input</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>mcgb_rst</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>mcgb_rst</role>
+   </port>
+  </interface>
+  <interface name="mcgb_serial_clk" kind="hssi_serial_clock_source" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="clockRate">
+    <type>long</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>hssi_serial_clock</type>
+   <isStart>true</isStart>
+   <port>
+    <name>mcgb_serial_clk</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="mcgb_cal_busy" kind="conduit_end" version="17.0">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>mcgb_cal_busy</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>mcgb_cal_busy</role>
+   </port>
+  </interface>
+ </module>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>altera_xcvr_atx_pll_a10</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>Arria 10 Transceiver ATX PLL</displayName>
+  <version>17.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>5</instanceCount>
+  <name>conduit_end</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Conduit</displayName>
+  <version>17.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>2</instanceCount>
+  <name>clock_sink</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Clock Input</displayName>
+  <version>17.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>2</instanceCount>
+  <name>hssi_serial_clock_source</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>HSSI Serial Clock Output</displayName>
+  <version>17.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>reset_sink</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Reset Input</displayName>
+  <version>17.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>avalon_slave</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Avalon Memory Mapped Slave</displayName>
+  <version>17.0</version>
+ </plugin>
+ <reportVersion>17.0 290</reportVersion>
+ <uniqueIdentifier></uniqueIdentifier>
+</EnsembleReport>

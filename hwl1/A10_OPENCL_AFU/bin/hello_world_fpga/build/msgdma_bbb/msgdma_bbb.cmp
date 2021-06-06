@@ -1,0 +1,48 @@
+	component msgdma_bbb is
+		port (
+			clk_clk               : in  std_logic                      := 'X';             -- clk
+			reset_reset_n         : in  std_logic                      := 'X';             -- reset_n
+			csr_waitrequest       : out std_logic;                                         -- waitrequest
+			csr_readdata          : out std_logic_vector(63 downto 0);                     -- readdata
+			csr_readdatavalid     : out std_logic;                                         -- readdatavalid
+			csr_burstcount        : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- burstcount
+			csr_writedata         : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- writedata
+			csr_address           : in  std_logic_vector(6 downto 0)   := (others => 'X'); -- address
+			csr_write             : in  std_logic                      := 'X';             -- write
+			csr_read              : in  std_logic                      := 'X';             -- read
+			csr_byteenable        : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- byteenable
+			csr_debugaccess       : in  std_logic                      := 'X';             -- debugaccess
+			dma_irq_irq           : out std_logic;                                         -- irq
+			host_rd_waitrequest   : in  std_logic                      := 'X';             -- waitrequest
+			host_rd_readdata      : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			host_rd_readdatavalid : in  std_logic                      := 'X';             -- readdatavalid
+			host_rd_burstcount    : out std_logic_vector(2 downto 0);                      -- burstcount
+			host_rd_writedata     : out std_logic_vector(511 downto 0);                    -- writedata
+			host_rd_address       : out std_logic_vector(47 downto 0);                     -- address
+			host_rd_write         : out std_logic;                                         -- write
+			host_rd_read          : out std_logic;                                         -- read
+			host_rd_byteenable    : out std_logic_vector(63 downto 0);                     -- byteenable
+			host_rd_debugaccess   : out std_logic;                                         -- debugaccess
+			host_wr_waitrequest   : in  std_logic                      := 'X';             -- waitrequest
+			host_wr_readdata      : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			host_wr_readdatavalid : in  std_logic                      := 'X';             -- readdatavalid
+			host_wr_burstcount    : out std_logic_vector(2 downto 0);                      -- burstcount
+			host_wr_writedata     : out std_logic_vector(511 downto 0);                    -- writedata
+			host_wr_address       : out std_logic_vector(48 downto 0);                     -- address
+			host_wr_write         : out std_logic;                                         -- write
+			host_wr_read          : out std_logic;                                         -- read
+			host_wr_byteenable    : out std_logic_vector(63 downto 0);                     -- byteenable
+			host_wr_debugaccess   : out std_logic;                                         -- debugaccess
+			mem_waitrequest       : in  std_logic                      := 'X';             -- waitrequest
+			mem_readdata          : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			mem_readdatavalid     : in  std_logic                      := 'X';             -- readdatavalid
+			mem_burstcount        : out std_logic_vector(2 downto 0);                      -- burstcount
+			mem_writedata         : out std_logic_vector(511 downto 0);                    -- writedata
+			mem_address           : out std_logic_vector(47 downto 0);                     -- address
+			mem_write             : out std_logic;                                         -- write
+			mem_read              : out std_logic;                                         -- read
+			mem_byteenable        : out std_logic_vector(63 downto 0);                     -- byteenable
+			mem_debugaccess       : out std_logic                                          -- debugaccess
+		);
+	end component msgdma_bbb;
+

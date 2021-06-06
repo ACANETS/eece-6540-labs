@@ -1,0 +1,10 @@
+
+State Machine - fpga_top|inst_green_bs|bsp_interface_inst|ccip_std_afu|mpf|csr|stat_upd_state
+Name stat_upd_state.STAT_UPDATE1 stat_upd_state.STAT_UPDATE0 stat_upd_state.STAT_PROCESS_VEC stat_upd_state.STAT_IDLE stat_upd_state.STAT_WRITEBACK 
+stat_upd_state.STAT_IDLE 0 0 0 0 0 
+stat_upd_state.STAT_PROCESS_VEC 0 0 1 1 0 
+stat_upd_state.STAT_UPDATE0 0 1 0 1 0 
+stat_upd_state.STAT_UPDATE1 1 0 0 1 0 
+stat_upd_state.STAT_WRITEBACK 0 0 0 1 1 
+
+State Machine - Summary

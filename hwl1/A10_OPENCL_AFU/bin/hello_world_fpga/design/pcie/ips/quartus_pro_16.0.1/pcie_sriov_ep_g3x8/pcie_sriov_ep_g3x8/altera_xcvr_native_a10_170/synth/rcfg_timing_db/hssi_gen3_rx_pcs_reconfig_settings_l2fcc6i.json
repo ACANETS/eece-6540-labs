@@ -1,0 +1,45 @@
+{ 
+  "configurations" : [
+    { 
+      "name" : "0",
+      "parameters" :{
+        "block_sync" : "enable_block_sync",
+        "block_sync_sm" : "enable_blk_sync_sm",
+        "cdr_ctrl_force_unalgn" : "enable",
+        "lpbk_force" : "lpbk_frce_en",
+        "mode" : "gen3_func",
+        "rate_match_fifo" : "enable_rm_fifo_600ppm",
+        "rate_match_fifo_latency" : "regular_latency",
+        "reverse_lpbk" : "rev_lpbk_en",
+        "rx_b4gb_par_lpbk" : "b4gb_par_lpbk_dis",
+        "rx_force_balign" : "en_force_balign",
+        "rx_ins_del_one_skip" : "ins_del_one_skip_en",
+        "rx_num_fixed_pat" : "4'd8",
+        "rx_test_out_sel" : "rx_test_out0",
+        "sup_mode" : "user_mode",
+        "reconfig_settings" : "{}"
+      }
+    },
+    { 
+      "name" : "1",
+      "parameters" :{
+        "block_sync" : "bypass_block_sync",
+        "block_sync_sm" : "disable_blk_sync_sm",
+        "cdr_ctrl_force_unalgn" : "disable",
+        "lpbk_force" : "lpbk_frce_dis",
+        "mode" : "disable_pcs",
+        "rate_match_fifo" : "bypass_rm_fifo",
+        "rate_match_fifo_latency" : "low_latency",
+        "reverse_lpbk" : "rev_lpbk_dis",
+        "rx_b4gb_par_lpbk" : "b4gb_par_lpbk_dis",
+        "rx_force_balign" : "dis_force_balign",
+        "rx_ins_del_one_skip" : "ins_del_one_skip_dis",
+        "rx_num_fixed_pat" : "4'd0",
+        "rx_test_out_sel" : "rx_test_out0",
+        "sup_mode" : "user_mode",
+        "reconfig_settings" : "{}"
+      }
+    }
+  ]
+}
+

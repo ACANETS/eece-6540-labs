@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<board name="pac_a10" vfabric="0" big_endian="0">
+	 <global_mem_config name="DDR" mode="burst-interleaved"/> 
+	<kernel name="hello_world" csr_addr="0" csr_size="256" csr_preload_depth="1" work_group_invariant="1" vector_lanes="1" >
+		<work_group size_x="0" size_y="0" size_z="0" num="1" max_size="2147483647"/>
+			<argument index="0" type="0" category="0" size="4" >
+			</argument>
+			<argument index="1" type="2" category="1" size="8" >
+			</argument>
+			<argument index="2" type="0" category="0" size="4" >
+			</argument>
+	</kernel>
+</board>

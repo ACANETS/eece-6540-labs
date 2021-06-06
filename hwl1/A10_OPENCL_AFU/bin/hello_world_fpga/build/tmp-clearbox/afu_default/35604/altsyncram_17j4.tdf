@@ -1,0 +1,1529 @@
+--altsyncram ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES="CARE" ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS="AUTO" ACF_DISABLE_MLAB_RAM_USE="FALSE" ACF_IMPLEMENT_MLAB_IN_16_BIT_DEEP_MODE="FALSE" ADDRESS_ACLR_A="NONE" ADDRESS_ACLR_B="NONE" ADDRESS_REG_B="CLOCK1" BYTE_SIZE=0 BYTEENA_REG_B="CLOCK1" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" CBX_SINGLE_OUTPUT_FILE="OFF" CLOCK_DUTY_CYCLE_DEPENDENCE="AUTO" CLOCK_ENABLE_CORE_A="USE_INPUT_CLKEN" CLOCK_ENABLE_CORE_B="USE_INPUT_CLKEN" CLOCK_ENABLE_INPUT_A="BYPASS" CLOCK_ENABLE_INPUT_B="NORMAL" CLOCK_ENABLE_OUTPUT_A="BYPASS" CLOCK_ENABLE_OUTPUT_B="NORMAL" CYCLONEII_M4K_COMPATIBILITY="ON" DEVICE_FAMILY="Arria 10" ECC_PIPELINE_STAGE_ENABLED="FALSE" ENABLE_ECC="FALSE" ENABLE_RUNTIME_MOD="NO" IMPLEMENT_IN_LES="OFF" INDATA_REG_B="CLOCK1" INIT_FILE="sys_description.hex" INIT_FILE_LAYOUT="PORT_A" LOW_POWER_MODE="AUTO" MAXIMUM_DEPTH=0 NUMWORDS_A=64 NUMWORDS_B=0 OPERATION_MODE="ROM" OUTDATA_ACLR_A="NONE" OUTDATA_ACLR_B="NONE" OUTDATA_REG_A="CLOCK0" OUTDATA_REG_B="UNREGISTERED" POWER_UP_UNINITIALIZED="FALSE" RAM_BLOCK_TYPE="M20K" RDCONTROL_REG_B="CLOCK1" RDEN_POWER_OPTIMIZATION="ON" READ_DURING_WRITE_MODE_MIXED_PORTS="DONT_CARE" read_during_write_mode_port_a="NEW_DATA_NO_NBE_READ" read_during_write_mode_port_b="NEW_DATA_NO_NBE_READ" WIDTH_A=64 WIDTH_B=1 WIDTH_BYTEENA_A=1 WIDTH_BYTEENA_B=1 WIDTH_ECCSTATUS=2 WIDTHAD_A=6 WIDTHAD_B=1 WRCONTROL_WRADDRESS_REG_B="CLOCK1" address_a address_b addressstall_a addressstall_b clock0 clocken0 data_a data_b q_a q_b rden_a rden_b wren_a wren_b CARRY_CHAIN="MANUAL"
+--VERSION_BEGIN 19.2 cbx_altera_syncram_nd_impl 2019:06:24:17:05:51:SJ cbx_altsyncram 2019:06:24:17:05:52:SJ cbx_lpm_add_sub 2019:06:24:17:05:52:SJ cbx_lpm_compare 2019:06:24:17:05:52:SJ cbx_lpm_decode 2019:06:24:17:05:52:SJ cbx_lpm_mux 2019:06:24:17:05:52:SJ cbx_mgl 2019:06:24:18:19:52:SJ cbx_nadder 2019:06:24:17:05:52:SJ cbx_stratix 2019:06:24:17:05:52:SJ cbx_stratixii 2019:06:24:17:05:52:SJ cbx_stratixiii 2019:06:24:17:05:52:SJ cbx_stratixv 2019:06:24:17:05:52:SJ cbx_util_mgl 2019:06:24:17:05:52:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION twentynm_ram_block (clk0, clk1, clr0, clr1, ena0, ena1, ena2, ena3, portaaddr[PORT_A_ADDRESS_WIDTH-1..0], portaaddrstall, portabyteenamasks[PORT_A_BYTE_ENABLE_MASK_WIDTH-1..0], portadatain[PORT_A_DATA_WIDTH-1..0], portare, portawe, portbaddr[PORT_B_ADDRESS_WIDTH-1..0], portbaddrstall, portbbyteenamasks[PORT_B_BYTE_ENABLE_MASK_WIDTH-1..0], portbdatain[PORT_B_DATA_WIDTH-1..0], portbre, portbwe)
+WITH ( CLK0_CORE_CLOCK_ENABLE, CLK0_INPUT_CLOCK_ENABLE, CLK0_OUTPUT_CLOCK_ENABLE, CLK1_CORE_CLOCK_ENABLE, CLK1_INPUT_CLOCK_ENABLE, CLK1_OUTPUT_CLOCK_ENABLE, CONNECTIVITY_CHECKING, DATA_INTERLEAVE_OFFSET_IN_BITS, DATA_INTERLEAVE_WIDTH_IN_BITS, DONT_POWER_OPTIMIZE, ECC_PIPELINE_STAGE_ENABLED, ENABLE_ECC, INIT_FILE, INIT_FILE_LAYOUT, LOGICAL_RAM_NAME, mem_init0, mem_init1, mem_init10, mem_init11, mem_init12, mem_init13, mem_init14, mem_init15, mem_init16, mem_init17, mem_init18, mem_init19, mem_init2, mem_init20, mem_init21, mem_init22, mem_init23, mem_init24, mem_init25, mem_init26, mem_init27, mem_init28, mem_init29, mem_init3, mem_init30, mem_init31, mem_init32, mem_init33, mem_init34, mem_init35, mem_init36, mem_init37, mem_init38, mem_init39, mem_init4, mem_init40, mem_init41, mem_init42, mem_init43, mem_init44, mem_init45, mem_init46, mem_init47, mem_init48, mem_init49, mem_init5, mem_init50, mem_init51, mem_init52, mem_init53, mem_init54, mem_init55, mem_init56, mem_init57, mem_init58, mem_init59, mem_init6, mem_init60, mem_init61, mem_init62, mem_init63, mem_init64, mem_init65, mem_init66, mem_init67, mem_init68, mem_init69, mem_init7, mem_init70, mem_init71, mem_init8, mem_init9, MIXED_PORT_FEED_THROUGH_MODE, OPERATION_MODE, PORT_A_ADDRESS_CLEAR, PORT_A_ADDRESS_WIDTH = 1, PORT_A_BYTE_ENABLE_MASK_WIDTH = 1, PORT_A_BYTE_SIZE, PORT_A_DATA_OUT_CLEAR, PORT_A_DATA_OUT_CLOCK, PORT_A_DATA_WIDTH = 1, PORT_A_FIRST_ADDRESS, PORT_A_FIRST_BIT_NUMBER, PORT_A_LAST_ADDRESS, PORT_A_LOGICAL_RAM_DEPTH, PORT_A_LOGICAL_RAM_WIDTH, PORT_A_READ_DURING_WRITE_MODE, PORT_B_ADDRESS_CLEAR, PORT_B_ADDRESS_CLOCK, PORT_B_ADDRESS_WIDTH = 1, PORT_B_BYTE_ENABLE_CLOCK, PORT_B_BYTE_ENABLE_MASK_WIDTH = 1, PORT_B_BYTE_SIZE, PORT_B_DATA_IN_CLOCK, PORT_B_DATA_OUT_CLEAR, PORT_B_DATA_OUT_CLOCK, PORT_B_DATA_WIDTH = 1, PORT_B_FIRST_ADDRESS, PORT_B_FIRST_BIT_NUMBER, PORT_B_LAST_ADDRESS, PORT_B_LOGICAL_RAM_DEPTH, PORT_B_LOGICAL_RAM_WIDTH, PORT_B_READ_DURING_WRITE_MODE, PORT_B_READ_ENABLE_CLOCK, PORT_B_WRITE_ENABLE_CLOCK, POWER_UP_UNINITIALIZED, RAM_BLOCK_TYPE, WIDTH_ECCSTATUS = 3)
+RETURNS ( dftout[8..0], eccstatus[WIDTH_ECCSTATUS-1..0], portadataout[PORT_A_DATA_WIDTH-1..0], portbdataout[PORT_B_DATA_WIDTH-1..0]);
+
+--synthesis_resources = M20K 2 
+OPTIONS ALTERA_INTERNAL_OPTION = "OPTIMIZE_POWER_DURING_SYNTHESIS=NORMAL_COMPILATION";
+
+SUBDESIGN altsyncram_17j4
+( 
+	address_a[5..0]	:	input;
+	address_b[0..0]	:	input;
+	addressstall_a	:	input;
+	addressstall_b	:	input;
+	clock0	:	input;
+	clocken0	:	input;
+	data_a[63..0]	:	input;
+	data_b[0..0]	:	input;
+	q_a[63..0]	:	output;
+	q_b[0..0]	:	output;
+	rden_a	:	input;
+	rden_b	:	input;
+	wren_a	:	input;
+	wren_b	:	input;
+) 
+VARIABLE 
+	ram_block2a0 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a1 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a2 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a3 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a4 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a5 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a6 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a7 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a8 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a9 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a10 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a11 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a12 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a13 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a14 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a15 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a16 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a17 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 17,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a18 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 18,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a19 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 19,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a20 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 20,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a21 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 21,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a22 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 22,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a23 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 23,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a24 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 24,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a25 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 25,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a26 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 26,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a27 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 27,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a28 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 28,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a29 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 29,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a30 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 30,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a31 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 31,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a32 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 32,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a33 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 33,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a34 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 34,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a35 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 35,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a36 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 36,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a37 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 37,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a38 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 38,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a39 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 39,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a40 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 40,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a41 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 41,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a42 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 42,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a43 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 43,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a44 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 44,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a45 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 45,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a46 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 46,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a47 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 47,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a48 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 48,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a49 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 49,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a50 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 50,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a51 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 51,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a52 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 52,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a53 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 53,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a54 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 54,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a55 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 55,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a56 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 56,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a57 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 57,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a58 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 58,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a59 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 59,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a60 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 60,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a61 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 61,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a62 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 62,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	ram_block2a63 : twentynm_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CLK0_OUTPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "sys_description.hex",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 6,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "clock0",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 63,
+			PORT_A_LAST_ADDRESS = 63,
+			PORT_A_LOGICAL_RAM_DEPTH = 64,
+			PORT_A_LOGICAL_RAM_WIDTH = 64,
+			POWER_UP_UNINITIALIZED = "false",
+			RAM_BLOCK_TYPE = "M20K"
+		);
+	address_a_wire[5..0]	: WIRE;
+
+BEGIN 
+	ram_block2a[63..0].clk0 = clock0;
+	ram_block2a[63..0].ena0 = rden_a;
+	ram_block2a[63..0].portaaddr[] = ( address_a_wire[5..0]);
+	ram_block2a[63..0].portaaddrstall = addressstall_a;
+	ram_block2a[63..0].portare = B"1111111111111111111111111111111111111111111111111111111111111111";
+	address_a_wire[] = address_a[];
+	q_a[] = ( ram_block2a[63..0].portadataout[0..0]);
+END;
+--VALID FILE

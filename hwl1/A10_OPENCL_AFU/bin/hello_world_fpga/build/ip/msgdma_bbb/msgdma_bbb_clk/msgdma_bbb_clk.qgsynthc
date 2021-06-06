@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altera="http://www.altera.com/XMLSchema/Qsys/SystemTree">
+  <instanceKey xsi:type="xs:string">msgdma_bbb_clk</instanceKey>
+  <instanceData xsi:type="data">
+    <parameters></parameters>
+    <interconnectAssignments></interconnectAssignments>
+    <className>msgdma_bbb_clk</className>
+    <version>1.0</version>
+    <name>msgdma_bbb_clk</name>
+    <uniqueName>msgdma_bbb_clk</uniqueName>
+    <nonce>0</nonce>
+    <incidentConnections></incidentConnections>
+  </instanceData>
+  <children>
+    <node>
+      <instanceKey xsi:type="xs:string">clk</instanceKey>
+      <instanceData xsi:type="data">
+        <parameters>
+          <parameter>
+            <name>clockFrequency</name>
+            <value>100000000</value>
+          </parameter>
+          <parameter>
+            <name>clockFrequencyKnown</name>
+            <value>true</value>
+          </parameter>
+          <parameter>
+            <name>inputClockFrequency</name>
+            <value>200000000</value>
+          </parameter>
+          <parameter>
+            <name>resetSynchronousEdges</name>
+            <value>BOTH</value>
+          </parameter>
+        </parameters>
+        <interconnectAssignments></interconnectAssignments>
+        <className>clock_source</className>
+        <version>19.2</version>
+        <name>clk</name>
+        <uniqueName>msgdma_bbb_clk_clock_source_192_sg27ddi</uniqueName>
+        <nonce>0</nonce>
+        <incidentConnections></incidentConnections>
+        <path>msgdma_bbb_clk.clk</path>
+      </instanceData>
+      <children></children>
+    </node>
+  </children>
+</node>

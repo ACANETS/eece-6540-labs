@@ -1,0 +1,1600 @@
+ -- Copyright (C) 2019  Intel Corporation. All rights reserved.
+ -- Your use of Intel Corporation's design tools, logic functions 
+ -- and other software and tools, and any partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Intel Program License 
+ -- Subscription Agreement, the Intel Quartus Prime License Agreement,
+ -- the Intel FPGA IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Intel and sold by Intel or its authorized distributors.  Please
+ -- refer to the applicable agreement for further details, at
+ -- https://fpgasoftware.intel.com/eula.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCPGM        : Dedicated power pin for configuration, which MUST be connected to 1.2V, 1.5V or 1,8V depending on the requirements of the configuration device.
+ -- VCCIO         : Dedicated power pin, which MUST be connected to specific voltage
+ --                 of its bank.
+ --                  Bank 2L:       1.8V
+ --                  Bank 2K:  1.8V
+ --                  Bank 2J:  1.8V
+ --                  Bank 2I:  1.8V
+ --                  Bank 2A:  1.8V
+ --                  Bank 3H:  1.8V
+ --                  Bank 3G:  1.2V
+ --                  Bank 3F:  1.2V
+ --                  Bank 3E:  1.2V
+ --                  Bank 3D:  1.2V
+ --                  Bank 3C:  1.2V
+ --                  Bank 3B:  1.2V
+ --                  Bank 3A:  1.8V
+ -- RREF          : External reference resistor for the transceiver, MUST be connected to
+ --                 GND via a 2k Ohm resistor.
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin.   For transceiver I/O banks, connect each pin marked GND*
+ --                  either individually through a 10k Ohm resistor to GND or tie all pins
+ --                  together and connect through a single 10k Ohm resistor to GND.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ -- GXB_GND*:       Unused GXB Receiver or dedicated reference clock pin. This pin
+ --                 must be connected to GXB_GND through a 10k Ohm resistor.
+ -- GXB_NC        : Unused GXB Transmitter or dedicated clock output pin. This pin
+ --                 must not be connected.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 19.2.0 Build 57 06/24/2019 Patches 0.01rc SJ Pro Edition
+CHIP  "afu_default"  ASSIGNED TO AN: 10AX115N2F40E2LG
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment : Package Delay
+-----------------------------------------------------------------------------------------------------------------------------
+GND                          : A2        :        :                   :         :           :                 : --           
+VCCR_GXBR4F                  : A3        : gnd    :                   : GND     :           :                 : --           
+DDR4B_DQ[33]                 : A4        : bidir  : 1.2-V POD         :         : 3G        : Y               : 186ps        
+DDR4B_DQ[37]                 : A5        : bidir  : 1.2-V POD         :         : 3G        : Y               : 179ps        
+GND                          : A6        : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : A7        :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : A8        :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : A9        :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : A10       :        :                   :         : 3H        :                 : --           
+GND                          : A11       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : A12       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : A13       :        :                   :         : 3H        :                 : --           
+VSIGP_1                      : A14       :        :                   :         :           :                 : --           
+VSIGP_0                      : A15       :        :                   :         :           :                 : --           
+GND                          : A16       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : A17       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : A18       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : A19       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : A20       :        :                   :         : 2K        :                 : --           
+GND                          : A21       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : A22       :        :                   :         : 2K        :                 : --           
+QSFP1_RST_L                  : A23       : output : 1.8 V             :         : 2K        : Y               : --           
+QSFP1_LP                     : A24       : output : 1.8 V             :         : 2K        : Y               : --           
+QSFP1_INT_L                  : A25       : input  : 1.8 V             :         : 2K        : Y               : --           
+QSFP1_PRS_L                  : A26       : input  : 1.8 V             :         : 2K        : Y               : --           
+GND                          : A27       : gnd    :                   :         :           :                 : --           
+RREF                         : A28       :        :                   :         :           :                 : --           
+GND                          : A29       : gnd    :                   :         :           :                 : --           
+GND                          : A30       : gnd    :                   :         :           :                 : --           
+GND                          : A31       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : A32       :        :                   :         : 1J        :                 : --           
+GXB_NC                       : A33       :        :                   :         : 1J        :                 : --           
+GND                          : A34       : gnd    :                   :         :           :                 : --           
+GND                          : A35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : A36       :        :                   :         : 1J        :                 : --           
+GXB_NC                       : A37       :        :                   :         : 1J        :                 : --           
+GND                          : A38       : gnd    :                   :         :           :                 : --           
+GND                          : AA1       : gnd    :                   :         :           :                 : --           
+DDR4A_DQS_P[6]               : AA2       : bidir  : Differential 1.2-V POD :         : 3D        : Y               : 135ps        
+DDR4A_DQS_N[6]               : AA3       : bidir  : Differential 1.2-V POD :         : 3D        : Y               : 137ps        
+RESERVED_INPUT               : AA4       :        :                   :         : 3D        :                 : --           
+DDR4A_DQ[40]                 : AA5       : bidir  : 1.2-V POD         :         : 3D        : Y               : 115ps        
+VCCIO3D                      : AA6       : power  :                   : 1.2V    : 3D        :                 : --           
+DDR4A_DQS_P[4]               : AA7       : bidir  : Differential 1.2-V POD :         : 3D        : Y               : 102ps        
+DDR4A_DQS_N[4]               : AA8       : bidir  : Differential 1.2-V POD :         : 3D        : Y               : 103ps        
+RESERVED_INPUT               : AA9       :        :                   :         : 3D        :                 : --           
+DDR4A_DQ[34]                 : AA10      : bidir  : 1.2-V POD         :         : 3D        : Y               : 149ps        
+GND                          : AA11      : gnd    :                   :         :           :                 : --           
+VCC                          : AA12      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AA13      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AA14      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AA15      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AA16      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AA17      : gnd    :                   :         :           :                 : --           
+GNDSENSE                     : AA18      :        :                   :         :           :                 : --           
+VCCLSENSE                    : AA19      :        :                   :         :           :                 : --           
+VCC                          : AA20      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AA21      : gnd    :                   :         :           :                 : --           
+VCC                          : AA22      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AA23      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AA24      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AA25      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AA26      : gnd    :                   :         :           :                 : --           
+GND                          : AA27      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AA28      :        :                   :         : 1F        :                 : --           
+GXB_GND*                     : AA29      :        :                   :         : 1F        :                 : --           
+GND                          : AA30      : gnd    :                   :         :           :                 : --           
+GND                          : AA31      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AA32      :        :                   :         : 1F        :                 : --           
+GXB_GND*                     : AA33      :        :                   :         : 1F        :                 : --           
+GND                          : AA34      : gnd    :                   :         :           :                 : --           
+GND                          : AA35      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AA36      :        :                   :         : 1F        :                 : --           
+GXB_NC                       : AA37      :        :                   :         : 1F        :                 : --           
+GND                          : AA38      : gnd    :                   :         :           :                 : --           
+GND                          : AA39      : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[54]                 : AB1       : bidir  : 1.2-V POD         :         : 3D        : Y               : 146ps        
+DDR4A_DQ[55]                 : AB2       : bidir  : 1.2-V POD         :         : 3D        : Y               : 143ps        
+GND                          : AB3       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[50]                 : AB4       : bidir  : 1.2-V POD         :         : 3D        : Y               : 127ps        
+DDR4A_DQ[46]                 : AB5       : bidir  : 1.2-V POD         :         : 3D        : Y               : 119ps        
+DDR4A_DBI_L[5]               : AB6       : bidir  : 1.2-V POD         :         : 3D        : Y               : 117ps        
+DDR4A_DBI_L[4]               : AB7       : bidir  : 1.2-V POD         :         : 3D        : Y               : 164ps        
+GND                          : AB8       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[37]                 : AB9       : bidir  : 1.2-V POD         :         : 3D        : Y               : 173ps        
+DDR4A_DQ[35]                 : AB10      : bidir  : 1.2-V POD         :         : 3D        : Y               : 174ps        
+DDR4A_DQ[36]                 : AB11      : bidir  : 1.2-V POD         :         : 3D        : Y               : 149ps        
+VCC                          : AB12      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AB13      : gnd    :                   :         :           :                 : --           
+VCCPT                        : AB14      : power  :                   : 1.8V    :           :                 : --           
+VCC                          : AB15      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AB16      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AB17      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AB18      : gnd    :                   :         :           :                 : --           
+VCC                          : AB19      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AB20      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AB21      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AB22      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AB23      : gnd    :                   :         :           :                 : --           
+VCC                          : AB24      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AB25      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AB26      : gnd    :                   :         :           :                 : --           
+GND                          : AB27      : gnd    :                   :         :           :                 : --           
+VCCR_GXBL1F                  : AB28      : power  :                   : 1.03V   :           :                 : --           
+VCCR_GXBL1F                  : AB29      : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : AB30      :        :                   :         : 1F        :                 : --           
+GXB_GND*                     : AB31      :        :                   :         : 1F        :                 : --           
+GND                          : AB32      : gnd    :                   :         :           :                 : --           
+GND                          : AB33      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AB34      :        :                   :         : 1F        :                 : --           
+GXB_GND*                     : AB35      :        :                   :         : 1F        :                 : --           
+GND                          : AB36      : gnd    :                   :         :           :                 : --           
+GND                          : AB37      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AB38      :        :                   :         : 1F        :                 : --           
+GXB_NC                       : AB39      :        :                   :         : 1F        :                 : --           
+RESERVED_INPUT               : AC1       :        :                   :         : 3D        :                 : --           
+DDR4A_DQ[56]                 : AC2       : bidir  : 1.2-V POD         :         : 3D        : Y               : 142ps        
+DDR4A_DQ[52]                 : AC3       : bidir  : 1.2-V POD         :         : 3D        : Y               : 129ps        
+DDR4A_DQ[53]                 : AC4       : bidir  : 1.2-V POD         :         : 3D        : Y               : 128ps        
+VCCIO3D                      : AC5       : power  :                   : 1.2V    : 3D        :                 : --           
+RESERVED_INPUT               : AC6       :        :                   :         : 3D        :                 : --           
+DDR4A_DQ[33]                 : AC7       : bidir  : 1.2-V POD         :         : 3D        : Y               : 165ps        
+RESERVED_INPUT               : AC8       :        :                   :         : 3C        :                 : --           
+RESERVED_INPUT               : AC9       :        :                   :         : 3C        :                 : --           
+GND                          : AC10      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AC11      :        :                   :         : 3C        :                 : --           
+VCC                          : AC12      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AC13      : power  :                   : 0.9V    :           :                 : --           
+VCCPT                        : AC14      : power  :                   : 1.8V    :           :                 : --           
+GND                          : AC15      : gnd    :                   :         :           :                 : --           
+VCCPT                        : AC16      : power  :                   : 1.8V    :           :                 : --           
+VCCPT                        : AC17      : power  :                   : 1.8V    :           :                 : --           
+VCC                          : AC18      : power  :                   : 0.9V    :           :                 : --           
+VCCPT                        : AC19      : power  :                   : 1.8V    :           :                 : --           
+GND                          : AC20      : gnd    :                   :         :           :                 : --           
+VCCPT                        : AC21      : power  :                   : 1.8V    :           :                 : --           
+GND                          : AC22      : gnd    :                   :         :           :                 : --           
+VCC                          : AC23      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AC24      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AC25      : gnd    :                   :         :           :                 : --           
+VCC                          : AC26      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AC27      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AC28      :        :                   :         : 1F        :                 : --           
+GXB_GND*                     : AC29      :        :                   :         : 1F        :                 : --           
+GND                          : AC30      : gnd    :                   :         :           :                 : --           
+GND                          : AC31      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AC32      :        :                   :         : 1F        :                 : --           
+GXB_GND*                     : AC33      :        :                   :         : 1F        :                 : --           
+GND                          : AC34      : gnd    :                   :         :           :                 : --           
+GND                          : AC35      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AC36      :        :                   :         : 1F        :                 : --           
+GXB_NC                       : AC37      :        :                   :         : 1F        :                 : --           
+GND                          : AC38      : gnd    :                   :         :           :                 : --           
+GND                          : AC39      : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[57]                 : AD1       : bidir  : 1.2-V POD         :         : 3D        : Y               : 151ps        
+GND                          : AD2       : gnd    :                   :         :           :                 : --           
+DDR4A_DBI_L[7]               : AD3       : bidir  : 1.2-V POD         :         : 3D        : Y               : 142ps        
+DDR4A_DQ[47]                 : AD4       : bidir  : 1.2-V POD         :         : 3D        : Y               : 153ps        
+DDR4A_DQ[43]                 : AD5       : bidir  : 1.2-V POD         :         : 3D        : Y               : 154ps        
+DDR4A_DQ[41]                 : AD6       : bidir  : 1.2-V POD         :         : 3D        : Y               : 128ps        
+VCCIO3C                      : AD7       : power  :                   : 1.2V    : 3C        :                 : --           
+RESERVED_INPUT               : AD8       :        :                   :         : 3C        :                 : --           
+RESERVED_INPUT               : AD9       :        :                   :         : 3C        :                 : --           
+RESERVED_INPUT               : AD10      :        :                   :         : 3C        :                 : --           
+VREFB3CN0                    : AD11      : power  :                   : GND     : 3C        :                 : --           
+GND                          : AD12      : gnd    :                   :         :           :                 : --           
+VCC                          : AD13      : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : AD14      : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : AD15      : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : AD16      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AD17      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AD18      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AD19      : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : AD20      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AD21      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AD22      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AD23      : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : AD24      : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : AD25      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AD26      : gnd    :                   :         :           :                 : --           
+VCCH_GXBL                    : AD27      : power  :                   : 1.8V    :           :                 : --           
+VCCT_GXBL1E                  : AD28      : power  :                   : 1.03V   :           :                 : --           
+VCCT_GXBL1E                  : AD29      : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : AD30      :        :                   :         : 1E        :                 : --           
+GXB_GND*                     : AD31      :        :                   :         : 1E        :                 : --           
+GND                          : AD32      : gnd    :                   :         :           :                 : --           
+GND                          : AD33      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AD34      :        :                   :         : 1F        :                 : --           
+GXB_GND*                     : AD35      :        :                   :         : 1F        :                 : --           
+GND                          : AD36      : gnd    :                   :         :           :                 : --           
+GND                          : AD37      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AD38      :        :                   :         : 1F        :                 : --           
+GXB_NC                       : AD39      :        :                   :         : 1F        :                 : --           
+DDR4A_DQ[62]                 : AE1       : bidir  : 1.2-V POD         :         : 3D        : Y               : 148ps        
+DDR4A_DQ[61]                 : AE2       : bidir  : 1.2-V POD         :         : 3D        : Y               : 149ps        
+DDR4A_DQ[63]                 : AE3       : bidir  : 1.2-V POD         :         : 3D        : Y               : 138ps        
+GND                          : AE4       : gnd    :                   :         :           :                 : --           
+DDR4A_DQS_P[5]               : AE5       : bidir  : Differential 1.2-V POD :         : 3D        : Y               : 143ps        
+DDR4A_DQS_N[5]               : AE6       : bidir  : Differential 1.2-V POD :         : 3D        : Y               : 143ps        
+DDR4A_A[16]                  : AE7       : output : SSTL-12           :         : 3C        : Y               : --           
+RESERVED_INPUT               : AE8       :        :                   :         : 3C        :                 : --           
+GND                          : AE9       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AE10      :        :                   :         : 3C        :                 : --           
+RESERVED_INPUT               : AE11      :        :                   :         : 3C        :                 : --           
+VCC                          : AE12      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AE13      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AE14      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AE15      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AE16      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AE17      : power  :                   : 0.9V    :           :                 : --           
+VCCBAT                       : AE18      : power  :                   : 1.8V    :           :                 : --           
+GND                          : AE19      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AE20      :        :                   :         : 2I        :                 : --           
+VCC                          : AE21      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AE22      : power  :                   : 0.9V    :           :                 : --           
+VREFB2IN0                    : AE23      : power  :                   : GND     : 2I        :                 : --           
+GND                          : AE24      : gnd    :                   :         :           :                 : --           
+VCC                          : AE25      : power  :                   : 0.9V    :           :                 : --           
+GND                          : AE26      : gnd    :                   :         :           :                 : --           
+GND                          : AE27      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AE28      :        :                   :         : 1E        :                 : --           
+GXB_GND*                     : AE29      :        :                   :         : 1E        :                 : --           
+GND                          : AE30      : gnd    :                   :         :           :                 : --           
+GND                          : AE31      : gnd    :                   :         :           :                 : --           
+QSFP1_RX_P_4(n)              : AE32      : input  : High Speed Differential I/O :         : 1E        : N               : --           
+QSFP1_RX_P_4                 : AE33      : input  : High Speed Differential I/O :         : 1E        : Y               : --           
+GND                          : AE34      : gnd    :                   :         :           :                 : --           
+GND                          : AE35      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AE36      :        :                   :         : 1F        :                 : --           
+GXB_NC                       : AE37      :        :                   :         : 1F        :                 : --           
+GND                          : AE38      : gnd    :                   :         :           :                 : --           
+GND                          : AE39      : gnd    :                   :         :           :                 : --           
+GND                          : AF1       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[58]                 : AF2       : bidir  : 1.2-V POD         :         : 3D        : Y               : 147ps        
+DDR4A_DQ[60]                 : AF3       : bidir  : 1.2-V POD         :         : 3D        : Y               : 137ps        
+RESERVED_INPUT               : AF4       :        :                   :         : 3C        :                 : --           
+DDR4A_BA[0]                  : AF5       : output : SSTL-12           :         : 3C        : Y               : --           
+GND                          : AF6       : gnd    :                   :         :           :                 : --           
+DDR4A_A[15]                  : AF7       : output : SSTL-12           :         : 3C        : Y               : --           
+RESERVED_INPUT               : AF8       :        :                   :         : 3C        :                 : --           
+RESERVED_INPUT               : AF9       :        :                   :         : 3C        :                 : --           
+RESERVED_INPUT               : AF10      :        :                   :         : 3C        :                 : --           
+GND                          : AF11      : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[27]                 : AF12      : bidir  : 1.2-V POD         :         : 3B        : Y               : 127ps        
+VREFB3BN0                    : AF13      : power  :                   : GND     : 3B        :                 : --           
+RESERVED_INPUT               : AF14      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AF15      :        :                   :         : 3A        :                 : --           
+GND                          : AF16      : gnd    :                   :         :           :                 : --           
+DNU                          : AF17      :        :                   :         :           :                 : --           
+VCCPGM                       : AF18      : power  :                   : 1.8V    :           :                 : --           
+VCCPGM                       : AF19      : power  :                   : 1.8V    :           :                 : --           
+RESERVED_INPUT               : AF20      :        :                   :         : 2I        :                 : --           
+VCC                          : AF21      : power  :                   : 0.9V    :           :                 : --           
+VCC                          : AF22      : power  :                   : 0.9V    :           :                 : --           
+VREFB2JN0                    : AF23      : power  :                   : GND     : 2J        :                 : --           
+RESERVED_INPUT               : AF24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AF25      :        :                   :         : 2J        :                 : --           
+GND                          : AF26      : gnd    :                   :         :           :                 : --           
+GND                          : AF27      : gnd    :                   :         :           :                 : --           
+VCCR_GXBL1E                  : AF28      : power  :                   : 1.03V   :           :                 : --           
+VCCR_GXBL1E                  : AF29      : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : AF30      :        :                   :         : 1E        :                 : --           
+GXB_GND*                     : AF31      :        :                   :         : 1E        :                 : --           
+GND                          : AF32      : gnd    :                   :         :           :                 : --           
+GND                          : AF33      : gnd    :                   :         :           :                 : --           
+QSFP1_RX_P_3(n)              : AF34      : input  : High Speed Differential I/O :         : 1E        : N               : --           
+QSFP1_RX_P_3                 : AF35      : input  : High Speed Differential I/O :         : 1E        : Y               : --           
+GND                          : AF36      : gnd    :                   :         :           :                 : --           
+GND                          : AF37      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AF38      :        :                   :         : 1E        :                 : --           
+GXB_NC                       : AF39      :        :                   :         : 1E        :                 : --           
+DDR4A_DQS_N[7]               : AG1       : bidir  : Differential 1.2-V POD :         : 3D        : Y               : 154ps        
+DDR4A_DQ[59]                 : AG2       : bidir  : 1.2-V POD         :         : 3D        : Y               : 147ps        
+GND                          : AG3       : gnd    :                   :         :           :                 : --           
+DDR4A_BG                     : AG4       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4_RefClk                  : AG5       : input  : LVDS              :         : 3C        : Y               : --           
+DDR4_RefClk(n)               : AG6       : input  : LVDS              :         : 3C        : N               : --           
+DDR4A_A[12]                  : AG7       : output : SSTL-12           :         : 3C        : Y               : --           
+VCCIO3C                      : AG8       : power  :                   : 1.2V    : 3C        :                 : --           
+DDR4A_DQS_P[3]               : AG9       : bidir  : Differential 1.2-V POD :         : 3B        : Y               : 157ps        
+DDR4A_DQS_N[3]               : AG10      : bidir  : Differential 1.2-V POD :         : 3B        : Y               : 156ps        
+DDR4A_DQ[31]                 : AG11      : bidir  : 1.2-V POD         :         : 3B        : Y               : 139ps        
+DDR4A_DQ[29]                 : AG12      : bidir  : 1.2-V POD         :         : 3B        : Y               : 126ps        
+GND                          : AG13      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AG14      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AG15      :        :                   :         : 3A        :                 : --           
+DNU                          : AG16      :        :                   :         :           :                 : --           
+DNU                          : AG17      :        :                   :         :           :                 : --           
+GND                          : AG18      : gnd    :                   :         :           :                 : --           
+VREFB2AN0                    : AG19      : power  :                   : GND     : 2A        :                 : --           
+RESERVED_INPUT               : AG20      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AG21      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AG22      :        :                   :         : 2I        :                 : --           
+GND                          : AG23      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AG24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AG25      :        :                   :         : 2J        :                 : --           
+GND                          : AG26      : gnd    :                   :         :           :                 : --           
+GND                          : AG27      : gnd    :                   :         :           :                 : --           
+ETH_RefClk(n)                : AG28      : input  : LVDS              :         : 1E        : N               : --           
+ETH_RefClk                   : AG29      : input  : LVDS              :         : 1E        : Y               : --           
+GND                          : AG30      : gnd    :                   :         :           :                 : --           
+GND                          : AG31      : gnd    :                   :         :           :                 : --           
+QSFP1_RX_P_2(n)              : AG32      : input  : High Speed Differential I/O :         : 1E        : N               : --           
+QSFP1_RX_P_2                 : AG33      : input  : High Speed Differential I/O :         : 1E        : Y               : --           
+GND                          : AG34      : gnd    :                   :         :           :                 : --           
+GND                          : AG35      : gnd    :                   :         :           :                 : --           
+QSFP1_TX_P_4(n)              : AG36      : output : High Speed Differential I/O :         : 1E        : N               : --           
+QSFP1_TX_P_4                 : AG37      : output : High Speed Differential I/O :         : 1E        : Y               : --           
+GND                          : AG38      : gnd    :                   :         :           :                 : --           
+GND                          : AG39      : gnd    :                   :         :           :                 : --           
+DDR4A_DQS_P[7]               : AH1       : bidir  : Differential 1.2-V POD :         : 3D        : Y               : 157ps        
+DDR4A_PAR                    : AH2       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_A[14]                  : AH3       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_BA[1]                  : AH4       : output : SSTL-12           :         : 3C        : Y               : --           
+VCCIO3C                      : AH5       : power  :                   : 1.2V    : 3C        :                 : --           
+DDR4A_A[11]                  : AH6       : output : SSTL-12           :         : 3C        : Y               : --           
+RZQ_3C                       : AH7       : input  : 1.2 V             :         : 3C        : Y               : --           
+DDR4A_DQ[28]                 : AH8       : bidir  : 1.2-V POD         :         : 3B        : Y               : 128ps        
+DDR4A_DQ[24]                 : AH9       : bidir  : 1.2-V POD         :         : 3B        : Y               : 115ps        
+GND                          : AH10      : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[30]                 : AH11      : bidir  : 1.2-V POD         :         : 3B        : Y               : 140ps        
+RESERVED_INPUT               : AH12      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AH13      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AH14      :        :                   :         : 3A        :                 : --           
+GND                          : AH15      : gnd    :                   :         :           :                 : --           
+VREFB3AN0                    : AH16      : power  :                   : GND     : 3A        :                 : --           
+RESERVED_INPUT               : AH17      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AH18      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AH19      :        :                   :         : 2A        :                 : --           
+GND                          : AH20      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AH21      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AH22      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AH23      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AH24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AH25      :        :                   :         : 2J        :                 : --           
+GND                          : AH26      : gnd    :                   :         :           :                 : --           
+VCCH_GXBL                    : AH27      : power  :                   : 1.8V    :           :                 : --           
+VCCT_GXBL1D                  : AH28      : power  :                   : 1.03V   :           :                 : --           
+VCCT_GXBL1D                  : AH29      : power  :                   : 1.03V   :           :                 : --           
+PCIE_RX[7](n)                : AH30      : input  : Current Mode Logic (CML) :         : 1D        : N               : --           
+PCIE_RX[7]                   : AH31      : input  : Current Mode Logic (CML) :         : 1D        : Y               : --           
+GND                          : AH32      : gnd    :                   :         :           :                 : --           
+GND                          : AH33      : gnd    :                   :         :           :                 : --           
+QSFP1_RX_P_1(n)              : AH34      : input  : High Speed Differential I/O :         : 1E        : N               : --           
+QSFP1_RX_P_1                 : AH35      : input  : High Speed Differential I/O :         : 1E        : Y               : --           
+GND                          : AH36      : gnd    :                   :         :           :                 : --           
+GND                          : AH37      : gnd    :                   :         :           :                 : --           
+QSFP1_TX_P_3(n)              : AH38      : output : High Speed Differential I/O :         : 1E        : N               : --           
+QSFP1_TX_P_3                 : AH39      : output : High Speed Differential I/O :         : 1E        : Y               : --           
+RESERVED_INPUT               : AJ1       :        :                   :         : 3C        :                 : --           
+GND                          : AJ2       : gnd    :                   :         :           :                 : --           
+DDR4A_A[13]                  : AJ3       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_A[9]                   : AJ4       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_A[10]                  : AJ5       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_A[7]                   : AJ6       : output : SSTL-12           :         : 3C        : Y               : --           
+GND                          : AJ7       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[26]                 : AJ8       : bidir  : 1.2-V POD         :         : 3B        : Y               : 125ps        
+RESERVED_INPUT               : AJ9       :        :                   :         : 3B        :                 : --           
+DDR4A_DQ[25]                 : AJ10      : bidir  : 1.2-V POD         :         : 3B        : Y               : 117ps        
+DDR4A_DBI_L[3]               : AJ11      : bidir  : 1.2-V POD         :         : 3B        : Y               : 114ps        
+GND                          : AJ12      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AJ13      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AJ14      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AJ15      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AJ16      :        :                   :         : 2A        :                 : --           
+GND                          : AJ17      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AJ18      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AJ19      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AJ20      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AJ21      :        :                   :         : 2I        :                 : --           
+GND                          : AJ22      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AJ23      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AJ24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AJ25      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AJ26      :        :                   :         : 2J        :                 : --           
+GND                          : AJ27      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AJ28      :        :                   :         : 1D        :                 : --           
+GXB_GND*                     : AJ29      :        :                   :         : 1D        :                 : --           
+GND                          : AJ30      : gnd    :                   :         :           :                 : --           
+GND                          : AJ31      : gnd    :                   :         :           :                 : --           
+PCIE_RX[6](n)                : AJ32      : input  : Current Mode Logic (CML) :         : 1D        : N               : --           
+PCIE_RX[6]                   : AJ33      : input  : Current Mode Logic (CML) :         : 1D        : Y               : --           
+GND                          : AJ34      : gnd    :                   :         :           :                 : --           
+GND                          : AJ35      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AJ36      :        :                   :         : 1E        :                 : --           
+GXB_NC                       : AJ37      :        :                   :         : 1E        :                 : --           
+GND                          : AJ38      : gnd    :                   :         :           :                 : --           
+GND                          : AJ39      : gnd    :                   :         :           :                 : --           
+DDR4A_CK_P                   : AK1       : output : Differential 1.2-V SSTL :         : 3C        : Y               : --           
+DDR4A_CK_N                   : AK2       : output : Differential 1.2-V SSTL :         : 3C        : Y               : --           
+DDR4A_A[8]                   : AK3       : output : SSTL-12           :         : 3C        : Y               : --           
+GND                          : AK4       : gnd    :                   :         :           :                 : --           
+DDR4A_A[5]                   : AK5       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_A[6]                   : AK6       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_DQ[21]                 : AK7       : bidir  : 1.2-V POD         :         : 3B        : Y               : 131ps        
+RESERVED_INPUT               : AK8       :        :                   :         : 3B        :                 : --           
+VCCIO3B                      : AK9       : power  :                   : 1.2V    : 3B        :                 : --           
+DDR4A_DBI_L[2]               : AK10      : bidir  : 1.2-V POD         :         : 3B        : Y               : 121ps        
+RESERVED_INPUT               : AK11      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AK12      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AK13      :        :                   :         : 3A        :                 : --           
+VCCIO3A                      : AK14      : power  :                   : 1.8V    : 3A        :                 : --           
+RESERVED_INPUT               : AK15      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AK16      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AK17      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AK18      :        :                   :         : 2A        :                 : --           
+VCCIO2A                      : AK19      : power  :                   : 1.8V    : 2A        :                 : --           
+RESERVED_INPUT               : AK20      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AK21      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AK22      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AK23      :        :                   :         : 2J        :                 : --           
+VCCIO2J                      : AK24      : power  :                   : 1.8V    : 2J        :                 : --           
+RESERVED_INPUT               : AK25      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AK26      :        :                   :         : 2J        :                 : --           
+GND                          : AK27      : gnd    :                   :         :           :                 : --           
+VCCR_GXBL1D                  : AK28      : power  :                   : 1.03V   :           :                 : --           
+VCCR_GXBL1D                  : AK29      : power  :                   : 1.03V   :           :                 : --           
+PCIE_RX[4](n)                : AK30      : input  : Current Mode Logic (CML) :         : 1D        : N               : --           
+PCIE_RX[4]                   : AK31      : input  : Current Mode Logic (CML) :         : 1D        : Y               : --           
+GND                          : AK32      : gnd    :                   :         :           :                 : --           
+GND                          : AK33      : gnd    :                   :         :           :                 : --           
+PCIE_RX[5](n)                : AK34      : input  : Current Mode Logic (CML) :         : 1D        : N               : --           
+PCIE_RX[5]                   : AK35      : input  : Current Mode Logic (CML) :         : 1D        : Y               : --           
+GND                          : AK36      : gnd    :                   :         :           :                 : --           
+GND                          : AK37      : gnd    :                   :         :           :                 : --           
+QSFP1_TX_P_2(n)              : AK38      : output : High Speed Differential I/O :         : 1E        : N               : --           
+QSFP1_TX_P_2                 : AK39      : output : High Speed Differential I/O :         : 1E        : Y               : --           
+GND                          : AL1       : gnd    :                   :         :           :                 : --           
+DDR4A_ACT_L                  : AL2       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_A[2]                   : AL3       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_A[3]                   : AL4       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_A[4]                   : AL5       : output : SSTL-12           :         : 3C        : Y               : --           
+VCCIO3B                      : AL6       : power  :                   : 1.2V    : 3B        :                 : --           
+DDR4A_DQ[19]                 : AL7       : bidir  : 1.2-V POD         :         : 3B        : Y               : 132ps        
+DDR4A_DQ[20]                 : AL8       : bidir  : 1.2-V POD         :         : 3B        : Y               : 132ps        
+DDR4A_DQ[23]                 : AL9       : bidir  : 1.2-V POD         :         : 3B        : Y               : 124ps        
+RESERVED_INPUT               : AL10      :        :                   :         : 3A        :                 : --           
+VCCIO3A                      : AL11      : power  :                   : 1.8V    : 3A        :                 : --           
+RESERVED_INPUT               : AL12      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AL13      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AL14      :        :                   :         : 3A        :                 : --           
+altera_reserved_tdi          : AL15      : input  : 1.8 V             :         : CSS       : N               : --           
+GND                          : AL16      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AL17      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AL18      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AL19      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AL20      :        :                   :         : 2I        :                 : --           
+VCCIO2I                      : AL21      : power  :                   : 1.8V    : 2I        :                 : --           
+RESERVED_INPUT               : AL22      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AL23      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AL24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AL25      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AL26      :        :                   :         : 2J        :                 : --           
+GND                          : AL27      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AL28      :        :                   :         : 1D        :                 : --           
+GXB_GND*                     : AL29      :        :                   :         : 1D        :                 : --           
+GND                          : AL30      : gnd    :                   :         :           :                 : --           
+GND                          : AL31      : gnd    :                   :         :           :                 : --           
+PCIE_RX[3](n)                : AL32      : input  : Current Mode Logic (CML) :         : 1D        : N               : --           
+PCIE_RX[3]                   : AL33      : input  : Current Mode Logic (CML) :         : 1D        : Y               : --           
+GND                          : AL34      : gnd    :                   :         :           :                 : --           
+GND                          : AL35      : gnd    :                   :         :           :                 : --           
+QSFP1_TX_P_1(n)              : AL36      : output : High Speed Differential I/O :         : 1E        : N               : --           
+QSFP1_TX_P_1                 : AL37      : output : High Speed Differential I/O :         : 1E        : Y               : --           
+GND                          : AL38      : gnd    :                   :         :           :                 : --           
+GND                          : AL39      : gnd    :                   :         :           :                 : --           
+DDR4A_CKE                    : AM1       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_CS_L                   : AM2       : output : SSTL-12           :         : 3C        : Y               : --           
+GND                          : AM3       : gnd    :                   :         :           :                 : --           
+DDR4A_A[1]                   : AM4       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_DBI_L[1]               : AM5       : bidir  : 1.2-V POD         :         : 3B        : Y               : 162ps        
+DDR4A_DQ[18]                 : AM6       : bidir  : 1.2-V POD         :         : 3B        : Y               : 143ps        
+DDR4A_DQS_N[2]               : AM7       : bidir  : Differential 1.2-V POD :         : 3B        : Y               : 133ps        
+VCCIO3B                      : AM8       : power  :                   : 1.2V    : 3B        :                 : --           
+DDR4A_DQ[22]                 : AM9       : bidir  : 1.2-V POD         :         : 3B        : Y               : 131ps        
+RESERVED_INPUT               : AM10      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AM11      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AM12      :        :                   :         : 3A        :                 : --           
+VCCIO3A                      : AM13      : power  :                   : 1.8V    : 3A        :                 : --           
+nCONFIG                      : AM14      : input  :                   :         : CSS       :                 : --           
+nCE                          : AM15      :        :                   :         : CSS       :                 : --           
+RESERVED_INPUT               : AM16      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AM17      :        :                   :         : 2A        :                 : --           
+VCCIO2A                      : AM18      : power  :                   : 1.8V    : 2A        :                 : --           
+RESERVED_INPUT               : AM19      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AM20      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AM21      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AM22      :        :                   :         : 2I        :                 : --           
+GND                          : AM23      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AM24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AM25      :        :                   :         : 2J        :                 : --           
+GND                          : AM26      : gnd    :                   :         :           :                 : --           
+VCCH_GXBL                    : AM27      : power  :                   : 1.8V    :           :                 : --           
+VCCT_GXBL1C                  : AM28      : power  :                   : 1.03V   :           :                 : --           
+VCCT_GXBL1C                  : AM29      : power  :                   : 1.03V   :           :                 : --           
+PCIE_RX[1](n)                : AM30      : input  : Current Mode Logic (CML) :         : 1C        : N               : --           
+PCIE_RX[1]                   : AM31      : input  : Current Mode Logic (CML) :         : 1C        : Y               : --           
+GND                          : AM32      : gnd    :                   :         :           :                 : --           
+GND                          : AM33      : gnd    :                   :         :           :                 : --           
+PCIE_RX[2](n)                : AM34      : input  : Current Mode Logic (CML) :         : 1D        : N               : --           
+PCIE_RX[2]                   : AM35      : input  : Current Mode Logic (CML) :         : 1D        : Y               : --           
+GND                          : AM36      : gnd    :                   :         :           :                 : --           
+GND                          : AM37      : gnd    :                   :         :           :                 : --           
+PCIE_TX[7](n)                : AM38      : output : High Speed Differential I/O :         : 1D        : N               : --           
+PCIE_TX[7]                   : AM39      : output : High Speed Differential I/O :         : 1D        : Y               : --           
+RESERVED_INPUT               : AN1       :        :                   :         : 3C        :                 : --           
+DDR4A_RESET_L                : AN2       : output : 1.2 V             :         : 3C        : Y               : --           
+DDR4A_A[0]                   : AN3       : output : SSTL-12           :         : 3C        : Y               : --           
+DDR4A_DQ[13]                 : AN4       : bidir  : 1.2-V POD         :         : 3B        : Y               : 163ps        
+GND                          : AN5       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[16]                 : AN6       : bidir  : 1.2-V POD         :         : 3B        : Y               : 144ps        
+DDR4A_DQS_P[2]               : AN7       : bidir  : Differential 1.2-V POD :         : 3B        : Y               : 134ps        
+DDR4A_DQ[17]                 : AN8       : bidir  : 1.2-V POD         :         : 3B        : Y               : 129ps        
+RESERVED_INPUT               : AN9       :        :                   :         : 3A        :                 : --           
+GND                          : AN10      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AN11      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AN12      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AN13      :        :                   :         : 3A        :                 : --           
+DCLK                         : AN14      : bidir  :                   :         : CSS       :                 : --           
+GND                          : AN15      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AN16      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AN17      :        :                   :         : 2A        :                 : --           
+SYS_RefClk(n)                : AN18      : input  : LVDS              :         : 2A        : N               : --           
+RESERVED_INPUT               : AN19      :        :                   :         : 2A        :                 : --           
+GND                          : AN20      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AN21      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AN22      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AN23      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AN24      :        :                   :         : 2J        :                 : --           
+VCCIO2J                      : AN25      : power  :                   : 1.8V    : 2J        :                 : --           
+RESERVED_INPUT               : AN26      :        :                   :         : 2J        :                 : --           
+GND                          : AN27      : gnd    :                   :         :           :                 : --           
+PCIE_REFCLK(n)               : AN28      : input  : HCSL              :         : 1C        : N               : --           
+PCIE_REFCLK                  : AN29      : input  : HCSL              :         : 1C        : Y               : --           
+GND                          : AN30      : gnd    :                   :         :           :                 : --           
+GND                          : AN31      : gnd    :                   :         :           :                 : --           
+PCIE_RX[0](n)                : AN32      : input  : Current Mode Logic (CML) :         : 1C        : N               : --           
+PCIE_RX[0]                   : AN33      : input  : Current Mode Logic (CML) :         : 1C        : Y               : --           
+GND                          : AN34      : gnd    :                   :         :           :                 : --           
+GND                          : AN35      : gnd    :                   :         :           :                 : --           
+PCIE_TX[6](n)                : AN36      : output : High Speed Differential I/O :         : 1D        : N               : --           
+PCIE_TX[6]                   : AN37      : output : High Speed Differential I/O :         : 1D        : Y               : --           
+GND                          : AN38      : gnd    :                   :         :           :                 : --           
+GND                          : AN39      : gnd    :                   :         :           :                 : --           
+DDR4A_ALERT_L                : AP1       : input  : 1.2 V             :         : 3C        : Y               : --           
+GND                          : AP2       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[9]                  : AP3       : bidir  : 1.2-V POD         :         : 3B        : Y               : 173ps        
+DDR4A_DQ[12]                 : AP4       : bidir  : 1.2-V POD         :         : 3B        : Y               : 159ps        
+RESERVED_INPUT               : AP5       :        :                   :         : 3B        :                 : --           
+DDR4A_DQS_N[1]               : AP6       : bidir  : Differential 1.2-V POD :         : 3B        : Y               : 152ps        
+GND                          : AP7       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AP8       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AP9       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AP10      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AP11      :        :                   :         : 3A        :                 : --           
+GND                          : AP12      : gnd    :                   :         :           :                 : --           
+AS_DATA0, ASDO               : AP13      :        :                   :         : CSS       :                 : --           
+GND                          : AP14      :        :                   :         : CSS       :                 : --           
+MSEL1                        : AP15      : input  :                   :         : CSS       :                 : --           
+RESERVED_INPUT               : AP16      :        :                   :         : 2A        :                 : --           
+VCCIO2A                      : AP17      : power  :                   : 1.8V    : 2A        :                 : --           
+SYS_RefClk                   : AP18      : input  : LVDS              :         : 2A        : Y               : --           
+RESERVED_INPUT               : AP19      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AP20      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AP21      :        :                   :         : 2I        :                 : --           
+VCCIO2I                      : AP22      : power  :                   : 1.8V    : 2I        :                 : --           
+RESERVED_INPUT               : AP23      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AP24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AP25      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AP26      :        :                   :         : 2J        :                 : --           
+GND                          : AP27      : gnd    :                   :         :           :                 : --           
+VCCR_GXBL1C                  : AP28      : power  :                   : 1.03V   :           :                 : --           
+VCCR_GXBL1C                  : AP29      : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : AP30      :        :                   :         : 1C        :                 : --           
+GXB_GND*                     : AP31      :        :                   :         : 1C        :                 : --           
+GND                          : AP32      : gnd    :                   :         :           :                 : --           
+GND                          : AP33      : gnd    :                   :         :           :                 : --           
+PCIE_TX[4](n)                : AP34      : output : High Speed Differential I/O :         : 1D        : N               : --           
+PCIE_TX[4]                   : AP35      : output : High Speed Differential I/O :         : 1D        : Y               : --           
+GND                          : AP36      : gnd    :                   :         :           :                 : --           
+GND                          : AP37      : gnd    :                   :         :           :                 : --           
+PCIE_TX[5](n)                : AP38      : output : High Speed Differential I/O :         : 1D        : N               : --           
+PCIE_TX[5]                   : AP39      : output : High Speed Differential I/O :         : 1D        : Y               : --           
+DDR4A_ODT                    : AR1       : output : SSTL-12           :         : 3C        : Y               : --           
+RESERVED_INPUT               : AR2       :        :                   :         : 3C        :                 : --           
+DDR4A_DQ[8]                  : AR3       : bidir  : 1.2-V POD         :         : 3B        : Y               : 177ps        
+GND                          : AR4       : gnd    :                   :         :           :                 : --           
+DDR4A_DQS_P[1]               : AR5       : bidir  : Differential 1.2-V POD :         : 3B        : Y               : 152ps        
+DDR4A_DQ[4]                  : AR6       : bidir  : 1.2-V POD         :         : 3B        : Y               : 148ps        
+DDR4A_DBI_L[0]               : AR7       : bidir  : 1.2-V POD         :         : 3B        : Y               : 149ps        
+RESERVED_INPUT               : AR8       :        :                   :         : 3A        :                 : --           
+GND                          : AR9       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AR10      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AR11      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AR12      :        :                   :         : 3A        :                 : --           
+TRST                         : AR13      : input  :                   :         : CSS       :                 : --           
+GND                          : AR14      : gnd    :                   :         :           :                 : --           
+GND                          : AR15      :        :                   :         : CSS       :                 : --           
+RESERVED_INPUT               : AR16      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AR17      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AR18      :        :                   :         : 2A        :                 : --           
+GND                          : AR19      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AR20      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AR21      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AR22      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AR23      :        :                   :         : 2I        :                 : --           
+VCCIO2J                      : AR24      : power  :                   : 1.8V    : 2J        :                 : --           
+RESERVED_INPUT               : AR25      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AR26      :        :                   :         : 2J        :                 : --           
+GND                          : AR27      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AR28      :        :                   :         : 1C        :                 : --           
+GXB_GND*                     : AR29      :        :                   :         : 1C        :                 : --           
+GND                          : AR30      : gnd    :                   :         :           :                 : --           
+GND                          : AR31      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AR32      :        :                   :         : 1C        :                 : --           
+GXB_GND*                     : AR33      :        :                   :         : 1C        :                 : --           
+GND                          : AR34      : gnd    :                   :         :           :                 : --           
+GND                          : AR35      : gnd    :                   :         :           :                 : --           
+PCIE_TX[3](n)                : AR36      : output : High Speed Differential I/O :         : 1D        : N               : --           
+PCIE_TX[3]                   : AR37      : output : High Speed Differential I/O :         : 1D        : Y               : --           
+GND                          : AR38      : gnd    :                   :         :           :                 : --           
+GND                          : AR39      : gnd    :                   :         :           :                 : --           
+GND                          : AT1       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[10]                 : AT2       : bidir  : 1.2-V POD         :         : 3B        : Y               : 175ps        
+DDR4A_DQ[11]                 : AT3       : bidir  : 1.2-V POD         :         : 3B        : Y               : 179ps        
+DDR4A_DQ[2]                  : AT4       : bidir  : 1.2-V POD         :         : 3B        : Y               : 162ps        
+DDR4A_DQ[1]                  : AT5       : bidir  : 1.2-V POD         :         : 3B        : Y               : 163ps        
+GND                          : AT6       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AT7       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AT8       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AT9       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AT10      :        :                   :         : 3A        :                 : --           
+GND                          : AT11      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AT12      :        :                   :         : 3A        :                 : --           
+CONF_DONE                    : AT13      : bidir  :                   :         : CSS       :                 : --           
+nIO_PULLUP                   : AT14      : input  :                   :         : CSS       :                 : --           
+MSEL2                        : AT15      : input  :                   :         : CSS       :                 : --           
+GND                          : AT16      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AT17      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AT18      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AT19      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AT20      :        :                   :         : 2A        :                 : --           
+VCCIO2I                      : AT21      : power  :                   : 1.8V    : 2I        :                 : --           
+RESERVED_INPUT               : AT22      :        :                   :         : 2I        :                 : --           
+RESERVED_INPUT               : AT23      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AT24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AT25      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AT26      :        :                   :         : 2J        :                 : --           
+GND                          : AT27      : gnd    :                   :         :           :                 : --           
+GND                          : AT28      : gnd    :                   :         :           :                 : --           
+GND                          : AT29      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AT30      :        :                   :         : 1C        :                 : --           
+GXB_GND*                     : AT31      :        :                   :         : 1C        :                 : --           
+GND                          : AT32      : gnd    :                   :         :           :                 : --           
+GND                          : AT33      : gnd    :                   :         :           :                 : --           
+PCIE_TX[1](n)                : AT34      : output : High Speed Differential I/O :         : 1C        : N               : --           
+PCIE_TX[1]                   : AT35      : output : High Speed Differential I/O :         : 1C        : Y               : --           
+GND                          : AT36      : gnd    :                   :         :           :                 : --           
+GND                          : AT37      : gnd    :                   :         :           :                 : --           
+PCIE_TX[2](n)                : AT38      : output : High Speed Differential I/O :         : 1D        : N               : --           
+PCIE_TX[2]                   : AT39      : output : High Speed Differential I/O :         : 1D        : Y               : --           
+DDR4A_DQ[15]                 : AU1       : bidir  : 1.2-V POD         :         : 3B        : Y               : 190ps        
+DDR4A_DQ[14]                 : AU2       : bidir  : 1.2-V POD         :         : 3B        : Y               : 194ps        
+GND                          : AU3       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[0]                  : AU4       : bidir  : 1.2-V POD         :         : 3B        : Y               : 169ps        
+DDR4A_DQ[6]                  : AU5       : bidir  : 1.2-V POD         :         : 3B        : Y               : 165ps        
+RESERVED_INPUT               : AU6       :        :                   :         : 3B        :                 : --           
+RESERVED_INPUT               : AU7       :        :                   :         : 3A        :                 : --           
+GND                          : AU8       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AU9       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AU10      :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AU11      :        :                   :         : 3A        :                 : --           
+nSTATUS                      : AU12      :        :                   :         : CSS       :                 : --           
+GND                          : AU13      : gnd    :                   :         :           :                 : --           
+nCSO0                        : AU14      :        :                   :         : CSS       :                 : --           
+MSEL0                        : AU15      : input  :                   :         : CSS       :                 : --           
+RESERVED_INPUT               : AU16      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AU17      :        :                   :         : 2A        :                 : --           
+GND                          : AU18      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AU19      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AU20      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AU21      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AU22      :        :                   :         : 2I        :                 : --           
+GND                          : AU23      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AU24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AU25      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AU26      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AU27      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AU28      :        :                   :         : 2J        :                 : --           
+GND                          : AU29      : gnd    :                   :         :           :                 : --           
+GND                          : AU30      : gnd    :                   :         :           :                 : --           
+GND                          : AU31      : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : AU32      :        :                   :         : 1C        :                 : --           
+GXB_GND*                     : AU33      :        :                   :         : 1C        :                 : --           
+GND                          : AU34      : gnd    :                   :         :           :                 : --           
+GND                          : AU35      : gnd    :                   :         :           :                 : --           
+PCIE_TX[0](n)                : AU36      : output : High Speed Differential I/O :         : 1C        : N               : --           
+PCIE_TX[0]                   : AU37      : output : High Speed Differential I/O :         : 1C        : Y               : --           
+GND                          : AU38      : gnd    :                   :         :           :                 : --           
+GND                          : AU39      : gnd    :                   :         :           :                 : --           
+VCCH_GXBR                    : AV1       : gnd    :                   : GND     :           :                 : --           
+DNU                          : AV2       :        :                   :         :           :                 : --           
+DNU                          : AV3       :        :                   :         :           :                 : --           
+DDR4A_DQ[3]                  : AV4       : bidir  : 1.2-V POD         :         : 3B        : Y               : 170ps        
+GND                          : AV5       : gnd    :                   :         :           :                 : --           
+DDR4A_DQS_N[0]               : AV6       : bidir  : Differential 1.2-V POD :         : 3B        : Y               : 165ps        
+RESERVED_INPUT               : AV7       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AV8       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AV9       :        :                   :         : 3A        :                 : --           
+GND                          : AV10      : gnd    :                   :         :           :                 : --           
+AS_DATA2                     : AV11      :        :                   :         : CSS       :                 : --           
+nCSO1                        : AV12      :        :                   :         : CSS       :                 : --           
+altera_reserved_tms          : AV13      : input  : 1.8 V             :         : CSS       : N               : --           
+nCSO2                        : AV14      :        :                   :         : CSS       :                 : --           
+GND                          : AV15      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AV16      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AV17      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AV18      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AV19      :        :                   :         : 2A        :                 : --           
+GND                          : AV20      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AV21      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AV22      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AV23      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AV24      :        :                   :         : 2J        :                 : --           
+GND                          : AV25      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AV26      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AV27      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AV28      :        :                   :         : 2J        :                 : --           
+DNU                          : AV29      :        :                   :         :           :                 : --           
+DNU                          : AV30      :        :                   :         :           :                 : --           
+GND                          : AV31      : gnd    :                   :         :           :                 : --           
+GND                          : AV32      : gnd    :                   :         :           :                 : --           
+GND                          : AV33      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AV34      :        :                   :         : 1C        :                 : --           
+GXB_NC                       : AV35      :        :                   :         : 1C        :                 : --           
+GND                          : AV36      : gnd    :                   :         :           :                 : --           
+GND                          : AV37      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AV38      :        :                   :         : 1C        :                 : --           
+GXB_NC                       : AV39      :        :                   :         : 1C        :                 : --           
+GND                          : AW2       :        :                   :         :           :                 : --           
+VCCR_GXBR4F                  : AW3       : gnd    :                   : GND     :           :                 : --           
+DDR4A_DQ[5]                  : AW4       : bidir  : 1.2-V POD         :         : 3B        : Y               : 179ps        
+DDR4A_DQ[7]                  : AW5       : bidir  : 1.2-V POD         :         : 3B        : Y               : 181ps        
+DDR4A_DQS_P[0]               : AW6       : bidir  : Differential 1.2-V POD :         : 3B        : Y               : 164ps        
+GND                          : AW7       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AW8       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AW9       :        :                   :         : 3A        :                 : --           
+RESERVED_INPUT               : AW10      :        :                   :         : 3A        :                 : --           
+AS_DATA1                     : AW11      :        :                   :         : CSS       :                 : --           
+GND                          : AW12      : gnd    :                   :         :           :                 : --           
+AS_DATA3                     : AW13      :        :                   :         : CSS       :                 : --           
+altera_reserved_tdo          : AW14      : output : 1.8 V             :         : CSS       : N               : --           
+altera_reserved_tck          : AW15      : input  : 1.8 V             :         : CSS       : N               : --           
+PCIE_RESET_N                 : AW16      : input  : 1.8 V             :         : 2A        : Y               : --           
+GND                          : AW17      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AW18      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AW19      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AW20      :        :                   :         : 2A        :                 : --           
+RESERVED_INPUT               : AW21      :        :                   :         : 2A        :                 : --           
+GND                          : AW22      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AW23      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AW24      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AW25      :        :                   :         : 2J        :                 : --           
+RESERVED_INPUT               : AW26      :        :                   :         : 2J        :                 : --           
+GND                          : AW27      : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : AW28      :        :                   :         : 2J        :                 : --           
+GND                          : AW29      : gnd    :                   :         :           :                 : --           
+RREF                         : AW30      :        :                   :         :           :                 : --           
+GND                          : AW31      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AW32      :        :                   :         : 1C        :                 : --           
+GXB_NC                       : AW33      :        :                   :         : 1C        :                 : --           
+GND                          : AW34      : gnd    :                   :         :           :                 : --           
+GND                          : AW35      : gnd    :                   :         :           :                 : --           
+GXB_NC                       : AW36      :        :                   :         : 1C        :                 : --           
+GXB_NC                       : AW37      :        :                   :         : 1C        :                 : --           
+GND                          : AW38      : gnd    :                   :         :           :                 : --           
+VCCH_GXBR                    : B1        : gnd    :                   : GND     :           :                 : --           
+GND                          : B2        : gnd    :                   :         :           :                 : --           
+GND                          : B3        : gnd    :                   :         :           :                 : --           
+DDR4B_DBI_L[4]               : B4        : bidir  : 1.2-V POD         :         : 3G        : Y               : 186ps        
+DDR4B_DQ[38]                 : B5        : bidir  : 1.2-V POD         :         : 3G        : Y               : 182ps        
+DDR4B_DQS_P[4]               : B6        : bidir  : Differential 1.2-V POD :         : 3G        : Y               : 168ps        
+RESERVED_INPUT               : B7        :        :                   :         : 3G        :                 : --           
+GND                          : B8        : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : B9        :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : B10       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : B11       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : B12       :        :                   :         : 3H        :                 : --           
+GND                          : B13       : gnd    :                   :         :           :                 : --           
+VSIGN_1                      : B14       :        :                   :         :           :                 : --           
+VSIGN_0                      : B15       :        :                   :         :           :                 : --           
+TEMPDIODEn                   : B16       :        :                   :         :           :                 : --           
+ADCGND                       : B17       : gnd    :                   :         :           :                 : --           
+GND                          : B18       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : B19       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : B20       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : B21       :        :                   :         : 2K        :                 : --           
+MACID_WP                     : B22       : output : 1.8 V             :         : 2K        : Y               : --           
+GND                          : B23       : gnd    :                   :         :           :                 : --           
+MACID_SDA                    : B24       : bidir  : 1.8 V             :         : 2K        : Y               : --           
+GND                          : B25       : gnd    :                   :         :           :                 : --           
+fspi_cs_l                    : B26       : input  : 1.8 V             :         : 2K        : Y               : --           
+GND                          : B27       : gnd    :                   :         :           :                 : --           
+GND                          : B28       : gnd    :                   :         :           :                 : --           
+GND                          : B29       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : B30       :        :                   :         : 1J        :                 : --           
+GXB_GND*                     : B31       :        :                   :         : 1J        :                 : --           
+GND                          : B32       : gnd    :                   :         :           :                 : --           
+GND                          : B33       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : B34       :        :                   :         : 1J        :                 : --           
+GXB_NC                       : B35       :        :                   :         : 1J        :                 : --           
+GND                          : B36       : gnd    :                   :         :           :                 : --           
+GND                          : B37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : B38       :        :                   :         : 1J        :                 : --           
+GXB_NC                       : B39       :        :                   :         : 1J        :                 : --           
+RESERVED_INPUT               : C1        :        :                   :         : 3F        :                 : --           
+DDR4B_DQ[40]                 : C2        : bidir  : 1.2-V POD         :         : 3G        : Y               : 186ps        
+DDR4B_DQ[43]                 : C3        : bidir  : 1.2-V POD         :         : 3G        : Y               : 173ps        
+DDR4B_DQ[44]                 : C4        : bidir  : 1.2-V POD         :         : 3G        : Y               : 175ps        
+GND                          : C5        : gnd    :                   :         :           :                 : --           
+DDR4B_DQS_N[4]               : C6        : bidir  : Differential 1.2-V POD :         : 3G        : Y               : 168ps        
+DDR4B_DQ[32]                 : C7        : bidir  : 1.2-V POD         :         : 3G        : Y               : 159ps        
+DDR4B_DQ[34]                 : C8        : bidir  : 1.2-V POD         :         : 3G        : Y               : 147ps        
+RESERVED_INPUT               : C9        :        :                   :         : 3H        :                 : --           
+GND                          : C10       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : C11       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : C12       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : C13       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : C14       :        :                   :         : 3H        :                 : --           
+GND                          : C15       : gnd    :                   :         :           :                 : --           
+TEMPDIODEp                   : C16       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : C17       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : C18       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : C19       :        :                   :         : 2L        :                 : --           
+GND                          : C20       : gnd    :                   :         :           :                 : --           
+fspi_sclk                    : C21       : input  : 1.8 V             :         : 2K        : Y               : --           
+fspi_miso                    : C22       : bidir  : 1.8 V             :         : 2K        : Y               : --           
+fcomp_l                      : C23       : output : 1.8 V             :         : 2K        : Y               : --           
+RESERVED_INPUT               : C24       :        :                   :         : 2K        :                 : --           
+MACID_SCL                    : C25       : bidir  : 1.8 V             :         : 2K        : Y               : --           
+fspi_mosi                    : C26       : input  : 1.8 V             :         : 2K        : Y               : --           
+GND                          : C27       : gnd    :                   :         :           :                 : --           
+GND                          : C28       : gnd    :                   :         :           :                 : --           
+GND                          : C29       : gnd    :                   :         :           :                 : --           
+GND                          : C30       : gnd    :                   :         :           :                 : --           
+GND                          : C31       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : C32       :        :                   :         : 1J        :                 : --           
+GXB_NC                       : C33       :        :                   :         : 1J        :                 : --           
+GND                          : C34       : gnd    :                   :         :           :                 : --           
+GND                          : C35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : C36       :        :                   :         : 1J        :                 : --           
+GXB_NC                       : C37       :        :                   :         : 1J        :                 : --           
+GND                          : C38       : gnd    :                   :         :           :                 : --           
+GND                          : C39       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : D1        :        :                   :         : 3F        :                 : --           
+GND                          : D2        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[42]                 : D3        : bidir  : 1.2-V POD         :         : 3G        : Y               : 187ps        
+DDR4B_DQS_P[5]               : D4        : bidir  : Differential 1.2-V POD :         : 3G        : Y               : 169ps        
+DDR4B_DQS_N[5]               : D5        : bidir  : Differential 1.2-V POD :         : 3G        : Y               : 169ps        
+DDR4B_DQ[41]                 : D6        : bidir  : 1.2-V POD         :         : 3G        : Y               : 154ps        
+GND                          : D7        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[39]                 : D8        : bidir  : 1.2-V POD         :         : 3G        : Y               : 148ps        
+RESERVED_INPUT               : D9        :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : D10       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : D11       :        :                   :         : 3H        :                 : --           
+GND                          : D12       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : D13       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : D14       :        :                   :         : 3H        :                 : --           
+VREFN_ADC                    : D15       :        :                   :         :           :                 : --           
+VREFP_ADC                    : D16       :        :                   :         :           :                 : --           
+GND                          : D17       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : D18       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : D19       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : D20       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : D21       :        :                   :         : 2L        :                 : --           
+GND                          : D22       : gnd    :                   :         :           :                 : --           
+FPGA_I2C_MASTER_L            : D23       : output : 1.8 V             :         : 2K        : Y               : --           
+RESERVED_INPUT               : D24       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : D25       :        :                   :         : 2K        :                 : --           
+GND                          : D26       : gnd    :                   :         :           :                 : --           
+VCCH_GXBL                    : D27       : power  :                   : 1.8V    :           :                 : --           
+VCCT_GXBL1J                  : D28       : power  :                   : 1.03V   :           :                 : --           
+VCCT_GXBL1J                  : D29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : D30       :        :                   :         : 1J        :                 : --           
+GXB_GND*                     : D31       :        :                   :         : 1J        :                 : --           
+GND                          : D32       : gnd    :                   :         :           :                 : --           
+GND                          : D33       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : D34       :        :                   :         : 1I        :                 : --           
+GXB_NC                       : D35       :        :                   :         : 1I        :                 : --           
+GND                          : D36       : gnd    :                   :         :           :                 : --           
+GND                          : D37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : D38       :        :                   :         : 1I        :                 : --           
+GXB_NC                       : D39       :        :                   :         : 1I        :                 : --           
+RESERVED_INPUT               : E1        :        :                   :         : 3F        :                 : --           
+RESERVED_INPUT               : E2        :        :                   :         : 3F        :                 : --           
+RESERVED_INPUT               : E3        :        :                   :         : 3F        :                 : --           
+GND                          : E4        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[45]                 : E5        : bidir  : 1.2-V POD         :         : 3G        : Y               : 169ps        
+DDR4B_DQ[47]                 : E6        : bidir  : 1.2-V POD         :         : 3G        : Y               : 156ps        
+DDR4B_DQ[46]                 : E7        : bidir  : 1.2-V POD         :         : 3G        : Y               : 155ps        
+DDR4B_DQ[36]                 : E8        : bidir  : 1.2-V POD         :         : 3G        : Y               : 151ps        
+GND                          : E9        : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : E10       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : E11       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : E12       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : E13       :        :                   :         : 3H        :                 : --           
+GND                          : E14       : gnd    :                   :         :           :                 : --           
+NC                           : E15       :        :                   :         :           :                 : --           
+NC                           : E16       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : E17       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : E18       :        :                   :         : 2L        :                 : --           
+GND                          : E19       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : E20       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : E21       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : E22       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : E23       :        :                   :         : 2K        :                 : --           
+VCCIO2K                      : E24       : power  :                   : 1.8V    : 2K        :                 : --           
+LED_L_0                      : E25       : output : 1.8 V             :         : 2K        : Y               : --           
+RESERVED_INPUT               : E26       :        :                   :         : 2K        :                 : --           
+GND                          : E27       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : E28       :        :                   :         : 1J        :                 : --           
+GXB_GND*                     : E29       :        :                   :         : 1J        :                 : --           
+GND                          : E30       : gnd    :                   :         :           :                 : --           
+GND                          : E31       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : E32       :        :                   :         : 1J        :                 : --           
+GXB_GND*                     : E33       :        :                   :         : 1J        :                 : --           
+GND                          : E34       : gnd    :                   :         :           :                 : --           
+GND                          : E35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : E36       :        :                   :         : 1I        :                 : --           
+GXB_NC                       : E37       :        :                   :         : 1I        :                 : --           
+GND                          : E38       : gnd    :                   :         :           :                 : --           
+GND                          : E39       : gnd    :                   :         :           :                 : --           
+GND                          : F1        : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : F2        :        :                   :         : 3F        :                 : --           
+RESERVED_INPUT               : F3        :        :                   :         : 3F        :                 : --           
+RESERVED_INPUT               : F4        :        :                   :         : 3F        :                 : --           
+DDR4B_DBI_L[5]               : F5        : bidir  : 1.2-V POD         :         : 3G        : Y               : 169ps        
+GND                          : F6        : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : F7        :        :                   :         : 3G        :                 : --           
+DDR4B_DQ[35]                 : F8        : bidir  : 1.2-V POD         :         : 3G        : Y               : 151ps        
+DDR4B_DQ[48]                 : F9        : bidir  : 1.2-V POD         :         : 3G        : Y               : 144ps        
+RESERVED_INPUT               : F10       :        :                   :         : 3H        :                 : --           
+GND                          : F11       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : F12       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : F13       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : F14       :        :                   :         : 3H        :                 : --           
+NC                           : F15       :        :                   :         :           :                 : --           
+GND                          : F16       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : F17       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : F18       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : F19       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : F20       :        :                   :         : 2L        :                 : --           
+GND                          : F21       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : F22       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : F23       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : F24       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : F25       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : F26       :        :                   :         : 2K        :                 : --           
+GND                          : F27       : gnd    :                   :         :           :                 : --           
+VCCR_GXBL1J                  : F28       : power  :                   : 1.03V   :           :                 : --           
+VCCR_GXBL1J                  : F29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : F30       :        :                   :         : 1J        :                 : --           
+GXB_GND*                     : F31       :        :                   :         : 1J        :                 : --           
+GND                          : F32       : gnd    :                   :         :           :                 : --           
+GND                          : F33       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : F34       :        :                   :         : 1I        :                 : --           
+GXB_NC                       : F35       :        :                   :         : 1I        :                 : --           
+GND                          : F36       : gnd    :                   :         :           :                 : --           
+GND                          : F37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : F38       :        :                   :         : 1I        :                 : --           
+GXB_NC                       : F39       :        :                   :         : 1I        :                 : --           
+RESERVED_INPUT               : G1        :        :                   :         : 3F        :                 : --           
+RESERVED_INPUT               : G2        :        :                   :         : 3F        :                 : --           
+GND                          : G3        : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : G4        :        :                   :         : 3F        :                 : --           
+DDR4B_DQS_P[6]               : G5        : bidir  : Differential 1.2-V POD :         : 3G        : Y               : 154ps        
+DDR4B_DQS_N[6]               : G6        : bidir  : Differential 1.2-V POD :         : 3G        : Y               : 146ps        
+DDR4B_DQ[55]                 : G7        : bidir  : 1.2-V POD         :         : 3G        : Y               : 155ps        
+VCCIO3G                      : G8        : power  :                   : 1.2V    : 3G        :                 : --           
+DDR4B_DQ[49]                 : G9        : bidir  : 1.2-V POD         :         : 3G        : Y               : 141ps        
+RESERVED_INPUT               : G10       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : G11       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : G12       :        :                   :         : 3H        :                 : --           
+VCCIO3H                      : G13       : power  :                   : 1.8V    : 3H        :                 : --           
+RESERVED_INPUT               : G14       :        :                   :         : 3H        :                 : --           
+NC                           : G15       :        :                   :         :           :                 : --           
+NC                           : G16       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : G17       :        :                   :         : 2L        :                 : --           
+GND                          : G18       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : G19       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : G20       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : G21       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : G22       :        :                   :         : 2L        :                 : --           
+GND                          : G23       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : G24       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : G25       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : G26       :        :                   :         : 2K        :                 : --           
+GND                          : G27       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : G28       :        :                   :         : 1J        :                 : --           
+GXB_GND*                     : G29       :        :                   :         : 1J        :                 : --           
+GND                          : G30       : gnd    :                   :         :           :                 : --           
+GND                          : G31       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : G32       :        :                   :         : 1J        :                 : --           
+GXB_GND*                     : G33       :        :                   :         : 1J        :                 : --           
+GND                          : G34       : gnd    :                   :         :           :                 : --           
+GND                          : G35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : G36       :        :                   :         : 1I        :                 : --           
+GXB_NC                       : G37       :        :                   :         : 1I        :                 : --           
+GND                          : G38       : gnd    :                   :         :           :                 : --           
+GND                          : G39       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : H1        :        :                   :         : 3F        :                 : --           
+RESERVED_INPUT               : H2        :        :                   :         : 3F        :                 : --           
+DDR4B_A[15]                  : H3        : output : SSTL-12           :         : 3F        : Y               : 170ps        
+DDR4B_A[16]                  : H4        : output : SSTL-12           :         : 3F        : Y               : 170ps        
+GND                          : H5        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[51]                 : H6        : bidir  : 1.2-V POD         :         : 3G        : Y               : 145ps        
+DDR4B_DQ[54]                 : H7        : bidir  : 1.2-V POD         :         : 3G        : Y               : 155ps        
+DDR4B_DQ[50]                 : H8        : bidir  : 1.2-V POD         :         : 3G        : Y               : 157ps        
+DDR4B_DBI_L[6]               : H9        : bidir  : 1.2-V POD         :         : 3G        : Y               : 157ps        
+GND                          : H10       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : H11       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : H12       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : H13       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : H14       :        :                   :         : 3H        :                 : --           
+GND                          : H15       : gnd    :                   :         :           :                 : --           
+NC                           : H16       :        :                   :         :           :                 : --           
+NC                           : H17       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : H18       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : H19       :        :                   :         : 2L        :                 : --           
+VCCIO2L                      : H20       : power  :                   : 1.8V    : 2L        :                 : --           
+RESERVED_INPUT               : H21       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : H22       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : H23       :        :                   :         : 2L        :                 : --           
+LED_L_1                      : H24       : output : 1.8 V             :         : 2K        : Y               : --           
+VCCIO2K                      : H25       : power  :                   : 1.8V    : 2K        :                 : --           
+GND                          : H26       : gnd    :                   :         :           :                 : --           
+VCCH_GXBL                    : H27       : power  :                   : 1.8V    :           :                 : --           
+VCCT_GXBL1I                  : H28       : power  :                   : 1.03V   :           :                 : --           
+VCCT_GXBL1I                  : H29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : H30       :        :                   :         : 1J        :                 : --           
+GXB_GND*                     : H31       :        :                   :         : 1J        :                 : --           
+GND                          : H32       : gnd    :                   :         :           :                 : --           
+GND                          : H33       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : H34       :        :                   :         : 1I        :                 : --           
+GXB_GND*                     : H35       :        :                   :         : 1I        :                 : --           
+GND                          : H36       : gnd    :                   :         :           :                 : --           
+GND                          : H37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : H38       :        :                   :         : 1H        :                 : --           
+GXB_NC                       : H39       :        :                   :         : 1H        :                 : --           
+DDR4B_BA[0]                  : J1        : output : SSTL-12           :         : 3F        : Y               : 185ps        
+GND                          : J2        : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : J3        :        :                   :         : 3F        :                 : --           
+DDR4B_BA[1]                  : J4        : output : SSTL-12           :         : 3F        : Y               : 157ps        
+DDR4B_BG                     : J5        : output : SSTL-12           :         : 3F        : Y               : 156ps        
+DDR4B_DQ[53]                 : J6        : bidir  : 1.2-V POD         :         : 3G        : Y               : 139ps        
+GND                          : J7        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[52]                 : J8        : bidir  : 1.2-V POD         :         : 3G        : Y               : 191ps        
+DDR4B_DQ[60]                 : J9        : bidir  : 1.2-V POD         :         : 3G        : Y               : 124ps        
+RESERVED_INPUT               : J10       :        :                   :         : 3G        :                 : --           
+DDR4B_DQ[61]                 : J11       : bidir  : 1.2-V POD         :         : 3G        : Y               : 119ps        
+VCCIO3H                      : J12       : power  :                   : 1.8V    : 3H        :                 : --           
+RESERVED_INPUT               : J13       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : J14       :        :                   :         : 3H        :                 : --           
+NC                           : J15       :        :                   :         :           :                 : --           
+NC                           : J16       :        :                   :         :           :                 : --           
+GND                          : J17       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : J18       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : J19       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : J20       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : J21       :        :                   :         : 2L        :                 : --           
+VCCIO2L                      : J22       : power  :                   : 1.8V    : 2L        :                 : --           
+RESERVED_INPUT               : J23       :        :                   :         : 2L        :                 : --           
+LED_L_2                      : J24       : output : 1.8 V             :         : 2K        : Y               : --           
+RESERVED_INPUT               : J25       :        :                   :         : 2K        :                 : --           
+LED_L_3                      : J26       : output : 1.8 V             :         : 2K        : Y               : --           
+GND                          : J27       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : J28       :        :                   :         : 1I        :                 : --           
+GXB_GND*                     : J29       :        :                   :         : 1I        :                 : --           
+GND                          : J30       : gnd    :                   :         :           :                 : --           
+GND                          : J31       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : J32       :        :                   :         : 1I        :                 : --           
+GXB_GND*                     : J33       :        :                   :         : 1I        :                 : --           
+GND                          : J34       : gnd    :                   :         :           :                 : --           
+GND                          : J35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : J36       :        :                   :         : 1H        :                 : --           
+GXB_NC                       : J37       :        :                   :         : 1H        :                 : --           
+GND                          : J38       : gnd    :                   :         :           :                 : --           
+GND                          : J39       : gnd    :                   :         :           :                 : --           
+DDR4B_A[13]                  : K1        : output : SSTL-12           :         : 3F        : Y               : 172ps        
+DDR4B_A[14]                  : K2        : output : SSTL-12           :         : 3F        : Y               : 171ps        
+RESERVED_INPUT               : K3        :        :                   :         : 3F        :                 : --           
+VCCIO3F                      : K4        : power  :                   : 1.2V    : 3F        :                 : --           
+DDR4B_A[8]                   : K5        : output : SSTL-12           :         : 3F        : Y               : 149ps        
+DDR4B_A[9]                   : K6        : output : SSTL-12           :         : 3F        : Y               : 144ps        
+DDR4B_A[6]                   : K7        : output : SSTL-12           :         : 3F        : Y               : 142ps        
+RESERVED_INPUT               : K8        :        :                   :         : 3G        :                 : --           
+VCCIO3G                      : K9        : power  :                   : 1.2V    : 3G        :                 : --           
+DDR4B_DQ[58]                 : K10       : bidir  : 1.2-V POD         :         : 3G        : Y               : 166ps        
+DDR4B_DBI_L[7]               : K11       : bidir  : 1.2-V POD         :         : 3G        : Y               : 118ps        
+RESERVED_INPUT               : K12       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : K13       :        :                   :         : 3H        :                 : --           
+VCCIO3H                      : K14       : power  :                   : 1.8V    : 3H        :                 : --           
+NC                           : K15       :        :                   :         :           :                 : --           
+NC                           : K16       :        :                   :         :           :                 : --           
+NC                           : K17       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : K18       :        :                   :         : 2L        :                 : --           
+VCCIO2L                      : K19       : power  :                   : 1.8V    : 2L        :                 : --           
+RESERVED_INPUT               : K20       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : K21       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : K22       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : K23       :        :                   :         : 2L        :                 : --           
+VCCIO2K                      : K24       : power  :                   : 1.8V    : 2K        :                 : --           
+RESERVED_INPUT               : K25       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : K26       :        :                   :         : 2K        :                 : --           
+GND                          : K27       : gnd    :                   :         :           :                 : --           
+VCCR_GXBL1I                  : K28       : power  :                   : 1.03V   :           :                 : --           
+VCCR_GXBL1I                  : K29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : K30       :        :                   :         : 1I        :                 : --           
+GXB_GND*                     : K31       :        :                   :         : 1I        :                 : --           
+GND                          : K32       : gnd    :                   :         :           :                 : --           
+GND                          : K33       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : K34       :        :                   :         : 1I        :                 : --           
+GXB_GND*                     : K35       :        :                   :         : 1I        :                 : --           
+GND                          : K36       : gnd    :                   :         :           :                 : --           
+GND                          : K37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : K38       :        :                   :         : 1H        :                 : --           
+GXB_NC                       : K39       :        :                   :         : 1H        :                 : --           
+GND                          : L1        : gnd    :                   :         :           :                 : --           
+RZQ_3F                       : L2        : input  : 1.2 V             :         : 3F        : Y               : --           
+DDR4B_A[12]                  : L3        : output : SSTL-12           :         : 3F        : Y               : 167ps        
+DDR4B_A[2]                   : L4        : output : SSTL-12           :         : 3F        : Y               : 152ps        
+DDR4B_A[0]                   : L5        : output : SSTL-12           :         : 3F        : Y               : 142ps        
+VCCIO3F                      : L6        : power  :                   : 1.2V    : 3F        :                 : --           
+DDR4B_A[7]                   : L7        : output : SSTL-12           :         : 3F        : Y               : 141ps        
+DDR4B_ALERT_L                : L8        : input  : 1.2 V             :         : 3F        : Y               : 176ps        
+DDR4B_RESET_L                : L9        : output : 1.2 V             :         : 3F        : Y               : 172ps        
+DDR4B_DQ[56]                 : L10       : bidir  : 1.2-V POD         :         : 3G        : Y               : 166ps        
+VCCIO3G                      : L11       : power  :                   : 1.2V    : 3G        :                 : --           
+RESERVED_INPUT               : L12       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : L13       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : L14       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : L15       :        :                   :         : 3H        :                 : --           
+GND                          : L16       : gnd    :                   :         :           :                 : --           
+NC                           : L17       :        :                   :         :           :                 : --           
+NC                           : L18       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : L19       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : L20       :        :                   :         : 2L        :                 : --           
+GND                          : L21       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : L22       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : L23       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : L24       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : L25       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : L26       :        :                   :         : 2K        :                 : --           
+GND                          : L27       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : L28       :        :                   :         : 1I        :                 : --           
+GXB_GND*                     : L29       :        :                   :         : 1I        :                 : --           
+GND                          : L30       : gnd    :                   :         :           :                 : --           
+GND                          : L31       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : L32       :        :                   :         : 1I        :                 : --           
+GXB_GND*                     : L33       :        :                   :         : 1I        :                 : --           
+GND                          : L34       : gnd    :                   :         :           :                 : --           
+GND                          : L35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : L36       :        :                   :         : 1H        :                 : --           
+GXB_NC                       : L37       :        :                   :         : 1H        :                 : --           
+GND                          : L38       : gnd    :                   :         :           :                 : --           
+GND                          : L39       : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[29]                 : M1        : bidir  : 1.2-V POD         :         : 3E        : Y               : 159ps        
+DDR4B_DQ[31]                 : M2        : bidir  : 1.2-V POD         :         : 3E        : Y               : 157ps        
+GND                          : M3        : gnd    :                   :         :           :                 : --           
+DDR4B_A[3]                   : M4        : output : SSTL-12           :         : 3F        : Y               : 153ps        
+DDR4B_A[1]                   : M5        : output : SSTL-12           :         : 3F        : Y               : 143ps        
+DDR4B_A[4]                   : M6        : output : SSTL-12           :         : 3F        : Y               : 152ps        
+DDR4B_A[5]                   : M7        : output : SSTL-12           :         : 3F        : Y               : 152ps        
+VCCIO3F                      : M8        : power  :                   : 1.2V    : 3F        :                 : --           
+DDR4B_CK_N                   : M9        : output : Differential 1.2-V SSTL :         : 3F        : Y               : 162ps        
+DDR4B_DQS_P[7]               : M10       : bidir  : Differential 1.2-V POD :         : 3G        : Y               : 143ps        
+DDR4B_DQ[62]                 : M11       : bidir  : 1.2-V POD         :         : 3G        : Y               : 158ps        
+DDR4B_DQ[57]                 : M12       : bidir  : 1.2-V POD         :         : 3G        : Y               : 136ps        
+GND                          : M13       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : M14       :        :                   :         : 3H        :                 : --           
+VREFB3HN0                    : M15       : power  :                   : GND     : 3H        :                 : --           
+GND                          : M16       : gnd    :                   :         :           :                 : --           
+NC                           : M17       :        :                   :         :           :                 : --           
+GND                          : M18       : gnd    :                   :         :           :                 : --           
+NC                           : M19       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : M20       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : M21       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : M22       :        :                   :         : 2L        :                 : --           
+GND                          : M23       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : M24       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : M25       :        :                   :         : 2K        :                 : --           
+GND                          : M26       : gnd    :                   :         :           :                 : --           
+VCCH_GXBL                    : M27       : power  :                   : 1.8V    :           :                 : --           
+VCCT_GXBL1H                  : M28       : power  :                   : 1.03V   :           :                 : --           
+VCCT_GXBL1H                  : M29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : M30       :        :                   :         : 1I        :                 : --           
+GXB_GND*                     : M31       :        :                   :         : 1I        :                 : --           
+GND                          : M32       : gnd    :                   :         :           :                 : --           
+GND                          : M33       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : M34       :        :                   :         : 1H        :                 : --           
+GXB_GND*                     : M35       :        :                   :         : 1H        :                 : --           
+GND                          : M36       : gnd    :                   :         :           :                 : --           
+GND                          : M37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : M38       :        :                   :         : 1H        :                 : --           
+GXB_NC                       : M39       :        :                   :         : 1H        :                 : --           
+DDR4B_DQS_P[3]               : N1        : bidir  : Differential 1.2-V POD :         : 3E        : Y               : 154ps        
+DDR4B_DQS_N[3]               : N2        : bidir  : Differential 1.2-V POD :         : 3E        : Y               : 155ps        
+DDR4B_DQ[25]                 : N3        : bidir  : 1.2-V POD         :         : 3E        : Y               : 141ps        
+DDR4B_DBI_L[3]               : N4        : bidir  : 1.2-V POD         :         : 3E        : Y               : 138ps        
+GND                          : N5        : gnd    :                   :         :           :                 : --           
+DDR4B_A[10]                  : N6        : output : SSTL-12           :         : 3F        : Y               : 122ps        
+DDR4B_A[11]                  : N7        : output : SSTL-12           :         : 3F        : Y               : 125ps        
+DDR4B_CK_P                   : N8        : output : Differential 1.2-V SSTL :         : 3F        : Y               : 160ps        
+RESERVED_INPUT               : N9        :        :                   :         : 3F        :                 : --           
+GND                          : N10       : gnd    :                   :         :           :                 : --           
+DDR4B_DQS_N[7]               : N11       : bidir  : Differential 1.2-V POD :         : 3G        : Y               : 142ps        
+DDR4B_DQ[63]                 : N12       : bidir  : 1.2-V POD         :         : 3G        : Y               : 152ps        
+DDR4B_DQ[59]                 : N13       : bidir  : 1.2-V POD         :         : 3G        : Y               : 135ps        
+RESERVED_INPUT               : N14       :        :                   :         : 3H        :                 : --           
+GND                          : N15       : gnd    :                   :         :           :                 : --           
+GND                          : N16       : gnd    :                   :         :           :                 : --           
+GND                          : N17       : gnd    :                   :         :           :                 : --           
+GND                          : N18       : gnd    :                   :         :           :                 : --           
+NC                           : N19       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : N20       :        :                   :         : 2L        :                 : --           
+GND                          : N21       : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : N22       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : N23       :        :                   :         : 2L        :                 : --           
+RESERVED_INPUT               : N24       :        :                   :         : 2K        :                 : --           
+RESERVED_INPUT               : N25       :        :                   :         : 2K        :                 : --           
+GND                          : N26       : gnd    :                   :         :           :                 : --           
+GND                          : N27       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : N28       :        :                   :         : 1H        :                 : --           
+GXB_GND*                     : N29       :        :                   :         : 1H        :                 : --           
+GND                          : N30       : gnd    :                   :         :           :                 : --           
+GND                          : N31       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : N32       :        :                   :         : 1H        :                 : --           
+GXB_GND*                     : N33       :        :                   :         : 1H        :                 : --           
+GND                          : N34       : gnd    :                   :         :           :                 : --           
+GND                          : N35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : N36       :        :                   :         : 1H        :                 : --           
+GXB_NC                       : N37       :        :                   :         : 1H        :                 : --           
+GND                          : N38       : gnd    :                   :         :           :                 : --           
+GND                          : N39       : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[27]                 : P1        : bidir  : 1.2-V POD         :         : 3E        : Y               : 156ps        
+GND                          : P2        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[24]                 : P3        : bidir  : 1.2-V POD         :         : 3E        : Y               : 144ps        
+RESERVED_INPUT               : P4        :        :                   :         : 3E        :                 : --           
+DDR4B_DQ[22]                 : P5        : bidir  : 1.2-V POD         :         : 3E        : Y               : 146ps        
+DDR4B_DQ[20]                 : P6        : bidir  : 1.2-V POD         :         : 3E        : Y               : 144ps        
+GND                          : P7        : gnd    :                   :         :           :                 : --           
+DDR4B_ODT                    : P8        : output : SSTL-12           :         : 3F        : Y               : 142ps        
+DDR4B_CKE                    : P9        : output : SSTL-12           :         : 3F        : Y               : 165ps        
+DDR4B_PAR                    : P10       : output : SSTL-12           :         : 3F        : Y               : 154ps        
+DDR4B_CS_L                   : P11       : output : SSTL-12           :         : 3F        : Y               : 161ps        
+GND                          : P12       : gnd    :                   :         :           :                 : --           
+VREFB3GN0                    : P13       : power  :                   : GND     : 3G        :                 : --           
+RESERVED_INPUT               : P14       :        :                   :         : 3H        :                 : --           
+RESERVED_INPUT               : P15       :        :                   :         : 3H        :                 : --           
+GND                          : P16       : gnd    :                   :         :           :                 : --           
+GND                          : P17       : gnd    :                   :         :           :                 : --           
+GND                          : P18       : gnd    :                   :         :           :                 : --           
+NC                           : P19       :        :                   :         :           :                 : --           
+RESERVED_INPUT               : P20       :        :                   :         : 2L        :                 : --           
+VCC                          : P21       : power  :                   : 0.9V    :           :                 : --           
+VREFB2LN0                    : P22       : power  :                   : GND     : 2L        :                 : --           
+VCC                          : P23       : power  :                   : 0.9V    :           :                 : --           
+VREFB2KN0                    : P24       : power  :                   : GND     : 2K        :                 : --           
+RESERVED_INPUT               : P25       :        :                   :         : 2K        :                 : --           
+GND                          : P26       : gnd    :                   :         :           :                 : --           
+GND                          : P27       : gnd    :                   :         :           :                 : --           
+VCCR_GXBL1H                  : P28       : power  :                   : 1.03V   :           :                 : --           
+VCCR_GXBL1H                  : P29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : P30       :        :                   :         : 1H        :                 : --           
+GXB_GND*                     : P31       :        :                   :         : 1H        :                 : --           
+GND                          : P32       : gnd    :                   :         :           :                 : --           
+GND                          : P33       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : P34       :        :                   :         : 1H        :                 : --           
+GXB_GND*                     : P35       :        :                   :         : 1H        :                 : --           
+GND                          : P36       : gnd    :                   :         :           :                 : --           
+GND                          : P37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : P38       :        :                   :         : 1G        :                 : --           
+GXB_NC                       : P39       :        :                   :         : 1G        :                 : --           
+DDR4B_DQ[28]                 : R1        : bidir  : 1.2-V POD         :         : 3E        : Y               : 159ps        
+DDR4B_DQ[26]                 : R2        : bidir  : 1.2-V POD         :         : 3E        : Y               : 139ps        
+DDR4B_DQ[30]                 : R3        : bidir  : 1.2-V POD         :         : 3E        : Y               : 141ps        
+VCCIO3E                      : R4        : power  :                   : 1.2V    : 3E        :                 : --           
+DDR4B_DQ[16]                 : R5        : bidir  : 1.2-V POD         :         : 3E        : Y               : 132ps        
+DDR4B_DQ[5]                  : R6        : bidir  : 1.2-V POD         :         : 3E        : Y               : 176ps        
+DDR4B_DQ[7]                  : R7        : bidir  : 1.2-V POD         :         : 3E        : Y               : 175ps        
+RESERVED_INPUT               : R8        :        :                   :         : 3F        :                 : --           
+GND                          : R9        : gnd    :                   :         :           :                 : --           
+RESERVED_INPUT               : R10       :        :                   :         : 3F        :                 : --           
+DDR4B_ACT_L                  : R11       : output : SSTL-12           :         : 3F        : Y               : 164ps        
+VCC                          : R12       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : R13       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : R14       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : R15       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : R16       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : R17       : power  :                   : 0.9V    :           :                 : --           
+GND                          : R18       : gnd    :                   :         :           :                 : --           
+GND                          : R19       : gnd    :                   :         :           :                 : --           
+VCC                          : R20       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : R21       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : R22       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : R23       : power  :                   : 0.9V    :           :                 : --           
+GND                          : R24       : gnd    :                   :         :           :                 : --           
+VCC                          : R25       : power  :                   : 0.9V    :           :                 : --           
+GND                          : R26       : gnd    :                   :         :           :                 : --           
+GND                          : R27       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : R28       :        :                   :         : 1H        :                 : --           
+GXB_GND*                     : R29       :        :                   :         : 1H        :                 : --           
+GND                          : R30       : gnd    :                   :         :           :                 : --           
+GND                          : R31       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : R32       :        :                   :         : 1H        :                 : --           
+GXB_GND*                     : R33       :        :                   :         : 1H        :                 : --           
+GND                          : R34       : gnd    :                   :         :           :                 : --           
+GND                          : R35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : R36       :        :                   :         : 1G        :                 : --           
+GXB_NC                       : R37       :        :                   :         : 1G        :                 : --           
+GND                          : R38       : gnd    :                   :         :           :                 : --           
+GND                          : R39       : gnd    :                   :         :           :                 : --           
+GND                          : T1        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[8]                  : T2        : bidir  : 1.2-V POD         :         : 3E        : Y               : 141ps        
+RESERVED_INPUT               : T3        :        :                   :         : 3E        :                 : --           
+DDR4B_DQ[9]                  : T4        : bidir  : 1.2-V POD         :         : 3E        : Y               : 130ps        
+DDR4B_DQ[18]                 : T5        : bidir  : 1.2-V POD         :         : 3E        : Y               : 129ps        
+VCCIO3E                      : T6        : power  :                   : 1.2V    : 3E        :                 : --           
+DDR4B_DQ[23]                 : T7        : bidir  : 1.2-V POD         :         : 3E        : Y               : 137ps        
+DDR4B_DQ[3]                  : T8        : bidir  : 1.2-V POD         :         : 3E        : Y               : 160ps        
+DDR4B_DQ[1]                  : T9        : bidir  : 1.2-V POD         :         : 3E        : Y               : 160ps        
+VREFB3FN0                    : T10       : power  :                   : GND     : 3F        :                 : --           
+GND                          : T11       : gnd    :                   :         :           :                 : --           
+VCC                          : T12       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : T13       : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : T14       : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : T15       : power  :                   : 0.9V    :           :                 : --           
+GND                          : T16       : gnd    :                   :         :           :                 : --           
+VCCP                         : T17       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : T18       : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : T19       : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : T20       : power  :                   : 0.9V    :           :                 : --           
+GND                          : T21       : gnd    :                   :         :           :                 : --           
+VCC                          : T22       : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : T23       : power  :                   : 0.9V    :           :                 : --           
+VCCP                         : T24       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : T25       : power  :                   : 0.9V    :           :                 : --           
+GND                          : T26       : gnd    :                   :         :           :                 : --           
+VCCH_GXBL                    : T27       : power  :                   : 1.8V    :           :                 : --           
+VCCT_GXBL1G                  : T28       : power  :                   : 1.03V   :           :                 : --           
+VCCT_GXBL1G                  : T29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : T30       :        :                   :         : 1H        :                 : --           
+GXB_GND*                     : T31       :        :                   :         : 1H        :                 : --           
+GND                          : T32       : gnd    :                   :         :           :                 : --           
+GND                          : T33       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : T34       :        :                   :         : 1G        :                 : --           
+GXB_GND*                     : T35       :        :                   :         : 1G        :                 : --           
+GND                          : T36       : gnd    :                   :         :           :                 : --           
+GND                          : T37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : T38       :        :                   :         : 1G        :                 : --           
+GXB_NC                       : T39       :        :                   :         : 1G        :                 : --           
+DDR4B_DQ[12]                 : U1        : bidir  : 1.2-V POD         :         : 3E        : Y               : 143ps        
+DDR4B_DQ[10]                 : U2        : bidir  : 1.2-V POD         :         : 3E        : Y               : 143ps        
+GND                          : U3        : gnd    :                   :         :           :                 : --           
+DDR4B_DBI_L[1]               : U4        : bidir  : 1.2-V POD         :         : 3E        : Y               : 131ps        
+DDR4B_DQS_P[2]               : U5        : bidir  : Differential 1.2-V POD :         : 3E        : Y               : 115ps        
+DDR4B_DQS_N[2]               : U6        : bidir  : Differential 1.2-V POD :         : 3E        : Y               : 114ps        
+DDR4B_DQ[19]                 : U7        : bidir  : 1.2-V POD         :         : 3E        : Y               : 135ps        
+GND                          : U8        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[0]                  : U9        : bidir  : 1.2-V POD         :         : 3E        : Y               : 134ps        
+DDR4B_DQ[2]                  : U10       : bidir  : 1.2-V POD         :         : 3E        : Y               : 130ps        
+RESERVED_INPUT               : U11       :        :                   :         : 3E        :                 : --           
+VCC                          : U12       : power  :                   : 0.9V    :           :                 : --           
+GND                          : U13       : gnd    :                   :         :           :                 : --           
+VCC                          : U14       : power  :                   : 0.9V    :           :                 : --           
+VCCPT                        : U15       : power  :                   : 1.8V    :           :                 : --           
+VCCPT                        : U16       : power  :                   : 1.8V    :           :                 : --           
+VCCPT                        : U17       : power  :                   : 1.8V    :           :                 : --           
+GND                          : U18       : gnd    :                   :         :           :                 : --           
+VCC                          : U19       : power  :                   : 0.9V    :           :                 : --           
+VCCPT                        : U20       : power  :                   : 1.8V    :           :                 : --           
+VCCPT                        : U21       : power  :                   : 1.8V    :           :                 : --           
+VCCPT                        : U22       : power  :                   : 1.8V    :           :                 : --           
+GND                          : U23       : gnd    :                   :         :           :                 : --           
+VCC                          : U24       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : U25       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : U26       : power  :                   : 0.9V    :           :                 : --           
+GND                          : U27       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : U28       :        :                   :         : 1G        :                 : --           
+GXB_GND*                     : U29       :        :                   :         : 1G        :                 : --           
+GND                          : U30       : gnd    :                   :         :           :                 : --           
+GND                          : U31       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : U32       :        :                   :         : 1G        :                 : --           
+GXB_GND*                     : U33       :        :                   :         : 1G        :                 : --           
+GND                          : U34       : gnd    :                   :         :           :                 : --           
+GND                          : U35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : U36       :        :                   :         : 1G        :                 : --           
+GXB_NC                       : U37       :        :                   :         : 1G        :                 : --           
+GND                          : U38       : gnd    :                   :         :           :                 : --           
+GND                          : U39       : gnd    :                   :         :           :                 : --           
+DDR4B_DQS_P[1]               : V1        : bidir  : Differential 1.2-V POD :         : 3E        : Y               : 143ps        
+DDR4B_DQS_N[1]               : V2        : bidir  : Differential 1.2-V POD :         : 3E        : Y               : 143ps        
+DDR4B_DQ[13]                 : V3        : bidir  : 1.2-V POD         :         : 3E        : Y               : 129ps        
+DDR4B_DQ[11]                 : V4        : bidir  : 1.2-V POD         :         : 3E        : Y               : 129ps        
+VCCIO3E                      : V5        : power  :                   : 1.2V    : 3E        :                 : --           
+DDR4B_DQ[17]                 : V6        : bidir  : 1.2-V POD         :         : 3E        : Y               : 135ps        
+RESERVED_INPUT               : V7        :        :                   :         : 3E        :                 : --           
+DDR4B_DQ[6]                  : V8        : bidir  : 1.2-V POD         :         : 3E        : Y               : 133ps        
+DDR4B_DBI_L[0]               : V9        : bidir  : 1.2-V POD         :         : 3E        : Y               : 135ps        
+GND                          : V10       : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[4]                  : V11       : bidir  : 1.2-V POD         :         : 3E        : Y               : 140ps        
+VCC                          : V12       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : V13       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : V14       : power  :                   : 0.9V    :           :                 : --           
+GND                          : V15       : gnd    :                   :         :           :                 : --           
+VCC                          : V16       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : V17       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : V18       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : V19       : power  :                   : 0.9V    :           :                 : --           
+GND                          : V20       : gnd    :                   :         :           :                 : --           
+VCC                          : V21       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : V22       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : V23       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : V24       : power  :                   : 0.9V    :           :                 : --           
+GND                          : V25       : gnd    :                   :         :           :                 : --           
+GND                          : V26       : gnd    :                   :         :           :                 : --           
+GND                          : V27       : gnd    :                   :         :           :                 : --           
+VCCR_GXBL1G                  : V28       : power  :                   : 1.03V   :           :                 : --           
+VCCR_GXBL1G                  : V29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : V30       :        :                   :         : 1G        :                 : --           
+GXB_GND*                     : V31       :        :                   :         : 1G        :                 : --           
+GND                          : V32       : gnd    :                   :         :           :                 : --           
+GND                          : V33       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : V34       :        :                   :         : 1G        :                 : --           
+GXB_GND*                     : V35       :        :                   :         : 1G        :                 : --           
+GND                          : V36       : gnd    :                   :         :           :                 : --           
+GND                          : V37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : V38       :        :                   :         : 1G        :                 : --           
+GXB_NC                       : V39       :        :                   :         : 1G        :                 : --           
+DDR4A_DQ[49]                 : W1        : bidir  : 1.2-V POD         :         : 3D        : Y               : 159ps        
+GND                          : W2        : gnd    :                   :         :           :                 : --           
+DDR4B_DQ[14]                 : W3        : bidir  : 1.2-V POD         :         : 3E        : Y               : 131ps        
+DDR4B_DQ[15]                 : W4        : bidir  : 1.2-V POD         :         : 3E        : Y               : 132ps        
+DDR4B_DQ[21]                 : W5        : bidir  : 1.2-V POD         :         : 3E        : Y               : 122ps        
+DDR4B_DBI_L[2]               : W6        : bidir  : 1.2-V POD         :         : 3E        : Y               : 123ps        
+GND                          : W7        : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[38]                 : W8        : bidir  : 1.2-V POD         :         : 3D        : Y               : 128ps        
+DDR4B_DQS_P[0]               : W9        : bidir  : Differential 1.2-V POD :         : 3E        : Y               : 153ps        
+DDR4B_DQS_N[0]               : W10       : bidir  : Differential 1.2-V POD :         : 3E        : Y               : 149ps        
+VREFB3EN0                    : W11       : power  :                   : GND     : 3E        :                 : --           
+GND                          : W12       : gnd    :                   :         :           :                 : --           
+VCC                          : W13       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : W14       : power  :                   : 0.9V    :           :                 : --           
+GXB_GND*                     : W15       :        :                   :         : 4F        :                 : --           
+GXB_GND*                     : W16       :        :                   :         : 4F        :                 : --           
+GND                          : W17       : gnd    :                   :         :           :                 : --           
+VCCA_PLL                     : W18       : power  :                   : 1.8V    :           :                 : --           
+VCCA_PLL                     : W19       : power  :                   : 1.8V    :           :                 : --           
+VCC                          : W20       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : W21       : power  :                   : 0.9V    :           :                 : --           
+GND                          : W22       : gnd    :                   :         :           :                 : --           
+VCC                          : W23       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : W24       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : W25       : power  :                   : 0.9V    :           :                 : --           
+GND                          : W26       : gnd    :                   :         :           :                 : --           
+GND                          : W27       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : W28       :        :                   :         : 1G        :                 : --           
+GXB_GND*                     : W29       :        :                   :         : 1G        :                 : --           
+GND                          : W30       : gnd    :                   :         :           :                 : --           
+GND                          : W31       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : W32       :        :                   :         : 1G        :                 : --           
+GXB_GND*                     : W33       :        :                   :         : 1G        :                 : --           
+GND                          : W34       : gnd    :                   :         :           :                 : --           
+GND                          : W35       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : W36       :        :                   :         : 1G        :                 : --           
+GXB_NC                       : W37       :        :                   :         : 1G        :                 : --           
+GND                          : W38       : gnd    :                   :         :           :                 : --           
+GND                          : W39       : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[48]                 : Y1        : bidir  : 1.2-V POD         :         : 3D        : Y               : 160ps        
+DDR4A_DQ[51]                 : Y2        : bidir  : 1.2-V POD         :         : 3D        : Y               : 141ps        
+DDR4A_DBI_L[6]               : Y3        : bidir  : 1.2-V POD         :         : 3D        : Y               : 139ps        
+VCCIO3D                      : Y4        : power  :                   : 1.2V    : 3D        :                 : --           
+DDR4A_DQ[42]                 : Y5        : bidir  : 1.2-V POD         :         : 3D        : Y               : 116ps        
+DDR4A_DQ[44]                 : Y6        : bidir  : 1.2-V POD         :         : 3D        : Y               : 105ps        
+DDR4A_DQ[45]                 : Y7        : bidir  : 1.2-V POD         :         : 3D        : Y               : 105ps        
+DDR4A_DQ[39]                 : Y8        : bidir  : 1.2-V POD         :         : 3D        : Y               : 130ps        
+GND                          : Y9        : gnd    :                   :         :           :                 : --           
+DDR4A_DQ[32]                 : Y10       : bidir  : 1.2-V POD         :         : 3D        : Y               : 152ps        
+VREFB3DN0                    : Y11       : power  :                   : GND     : 3D        :                 : --           
+VCCERAM                      : Y12       : power  :                   : 0.9V    :           :                 : --           
+VCCERAM                      : Y13       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : Y14       : power  :                   : 0.9V    :           :                 : --           
+GND                          : Y15       : gnd    :                   :         :           :                 : --           
+VCC                          : Y16       : power  :                   : 0.9V    :           :                 : --           
+VCC                          : Y17       : power  :                   : 0.9V    :           :                 : --           
+VCCERAM                      : Y18       : power  :                   : 0.9V    :           :                 : --           
+GND                          : Y19       : gnd    :                   :         :           :                 : --           
+VCC                          : Y20       : power  :                   : 0.9V    :           :                 : --           
+VCCERAM                      : Y21       : power  :                   : 0.9V    :           :                 : --           
+VCCERAM                      : Y22       : power  :                   : 0.9V    :           :                 : --           
+VCCERAM                      : Y23       : power  :                   : 0.9V    :           :                 : --           
+GND                          : Y24       : gnd    :                   :         :           :                 : --           
+VCC                          : Y25       : power  :                   : 0.9V    :           :                 : --           
+GND                          : Y26       : gnd    :                   :         :           :                 : --           
+VCCH_GXBL                    : Y27       : power  :                   : 1.8V    :           :                 : --           
+VCCT_GXBL1F                  : Y28       : power  :                   : 1.03V   :           :                 : --           
+VCCT_GXBL1F                  : Y29       : power  :                   : 1.03V   :           :                 : --           
+GXB_GND*                     : Y30       :        :                   :         : 1G        :                 : --           
+GXB_GND*                     : Y31       :        :                   :         : 1G        :                 : --           
+GND                          : Y32       : gnd    :                   :         :           :                 : --           
+GND                          : Y33       : gnd    :                   :         :           :                 : --           
+GXB_GND*                     : Y34       :        :                   :         : 1F        :                 : --           
+GXB_GND*                     : Y35       :        :                   :         : 1F        :                 : --           
+GND                          : Y36       : gnd    :                   :         :           :                 : --           
+GND                          : Y37       : gnd    :                   :         :           :                 : --           
+GXB_NC                       : Y38       :        :                   :         : 1F        :                 : --           
+GXB_NC                       : Y39       :        :                   :         : 1F        :                 : --           

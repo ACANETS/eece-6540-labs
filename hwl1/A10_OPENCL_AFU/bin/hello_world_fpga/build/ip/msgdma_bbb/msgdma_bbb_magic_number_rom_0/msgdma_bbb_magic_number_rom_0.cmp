@@ -1,0 +1,17 @@
+	component msgdma_bbb_magic_number_rom_0 is
+		generic (
+			MAGIC_NUMBER_LOW  : integer := 1400467043;
+			MAGIC_NUMBER_HIGH : integer := 1467118687
+		);
+		port (
+			clk           : in  std_logic                      := 'X';             -- clk
+			reset         : in  std_logic                      := 'X';             -- reset
+			address       : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- address
+			burst         : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- burstcount
+			read          : in  std_logic                      := 'X';             -- read
+			readdata      : out std_logic_vector(511 downto 0);                    -- readdata
+			waitrequest   : out std_logic;                                         -- waitrequest
+			readdatavalid : out std_logic                                          -- readdatavalid
+		);
+	end component msgdma_bbb_magic_number_rom_0;
+

@@ -1,0 +1,26 @@
+	component ase is
+		port (
+			expanded_master_address       : out std_logic_vector(47 downto 0);                     -- address
+			expanded_master_read          : out std_logic;                                         -- read
+			expanded_master_waitrequest   : in  std_logic                      := 'X';             -- waitrequest
+			expanded_master_readdata      : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			expanded_master_write         : out std_logic;                                         -- write
+			expanded_master_writedata     : out std_logic_vector(511 downto 0);                    -- writedata
+			expanded_master_readdatavalid : in  std_logic                      := 'X';             -- readdatavalid
+			expanded_master_byteenable    : out std_logic_vector(63 downto 0);                     -- byteenable
+			expanded_master_burstcount    : out std_logic_vector(3 downto 0);                      -- burstcount
+			avmm_pipe_slave_waitrequest   : out std_logic;                                         -- waitrequest
+			avmm_pipe_slave_readdata      : out std_logic_vector(63 downto 0);                     -- readdata
+			avmm_pipe_slave_readdatavalid : out std_logic;                                         -- readdatavalid
+			avmm_pipe_slave_burstcount    : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- burstcount
+			avmm_pipe_slave_writedata     : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- writedata
+			avmm_pipe_slave_address       : in  std_logic_vector(12 downto 0)  := (others => 'X'); -- address
+			avmm_pipe_slave_write         : in  std_logic                      := 'X';             -- write
+			avmm_pipe_slave_read          : in  std_logic                      := 'X';             -- read
+			avmm_pipe_slave_byteenable    : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- byteenable
+			avmm_pipe_slave_debugaccess   : in  std_logic                      := 'X';             -- debugaccess
+			clk_clk                       : in  std_logic                      := 'X';             -- clk
+			reset_reset                   : in  std_logic                      := 'X'              -- reset
+		);
+	end component ase;
+

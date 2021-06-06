@@ -1,0 +1,46 @@
+--lpm_mux CBX_SINGLE_OUTPUT_FILE="OFF" DEVICE_FAMILY="Arria 10" LPM_SIZE=2 LPM_WIDTH=3 LPM_WIDTHS=1 data result sel
+--VERSION_BEGIN 19.2 cbx_lpm_mux 2019:06:24:17:05:52:SJ cbx_mgl 2019:06:24:18:19:52:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+
+--synthesis_resources = lut 1 
+SUBDESIGN mux_tba
+( 
+	data[5..0]	:	input;
+	result[2..0]	:	output;
+	sel[0..0]	:	input;
+) 
+VARIABLE
+	l1_w0_n0_mux_dataout	:	WIRE;
+	l1_w1_n0_mux_dataout	:	WIRE;
+	l1_w2_n0_mux_dataout	:	WIRE;
+	data_wire[5..0]	: WIRE;
+	result_wire_ext[2..0]	: WIRE;
+	sel_wire[0..0]	: WIRE;
+
+BEGIN 
+	l1_w0_n0_mux_dataout = sel_wire[0..0] & data_wire[3..3] # !(sel_wire[0..0]) & data_wire[0..0];
+	l1_w1_n0_mux_dataout = sel_wire[0..0] & data_wire[4..4] # !(sel_wire[0..0]) & data_wire[1..1];
+	l1_w2_n0_mux_dataout = sel_wire[0..0] & data_wire[5..5] # !(sel_wire[0..0]) & data_wire[2..2];
+	data_wire[] = ( data[]);
+	result[] = result_wire_ext[];
+	result_wire_ext[] = ( l1_w2_n0_mux_dataout, l1_w1_n0_mux_dataout, l1_w0_n0_mux_dataout);
+	sel_wire[] = ( sel[0..0]);
+END;
+--VALID FILE

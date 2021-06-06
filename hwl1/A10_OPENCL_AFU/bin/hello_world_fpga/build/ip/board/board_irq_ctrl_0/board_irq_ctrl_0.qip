@@ -1,0 +1,42 @@
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_TOOL_VERSION "19.2"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_TOP_LEVEL_COMPONENT_NAME "irq_ctrl"
+set_global_assignment -library "board_irq_ctrl_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "board_irq_ctrl_0.sopcinfo"]
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name SLD_INFO "QSYS_NAME board_irq_ctrl_0 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "board_irq_ctrl_0" -name MISC_FILE [file join $::quartus(qip_path) "board_irq_ctrl_0.cmp"]
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_TARGETED_DEVICE_FAMILY "Arria 10"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_GENERATED_DEVICE_FAMILY "{Arria 10}"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "board_irq_ctrl_0" -name MISC_FILE [file join $::quartus(qip_path) "../board_irq_ctrl_0.ip"]
+
+set_global_assignment -entity "irq_ctrl" -library "irq_ctrl_10" -name IP_COMPONENT_NAME "aXJxX2N0cmw="
+set_global_assignment -entity "irq_ctrl" -library "irq_ctrl_10" -name IP_COMPONENT_DISPLAY_NAME "SVJRIENUUkw="
+set_global_assignment -entity "irq_ctrl" -library "irq_ctrl_10" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "irq_ctrl" -library "irq_ctrl_10" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "irq_ctrl" -library "irq_ctrl_10" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "irq_ctrl" -library "irq_ctrl_10" -name IP_COMPONENT_PARAMETER "QVVUT19JTlRFUlJVUFRfUkVDRUlWRVJfSU5URVJSVVBUU19VU0VE::MQ==::QXV0byBJTlRFUlJVUFRTX1VTRUQ="
+set_global_assignment -entity "irq_ctrl" -library "irq_ctrl_10" -name IP_COMPONENT_GROUP "QXJyaWExMCBCU1AgQ29tcG9uZW50cw=="
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_NAME "Ym9hcmRfaXJxX2N0cmxfMA=="
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::QXJyaWEgMTA=::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBBWDExNU4yRjQwRTJMRw==::QXV0byBERVZJQ0U="
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Mg==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19SQVRF::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19ET01BSU4=::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19SRVNFVF9ET01BSU4=::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "board_irq_ctrl_0" -library "board_irq_ctrl_0" -name IP_COMPONENT_PARAMETER "QVVUT19JTlRFUlJVUFRfUkVDRUlWRVJfSU5URVJSVVBUU19VU0VE::LTE=::QXV0byBJTlRFUlJVUFRTX1VTRUQ="
+
+
+set_global_assignment -library "irq_ctrl_10" -name VERILOG_FILE [file join $::quartus(qip_path) "irq_ctrl_10/synth/irq_ctrl.v"]
+set_global_assignment -library "irq_ctrl_10" -name VERILOG_FILE [file join $::quartus(qip_path) "irq_ctrl_10/synth/irq_ena.v"]
+set_global_assignment -library "irq_ctrl_10" -name VERILOG_FILE [file join $::quartus(qip_path) "irq_ctrl_10/synth/irq_bridge.v"]
+set_global_assignment -library "board_irq_ctrl_0" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/board_irq_ctrl_0.v"]
+
