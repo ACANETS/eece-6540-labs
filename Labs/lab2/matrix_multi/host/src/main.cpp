@@ -29,6 +29,9 @@
 // properties of the device.
 ///////////////////////////////////////////////////////////////////////////////////
 
+// matrix multiplication example
+// TODO: see Lab2 assignment
+
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -68,6 +71,7 @@ static void device_info_bool( cl_device_id device, cl_device_info param, const c
 static void device_info_string( cl_device_id device, cl_device_info param, const char* name);
 static void display_device_info( cl_device_id device );
 
+// TODO: you will need to allocate memory dynamically for larger arrays
 static float A[8] = {
   1.0f,  1.0f,  1.0f,  1.0f,
   1.0f,  1.0f,  1.0f,  1.0f};
@@ -78,12 +82,13 @@ static float B[24] = {
   2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f,
   2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f};
 
-static    int wA=4;
-    static int hA=2;
-    static int wB=6;
-    static int hB=4;
-    static int wC = wB;
-    static int hC = hA;
+// declare matrix sizes
+static int wA=4;
+static int hA=2;
+static int wB=6;
+static int hB=4;
+static int wC = wB;
+static int hC = hA;
 
 // Entry point.
 int main(int argc, char **argv) {
@@ -108,62 +113,49 @@ int main(int argc, char **argv) {
   }
   printf("\n");
 
-    /* We assume A, B, C are float arrays which
-    have been declared and initialized */
-    /* allocate space for Matrix A on the device */
-    cl_mem bufferA = clCreateBuffer(context, CL_MEM_READ_ONLY,
-           wA*hA*sizeof(float), NULL, &ret);
-    /* copy Matrix A to the device */
-    clEnqueueWriteBuffer(queue, bufferA, CL_TRUE, 0,
-           wA*hA*sizeof(float), (void *)A, 0, NULL, NULL);
+  // In this example, we assume A, B, C are float arrays which
+  // have been declared and initialized
+  // TODO: change to dynamic memory allocation for larger arrays
+  // TODO: initialize the elements in matrices.
+  
+  // allocate space for Matrix A on the device 
+  cl_mem bufferA = clCreateBuffer(context, CL_MEM_READ_ONLY,
+          wA*hA*sizeof(float), NULL, &ret);
+  // copy Matrix A to the device 
+  clEnqueueWriteBuffer(queue, bufferA, CL_TRUE, 0,
+          wA*hA*sizeof(float), (void *)A, 0, NULL, NULL);
 
-    /* allocate space for Matrix B on the device */
-    cl_mem bufferB = clCreateBuffer(context, CL_MEM_READ_ONLY,
-            wB*hB*sizeof(float), NULL, &ret);
-    /* copy Matrix B to the device */
-    clEnqueueWriteBuffer(queue, bufferB, CL_TRUE, 0,
-            wB*hB*sizeof(float), (void *)B, 0, NULL, NULL);
+  // allocate space for Matrix B on the device 
+  cl_mem bufferB = clCreateBuffer(context, CL_MEM_READ_ONLY,
+          wB*hB*sizeof(float), NULL, &ret);
+  // copy Matrix B to the device 
+  clEnqueueWriteBuffer(queue, bufferB, CL_TRUE, 0,
+          wB*hB*sizeof(float), (void *)B, 0, NULL, NULL);
 
-    /* allocate space for Matrix C on the device */
-    cl_mem bufferC = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
-            wC*hC*sizeof(float), NULL, &ret);
+  // allocate space for Matrix C on the device 
+  cl_mem bufferC = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
+          wC*hC*sizeof(float), NULL, &ret);
 
-    /* Set the kernel arguments */
-    clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&bufferC);
-    clSetKernelArg(kernel, 1, sizeof(cl_int), (void *)&wA);
-    clSetKernelArg(kernel, 2, sizeof(cl_int), (void *)&hA);
-    clSetKernelArg(kernel, 3, sizeof(cl_int), (void *)&wB);
-    clSetKernelArg(kernel, 4, sizeof(cl_int), (void *)&hB);
-    clSetKernelArg(kernel, 5, sizeof(cl_mem), (void *)&bufferA);
-    clSetKernelArg(kernel, 6, sizeof(cl_mem), (void *)&bufferB);
-
-  // Set the kernel argument (argument 0)
-  //status = clSetKernelArg(kernel, 0, sizeof(cl_int), (void*)&thread_id_to_output);
-  //checkError(status, "Failed to set kernel arg 0");
+  // Set the kernel arguments 
+  status = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&bufferC);
+  status = clSetKernelArg(kernel, 1, sizeof(cl_int), (void *)&wA);
+  status = clSetKernelArg(kernel, 2, sizeof(cl_int), (void *)&hA);
+  status = clSetKernelArg(kernel, 3, sizeof(cl_int), (void *)&wB);
+  status = clSetKernelArg(kernel, 4, sizeof(cl_int), (void *)&hB);
+  status = clSetKernelArg(kernel, 5, sizeof(cl_mem), (void *)&bufferA);
+  status = clSetKernelArg(kernel, 6, sizeof(cl_mem), (void *)&bufferB);
+  checkError(status, "Failed to set kernel arg ");
 
   printf("\nKernel initialization is complete.\n");
   printf("Launching the kernel...\n\n");
 
-    /* Execute the kernel */
-    size_t globalws[2]={wC, hC};
-    size_t localws[2] = {2, 2};
-    status = clEnqueueNDRangeKernel(queue, kernel, 2, NULL,
-      globalws, localws, 0, NULL, NULL);
-    /* it is important to check the return value.
-      for example, when enqueueNDRangeKernel may fail when Work group size
-      does not divide evenly into global work size */
-    //if (ret != CL_SUCCESS) {
-      //printf("Failed to enqueueNDRangeKernel.\n");
-      //exit(1);
-    //}
-
   // Configure work set over which the kernel will execute
-  //size_t wgSize[3] = {work_group_size, 1, 1};
-  //size_t gSize[3] = {work_group_size, 1, 1};
-
-  // Launch the kernel
-  //status = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, gSize, wgSize, 0, NULL, NULL);
-  //
+  size_t globalws[2]={wC, hC};
+  size_t localws[2] = {2, 2};
+  // Execute the kernel 
+  status = clEnqueueNDRangeKernel(queue, kernel, 2, NULL,
+      globalws, localws, 0, NULL, NULL);
+  // it is important to check the return value.
   checkError(status, "Failed to launch kernel");
 
   // Wait for command queue to complete pending events
@@ -172,15 +164,15 @@ int main(int argc, char **argv) {
 
   printf("\nKernel execution is complete.\n");
 
-/* Copy the output data back to the host */
-    clEnqueueReadBuffer(queue, bufferC, CL_TRUE, 0, wC*hC*sizeof(float),
+  // Copy the output data back to the host 
+  clEnqueueReadBuffer(queue, bufferC, CL_TRUE, 0, wC*hC*sizeof(float),
          (void *)C, 0, NULL, NULL);
 
-    /* Verify result */
-    for (int i = 0; i < wC*hC; i++) {
-      printf ("%f ", C[i]);
-    }
-    printf("\n");
+  // Verify result 
+  for (int i = 0; i < wC*hC; i++) {
+    printf ("%f ", C[i]);
+  }
+  printf("\n");
 
   // Free the resources allocated
   cleanup();
