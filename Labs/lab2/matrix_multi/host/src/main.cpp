@@ -83,12 +83,12 @@ static float B[24] = {
   2.0f,  2.0f,  2.0f,  2.0f, 2.0f, 2.0f};
 
 // declare matrix sizes
-static int wA=4;
-static int hA=2;
-static int wB=6;
-static int hB=4;
-static int wC = wB;
-static int hC = hA;
+static size_t wA=4;
+static size_t hA=2;
+static size_t wB=6;
+static size_t hB=4;
+static size_t wC = wB;
+static size_t hC = hA;
 
 // Entry point.
 int main(int argc, char **argv) {
