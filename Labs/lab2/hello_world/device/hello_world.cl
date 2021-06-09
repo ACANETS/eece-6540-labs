@@ -19,14 +19,28 @@
 // This agreement shall be governed in all respects by the laws of the State of California and
 // by the laws of the United States of America.
 
-// AOC kernel demonstrating device-side printf call
+/* widthA=heightB for valid matrix multiplication */
+__kernel void simpleMultiply(
+    __global float *outputC,
+    int widthA,
+    int heightA,
+    int widthB,
+    int heightB,
+    __global float *inputA,
+    __global float *inputB)
+{
+    /* get global position in Y direction */
+    int row = get_global_id (1);
+    /* get global position in X direction */
+    int col = get_global_id (0);
 
-__kernel void hello_world(int thread_id_from_which_to_print_message) {
-  // Get index of the work item
-  unsigned thread_id = get_global_id(0);
+    float sum = 0.0f;
 
-  if(thread_id == thread_id_from_which_to_print_message) {
-    printf("Thread #%u: Hello from the Intel FPGA OpenCL Compiler!\n", thread_id);
-  }
+    /* calculate result of one element of Matrix C */
+    for (int i=0; i<widthA; i++) {
+        sum += inputA[row*widthA + i] * inputB[i*widthB + col];
+    }
+
+    outputC[row*widthB + col] = sum;
 }
 
