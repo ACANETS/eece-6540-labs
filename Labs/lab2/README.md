@@ -36,9 +36,56 @@ This code sample is licensed under MIT license.
 
 ### FPGA Hardware Mode
 
+#### Compiling for FPGA Hardware
 ```
     aoc device/matrix_multi.cl -o bin/matrix_multi_fpga.aocx -board=pac_a10
+    cd bin
+    source $AOCL_BOARD_PACKAGE_ROOT/linux64/libexec/sign_aocx.sh -H openssl_manager -i matrix_multi_fpga.aocx -r NULL -k NULL -o matrix_multi_fpga_unsigned.aocx
+
 ```
+Because no root key or code signing key is provided, the script asks if you would like to create an unsigned bitstream, as shown below. Type Y to accept an unsigned bitstream.
+
+         No root key specified. Generate unsigned bitstream? Y = yes, N = no: Y
+         No CSK specified. Generate unsigned bitstream? Y = yes, N = no: Y
+         
+#### Downloading the bit stream into the PAC card
+
+The executable that you run on the FPGA on the PAC card is called an .aocx file (Altera OpenCL executable).
+
+To see what FPGA accelerator cards are available, we type the following into the terminal. 
+
+```bash
+aoc --list-boards
+```
+
+You will observe the pac_10 board is available. Next, as you did during the initial step, run the aocl diagnose command so that you can get the device name.
+
+```
+aocl diagnose
+```
+
+Observe that the device name is acl0.
+
+Next, you need to create the unsigned version of the .aocx file. 
+
+#### 3.6 Programming the Arria 10 GX PAC Card
+
+Next, you will program the PAC card with hello_world_fpga_unsigned.aocx (version 1.2.1) FPGA executable with one of the following commands:
+
+```
+aocl program acl0 matrix_multi_fpga_unsigned.aocx
+```
+
+
+
+#### 3.7 Running the host code 
+
+You have already run `make` to build the CPU host executable in the prior section, so it's not necessary to compile the host code again. Simply run the following command to run a heterogeneous workload that combines CPU and FPGA execution to utilizing the CPU and FPGA working in tandem.
+
+```bash
+./host
+```
+
 
 ### Application Parameters
 There are no editable parameters for this sample.
