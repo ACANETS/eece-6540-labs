@@ -68,7 +68,7 @@ Observe that the device name is acl0.
 
 Next, you need to create the unsigned version of the .aocx file. 
 
-#### 3.6 Programming the Arria 10 GX PAC Card
+#### Programming the Arria 10 GX PAC Card
 
 Next, you will program the PAC card with hello_world_fpga_unsigned.aocx (version 1.2.1) FPGA executable with one of the following commands:
 
@@ -77,8 +77,7 @@ aocl program acl0 matrix_multi_fpga_unsigned.aocx
 ```
 
 
-
-#### 3.7 Running the host code 
+#### Running the host code 
 
 You have already run `make` to build the CPU host executable in the prior section, so it's not necessary to compile the host code again. Simply run the following command to run a heterogeneous workload that combines CPU and FPGA execution to utilizing the CPU and FPGA working in tandem.
 
