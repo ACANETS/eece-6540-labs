@@ -242,7 +242,7 @@ bool init() {
   checkError(status, "Failed to create command queue");
 
   // Create the program.
-  std::string binary_file = getBoardBinaryFile("hello_world", device);
+  std::string binary_file = getBoardBinaryFile("matrix_multi", device);
   printf("Using AOCX: %s\n", binary_file.c_str());
   program = createProgramFromBinary(context, binary_file.c_str(), &device, 1);
 
