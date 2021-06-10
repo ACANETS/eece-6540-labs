@@ -12,7 +12,7 @@ The compilation and run-time profiling are performed on Intel FPGA DevCloud, a f
 
 ## Purpose
 
-We use matrix-multi example to demonstrate how OpenCL supports kernel functions that define how computation is carried out on a partition of the whole dataset or task.  
+We use matrix_multi example to demonstrate how OpenCL supports kernel functions that define how computation is carried out on a partition of the whole dataset or task.  
 
 ## Key Implementation Details 
 The implementation covers basic concepts of OpenCL programming such as platform/device selection, command queue, buffers and kernel. 
