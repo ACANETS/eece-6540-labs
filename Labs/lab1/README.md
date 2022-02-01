@@ -1,6 +1,7 @@
 # Lab 1: OpenCL Programming on DevCloud
 
-Note: the following instruction is provided by Intel Corporation. The original link is at : https://github.com/intel/FPGA-Devcloud/tree/master/main/QuickStartGuides/OpenCL_Program_PAC_Quickstart/Arria%2010
+Note: the following instruction is provided by Intel Corporation. The instructor made minor corrections.
+(The original link is at : https://github.com/intel/FPGA-Devcloud/tree/master/main/QuickStartGuides/OpenCL_Program_PAC_Quickstart/Arria%2010)
 
 # Arria 10 PAC: OpenCL Compilation and Programming on the FPGA devcloud using Arria 10 Devstack version 1.2.1
 
@@ -68,7 +69,7 @@ Type this into the terminal:
 
 ```bash
 cp -r /opt/intelFPGA_pro/quartus_19.2.0b57/hld/examples_aoc/hello_world A10_OPENCL_AFU
-cp -r /opt/intelFPGA_pro/quartus_19.2.0b57/hld/examples_aoc/common A10_OPENCL_AFU
+cp -r /opt/intelFPGA_pro/quartus_19.2.0b57/hld/examples_aoc/common ./
 cd A10_OPENCL_AFU
 ```
 
