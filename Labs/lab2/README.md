@@ -2,7 +2,7 @@
 
 For Spring 2022, Lab 2 has been updated. Please refer to the Lab 2 assignment posted on Blackboard. You should understand the "MapReduce" example in the "Exercises" folder and use similar methods. 
 
-[//]:# (
+<!-- 
 
 # `matrix_multi` Sample
 
@@ -96,4 +96,5 @@ You have already run `make` to build the CPU host executable in the prior sectio
 There are no editable parameters for this sample.
 
 ### Example of Output
-)
+
+-->
