@@ -1,3 +1,9 @@
+# ATTENTION
+
+For Spring 2022, Lab 2 has been updated. Please refer to the Lab 2 assignment posted on Blackboard. You should understand the "MapReduce" example in the "Exercises" folder and use similar methods. 
+
+[//]:# (
+
 # `matrix_multi` Sample
 
 We use matrix multiplication example to show how to design data parallel programs in OpenCL. Using it, we demonstrate how "thinking-in-parallel" helps take advantage of the parallelism in a task and implement it in OpenCL. 
@@ -90,3 +96,4 @@ You have already run `make` to build the CPU host executable in the prior sectio
 There are no editable parameters for this sample.
 
 ### Example of Output
+)
