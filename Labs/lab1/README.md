@@ -1,6 +1,6 @@
 # Lab 1: OpenCL Programming on DevCloud
 
-Note: the following instruction is provided by Intel Corporation. The instructor made minor corrections.
+Note: the following instruction is provided by Intel Corporation. The instructor made revisions and corrections.
 (The original link is at : https://github.com/intel/FPGA-Devcloud/tree/master/main/QuickStartGuides/OpenCL_Program_PAC_Quickstart/Arria%2010)
 
 # Arria 10 PAC: OpenCL Compilation and Programming on the FPGA devcloud using Arria 10 Devstack version 1.2.1
@@ -111,7 +111,7 @@ You should see a list of parameters and Kernel execution is complete.
 #### 3.3 Compiling OpenCL code into an FPGA executable
 
 Now that you have emulated your design, you can run the steps to convert OpenCL to RTL, which will subsequently get compiled in Quartus to produce an FPGA executable .aocx file using the following command. This step will take approximately one hour.
-
+(Make sure you are current in directory 'A10_OPENCL_AFU/hello_world' before executing the following command.)
 ```
 aoc device/hello_world.cl -o bin/hello_world_fpga.aocx -board=pac_a10
 ```
@@ -149,7 +149,7 @@ You will observe the pac_10 board is available. Next, as you did during the init
 aocl diagnose
 ```
 
-Observe that the device name is acl0.
+Observe that the device name is acl0. (Note that it is letter 'l' between 'ac' and zero in the device name.)
 
 Next, you need to create the unsigned version of the .aocx file. 
 
