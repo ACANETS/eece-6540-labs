@@ -1,5 +1,19 @@
 # eece-6540-labs
-Labs and Exercises for EECE.6540 Heterogeneous Computing
+Labs and Exercises for EECE.4510/5510 (formerly EECE.6540) Heterogeneous Computing
+
+## Apply for a free account on Intel Developer Cloud (DevCloud)
+
+Intel Developer Cloud is a "development sandbox to learn about programming cross architecture applications with OpenVino, High Level Design (HLD) tools – oneAPI, OpenCL, HLS – and RTL." Students can apply for a free account to access the hardware resources and development tools. To apply, please visit:
+
+https://devcloud.intel.com/oneapi/get_started/
+
+## Methods to Access Intel DevCloud
+
+There are several ways to access DevCloud as shown in the diagram: Terminal access, IDE access, Remote Desktop and Jupyter Notebooks.
+![Modes of Connections to DevCloud](DevCloud_Abstract_Diagram_v2.png)
+(diagram source https://devcloud.intel.com/oneapi/ )
+
+The following describes the detailed steps for accessing DevCloud through a terminal application.
 
 ## Set up SSH access to Intel DevCloud
 
