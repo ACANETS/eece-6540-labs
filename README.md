@@ -1,7 +1,7 @@
 # eece-6540-labs
 Labs and Exercises for EECE.4510/5510 (formerly EECE.6540) Heterogeneous Computing
 
-This repository contains exercises and lab assignments for Heterogeneous Computing course. We leverage Intel Developer Cloud to learn oneAPI and DPC++ with heterogeneous computing resources including CPUs, FPGAs and GPUs. Both the hardware resources and development tools are evolving. Please check back frequently for updated information and sample code. Although this repository is the primary resource hub for EECE.4510/5510, it can be used by anyone who is interested in heterogeneous architectures and their applications.
+This repository contains exercises and lab assignments for Heterogeneous Computing course. We leverage Intel Developer Cloud to learn oneAPI and DPC++ with heterogeneous computing resources including CPUs, FPGAs and GPUs. Both the hardware resources and development tools are evolving. Please check back frequently for updated information and sample code. Although it is the primary resource hub for EECE.4510/5510, this repository can be used by anyone who is interested in heterogeneous architectures and their applications.
 
 ## Apply for a free account on Intel Developer Cloud (DevCloud)
 
@@ -15,7 +15,7 @@ There are several ways to access DevCloud as shown in the diagram: Terminal acce
 ![Modes of Connections to DevCloud](DevCloud_Abstract_Diagram_v2.png)
 (diagram source https://devcloud.intel.com/oneapi/ )
 
-The following describes the detailed steps for accessing DevCloud through a terminal application.
+The following describes the detailed steps for accessing DevCloud through a terminal application, which is the preferred access mode for developing FPGA-oriented oneAPI applications.
 
 ## Set up SSH access to Intel DevCloud
 
