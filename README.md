@@ -1,6 +1,8 @@
 # eece-6540-labs
 Labs and Exercises for EECE.4510/5510 (formerly EECE.6540) Heterogeneous Computing
 
+This repository contains exercises and lab assignments for Heterogeneous Computing course. We leverage Intel Developer Cloud to learn oneAPI and DPC++ with heterogeneous computing resources including CPUs, FPGAs and GPUs. Both the hardware resources and development tools are evolving. Please check back frequently for updated information and sample code. Although this repository is the primary resource hub for EECE.4510/5510, it can be used by anyone who is interested in heterogeneous architectures and their applications.
+
 ## Apply for a free account on Intel Developer Cloud (DevCloud)
 
 Intel Developer Cloud is a "development sandbox to learn about programming cross architecture applications with OpenVino, High Level Design (HLD) tools – oneAPI, OpenCL, HLS – and RTL." Students can apply for a free account to access the hardware resources and development tools. To apply, please visit:
