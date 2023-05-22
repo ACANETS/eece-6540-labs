@@ -192,7 +192,11 @@ xxxxxxx is a unique job ID. The .exxxxxx file is the error log and the .oxxxxxx 
 
 <br/>
 
-## 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document Revision History
+## 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experiment with 'Matrix Multiplication' example 
+
+This repo includes matrix multiplication as another OpenCL example. Please refer to the steps in 3.2 to compile the project and execute in emulation mode. Answer the questions regarding this example in Lab 1 report.
+
+## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document Revision History
 
 List the revision history for the application note.
 
@@ -205,6 +209,7 @@ List the revision history for the application note.
 | Larry Landis     | 8/5/2020  | Misc edits per Ruben feedback                |
 | Larry Landis     | 4/6/2021  | Remove 1.2 commands as we only support 1.2.1 |
 | Larry Landis     | 4/30/2021 | Clarify flow for v1.2.1                      |
+| Yan Luo          | 5/22/2023 | Add example and clarify steps for Lab 1.     |
 
 
 
