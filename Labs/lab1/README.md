@@ -190,11 +190,10 @@ A10_v1.2.1_opencl_batch.sh.oxxxxxx
 
 xxxxxxx is a unique job ID. The .exxxxxx file is the error log and the .oxxxxxx file is the terminal log where success or failure of the commands can be determined. Note that log files dont get updated until the end of the job.
 
-<br/>
-
 ## 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experiment with 'Matrix Multiplication' example 
 
 This repo includes matrix multiplication as another OpenCL example. Please refer to the steps in 3.2 to compile the project and execute in emulation mode. Answer the questions regarding this example in Lab 1 report.
+
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document Revision History
 
