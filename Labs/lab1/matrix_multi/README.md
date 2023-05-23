@@ -96,7 +96,7 @@ You should see a list of parameters and Kernel execution is complete.
 #### 3.3 Compiling OpenCL code into an FPGA executable
 
 Now that you have emulated your design, you can run the steps to convert OpenCL to RTL, which will subsequently get compiled in Quartus to produce an FPGA executable .aocx file using the following command. This step will take approximately one hour.
-(Make sure you are current in directory 'A10_OPENCL_AFU/hello_world' before executing the following command.)
+(Make sure you are current in directory 'lab1/matrix_multi' before executing the following command.)
 ```
 aoc device/matrix_multi.cl -o bin/matrix_multi_fpga.aocx -board=pac_a10
 ```
@@ -157,7 +157,7 @@ You have already run `make` to build the CPU host executable in the prior sectio
 
 ## 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Batch Submission
 
-The batch script in Lab 1 folder can be use to launch the OpenCL emulation flow, followed by the compilation and FPGA board programming flow using aocl commands. **Adjust commands within the script to your own needs.**
+**The batch script in Lab 1 folder can be use to launch the OpenCL emulation flow, followed by the compilation and FPGA board programming flow using aocl commands. Adjust commands within the script to your own needs.**
 
 From the headnode login-2, run this command:
 
