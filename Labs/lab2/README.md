@@ -1,6 +1,6 @@
 # ATTENTION
 
-For Summer 2023, Lab 2 is to released. Please check back later. 
+For Summer 2023, Lab 2 is to be released. Please check back later. 
 
 <!-- 
 Please refer to the Lab 2 assignment posted on Blackboard. You should understand the "MapReduce" example in the "Exercises" folder and use similar methods. 
