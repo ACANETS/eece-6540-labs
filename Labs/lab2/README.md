@@ -1,100 +1,107 @@
-# ATTENTION
+# EECE.4510/5510 Heterogeneous Computing - Lab 2
 
-For Summer 2023, Lab 2 is to be released. Please check back later. 
+## Part 1: Practice Building and Executing a DPC++ Program
 
-<!-- 
-Please refer to the Lab 2 assignment posted on Blackboard. You should understand the "MapReduce" example in the "Exercises" folder and use similar methods. 
-# `matrix_multi` Sample
+As we start learning oneAPI and DPC++, we now delve into some concrete DPC++ program examples. In this lab, you will practice DPC++ design flow on Intel Developer Cloud in Part 1. The example program illustrates how data are managed and how kernel functions are defined, which are among the essential operations in a data parallel design using DPC++. 
 
-We use matrix multiplication example to show how to design data parallel programs in OpenCL. Using it, we demonstrate how "thinking-in-parallel" helps take advantage of the parallelism in a task and implement it in OpenCL. 
+## `matrix-multiplication` Sample
+
+We use matrix multiplication example to show how to design data parallel programs in DPC++. Using it, we demonstrate how "thinking-in-parallel" helps take advantage of the parallelism in a task and implement it in DPC++. 
 
 | Optimized for                     | Description
 |:---                               |:---
 | OS                                | Linux* Ubuntu* 18.04
 | Hardware                          | Skylake with GEN9 or newer, Intel(R) Programmable Acceleration Card with Intel(R) Arria(R) 10 GX FPGA
-| Software                          | Intel&reg; FPGA SDK for OpenCL 19.1 or later, FPGA Runtime Environment for OpenCL  
+| Software                          | Intel&reg; oneAPI DPC++ Compiler (beta)  
   
 The compilation and run-time profiling are performed on Intel FPGA DevCloud, a free development platform.
 
 ## Purpose
 
-We use matrix_multi example to demonstrate how OpenCL supports kernel functions that define how computation is carried out on a partition of the whole dataset or task.  
+We use matrix-multi example to demonstrate how DPC++ supports kernel functions that define how computation is carried out on a partition of the whole dataset or task. 
 
 ## Key Implementation Details 
-The implementation covers basic concepts of OpenCL programming such as platform/device selection, command queue, buffers and kernel. 
+The DPC++ implementations explained in the several versions covers basic concepts of DPC++ programming such as device selector, and parallel_for().
 
 ## License  
 This code sample is licensed under MIT license. 
 
-
 ## Building the `matrix-multi` Program for Intel(R) FPGA
 
-**The following commands are to be executed on a Intel DevCloud Compute Node**  
+### On a Linux* System
 
-### Emulation Mode
+**The project uses CMake. Perform the following steps to build different targets.** 
+
 ```
-    cd Labs/lab2/matrix_multi
-    aoc -march=emulator -v device/matrix_multi.cl -o bin/matrix_multi_emulation.aocx
-    ln -sf matrix_multi_emulation.aocx bin/matrix_multi.aocx
+    mkdir build
+    cd build
+    cmake ..
     make
-    ./bin/host -emulator
 ```
-
-### FPGA Hardware Mode
-
-#### Compiling for FPGA Hardware
+Optionally, you can also do the following.
 ```
-    aoc device/matrix_multi.cl -o bin/matrix_multi_fpga.aocx -board=pac_a10
-    cd bin
-    source $AOCL_BOARD_PACKAGE_ROOT/linux64/libexec/sign_aocx.sh -H openssl_manager -i matrix_multi_fpga.aocx -r NULL -k NULL -o matrix_multi_fpga_unsigned.aocx
-
+    make report
+    make fpga
+    make profile
 ```
-Because no root key or code signing key is provided, the script asks if you would like to create an unsigned bitstream, as shown below. Type Y to accept an unsigned bitstream.
+* make : by default, the emulation executables are built.
+* make report : generate static report on the FPGA resource utilization of the designs.
+* make fpga : generate FPGA binary files for the designs. Will take a couple of hours.
+* make profile : generate FPGA binary to be used in run-time profiling. Will take a couple of hours.
 
-         No root key specified. Generate unsigned bitstream? Y = yes, N = no: Y
-         No CSK specified. Generate unsigned bitstream? Y = yes, N = no: Y
-         
-#### Downloading the bit stream into the PAC card
+## Running the Sample
 
-The executable that you run on the FPGA on the PAC card is called an .aocx file (Altera OpenCL executable).
-
-To see what FPGA accelerator cards are available, we type the following into the terminal. 
-
-```bash
-aoc --list-boards
-```
-
-You will observe the pac_10 board is available. Next, as you did during the initial step, run the aocl diagnose command so that you can get the device name.
-
-```
-aocl diagnose
-```
-
-Observe that the device name is acl0.
-
-Next, you need to create the unsigned version of the .aocx file. 
-
-#### Programming the Arria 10 GX PAC Card
-
-Next, you will program the PAC card with hello_world_fpga_unsigned.aocx (version 1.2.1) FPGA executable with one of the following commands:
-
-```
-aocl program acl0 matrix_multi_fpga_unsigned.aocx
-```
-
-
-#### Running the host code 
-
-You have already run `make` to build the CPU host executable in the prior section, so it's not necessary to compile the host code again. Simply run the following command to run a heterogeneous workload that combines CPU and FPGA execution to utilizing the CPU and FPGA working in tandem.
-
-```bash
-./host
-```
-
+The executables (for emulation or for FPGA hardware) can be found in the build directory. Use the file name(s) to executable the samples. For example
+    ```
+    ./matrix-multi-para.fpga_emu
+    ```
 
 ### Application Parameters
 There are no editable parameters for this sample.
 
 ### Example of Output
 
--->
+* emulation on a Linux platform.
+<pre>
+1 found ..
+Platform: Intel(R) FPGA Emulation Platform for OpenCL(TM)
+Device: Intel(R) FPGA Emulation Device
+2 found ..
+Platform: Intel(R) OpenCL
+Device: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
+3 found ..
+Platform: Intel(R) OpenCL HD Graphics
+Device: Intel(R) Graphics [0x5912]
+4 found ..
+Platform: Intel(R) Level-Zero
+Device: Intel(R) Graphics [0x5912]
+5 found ..
+Platform: SYCL host platform
+Device: SYCL host device
+
+computing on host...
+1.83809 seconds
+Running on device: Intel(R) FPGA Emulation Device
+Matrix A size: 800,1000
+Matrix B size: 1000,2000
+Matrices C, D size: 800,2000
+MatrixMultiplication using parallel_for().
+0.183899 seconds
+Matrix multiplication successfully completed on device.
+
+</pre>
+
+## Recorded Lectures
+
+A series of recorded lectures are provided to introduce the important concepts about DPC++ programming for FPGAs. The videos can be found at the [DPC++ Tutorial playlist](https://youtube.com/playlist?list=PLZ9YeF_1_vF8RqYPNpHToklJcDRoVocU4) on Youtube and are linked individually below. 
+
+Watching these videos for Lab 2 is optional but recommended.
+
+[Introduction to DPC++](https://youtu.be/F2DWVuJRvfM)
+
+[How to Think "in Parallel"?](https://youtu.be/3DTYEBSrj-U)
+
+
+## Part 2 [EECE.5510 ONLY]: Design a DPC++ Program to Perform Image Rotation
+
+
