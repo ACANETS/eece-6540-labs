@@ -104,4 +104,12 @@ Watching these videos for Lab 2 is optional but recommended.
 
 ## Part 2 [EECE.5510 ONLY]: Design a DPC++ Program to Perform Image Rotation
 
+You will design your first DPC++ program that performs image rotation operation. To learn about the algorithm behind image rotation, you need to refer to the lecture notes on Image Rotation, and the recorded video to review the mathematical principles behind image rotation operations. 
+
+[Lecture notes on Image Rotation](Image-Rotation-Conv.pdf)
+[Recorded lecture on Image Rotation](https://youtu.be/8wCEcxjSbBs)
+
+The example code under Exercises/ImageRotation folder within our eece-6540-labs repository [2] shows how to implement the algorithm in OpenCL. The image-conv example in [DPCPP Tutorials](https://github.com/ACANETS/dpcpp-tutorial) shows how to handle image files in DPC++. To port image-rotation algorithm in DPC++, you should think about what data memory objects to use and how to partition the data and design the kernel operations in a lambda function. 
+
+You can use the skeleton code of image rotation given in this folder as a start to implement your complete design.  
 
