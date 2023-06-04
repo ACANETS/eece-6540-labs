@@ -1,0 +1,250 @@
+{
+  "columns":
+  ["", "ALUTs", "FFs", "RAMs", "DSPs", "MLABs", "Details"]
+  , "debug_enabled":"true"
+  , "type":"module"
+  , "total_percent":
+  [25.4411, 16.187, 10.7378, 15.6653, 0]
+  , "total":
+  [137482, 183488, 425, 0, 41]
+  , "name":"Kernel System"
+  , "max_resources":
+  [854400, 1708800, 2713, 1518, 42720]
+  , "children":
+  [
+    {
+      "name":"Static Partition"
+      , "type":"partition"
+      , "children":
+      [
+        {
+          "name":"Board interface"
+          , "type":"resource"
+          , "data":
+          [134500, 172452, 397, 0, 0]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Platform interface logic."
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Global interconnect"
+      , "type":"resource"
+      , "data":
+      [1289, 6591, 26, 0, 0]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Global interconnect for 0 global loads and 1 global store."
+        }
+        , {
+          "type":"brief"
+          , "text":"For 0 global loads and 1 global store."
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Global Memory Interconnect"
+              , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/mwh1391807516407.html#hnj1476724450050"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"System description ROM"
+      , "type":"resource"
+      , "data":
+      [0, 67, 2, 0, 0]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"This read-only memory contains information for the host about the system and about each kernel in the system, including kernel names, arguments, and attributes. The system description ROM ensures that the binary image on the FPGA is compatible with the host program."
+        }
+        , {
+          "type":"brief"
+          , "text":"Contains information for the host."
+        }
+      ]
+    }
+    , {
+      "name":"hello_world"
+      , "compute_units":1
+      , "type":"function"
+      , "total_percent":
+      [0.529476, 0.294125, 0.256203, 0, 0]
+      , "total_kernel_resources":
+      [1693, 4378, 0, 0, 41]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Number of compute units: 1"
+        }
+        , {
+          "type":"text"
+          , "text":"Kernel attribute 'uses_global_work_offset' not specified. Add '__attribute__((uses_global_work_offset(0)))' to reduce area utilization if the kernel will always be enqueued with a 0 or NULL global_work_offset argument in clEnqueueNDRangeKernel. Add '__attribute__((uses_global_work_offset(1)))' to hide this suggestion without affecting kernel functionality."
+        }
+        , {
+          "type":"brief"
+          , "text":"1 compute unit.\nKernel attribute 'uses_global_work_offset' not specified. Add '__attribute__((uses_global_work_offset(0)))' to reduce area utilization if the kernel will always be enqueued with a 0 or NULL global_work_offset argument in clEnqueueNDRangeKernel. Add '__attribute__((uses_global_work_offset(1)))' to hide this suggestion without affecting kernel functionality."
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"Function overhead"
+          , "type":"resource"
+          , "data":
+          [1338, 2411, 0, 0, 10]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Kernel dispatch logic."
+            }
+            , {
+              "type":"brief"
+              , "text":"Kernel dispatch logic."
+            }
+          ]
+        }
+        , {
+          "name":"hello_world.B0"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [2, 2, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [2, 2, 0, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"hello_world.cl:28"
+                  , "type":"resource"
+                  , "data":
+                  [11, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"device/hello_world.cl"
+                        , "line":28
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [11, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"hello_world.cl:29"
+                  , "type":"resource"
+                  , "data":
+                  [342, 1965, 0, 0, 31]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"device/hello_world.cl"
+                        , "line":29
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [301, 1704, 0, 0, 31]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store to global memory that implements printf functionality. printf is a debug tool that may slow down overall system performance. Remove from production code."
+                        }
+                        , {
+                          "type":"brief"
+                          , "text":"Store to global memory that implements printf functionality."
+                        }
+                      ]
+                    }
+                    , {
+                      "name":"llvm.fpga.printf"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [41, 261, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{ 
+  "configurations" : [
+    { 
+      "name" : "0",
+      "parameters" :{
+        "elec_idle_delay_val" : "3'd3",
+        "error_replace_pad" : "replace_edb",
+        "hip_mode" : "en_hip",
+        "ind_error_reporting" : "dis_ind_error_reporting",
+        "phystatus_delay_val" : "3'd0",
+        "phystatus_rst_toggle" : "dis_phystatus_rst_toggle",
+        "pipe_byte_de_serializer_en" : "dont_care_bds",
+        "prot_mode" : "pipe_g3",
+        "rx_pipe_enable" : "en_pipe3_rx",
+        "rxdetect_bypass" : "dis_rxdetect_bypass",
+        "sup_mode" : "user_mode",
+        "tx_pipe_enable" : "en_pipe3_tx",
+        "txswing" : "dis_txswing",
+        "reconfig_settings" : "{}"
+      }
+    },
+    { 
+      "name" : "1",
+      "parameters" :{
+        "elec_idle_delay_val" : "3'd0",
+        "error_replace_pad" : "replace_edb",
+        "hip_mode" : "dis_hip",
+        "ind_error_reporting" : "dis_ind_error_reporting",
+        "phystatus_delay_val" : "3'd0",
+        "phystatus_rst_toggle" : "dis_phystatus_rst_toggle",
+        "pipe_byte_de_serializer_en" : "dont_care_bds",
+        "prot_mode" : "basic",
+        "rx_pipe_enable" : "dis_pipe_rx",
+        "rxdetect_bypass" : "dis_rxdetect_bypass",
+        "sup_mode" : "user_mode",
+        "tx_pipe_enable" : "dis_pipe_tx",
+        "txswing" : "dis_txswing",
+        "reconfig_settings" : "{}"
+      }
+    }
+  ]
+}
+

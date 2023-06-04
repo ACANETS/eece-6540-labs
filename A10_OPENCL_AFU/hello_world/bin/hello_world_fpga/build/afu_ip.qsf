@@ -1,0 +1,16 @@
+set_global_assignment -name SYSTEMVERILOG_FILE ./bsp_pkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ./bsp_interface.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ./bsp_logic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ./ccip_std_afu.sv
+
+set_global_assignment -name VERILOG_FILE ./ip/freeze_wrapper.v
+set_global_assignment -name VERILOG_FILE ./ip/pr_region.v
+set_global_assignment -name VERILOG_FILE ./ip/kernel_mem_mm_bridge.v
+set_instance_assignment -name MAX_FANOUT 800 -to inst_ccip_interface_reg|inst_green_top|ccip_std_afu|u0|board_inst|cci_interface|mm_cci_bridge_0|*
+set_instance_assignment -name MAX_FANOUT 750 -to inst_ccip_interface_reg|ccip_std_afu|u0|board_inst|cci_interface|mm_cci_bridge_0|cci_requester_inst|dfifo_component|staging_reg|r_valid
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to inst_ccip_interface_reg|inst_green_top|ccip_std_afu|u0|board_inst|kernel_clk_generator|kernel_pll|altera_pll_i|twentynm_pll|outclk[0]
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to inst_ccip_interface_reg|inst_green_top|ccip_std_afu|u0|board_inst|kernel_clk_generator|kernel_pll|altera_pll_i|twentynm_pll|outclk[1]
+set_global_assignment -name SDC_FILE ./reset.sdc
+set_global_assignment -name SDC_FILE user_clock.sdc
+
+

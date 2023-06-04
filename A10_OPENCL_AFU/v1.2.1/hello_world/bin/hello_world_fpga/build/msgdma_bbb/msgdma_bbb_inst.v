@@ -1,0 +1,46 @@
+	msgdma_bbb u0 (
+		.clk_clk               (_connected_to_clk_clk_),               //   input,    width = 1,     clk.clk
+		.reset_reset_n         (_connected_to_reset_reset_n_),         //   input,    width = 1,   reset.reset_n
+		.csr_waitrequest       (_connected_to_csr_waitrequest_),       //  output,    width = 1,     csr.waitrequest
+		.csr_readdata          (_connected_to_csr_readdata_),          //  output,   width = 64,        .readdata
+		.csr_readdatavalid     (_connected_to_csr_readdatavalid_),     //  output,    width = 1,        .readdatavalid
+		.csr_burstcount        (_connected_to_csr_burstcount_),        //   input,    width = 1,        .burstcount
+		.csr_writedata         (_connected_to_csr_writedata_),         //   input,   width = 64,        .writedata
+		.csr_address           (_connected_to_csr_address_),           //   input,    width = 7,        .address
+		.csr_write             (_connected_to_csr_write_),             //   input,    width = 1,        .write
+		.csr_read              (_connected_to_csr_read_),              //   input,    width = 1,        .read
+		.csr_byteenable        (_connected_to_csr_byteenable_),        //   input,    width = 8,        .byteenable
+		.csr_debugaccess       (_connected_to_csr_debugaccess_),       //   input,    width = 1,        .debugaccess
+		.dma_irq_irq           (_connected_to_dma_irq_irq_),           //  output,    width = 1, dma_irq.irq
+		.host_rd_waitrequest   (_connected_to_host_rd_waitrequest_),   //   input,    width = 1, host_rd.waitrequest
+		.host_rd_readdata      (_connected_to_host_rd_readdata_),      //   input,  width = 512,        .readdata
+		.host_rd_readdatavalid (_connected_to_host_rd_readdatavalid_), //   input,    width = 1,        .readdatavalid
+		.host_rd_burstcount    (_connected_to_host_rd_burstcount_),    //  output,    width = 3,        .burstcount
+		.host_rd_writedata     (_connected_to_host_rd_writedata_),     //  output,  width = 512,        .writedata
+		.host_rd_address       (_connected_to_host_rd_address_),       //  output,   width = 48,        .address
+		.host_rd_write         (_connected_to_host_rd_write_),         //  output,    width = 1,        .write
+		.host_rd_read          (_connected_to_host_rd_read_),          //  output,    width = 1,        .read
+		.host_rd_byteenable    (_connected_to_host_rd_byteenable_),    //  output,   width = 64,        .byteenable
+		.host_rd_debugaccess   (_connected_to_host_rd_debugaccess_),   //  output,    width = 1,        .debugaccess
+		.host_wr_waitrequest   (_connected_to_host_wr_waitrequest_),   //   input,    width = 1, host_wr.waitrequest
+		.host_wr_readdata      (_connected_to_host_wr_readdata_),      //   input,  width = 512,        .readdata
+		.host_wr_readdatavalid (_connected_to_host_wr_readdatavalid_), //   input,    width = 1,        .readdatavalid
+		.host_wr_burstcount    (_connected_to_host_wr_burstcount_),    //  output,    width = 3,        .burstcount
+		.host_wr_writedata     (_connected_to_host_wr_writedata_),     //  output,  width = 512,        .writedata
+		.host_wr_address       (_connected_to_host_wr_address_),       //  output,   width = 49,        .address
+		.host_wr_write         (_connected_to_host_wr_write_),         //  output,    width = 1,        .write
+		.host_wr_read          (_connected_to_host_wr_read_),          //  output,    width = 1,        .read
+		.host_wr_byteenable    (_connected_to_host_wr_byteenable_),    //  output,   width = 64,        .byteenable
+		.host_wr_debugaccess   (_connected_to_host_wr_debugaccess_),   //  output,    width = 1,        .debugaccess
+		.mem_waitrequest       (_connected_to_mem_waitrequest_),       //   input,    width = 1,     mem.waitrequest
+		.mem_readdata          (_connected_to_mem_readdata_),          //   input,  width = 512,        .readdata
+		.mem_readdatavalid     (_connected_to_mem_readdatavalid_),     //   input,    width = 1,        .readdatavalid
+		.mem_burstcount        (_connected_to_mem_burstcount_),        //  output,    width = 3,        .burstcount
+		.mem_writedata         (_connected_to_mem_writedata_),         //  output,  width = 512,        .writedata
+		.mem_address           (_connected_to_mem_address_),           //  output,   width = 48,        .address
+		.mem_write             (_connected_to_mem_write_),             //  output,    width = 1,        .write
+		.mem_read              (_connected_to_mem_read_),              //  output,    width = 1,        .read
+		.mem_byteenable        (_connected_to_mem_byteenable_),        //  output,   width = 64,        .byteenable
+		.mem_debugaccess       (_connected_to_mem_debugaccess_)        //  output,    width = 1,        .debugaccess
+	);
+

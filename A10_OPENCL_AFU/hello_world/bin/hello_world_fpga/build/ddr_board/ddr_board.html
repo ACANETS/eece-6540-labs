@@ -1,0 +1,5597 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>datasheet for ddr_board</title>
+  <style type="text/css">
+body { font-family:arial ;}
+a { text-decoration:underline ; color:#003000 ;}
+a:hover { text-decoration:underline ; color:0030f0 ;}
+td { padding : 5px ;}
+table.topTitle { width:100% ;}
+table.topTitle td.l { text-align:left ; font-weight: bold ; font-size:30px ;}
+table.topTitle td.r { text-align:right ; font-weight: bold ; font-size:16px ;}
+table.blueBar { width : 100% ; border-spacing : 0px ;}
+table.blueBar td { background:#0036ff ; font-size:12px ; color : white ; text-align : left ; font-weight : bold ;}
+table.blueBar td.l { text-align : left ;}
+table.blueBar td.r { text-align : right ;}
+table.items { width:100% ; border-collapse:collapse ;}
+table.items td.label { font-weight:bold ; font-size:16px ; vertical-align:top ;}
+table.items td.mono { font-family:courier ; font-size:12px ; white-space:pre ;}
+div.label { font-weight:bold ; font-size:16px ; vertical-align:top ; text-align:center ;}
+table.grid { border-collapse:collapse ;}
+table.grid td { border:1px solid #bbb ; font-size:12px ;}
+body { font-family:arial ;}
+table.x { font-family:courier ; border-collapse:collapse ; padding:2px ;}
+table.x td { border:1px solid #bbb ;}
+td.tableTitle { font-weight:bold ; text-align:center ;}
+table.grid { border-collapse:collapse ;}
+table.grid td { border:1px solid #bbb ;}
+table.grid td.tableTitle { font-weight:bold ; text-align:center ;}
+table.mmap { border-collapse:collapse ; text-size:11px ; border:1px solid #d8d8d8 ;}
+table.mmap td { border-color:#d8d8d8 ; border-width:1px ; border-style:solid ;}
+table.mmap td.empty { border-style:none ; background-color:#f0f0f0 ;}
+table.mmap td.slavemodule { text-align:left ; font-size:11px ; border-style:solid solid none solid ;}
+table.mmap td.slavem { text-align:right ; font-size:9px ; font-style:italic ; border-style:none solid none solid ;}
+table.mmap td.slaveb { text-align:right ; font-size:9px ; font-style:italic ; border-style:none solid solid solid ;}
+table.mmap td.mastermodule { text-align:center ; font-size:11px ; border-style:solid solid none solid ;}
+table.mmap td.masterlr { text-align:center ; font-size:9px ; font-style:italic ; border-style:none solid solid solid ;}
+table.mmap td.masterl { text-align:center ; font-size:9px ; font-style:italic ; border-style:none none solid solid ;}
+table.mmap td.masterm { text-align:center ; font-size:9px ; font-style:italic ; border-style:none none solid none ;}
+table.mmap td.masterr { text-align:center ; font-size:9px ; font-style:italic ; border-style:none solid solid none ;}
+table.mmap td.addr { font-family:courier ; font-size:9px ; text-align:right ;}
+table.connectionboxes { border-collapse:separate ; border-spacing:0px ; font-family:arial ;}
+table.connectionboxes td.from { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.to { font-size:9px ; font-style:italic ; vertical-align:top ; text-align:right ;}
+table.connectionboxes td.lefthandwire { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:right ;}
+table.connectionboxes td.righthandwire { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.righthandlabel { font-size:11px ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.neighbor { padding:3px ; border:1px solid black ; font-size: 11px ; background:#e8e8e8 ; vertical-align:center ; text-align:center ;}
+table.connectionboxes td.main { padding:8px ; border:1px solid black ; font-size: 14px ; font-weight:bold ; background:#ffffff ; vertical-align:center ; text-align:center ;}
+.parametersbox { border:1px solid #d0d0d0 ; display:inline-block ; max-height:160px ; overflow:auto ; width:360px ; font-size:10px ;}
+.flowbox { display:inline-block ;}
+.parametersbox table { font-size:10px ;}
+td.parametername { font-style:italic ;}
+td.parametervalue { font-weight:bold ;}
+div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; border-top:1px solid #707070 ; border-bottom:1px solid #707070 ; padding:20px ; margin:20px ; width:auto ;}</style>
+ </head>
+ <body>
+  <table class="topTitle">
+   <tr>
+    <td class="l">ddr_board</td>
+    <td class="r">
+     <br/>
+     <br/>
+    </td>
+   </tr>
+  </table>
+  <table class="blueBar">
+   <tr>
+    <td class="l">2023.06.04.07:38:58</td>
+    <td class="r">Datasheet</td>
+   </tr>
+  </table>
+  <div style="width:100% ;  height:10px"> </div>
+  <div class="label">Overview</div>
+  <div class="greydiv">
+   <div style="display:inline-block ; text-align:left">
+    <table class="connectionboxes">
+     <tr>
+      <td class="lefthandwire">&#160;&#160;msgdma_bbb_inst_rd_clk&#160;</td>
+      <td class="main" rowspan="4">ddr_board</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="lefthandwire">&#160;&#160;msgdma_bbb_inst_wr_clk&#160;</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+    </table>
+   </div><span style="display:inline-block ; width:28px"> </span>
+   <div style="display:inline-block ; text-align:left"><span>
+     <br/>All Components
+     <br/>&#160;&#160;
+     <a href="#module_ddr4a_cross_to_host"><b>ddr4a_cross_to_host</b>
+     </a> altera_avalon_mm_clock_crossing_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ddr4a_cross_to_kernel"><b>ddr4a_cross_to_kernel</b>
+     </a> altera_avalon_mm_clock_crossing_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ddr4a_pipe_0"><b>ddr4a_pipe_0</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ddr4a_pipe_1_burst16"><b>ddr4a_pipe_1_burst16</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ddr4b_cross_to_host"><b>ddr4b_cross_to_host</b>
+     </a> altera_avalon_mm_clock_crossing_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ddr4b_cross_to_kernel"><b>ddr4b_cross_to_kernel</b>
+     </a> altera_avalon_mm_clock_crossing_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ddr4b_pipe_0"><b>ddr4b_pipe_0</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ddr4b_pipe_1_burst16"><b>ddr4b_pipe_1_burst16</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ddr_board_acl_memory_bank_divider_0"><b>ddr_board_acl_memory_bank_divider_0</b>
+     </a> acl_memory_bank_divider 1.0
+     <br/>&#160;&#160;
+     <a href="#module_dma_host_rd_pipe"><b>dma_host_rd_pipe</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_dma_host_wr_pipe"><b>dma_host_wr_pipe</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_null_dfh_afu_id"><b>null_dfh_afu_id</b>
+     </a> afu_id_avmm_slave 1.0
+     <br/>&#160;&#160;
+     <a href="#module_pipe_stage_ase"><b>pipe_stage_ase</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_ase_inst_0"><b>ase_inst_0</b>
+     </a> ase 1.0
+     <br/>&#160;&#160;
+     <a href="#module_ase_inst_0_address_span_extender_0"><b>ase_inst_0_address_span_extender_0</b>
+     </a> altera_address_span_extender 17.1
+     <br/>&#160;&#160;
+     <a href="#module_ase_inst_0_afu_id_avmm_slave_0"><b>ase_inst_0_afu_id_avmm_slave_0</b>
+     </a> afu_id_avmm_slave 1.0
+     <br/>&#160;&#160;
+     <a href="#module_ase_inst_0_ase_avmm_pipe_0"><b>ase_inst_0_ase_avmm_pipe_0</b>
+     </a> altera_avalon_mm_bridge 17.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd"><b>msgdma_bbb_inst_rd</b>
+     </a> msgdma_bbb 1.0
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_csr"><b>msgdma_bbb_inst_rd_csr</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_magic_number_rom"><b>msgdma_bbb_inst_rd_magic_number_rom</b>
+     </a> magic_number_rom 1.0
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0"><b>msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</b>
+     </a> modular_sgdma_dispatcher 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0"><b>msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0</b>
+     </a> afu_id_avmm_slave 1.0
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_read"><b>msgdma_bbb_inst_rd_pipe_stage_dma_read</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_write"><b>msgdma_bbb_inst_rd_pipe_stage_dma_write</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_pipe_stage_host_rd"><b>msgdma_bbb_inst_rd_pipe_stage_host_rd</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_pipe_stage_host_wr"><b>msgdma_bbb_inst_rd_pipe_stage_host_wr</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_rd_pipe_stage_mem"><b>msgdma_bbb_inst_rd_pipe_stage_mem</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr"><b>msgdma_bbb_inst_wr</b>
+     </a> msgdma_bbb 1.0
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_csr"><b>msgdma_bbb_inst_wr_csr</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_magic_number_rom"><b>msgdma_bbb_inst_wr_magic_number_rom</b>
+     </a> magic_number_rom 1.0
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0"><b>msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</b>
+     </a> modular_sgdma_dispatcher 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0"><b>msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0</b>
+     </a> afu_id_avmm_slave 1.0
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_read"><b>msgdma_bbb_inst_wr_pipe_stage_dma_read</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_write"><b>msgdma_bbb_inst_wr_pipe_stage_dma_write</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_pipe_stage_host_rd"><b>msgdma_bbb_inst_wr_pipe_stage_host_rd</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_pipe_stage_host_wr"><b>msgdma_bbb_inst_wr_pipe_stage_host_wr</b>
+     </a> altera_avalon_mm_bridge 19.1
+     <br/>&#160;&#160;
+     <a href="#module_msgdma_bbb_inst_wr_pipe_stage_mem"><b>msgdma_bbb_inst_wr_pipe_stage_mem</b>
+     </a> altera_avalon_mm_bridge 19.1</span>
+   </div>
+  </div>
+  <div style="width:100% ;  height:10px"> </div>
+  <div class="label">Memory Map</div>
+  <table class="mmap">
+   <tr>
+    <td class="empty" rowspan="2"></td>
+    <td class="mastermodule" colspan="2">
+     <a href="#module_ddr_board_acl_memory_bank_divider_0"><b>ddr_board_acl_memory_bank_divider_0</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_ase_inst_0"><b>ase_inst_0</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_ase_inst_0_address_span_extender_0"><b>ase_inst_0_address_span_extender_0</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="3">
+     <a href="#module_msgdma_bbb_inst_rd"><b>msgdma_bbb_inst_rd</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_msgdma_bbb_inst_rd_dma_read_master"><b>msgdma_bbb_inst_rd_dma_read_master</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_msgdma_bbb_inst_rd_dma_write_master"><b>msgdma_bbb_inst_rd_dma_write_master</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="3">
+     <a href="#module_msgdma_bbb_inst_wr"><b>msgdma_bbb_inst_wr</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_msgdma_bbb_inst_wr_dma_read_master"><b>msgdma_bbb_inst_wr_dma_read_master</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_msgdma_bbb_inst_wr_dma_write_master"><b>msgdma_bbb_inst_wr_dma_write_master</b>
+     </a>
+    </td>
+   </tr>
+   <tr>
+    <td class="masterl">&#160;bank1</td>
+    <td class="masterr">&#160;bank2</td>
+    <td class="masterlr">&#160;expanded_master</td>
+    <td class="masterlr">&#160;expanded_master</td>
+    <td class="masterl">&#160;host_rd</td>
+    <td class="masterm">&#160;host_wr</td>
+    <td class="masterr">&#160;mem</td>
+    <td class="masterlr">&#160;Data_Read_Master</td>
+    <td class="masterlr">&#160;Data_Write_Master</td>
+    <td class="masterl">&#160;host_rd</td>
+    <td class="masterm">&#160;host_wr</td>
+    <td class="masterr">&#160;mem</td>
+    <td class="masterlr">&#160;Data_Read_Master</td>
+    <td class="masterlr">&#160;Data_Write_Master</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_ddr_board_acl_memory_bank_divider_0"><b>ddr_board_acl_memory_bank_divider_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_null_dfh_afu_id"><b>null_dfh_afu_id</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">afu_cfg_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_ase_inst_0"><b>ase_inst_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avmm_pipe_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_ase_inst_0_address_span_extender_0"><b>ase_inst_0_address_span_extender_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">cntl&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">windowed_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_ase_inst_0_afu_id_avmm_slave_0"><b>ase_inst_0_afu_id_avmm_slave_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">afu_cfg_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_msgdma_bbb_inst_rd"><b>msgdma_bbb_inst_rd</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">csr&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_msgdma_bbb_inst_rd_magic_number_rom"><b>msgdma_bbb_inst_rd_magic_number_rom</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>0001000000000000</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0"><b>msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">CSR&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">Descriptor_Slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0"><b>msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">afu_cfg_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_msgdma_bbb_inst_wr"><b>msgdma_bbb_inst_wr</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">csr&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_msgdma_bbb_inst_wr_magic_number_rom"><b>msgdma_bbb_inst_wr_magic_number_rom</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>0001000000000000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0"><b>msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">CSR&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">Descriptor_Slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0"><b>msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">afu_cfg_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+  </table>
+  <a name="module_ddr4a_cross_to_host"> </a>
+  <div>
+   <hr/>
+   <h2>ddr4a_cross_to_host</h2>altera_avalon_mm_clock_crossing_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_board_acl_memory_bank_divider_0">ddr_board_acl_memory_bank_divider_0</a>
+      </td>
+      <td class="from">bank1&#160;&#160;</td>
+      <td class="main" rowspan="15">ddr4a_cross_to_host</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_clk_a">ddr_clk_a</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;m0_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;m0_reset</td>
+     </tr>
+     <tr>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_pipe_1_burst16">ddr4a_pipe_1_burst16</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr4a_cross_to_kernel"> </a>
+  <div>
+   <hr/>
+   <h2>ddr4a_cross_to_kernel</h2>altera_avalon_mm_clock_crossing_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_clk_a">ddr_clk_a</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="12">ddr4a_cross_to_kernel</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;m0_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_kernel_clk">kernel_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;m0_reset</td>
+     </tr>
+     <tr>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_pipe_1_burst16">ddr4a_pipe_1_burst16</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr4a_pipe_0"> </a>
+  <div>
+   <hr/>
+   <h2>ddr4a_pipe_0</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_pipe_1_burst16">ddr4a_pipe_1_burst16</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="8">ddr4a_pipe_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_clk_a">ddr_clk_a</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr4a_pipe_1_burst16"> </a>
+  <div>
+   <hr/>
+   <h2>ddr4a_pipe_1_burst16</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_cross_to_kernel">ddr4a_cross_to_kernel</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="13">ddr4a_pipe_1_burst16</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_cross_to_host">ddr4a_cross_to_host</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_clk_a">ddr_clk_a</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_pipe_0">ddr4a_pipe_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr4b_cross_to_host"> </a>
+  <div>
+   <hr/>
+   <h2>ddr4b_cross_to_host</h2>altera_avalon_mm_clock_crossing_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_board_acl_memory_bank_divider_0">ddr_board_acl_memory_bank_divider_0</a>
+      </td>
+      <td class="from">bank2&#160;&#160;</td>
+      <td class="main" rowspan="15">ddr4b_cross_to_host</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_clk_b">ddr_clk_b</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;m0_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;m0_reset</td>
+     </tr>
+     <tr>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_pipe_1_burst16">ddr4b_pipe_1_burst16</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr4b_cross_to_kernel"> </a>
+  <div>
+   <hr/>
+   <h2>ddr4b_cross_to_kernel</h2>altera_avalon_mm_clock_crossing_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_clk_b">ddr_clk_b</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="12">ddr4b_cross_to_kernel</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;m0_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_kernel_clk">kernel_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;m0_reset</td>
+     </tr>
+     <tr>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_pipe_1_burst16">ddr4b_pipe_1_burst16</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr4b_pipe_0"> </a>
+  <div>
+   <hr/>
+   <h2>ddr4b_pipe_0</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_pipe_1_burst16">ddr4b_pipe_1_burst16</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="8">ddr4b_pipe_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_clk_b">ddr_clk_b</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr4b_pipe_1_burst16"> </a>
+  <div>
+   <hr/>
+   <h2>ddr4b_pipe_1_burst16</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_cross_to_kernel">ddr4b_cross_to_kernel</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="13">ddr4b_pipe_1_burst16</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_cross_to_host">ddr4b_cross_to_host</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_clk_b">ddr_clk_b</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_pipe_0">ddr4b_pipe_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr_board_acl_memory_bank_divider_0"> </a>
+  <div>
+   <hr/>
+   <h2>ddr_board_acl_memory_bank_divider_0</h2>acl_memory_bank_divider v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_pipe_stage_ase">pipe_stage_ase</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="25">ddr_board_acl_memory_bank_divider_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_mem">msgdma_bbb_inst_rd_pipe_stage_mem</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_mem">msgdma_bbb_inst_wr_pipe_stage_mem</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_kernel_clk">kernel_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;kernel_clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_kernel_reset">kernel_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;kernel_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">bank1&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_cross_to_host">ddr4a_cross_to_host</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">bank2&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_cross_to_host">ddr4b_cross_to_host</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr_clk_a"> </a>
+  <div>
+   <hr/>
+   <h2>ddr_clk_a</h2>altera_clock_bridge v19.1
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ddr_clk_b"> </a>
+  <div>
+   <hr/>
+   <h2>ddr_clk_b</h2>altera_clock_bridge v19.1
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_dma_host_rd_pipe"> </a>
+  <div>
+   <hr/>
+   <h2>dma_host_rd_pipe</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_host_rd">msgdma_bbb_inst_rd_pipe_stage_host_rd</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="8">dma_host_rd_pipe</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_dma_host_wr_pipe"> </a>
+  <div>
+   <hr/>
+   <h2>dma_host_wr_pipe</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_host_wr">msgdma_bbb_inst_wr_pipe_stage_host_wr</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="8">dma_host_wr_pipe</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_global_reset"> </a>
+  <div>
+   <hr/>
+   <h2>global_reset</h2>altera_reset_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="57">global_reset</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_ddr4a_cross_to_kernel">ddr4a_cross_to_kernel</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;m0_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_ddr4b_cross_to_kernel">ddr4b_cross_to_kernel</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;m0_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_ddr4b_cross_to_host">ddr4b_cross_to_host</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;m0_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_ddr4a_cross_to_host">ddr4a_cross_to_host</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;m0_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_board_acl_memory_bank_divider_0">ddr_board_acl_memory_bank_divider_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_pipe_0">ddr4a_pipe_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4a_pipe_1_burst16">ddr4a_pipe_1_burst16</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_pipe_0">ddr4b_pipe_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr4b_pipe_1_burst16">ddr4b_pipe_1_burst16</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk_in_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk_in_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_dma_host_rd_pipe">dma_host_rd_pipe</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_dma_host_wr_pipe">dma_host_wr_pipe</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_null_dfh_afu_id">null_dfh_afu_id</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_reset_in">ase_inst_0_reset_in</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;in_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_pipe_stage_ase">pipe_stage_ase</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_host_clk"> </a>
+  <div>
+   <hr/>
+   <h2>host_clk</h2>altera_clock_bridge v19.1
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_kernel_clk"> </a>
+  <div>
+   <hr/>
+   <h2>kernel_clk</h2>altera_clock_bridge v19.1
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_kernel_reset"> </a>
+  <div>
+   <hr/>
+   <h2>kernel_reset</h2>altera_reset_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_kernel_clk">kernel_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="4">kernel_reset</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_board_acl_memory_bank_divider_0">ddr_board_acl_memory_bank_divider_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;kernel_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_null_dfh_afu_id"> </a>
+  <div>
+   <hr/>
+   <h2>null_dfh_afu_id</h2>afu_id_avmm_slave v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="5">null_dfh_afu_id</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_pipe_stage_ase"> </a>
+  <div>
+   <hr/>
+   <h2>pipe_stage_ase</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_address_span_extender_0">ase_inst_0_address_span_extender_0</a>
+      </td>
+      <td class="from">expanded_master&#160;&#160;</td>
+      <td class="main" rowspan="10">pipe_stage_ase</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_board_acl_memory_bank_divider_0">ddr_board_acl_memory_bank_divider_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ase_inst_0"> </a>
+  <div>
+   <hr/>
+   <h2>ase_inst_0</h2>ase v1.0
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ase_inst_0_address_span_extender_0"> </a>
+  <div>
+   <hr/>
+   <h2>ase_inst_0_address_span_extender_0</h2>altera_address_span_extender v17.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_ase_inst_0_ase_avmm_pipe_0">ase_inst_0_ase_avmm_pipe_0</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="12">ase_inst_0_address_span_extender_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;cntl</td>
+     </tr>
+     <tr>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;windowed_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_clock_in">ase_inst_0_clock_in</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_reset_in">ase_inst_0_reset_in</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">expanded_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_pipe_stage_ase">pipe_stage_ase</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BURSTCOUNT_WIDTH</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">BYTEENABLE_WIDTH</td>
+        <td class="parametervalue">64</td>
+       </tr>
+       <tr>
+        <td class="parametername">CNTL_ADDRESS_WIDTH</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">512</td>
+       </tr>
+       <tr>
+        <td class="parametername">MASTER_ADDRESS_WIDTH</td>
+        <td class="parametervalue">48</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BURST_BYTES</td>
+        <td class="parametervalue">512</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BURST_WORDS</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">SLAVE_ADDRESS_SHIFT</td>
+        <td class="parametervalue">6</td>
+       </tr>
+       <tr>
+        <td class="parametername">SLAVE_ADDRESS_WIDTH</td>
+        <td class="parametervalue">6</td>
+       </tr>
+       <tr>
+        <td class="parametername">SUB_WINDOW_COUNT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ase_inst_0_afu_id_avmm_slave_0"> </a>
+  <div>
+   <hr/>
+   <h2>ase_inst_0_afu_id_avmm_slave_0</h2>afu_id_avmm_slave v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_ase_avmm_pipe_0">ase_inst_0_ase_avmm_pipe_0</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="8">ase_inst_0_afu_id_avmm_slave_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;afu_cfg_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_clock_in">ase_inst_0_clock_in</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_reset_in">ase_inst_0_reset_in</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ase_inst_0_ase_avmm_pipe_0"> </a>
+  <div>
+   <hr/>
+   <h2>ase_inst_0_ase_avmm_pipe_0</h2>altera_avalon_mm_bridge v17.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_clock_in">ase_inst_0_clock_in</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="12">ase_inst_0_ase_avmm_pipe_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_reset_in">ase_inst_0_reset_in</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_afu_id_avmm_slave_0">ase_inst_0_afu_id_avmm_slave_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;afu_cfg_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_ase_inst_0_address_span_extender_0">ase_inst_0_address_span_extender_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;cntl</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;windowed_slave</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ase_inst_0_clock_in"> </a>
+  <div>
+   <hr/>
+   <h2>ase_inst_0_clock_in</h2>altera_clock_bridge v17.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="13">ase_inst_0_clock_in</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;in_clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_reset_in">ase_inst_0_reset_in</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_ase_avmm_pipe_0">ase_inst_0_ase_avmm_pipe_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_afu_id_avmm_slave_0">ase_inst_0_afu_id_avmm_slave_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_address_span_extender_0">ase_inst_0_address_span_extender_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_ase_inst_0_reset_in"> </a>
+  <div>
+   <hr/>
+   <h2>ase_inst_0_reset_in</h2>altera_reset_bridge v17.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_clock_in">ase_inst_0_clock_in</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="13">ase_inst_0_reset_in</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;in_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_ase_avmm_pipe_0">ase_inst_0_ase_avmm_pipe_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_address_span_extender_0">ase_inst_0_address_span_extender_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ase_inst_0_afu_id_avmm_slave_0">ase_inst_0_afu_id_avmm_slave_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd</h2>msgdma_bbb v1.0
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_clk"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_clk</h2>clock_source vnull
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="59">msgdma_bbb_inst_rd_clk</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_in</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_in_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_dma_read_master">msgdma_bbb_inst_rd_dma_read_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_dma_write_master">msgdma_bbb_inst_rd_dma_write_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_csr">msgdma_bbb_inst_rd_csr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_host_rd">msgdma_bbb_inst_rd_pipe_stage_host_rd</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_read">msgdma_bbb_inst_rd_pipe_stage_dma_read</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_write">msgdma_bbb_inst_rd_pipe_stage_dma_write</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_host_wr">msgdma_bbb_inst_rd_pipe_stage_host_wr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_mem">msgdma_bbb_inst_rd_pipe_stage_mem</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_magic_number_rom">msgdma_bbb_inst_rd_magic_number_rom</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0">msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0">msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_csr"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_csr</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="11">msgdma_bbb_inst_rd_csr</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0">msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;CSR</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Descriptor_Slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0">msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;afu_cfg_slave</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_dma_read_master"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_dma_read_master</h2>dma_read_master v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0">msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</a>
+      </td>
+      <td class="from">Read_Command_Source&#160;&#160;</td>
+      <td class="main" rowspan="15">msgdma_bbb_inst_rd_dma_read_master</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Command_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Data_Read_Master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_read">msgdma_bbb_inst_rd_pipe_stage_dma_read</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Data_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_dma_write_master">msgdma_bbb_inst_rd_dma_write_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Data_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Response_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0">msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Read_Response_Sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_dma_write_master"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_dma_write_master</h2>dma_write_master v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_dma_read_master">msgdma_bbb_inst_rd_dma_read_master</a>
+      </td>
+      <td class="from">Data_Source&#160;&#160;</td>
+      <td class="main" rowspan="15">msgdma_bbb_inst_rd_dma_write_master</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Data_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0">msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</a>
+      </td>
+      <td class="from">Write_Command_Source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Command_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Data_Write_Master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_write">msgdma_bbb_inst_rd_pipe_stage_dma_write</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Response_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0">msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Write_Response_Sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_magic_number_rom"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_magic_number_rom</h2>magic_number_rom v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_read">msgdma_bbb_inst_rd_pipe_stage_dma_read</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="7">msgdma_bbb_inst_rd_magic_number_rom</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</h2>modular_sgdma_dispatcher v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_csr">msgdma_bbb_inst_rd_csr</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="20">msgdma_bbb_inst_rd_modular_sgdma_dispatcher_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;CSR</td>
+     </tr>
+     <tr>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Descriptor_Slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_dma_read_master">msgdma_bbb_inst_rd_dma_read_master</a>
+      </td>
+      <td class="from">Response_Source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Read_Response_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_dma_write_master">msgdma_bbb_inst_rd_dma_write_master</a>
+      </td>
+      <td class="from">Response_Source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Write_Response_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Read_Command_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_dma_read_master">msgdma_bbb_inst_rd_dma_read_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Command_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Write_Command_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_dma_write_master">msgdma_bbb_inst_rd_dma_write_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Command_Sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BURST_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BURST_WRAPPING_SUPPORT</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_FIFO_DEPTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">DESCRIPTOR_FIFO_DEPTH</td>
+        <td class="parametervalue">128</td>
+       </tr>
+       <tr>
+        <td class="parametername">ENHANCED_FEATURES</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BURST_COUNT</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BYTE</td>
+        <td class="parametervalue">1024</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_STRIDE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PROGRAMMABLE_BURST_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESPONSE_FIFO_DEPTH</td>
+        <td class="parametervalue">256</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESPONSE_PORT</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">STRIDE_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TRANSFER_TYPE</td>
+        <td class="parametervalue">Aligned Accesses</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0</h2>afu_id_avmm_slave v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_csr">msgdma_bbb_inst_rd_csr</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="7">msgdma_bbb_inst_rd_msgdma_bbb_afu_id_avmm_slave_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;afu_cfg_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_pipe_stage_dma_read"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_pipe_stage_dma_read</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_dma_read_master">msgdma_bbb_inst_rd_dma_read_master</a>
+      </td>
+      <td class="from">Data_Read_Master&#160;&#160;</td>
+      <td class="main" rowspan="15">msgdma_bbb_inst_rd_pipe_stage_dma_read</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_host_rd">msgdma_bbb_inst_rd_pipe_stage_host_rd</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_mem">msgdma_bbb_inst_rd_pipe_stage_mem</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_magic_number_rom">msgdma_bbb_inst_rd_magic_number_rom</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;slave</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_pipe_stage_dma_write"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_pipe_stage_dma_write</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_dma_write_master">msgdma_bbb_inst_rd_dma_write_master</a>
+      </td>
+      <td class="from">Data_Write_Master&#160;&#160;</td>
+      <td class="main" rowspan="12">msgdma_bbb_inst_rd_pipe_stage_dma_write</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_mem">msgdma_bbb_inst_rd_pipe_stage_mem</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_host_wr">msgdma_bbb_inst_rd_pipe_stage_host_wr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_pipe_stage_host_rd"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_pipe_stage_host_rd</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_read">msgdma_bbb_inst_rd_pipe_stage_dma_read</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="9">msgdma_bbb_inst_rd_pipe_stage_host_rd</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_dma_host_rd_pipe">dma_host_rd_pipe</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_pipe_stage_host_wr"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_pipe_stage_host_wr</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_write">msgdma_bbb_inst_rd_pipe_stage_dma_write</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="7">msgdma_bbb_inst_rd_pipe_stage_host_wr</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_rd_pipe_stage_mem"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_rd_pipe_stage_mem</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_write">msgdma_bbb_inst_rd_pipe_stage_dma_write</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="12">msgdma_bbb_inst_rd_pipe_stage_mem</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_rd_pipe_stage_dma_read">msgdma_bbb_inst_rd_pipe_stage_dma_read</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_rd_clk">msgdma_bbb_inst_rd_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_board_acl_memory_bank_divider_0">ddr_board_acl_memory_bank_divider_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr</h2>msgdma_bbb v1.0
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_clk"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_clk</h2>clock_source vnull
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_host_clk">host_clk</a>
+      </td>
+      <td class="from">out_clk&#160;&#160;</td>
+      <td class="main" rowspan="59">msgdma_bbb_inst_wr_clk</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_in</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_global_reset">global_reset</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_in_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_dma_read_master">msgdma_bbb_inst_wr_dma_read_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_dma_write_master">msgdma_bbb_inst_wr_dma_write_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_csr">msgdma_bbb_inst_wr_csr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_host_rd">msgdma_bbb_inst_wr_pipe_stage_host_rd</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_read">msgdma_bbb_inst_wr_pipe_stage_dma_read</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_write">msgdma_bbb_inst_wr_pipe_stage_dma_write</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_host_wr">msgdma_bbb_inst_wr_pipe_stage_host_wr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_mem">msgdma_bbb_inst_wr_pipe_stage_mem</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_magic_number_rom">msgdma_bbb_inst_wr_magic_number_rom</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0">msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0">msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_csr"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_csr</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="11">msgdma_bbb_inst_wr_csr</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0">msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;CSR</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Descriptor_Slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0">msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;afu_cfg_slave</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_dma_read_master"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_dma_read_master</h2>dma_read_master v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0">msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</a>
+      </td>
+      <td class="from">Read_Command_Source&#160;&#160;</td>
+      <td class="main" rowspan="15">msgdma_bbb_inst_wr_dma_read_master</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Command_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Data_Read_Master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_read">msgdma_bbb_inst_wr_pipe_stage_dma_read</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Data_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_dma_write_master">msgdma_bbb_inst_wr_dma_write_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Data_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Response_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0">msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Read_Response_Sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_dma_write_master"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_dma_write_master</h2>dma_write_master v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_dma_read_master">msgdma_bbb_inst_wr_dma_read_master</a>
+      </td>
+      <td class="from">Data_Source&#160;&#160;</td>
+      <td class="main" rowspan="15">msgdma_bbb_inst_wr_dma_write_master</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Data_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0">msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</a>
+      </td>
+      <td class="from">Write_Command_Source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Command_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Data_Write_Master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_write">msgdma_bbb_inst_wr_pipe_stage_dma_write</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Response_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0">msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Write_Response_Sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_magic_number_rom"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_magic_number_rom</h2>magic_number_rom v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_read">msgdma_bbb_inst_wr_pipe_stage_dma_read</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="7">msgdma_bbb_inst_wr_magic_number_rom</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</h2>modular_sgdma_dispatcher v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_csr">msgdma_bbb_inst_wr_csr</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="20">msgdma_bbb_inst_wr_modular_sgdma_dispatcher_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;CSR</td>
+     </tr>
+     <tr>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Descriptor_Slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_dma_read_master">msgdma_bbb_inst_wr_dma_read_master</a>
+      </td>
+      <td class="from">Response_Source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Read_Response_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_dma_write_master">msgdma_bbb_inst_wr_dma_write_master</a>
+      </td>
+      <td class="from">Response_Source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Write_Response_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Read_Command_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_dma_read_master">msgdma_bbb_inst_wr_dma_read_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Command_Sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">Write_Command_Source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_dma_write_master">msgdma_bbb_inst_wr_dma_write_master</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Command_Sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BURST_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BURST_WRAPPING_SUPPORT</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_FIFO_DEPTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">DESCRIPTOR_FIFO_DEPTH</td>
+        <td class="parametervalue">128</td>
+       </tr>
+       <tr>
+        <td class="parametername">ENHANCED_FEATURES</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BURST_COUNT</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_BYTE</td>
+        <td class="parametervalue">1024</td>
+       </tr>
+       <tr>
+        <td class="parametername">MAX_STRIDE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PROGRAMMABLE_BURST_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESPONSE_FIFO_DEPTH</td>
+        <td class="parametervalue">256</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESPONSE_PORT</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">STRIDE_ENABLE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TRANSFER_TYPE</td>
+        <td class="parametervalue">Aligned Accesses</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0</h2>afu_id_avmm_slave v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_csr">msgdma_bbb_inst_wr_csr</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="7">msgdma_bbb_inst_wr_msgdma_bbb_afu_id_avmm_slave_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;afu_cfg_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_pipe_stage_dma_read"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_pipe_stage_dma_read</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_dma_read_master">msgdma_bbb_inst_wr_dma_read_master</a>
+      </td>
+      <td class="from">Data_Read_Master&#160;&#160;</td>
+      <td class="main" rowspan="15">msgdma_bbb_inst_wr_pipe_stage_dma_read</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_host_rd">msgdma_bbb_inst_wr_pipe_stage_host_rd</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_mem">msgdma_bbb_inst_wr_pipe_stage_mem</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_magic_number_rom">msgdma_bbb_inst_wr_magic_number_rom</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;slave</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_pipe_stage_dma_write"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_pipe_stage_dma_write</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_dma_write_master">msgdma_bbb_inst_wr_dma_write_master</a>
+      </td>
+      <td class="from">Data_Write_Master&#160;&#160;</td>
+      <td class="main" rowspan="12">msgdma_bbb_inst_wr_pipe_stage_dma_write</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_mem">msgdma_bbb_inst_wr_pipe_stage_mem</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_host_wr">msgdma_bbb_inst_wr_pipe_stage_host_wr</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_pipe_stage_host_rd"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_pipe_stage_host_rd</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_read">msgdma_bbb_inst_wr_pipe_stage_dma_read</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="7">msgdma_bbb_inst_wr_pipe_stage_host_rd</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_pipe_stage_host_wr"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_pipe_stage_host_wr</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_write">msgdma_bbb_inst_wr_pipe_stage_dma_write</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="9">msgdma_bbb_inst_wr_pipe_stage_host_wr</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_dma_host_wr_pipe">dma_host_wr_pipe</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_msgdma_bbb_inst_wr_pipe_stage_mem"> </a>
+  <div>
+   <hr/>
+   <h2>msgdma_bbb_inst_wr_pipe_stage_mem</h2>altera_avalon_mm_bridge v19.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_write">msgdma_bbb_inst_wr_pipe_stage_dma_write</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="12">msgdma_bbb_inst_wr_pipe_stage_mem</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_msgdma_bbb_inst_wr_pipe_stage_dma_read">msgdma_bbb_inst_wr_pipe_stage_dma_read</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_msgdma_bbb_inst_wr_clk">msgdma_bbb_inst_wr_clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_ddr_board_acl_memory_bank_divider_0">ddr_board_acl_memory_bank_divider_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <table class="blueBar">
+   <tr>
+    <td class="l">generation took 0.01 seconds</td>
+    <td class="r">rendering took 0.06 seconds</td>
+   </tr>
+  </table>
+ </body>
+</html>

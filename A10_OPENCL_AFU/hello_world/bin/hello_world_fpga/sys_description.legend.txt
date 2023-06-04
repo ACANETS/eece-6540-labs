@@ -1,0 +1,44 @@
+- Version Identifier
+- Random hash
+- Board name
+- Specifies whether the kernel was built in big-endian mode
+- Specifies number of global memory systems
+For each global memory
+  - Memory name
+  - Memory type
+  - Number of memory interfaces (DIMMS or banks) usable as device global memory
+  - Memory configuration address
+  - Specifies whether the memory access is burst-interleaved across memory interfaces
+  For each memory interface (DIMM or bank)
+    - Global memory interace start address
+    - Global memory interface end address
+- Number of kernels
+  For each kernel:
+   - Kernel name
+   - Start address of kernel control registers
+   - Size of kernel control registers
+   - Depth of kernel fast relaunch buffer
+   - 0x0 (for internal use)
+   - 0x0 (for internal use)
+   - 0/1 value to indicate if the kernel is work-group invariant. If the value is 1, kernel launch will be modified to make local_size = global_size. This is an optimization.
+   - 0/1 value to indicate if the kernel is work-item invariant. If the value is 1, kernel launch will be modified to ensure that only a single thread is present on the device at a time.  This enables a variety of compiler optimizations.
+   - Number of times kernel operations are vectorized. The kernel will launched with fewer work-items in each work-groups as many times as the number of vector lanes.
+   - number of words in this kernel's profile scan chain.
+   - Number of kernel arguments
+   For each kernel argument:
+    - internal # representing its type
+    - internal # representing its category
+    - its size
+   - Number of printf calls
+   For each printf call:
+    - internal # representing its index
+    - internal # representing its format string
+   - Number of local memory systems.
+   - X-dim of required work-group size (controlled by __attribute__((reqd_work_group_size(X, Y, Z))) )
+   - Y-dim of required work-group size
+   - Z-dim of required work-group size
+   - Number of Maximum work-group size arguments to follow (1, 2 or 3)
+   - Scalarized Version of Maximum work-group size
+   - Maximum global work dimension (controlled by __attribute__((max_global_work_dim(N))))
+   - 0/1 value to indicate if the kernel supports a non-zero global_work_offset argument to clEnqueueNDRangeKernel (controlled by __attribute__((uses_global_work_offset(N))))
+- ROM size

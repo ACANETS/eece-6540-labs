@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.06.04.07:38:53"
+ outputDirectory="/home/u192806/A10_OPENCL_AFU/hello_world/bin/hello_world_fpga/build/ip/board/board_afu_id_avmm_slave_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Arria 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10AX115N2F40E2LG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="synchronousEdges" value="BOTH" />
+   <port name="reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="afu_cfg_slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="64" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="avmm_readdata" direction="output" role="readdata" width="64" />
+   <port name="avmm_writedata" direction="input" role="writedata" width="64" />
+   <port name="avmm_address" direction="input" role="address" width="3" />
+   <port name="avmm_write" direction="input" role="write" width="1" />
+   <port name="avmm_read" direction="input" role="read" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="board_afu_id_avmm_slave_0"
+   version="1.0"
+   name="board_afu_id_avmm_slave_0">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="10AX115N2F40E2LG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/hello_world/bin/hello_world_fpga/build/ip/board/board_afu_id_avmm_slave_0/synth/board_afu_id_avmm_slave_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/hello_world/bin/hello_world_fpga/build/ip/board/board_afu_id_avmm_slave_0/synth/board_afu_id_avmm_slave_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/hello_world/bin/hello_world_fpga/build/ip/board/board_afu_id_avmm_slave_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/hello_world/bin/hello_world_fpga/build/ccip_iface/afu_id_avmm_slave/afu_id_avmm_slave_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="board_afu_id_avmm_slave_0">"Generating: board_afu_id_avmm_slave_0"</message>
+   <message level="Info" culprit="board_afu_id_avmm_slave_0">"Generating: afu_id_avmm_slave"</message>
+  </messages>
+ </entity>
+ <entity kind="afu_id_avmm_slave" version="1.0" name="afu_id_avmm_slave">
+  <parameter name="NEXT_AFU_OFFSET" value="0" />
+  <parameter name="DFH_NEXT_OFFSET" value="65536" />
+  <parameter name="CREATE_SCRATCH_REG" value="0" />
+  <parameter name="AFU_ID_H" value="7184217340536246019" />
+  <parameter name="DFH_END_OF_LIST" value="0" />
+  <parameter name="DFH_AFU_MINOR_REV" value="0" />
+  <parameter name="DFH_FEATURE_ID" value="0" />
+  <parameter name="AFU_ID_L" value="11307134592678193903" />
+  <parameter name="DFH_AFU_MAJOR_REV" value="0" />
+  <parameter name="DFH_FEATURE_TYPE" value="1" />
+  <generatedFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/hello_world/bin/hello_world_fpga/build/ip/board/board_afu_id_avmm_slave_0/afu_id_avmm_slave_10/synth/afu_id_avmm_slave.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/hello_world/bin/hello_world_fpga/build/ip/board/board_afu_id_avmm_slave_0/afu_id_avmm_slave_10/synth/afu_id_avmm_slave.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/hello_world/bin/hello_world_fpga/build/ccip_iface/afu_id_avmm_slave/afu_id_avmm_slave_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="board_afu_id_avmm_slave_0"
+     as="board_afu_id_avmm_slave_0" />
+  <messages>
+   <message level="Info" culprit="board_afu_id_avmm_slave_0">"Generating: afu_id_avmm_slave"</message>
+  </messages>
+ </entity>
+</deploy>

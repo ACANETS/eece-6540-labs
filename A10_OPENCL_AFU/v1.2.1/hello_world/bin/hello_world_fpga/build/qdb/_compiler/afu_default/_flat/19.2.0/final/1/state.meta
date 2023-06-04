@@ -1,0 +1,12 @@
+{
+	"validity" : "LEGAL_STATE",
+	"user_modified" : false,
+	"predecessor" : "_compiler/afu_default/_flat/19.2.0/routed/1/",
+	"imported" : false,
+	"internal" : false,
+	"emptied" : false,
+	"sdc_preserved" : false,
+	"compatible" : false,
+	"version" : "Version 19.2.0 Build 57 06/24/2019 Patches 0.01rc SJ Pro Edition",
+	"version_index" : 520108288
+}

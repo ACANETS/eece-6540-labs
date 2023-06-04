@@ -1,0 +1,143 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, the Altera Quartus Prime License Agreement,
+# the Altera MegaCore Function License Agreement, or other
+# applicable license agreement, including, without limitation,
+# that your use is for the sole purpose of programming logic
+# devices manufactured by Altera and sold by Altera or its
+# authorized distributors.  Please refer to the applicable
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 16.0.0 Build 211 04/27/2016 SJ Pro Edition
+# Date created = 09:34:12  June 28, 2016
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		afu_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults_pro.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:42:47  JUNE 28, 2016"
+
+# Project-Wide Assignments
+# ========================
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+
+# Compiler Assignments
+# ====================
+set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name TOP_LEVEL_ENTITY dcp_top
+set_global_assignment -name FAMILY "Arria 10"
+set_global_assignment -name DEVICE 10AX115N2F40E2LG
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name ALLOW_ANY_RAM_SIZE_FOR_RECOGNITION ON
+set_global_assignment -name OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS OFF
+set_global_assignment -name USE_HIGH_SPEED_ADDER ON
+set_global_assignment -name MUX_RESTRUCTURE ON
+
+# PR Assignments
+# ================================
+set_global_assignment -name REVISION_TYPE PR_IMPL
+set_instance_assignment -name QDB_FILE_PARTITION dcp.qdb -to | -entity dcp_top
+set_instance_assignment -name ENTITY_REBINDING green_bs -to fpga_top|inst_green_bs -entity dcp_top
+
+# Classic Timing Assignments
+# ==========================
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+
+# Power Assignments
+# ================================
+set_global_assignment -name POWER_AUTO_COMPUTE_TJ ON
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+
+# Fitter Assignments
+# ==================
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 4
+#set_global_assignment -name AUTO_RESERVE_CLKUSR_FOR_CALIBRATION OFF
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name ROUTER_TIMING_OPTIMIZATION_LEVEL MAXIMUM
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ON
+set_global_assignment -name QII_AUTO_PACKED_REGISTERS NORMAL
+set_global_assignment -name PROGRAMMABLE_POWER_TECHNOLOGY_SETTING "FORCE ALL TILES WITH FAILING TIMING PATHS TO HIGH SPEED"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "1.8 V"
+
+# Device Assignments
+# ================================
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X4"
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name STRATIXII_CONFIGURATION_DEVICE EPCQL1024
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN ON
+set_global_assignment -name ACTIVE_SERIAL_CLOCK FREQ_100MHZ
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+
+#set_global_assignment -name PRESERVE_UNUSED_XCVR_CHANNEL ON
+
+#set_global_assignment -name USE_PWRMGT_SCL SDM_IO0
+#set_global_assignment -name USE_PWRMGT_SDA SDM_IO12
+#set_global_assignment -name PWRMGT_SLAVE_DEVICE_TYPE OTHER
+#set_global_assignment -name PWRMGT_SLAVE_DEVICE0_ADDRESS 60
+#set_global_assignment -name PWRMGT_VOLTAGE_OUTPUT_FORMAT "DIRECT FORMAT"
+#set_global_assignment -name PWRMGT_DIRECT_FORMAT_COEFFICIENT_M 1
+#set_global_assignment -name PWRMGT_DIRECT_FORMAT_COEFFICIENT_R 3
+
+# Fileset
+# ===============================
+
+# Some AFUs using the legacy wires local memory interface need INCLUDE_DDR4 defined globally
+set_global_assignment -name VERILOG_MACRO "INCLUDE_DDR4=<None>"
+
+set_global_assignment -name VERILOG_MACRO "INCLUDE_ETHERNET=<None>"
+
+#set_global_assignment -name VERILOG_MACRO PLATFORM_NAME="PLATFORM_FPGA_PAC_DC"
+
+
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION ON
+set_global_assignment -name LAST_QUARTUS_VERSION "19.2.0 Pro Edition"
+
+
+##OPENCL_KERNEL_ASSIGNMENTS_START_HERE
+
+
+
+set_global_assignment -name QIP_FILE kernel_system.qip
+
+set_global_assignment -name SOURCE_TCL_SCRIPT_FILE ip_include.tcl
+
+set_instance_assignment -name AUTO_SHIFT_REGISTER_RECOGNITION OFF -to *_NO_SHIFT_REG*
+
+set_global_assignment -name VERILOG_CONSTANT_LOOP_LIMIT 10000

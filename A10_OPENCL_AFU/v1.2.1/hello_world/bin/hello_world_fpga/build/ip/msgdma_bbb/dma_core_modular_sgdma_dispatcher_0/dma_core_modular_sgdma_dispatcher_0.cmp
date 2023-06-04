@@ -1,0 +1,30 @@
+	component dma_core_modular_sgdma_dispatcher_0 is
+		port (
+			clk                    : in  std_logic                      := 'X';             -- clk
+			reset                  : in  std_logic                      := 'X';             -- reset
+			csr_writedata          : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- writedata
+			csr_write              : in  std_logic                      := 'X';             -- write
+			csr_byteenable         : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- byteenable
+			csr_readdata           : out std_logic_vector(31 downto 0);                     -- readdata
+			csr_read               : in  std_logic                      := 'X';             -- read
+			csr_address            : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- address
+			descriptor_write       : in  std_logic                      := 'X';             -- write
+			descriptor_waitrequest : out std_logic;                                         -- waitrequest
+			descriptor_writedata   : in  std_logic_vector(255 downto 0) := (others => 'X'); -- writedata
+			descriptor_byteenable  : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- byteenable
+			src_write_master_data  : out std_logic_vector(255 downto 0);                    -- data
+			src_write_master_valid : out std_logic;                                         -- valid
+			src_write_master_ready : in  std_logic                      := 'X';             -- ready
+			snk_write_master_data  : in  std_logic_vector(255 downto 0) := (others => 'X'); -- data
+			snk_write_master_valid : in  std_logic                      := 'X';             -- valid
+			snk_write_master_ready : out std_logic;                                         -- ready
+			src_read_master_data   : out std_logic_vector(255 downto 0);                    -- data
+			src_read_master_valid  : out std_logic;                                         -- valid
+			src_read_master_ready  : in  std_logic                      := 'X';             -- ready
+			snk_read_master_data   : in  std_logic_vector(255 downto 0) := (others => 'X'); -- data
+			snk_read_master_valid  : in  std_logic                      := 'X';             -- valid
+			snk_read_master_ready  : out std_logic;                                         -- ready
+			csr_irq                : out std_logic                                          -- irq
+		);
+	end component dma_core_modular_sgdma_dispatcher_0;
+

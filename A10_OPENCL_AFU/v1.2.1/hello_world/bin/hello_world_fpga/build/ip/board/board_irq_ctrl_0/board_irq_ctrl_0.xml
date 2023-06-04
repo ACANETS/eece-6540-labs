@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.06.04.09:54:28"
+ outputDirectory="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Arria 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10AX115N2F40E2LG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INTERRUPT_RECEIVER_INTERRUPTS_USED"
+     type="BigInteger"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="IRQ_Read_Slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="4" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="Clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="IrqRead_i" direction="input" role="read" width="1" />
+   <port name="IrqReadData_o" direction="output" role="readdata" width="32" />
+  </interface>
+  <interface name="IRQ_Mask_Slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="4" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="Clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="MaskWrite_i" direction="input" role="write" width="1" />
+   <port name="MaskWritedata_i" direction="input" role="writedata" width="32" />
+   <port name="MaskByteenable_i" direction="input" role="byteenable" width="4" />
+   <port name="MaskRead_i" direction="input" role="read" width="1" />
+   <port name="MaskReaddata_o" direction="output" role="readdata" width="32" />
+   <port
+       name="MaskWaitrequest_o"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+  </interface>
+  <interface name="Clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="Clk_i" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="Resetn" kind="reset" start="0">
+   <property name="associatedClock" value="Clock" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="Rstn_i" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="interrupt_receiver" kind="interrupt" start="1">
+   <property name="associatedAddressablePoint" value="" />
+   <property name="associatedClock" value="Clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="irqMap" value="" />
+   <property name="irqScheme" value="INDIVIDUAL_REQUESTS" />
+   <port name="Irq_i" direction="input" role="irq" width="32" />
+  </interface>
+  <interface name="interrupt_sender" kind="interrupt" start="0">
+   <property name="associatedAddressablePoint" value="" />
+   <property name="associatedClock" value="Clock" />
+   <property name="associatedReset" value="Resetn" />
+   <property name="bridgedReceiverOffset" value="0" />
+   <property name="bridgesToReceiver" value="" />
+   <property name="irqScheme" value="NONE" />
+   <port name="Irq_o" direction="output" role="irq" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="board_irq_ctrl_0" version="1.0" name="board_irq_ctrl_0">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="10AX115N2F40E2LG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <parameter name="AUTO_INTERRUPT_RECEIVER_INTERRUPTS_USED" value="-1" />
+  <generatedFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/synth/board_irq_ctrl_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/synth/board_irq_ctrl_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/irq_controller/irq_ctrl_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="board_irq_ctrl_0">"Generating: board_irq_ctrl_0"</message>
+   <message level="Info" culprit="board_irq_ctrl_0">"Generating: irq_ctrl"</message>
+  </messages>
+ </entity>
+ <entity kind="irq_ctrl" version="1.0" name="irq_ctrl">
+  <parameter name="AUTO_INTERRUPT_RECEIVER_INTERRUPTS_USED" value="1" />
+  <generatedFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/irq_ctrl_10/synth/irq_ctrl.v"
+       attributes="" />
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/irq_ctrl_10/synth/irq_ena.v"
+       attributes="" />
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/irq_ctrl_10/synth/irq_bridge.v"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/irq_ctrl_10/synth/irq_ctrl.v"
+       attributes="" />
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/irq_ctrl_10/synth/irq_ena.v"
+       attributes="" />
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/board/board_irq_ctrl_0/irq_ctrl_10/synth/irq_bridge.v"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/ip/irq_controller/irq_ctrl_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="board_irq_ctrl_0" as="board_irq_ctrl_0" />
+  <messages>
+   <message level="Info" culprit="board_irq_ctrl_0">"Generating: irq_ctrl"</message>
+  </messages>
+ </entity>
+</deploy>

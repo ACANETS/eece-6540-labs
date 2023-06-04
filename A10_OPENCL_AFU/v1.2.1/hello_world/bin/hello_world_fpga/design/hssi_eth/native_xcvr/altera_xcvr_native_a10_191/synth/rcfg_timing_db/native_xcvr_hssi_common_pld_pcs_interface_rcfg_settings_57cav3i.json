@@ -1,0 +1,35 @@
+{ 
+  "configurations" : [
+    { 
+      "name" : "0",
+      "parameters" :{
+        "dft_clk_out_en" : "dft_clk_out_disable",
+        "dft_clk_out_sel" : "teng_rx_dft_clk",
+        "hrdrstctrl_en" : "hrst_dis",
+        "pcs_testbus_block_sel" : "pma_if",
+        "reconfig_settings" : "{}"
+      }
+    },
+    { 
+      "name" : "1",
+      "parameters" :{
+        "dft_clk_out_en" : "dft_clk_out_disable",
+        "dft_clk_out_sel" : "teng_rx_dft_clk",
+        "hrdrstctrl_en" : "hrst_dis",
+        "pcs_testbus_block_sel" : "pma_if",
+        "reconfig_settings" : "{}"
+      }
+    },
+    { 
+      "name" : "2",
+      "parameters" :{
+        "dft_clk_out_en" : "dft_clk_out_disable",
+        "dft_clk_out_sel" : "teng_rx_dft_clk",
+        "hrdrstctrl_en" : "hrst_dis",
+        "pcs_testbus_block_sel" : "pma_if",
+        "reconfig_settings" : "{}"
+      }
+    }
+  ]
+}
+

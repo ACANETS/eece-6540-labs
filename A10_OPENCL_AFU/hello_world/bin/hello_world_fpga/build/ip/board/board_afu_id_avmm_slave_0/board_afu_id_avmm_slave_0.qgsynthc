@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altera="http://www.altera.com/XMLSchema/Qsys/SystemTree">
+  <instanceKey xsi:type="xs:string">board_afu_id_avmm_slave_0</instanceKey>
+  <instanceData xsi:type="data">
+    <parameters></parameters>
+    <interconnectAssignments></interconnectAssignments>
+    <className>board_afu_id_avmm_slave_0</className>
+    <version>1.0</version>
+    <name>board_afu_id_avmm_slave_0</name>
+    <uniqueName>board_afu_id_avmm_slave_0</uniqueName>
+    <nonce>0</nonce>
+    <incidentConnections></incidentConnections>
+  </instanceData>
+  <children>
+    <node>
+      <instanceKey xsi:type="xs:string">board_afu_id_avmm_slave_0</instanceKey>
+      <instanceData xsi:type="data">
+        <parameters>
+          <parameter>
+            <name>AFU_ID_H</name>
+            <value>7184217340536246019</value>
+          </parameter>
+          <parameter>
+            <name>AFU_ID_L</name>
+            <value>11307134592678193903</value>
+          </parameter>
+          <parameter>
+            <name>CREATE_SCRATCH_REG</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>DFH_AFU_MAJOR_REV</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>DFH_AFU_MINOR_REV</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>DFH_END_OF_LIST</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>DFH_FEATURE_ID</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>DFH_FEATURE_TYPE</name>
+            <value>1</value>
+          </parameter>
+          <parameter>
+            <name>DFH_NEXT_OFFSET</name>
+            <value>65536</value>
+          </parameter>
+          <parameter>
+            <name>NEXT_AFU_OFFSET</name>
+            <value>0</value>
+          </parameter>
+        </parameters>
+        <interconnectAssignments></interconnectAssignments>
+        <className>afu_id_avmm_slave</className>
+        <version>1.0</version>
+        <name>board_afu_id_avmm_slave_0</name>
+        <uniqueName>afu_id_avmm_slave</uniqueName>
+        <fixedName>afu_id_avmm_slave</fixedName>
+        <nonce>0</nonce>
+        <incidentConnections></incidentConnections>
+        <path>board_afu_id_avmm_slave_0.board_afu_id_avmm_slave_0</path>
+      </instanceData>
+      <children></children>
+    </node>
+  </children>
+</node>

@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnsembleReport
+ name="ptmgr_temp_sensor"
+ kind="ptmgr_temp_sensor"
+ version="1.0"
+ fabric="QSYS">
+ <!-- Format version 19.1 240 (Future versions may contain additional information.) -->
+ <!-- 2019.06.06.10:48:07 -->
+ <!-- A collection of modules and connections -->
+ <parameter name="AUTO_GENERATION_ID">
+  <type>java.lang.Integer</type>
+  <value>0</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>GENERATION_ID</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_UNIQUE_ID">
+  <type>java.lang.String</type>
+  <value></value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>UNIQUE_ID</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE_FAMILY">
+  <type>java.lang.String</type>
+  <value>ARRIA10</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE">
+  <type>java.lang.String</type>
+  <value>10AX115N2F40E2LG</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE_SPEEDGRADE">
+  <type>java.lang.String</type>
+  <value>2</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_SPEEDGRADE</sysinfo_type>
+ </parameter>
+ <parameter name="deviceFamily">
+  <type>java.lang.String</type>
+  <value>Arria 10</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+ </parameter>
+ <parameter name="generateLegacySim">
+  <type>boolean</type>
+  <value>false</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>true</visible>
+  <valid>true</valid>
+ </parameter>
+ <module
+   name="temp_sense_0"
+   kind="altera_temp_sense"
+   version="19.1"
+   path="temp_sense_0">
+  <!-- Describes a single module. Module parameters are
+the requested settings for a module instance. -->
+  <parameter name="DEVICE_FAMILY">
+   <type>java.lang.String</type>
+   <value>ARRIA10</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+  </parameter>
+  <parameter name="CBX_AUTO_BLACKBOX">
+   <type>java.lang.String</type>
+   <value>ALL</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="CLK_FREQUENCY">
+   <type>double</type>
+   <value>1.0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="CLOCK_DIVIDER_VALUE">
+   <type>int</type>
+   <value>40</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="CLOCK_DIVIDER_ENABLE">
+   <type>java.lang.String</type>
+   <value>off</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="CE_CHECK">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="CLR_CHECK">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="NUMBER_OF_SAMPLES">
+   <type>int</type>
+   <value>128</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="POI_CAL_TEMPERATURE">
+   <type>int</type>
+   <value>85</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="SIM_TSDCALO">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="USE_WYS">
+   <type>java.lang.String</type>
+   <value>on</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="USER_OFFSET_ENABLE">
+   <type>java.lang.String</type>
+   <value>off</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <interface name="corectl" kind="conduit_end" version="19.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>corectl</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>corectl</role>
+   </port>
+  </interface>
+  <interface name="reset" kind="conduit_end" version="19.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>reset</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>reset</role>
+   </port>
+  </interface>
+  <interface name="tempout" kind="conduit_end" version="19.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>OUTPUT</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>tempout</name>
+    <direction>Output</direction>
+    <width>10</width>
+    <role>tempout</role>
+   </port>
+  </interface>
+  <interface name="eoc" kind="conduit_end" version="19.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>OUTPUT</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>eoc</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>eoc</role>
+   </port>
+  </interface>
+ </module>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>altera_temp_sense</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>Temperature Sensor Intel FPGA IP</displayName>
+  <version>19.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>4</instanceCount>
+  <name>conduit_end</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Conduit</displayName>
+  <version>19.1</version>
+ </plugin>
+ <reportVersion>19.1 240</reportVersion>
+ <uniqueIdentifier></uniqueIdentifier>
+</EnsembleReport>

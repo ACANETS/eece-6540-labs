@@ -1,0 +1,9 @@
+	component board_kernel_clk_export is
+		port (
+			in_clk      : in  std_logic := 'X'; -- clk
+			reset_n     : in  std_logic := 'X'; -- reset_n
+			clk_out     : out std_logic;        -- clk
+			reset_n_out : out std_logic         -- reset_n
+		);
+	end component board_kernel_clk_export;
+

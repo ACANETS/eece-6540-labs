@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="SCJIO">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags="AUTHORSHIP=Intel Corporation /// INTERNAL_COMPONENT=true"
+   categories="System"
+   tool="QsysPro" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element $system
+   {
+   }
+   element soft_core_jtag_io_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="device" value="10AX115N2F40E2LG" />
+ <parameter name="deviceFamily" value="Arria 10" />
+ <parameter name="deviceSpeedGrade" value="2" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="true" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="systemInfos"><![CDATA[<systemInfosDefinition>
+    <connPtSystemInfos/>
+</systemInfosDefinition>]]></parameter>
+ <parameter name="systemScripts" value="" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="jtag"
+   internal="soft_core_jtag_io_0.jtag"
+   type="conduit"
+   dir="end">
+  <port name="tdi" internal="tdi" />
+  <port name="tdo" internal="tdo" />
+  <port name="tms" internal="tms" />
+ </interface>
+ <interface name="select_this" internal="soft_core_jtag_io_0.select_this" />
+ <interface name="tck" internal="soft_core_jtag_io_0.tck" type="clock" dir="end">
+  <port name="tck" internal="tck" />
+ </interface>
+ <module
+   name="soft_core_jtag_io_0"
+   kind="altera_soft_core_jtag_io"
+   version="19.1"
+   enabled="1"
+   autoexport="1">
+  <parameter name="CONNECTED_TO_JTAG_ATOM" value="false" />
+  <parameter name="ENABLE_JTAG_IO_SELECTION" value="0" />
+  <parameter name="device_family" value="Arria 10" />
+ </module>
+</system>

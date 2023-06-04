@@ -1,0 +1,9 @@
+board_spec.xml
+build
+quartus.ini
+design
+hw
+afu_opencl_kernel.qsf
+dcp.qpf
+bsp_dir_filelist.txt
+qdb

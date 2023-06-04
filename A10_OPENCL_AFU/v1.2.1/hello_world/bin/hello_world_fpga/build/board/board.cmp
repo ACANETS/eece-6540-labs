@@ -1,0 +1,99 @@
+	component board is
+		port (
+			host_kernel_irq_irq                  : out std_logic;                                         -- irq
+			clk_200_clk                          : in  std_logic                      := 'X';             -- clk
+			emif_ddr4a_clk_clk                   : in  std_logic                      := 'X';             -- clk
+			emif_ddr4b_clk_clk                   : in  std_logic                      := 'X';             -- clk
+			global_reset_reset                   : in  std_logic                      := 'X';             -- reset
+			kernel_clk_clk                       : out std_logic;                                         -- clk
+			kernel_reset_reset_n                 : out std_logic;                                         -- reset_n
+			kernel_clk_in_clk                    : in  std_logic                      := 'X';             -- clk
+			kernel_cra_waitrequest               : in  std_logic                      := 'X';             -- waitrequest
+			kernel_cra_readdata                  : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- readdata
+			kernel_cra_readdatavalid             : in  std_logic                      := 'X';             -- readdatavalid
+			kernel_cra_burstcount                : out std_logic_vector(0 downto 0);                      -- burstcount
+			kernel_cra_writedata                 : out std_logic_vector(63 downto 0);                     -- writedata
+			kernel_cra_address                   : out std_logic_vector(29 downto 0);                     -- address
+			kernel_cra_write                     : out std_logic;                                         -- write
+			kernel_cra_read                      : out std_logic;                                         -- read
+			kernel_cra_byteenable                : out std_logic_vector(7 downto 0);                      -- byteenable
+			kernel_cra_debugaccess               : out std_logic;                                         -- debugaccess
+			kernel_irq_irq                       : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- irq
+			ccip_avmm_requestor_rd_waitrequest   : in  std_logic                      := 'X';             -- waitrequest
+			ccip_avmm_requestor_rd_readdata      : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			ccip_avmm_requestor_rd_readdatavalid : in  std_logic                      := 'X';             -- readdatavalid
+			ccip_avmm_requestor_rd_burstcount    : out std_logic_vector(2 downto 0);                      -- burstcount
+			ccip_avmm_requestor_rd_writedata     : out std_logic_vector(511 downto 0);                    -- writedata
+			ccip_avmm_requestor_rd_address       : out std_logic_vector(47 downto 0);                     -- address
+			ccip_avmm_requestor_rd_write         : out std_logic;                                         -- write
+			ccip_avmm_requestor_rd_read          : out std_logic;                                         -- read
+			ccip_avmm_requestor_rd_byteenable    : out std_logic_vector(63 downto 0);                     -- byteenable
+			ccip_avmm_requestor_rd_debugaccess   : out std_logic;                                         -- debugaccess
+			ccip_avmm_requestor_wr_waitrequest   : in  std_logic                      := 'X';             -- waitrequest
+			ccip_avmm_requestor_wr_readdata      : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			ccip_avmm_requestor_wr_readdatavalid : in  std_logic                      := 'X';             -- readdatavalid
+			ccip_avmm_requestor_wr_burstcount    : out std_logic_vector(2 downto 0);                      -- burstcount
+			ccip_avmm_requestor_wr_writedata     : out std_logic_vector(511 downto 0);                    -- writedata
+			ccip_avmm_requestor_wr_address       : out std_logic_vector(47 downto 0);                     -- address
+			ccip_avmm_requestor_wr_write         : out std_logic;                                         -- write
+			ccip_avmm_requestor_wr_read          : out std_logic;                                         -- read
+			ccip_avmm_requestor_wr_byteenable    : out std_logic_vector(63 downto 0);                     -- byteenable
+			ccip_avmm_requestor_wr_debugaccess   : out std_logic;                                         -- debugaccess
+			ccip_avmm_mmio_waitrequest           : out std_logic;                                         -- waitrequest
+			ccip_avmm_mmio_readdata              : out std_logic_vector(63 downto 0);                     -- readdata
+			ccip_avmm_mmio_readdatavalid         : out std_logic;                                         -- readdatavalid
+			ccip_avmm_mmio_burstcount            : in  std_logic_vector(0 downto 0)   := (others => 'X'); -- burstcount
+			ccip_avmm_mmio_writedata             : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- writedata
+			ccip_avmm_mmio_address               : in  std_logic_vector(17 downto 0)  := (others => 'X'); -- address
+			ccip_avmm_mmio_write                 : in  std_logic                      := 'X';             -- write
+			ccip_avmm_mmio_read                  : in  std_logic                      := 'X';             -- read
+			ccip_avmm_mmio_byteenable            : in  std_logic_vector(7 downto 0)   := (others => 'X'); -- byteenable
+			ccip_avmm_mmio_debugaccess           : in  std_logic                      := 'X';             -- debugaccess
+			kernel_ddr4a_waitrequest             : out std_logic;                                         -- waitrequest
+			kernel_ddr4a_readdata                : out std_logic_vector(511 downto 0);                    -- readdata
+			kernel_ddr4a_readdatavalid           : out std_logic;                                         -- readdatavalid
+			kernel_ddr4a_burstcount              : in  std_logic_vector(4 downto 0)   := (others => 'X'); -- burstcount
+			kernel_ddr4a_writedata               : in  std_logic_vector(511 downto 0) := (others => 'X'); -- writedata
+			kernel_ddr4a_address                 : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- address
+			kernel_ddr4a_write                   : in  std_logic                      := 'X';             -- write
+			kernel_ddr4a_read                    : in  std_logic                      := 'X';             -- read
+			kernel_ddr4a_byteenable              : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- byteenable
+			kernel_ddr4a_debugaccess             : in  std_logic                      := 'X';             -- debugaccess
+			emif_ddr4a_waitrequest               : in  std_logic                      := 'X';             -- waitrequest
+			emif_ddr4a_readdata                  : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			emif_ddr4a_readdatavalid             : in  std_logic                      := 'X';             -- readdatavalid
+			emif_ddr4a_burstcount                : out std_logic_vector(6 downto 0);                      -- burstcount
+			emif_ddr4a_writedata                 : out std_logic_vector(511 downto 0);                    -- writedata
+			emif_ddr4a_address                   : out std_logic_vector(31 downto 0);                     -- address
+			emif_ddr4a_write                     : out std_logic;                                         -- write
+			emif_ddr4a_read                      : out std_logic;                                         -- read
+			emif_ddr4a_byteenable                : out std_logic_vector(63 downto 0);                     -- byteenable
+			emif_ddr4a_debugaccess               : out std_logic;                                         -- debugaccess
+			kernel_ddr4b_waitrequest             : out std_logic;                                         -- waitrequest
+			kernel_ddr4b_readdata                : out std_logic_vector(511 downto 0);                    -- readdata
+			kernel_ddr4b_readdatavalid           : out std_logic;                                         -- readdatavalid
+			kernel_ddr4b_burstcount              : in  std_logic_vector(4 downto 0)   := (others => 'X'); -- burstcount
+			kernel_ddr4b_writedata               : in  std_logic_vector(511 downto 0) := (others => 'X'); -- writedata
+			kernel_ddr4b_address                 : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- address
+			kernel_ddr4b_write                   : in  std_logic                      := 'X';             -- write
+			kernel_ddr4b_read                    : in  std_logic                      := 'X';             -- read
+			kernel_ddr4b_byteenable              : in  std_logic_vector(63 downto 0)  := (others => 'X'); -- byteenable
+			kernel_ddr4b_debugaccess             : in  std_logic                      := 'X';             -- debugaccess
+			emif_ddr4b_waitrequest               : in  std_logic                      := 'X';             -- waitrequest
+			emif_ddr4b_readdata                  : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			emif_ddr4b_readdatavalid             : in  std_logic                      := 'X';             -- readdatavalid
+			emif_ddr4b_burstcount                : out std_logic_vector(6 downto 0);                      -- burstcount
+			emif_ddr4b_writedata                 : out std_logic_vector(511 downto 0);                    -- writedata
+			emif_ddr4b_address                   : out std_logic_vector(31 downto 0);                     -- address
+			emif_ddr4b_write                     : out std_logic;                                         -- write
+			emif_ddr4b_read                      : out std_logic;                                         -- read
+			emif_ddr4b_byteenable                : out std_logic_vector(63 downto 0);                     -- byteenable
+			emif_ddr4b_debugaccess               : out std_logic;                                         -- debugaccess
+			acl_internal_snoop_data              : out std_logic_vector(32 downto 0);                     -- data
+			acl_internal_snoop_valid             : out std_logic;                                         -- valid
+			acl_internal_snoop_ready             : in  std_logic                      := 'X';             -- ready
+			msgdma_bbb_0_dma_irq_irq             : out std_logic;                                         -- irq
+			msgdma_bbb_1_dma_irq_irq             : out std_logic                                          -- irq
+		);
+	end component board;
+

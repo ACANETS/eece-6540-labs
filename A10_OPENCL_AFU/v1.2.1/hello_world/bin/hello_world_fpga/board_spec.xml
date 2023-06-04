@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<board version="18.1" name="pac_a10">
+  
+  <compile name="flat" project="dcp" revision="afu_default" qsys_file="none" generic_kernel="1">
+    <generate cmd="echo"/>
+    <synthesize cmd="quartus_sh -t build/entry.tcl default"/>
+    <auto_migrate platform_type="a10_ref" >
+      <include fixes=""/>
+      <exclude fixes=""/>
+    </auto_migrate>
+  </compile>
+  
+  <compile name="base" project="dcp" revision="afu_base" qsys_file="none" generic_kernel="1">
+    <generate cmd="echo"/>
+    <synthesize cmd="quartus_sh -t build/entry.tcl base"/>
+    <auto_migrate platform_type="a10_ref" >
+      <include fixes=""/>
+      <exclude fixes=""/>
+    </auto_migrate>
+  </compile>
+  
+  <compile name="import" project="dcp" revision="afu_import" qsys_file="none" generic_kernel="1">
+    <generate cmd="echo"/>
+    <synthesize cmd="quartus_sh -t build/entry.tcl import"/>
+    <auto_migrate platform_type="a10_ref" >
+      <include fixes=""/>
+      <exclude fixes=""/>
+    </auto_migrate>
+  </compile>
+  
+  <device device_model="10ax115s2f45i2sges_dm.xml">
+    <used_resources>
+      <alms num="67250"/> <!-- ALMs used in final placement - ALMs used for registers -->
+      <ffs num="172452"/>
+      <dsps num="0"/>
+      <rams num="397"/>
+    </used_resources>
+  </device>
+
+  <!-- DDR4-2133 -->
+  <global_mem name="DDR" max_bandwidth="34133" interleaved_bytes="1024" config_addr="0x018">
+    <interface name="board" port="kernel_ddr4a" type="slave" width="512" maxburst="16" address="0x00000000" size="0x100000000" latency="240"/>
+    <interface name="board" port="kernel_ddr4b" type="slave" width="512" maxburst="16" address="0x100000000" size="0x100000000" latency="240"/>
+  </global_mem>
+    
+  <host>
+    <kernel_config start="0x00000000" size="0x0100000"/>
+  </host>
+
+  <interfaces>
+    <interface name="board" port="kernel_cra" type="master" width="64" misc="0"/>
+    <interface name="board" port="kernel_irq" type="irq" width="1"/>
+    <interface name="board" port="acl_internal_snoop" type="streamsource" enable="SNOOPENABLE" width="33" clock="board.kernel_clk"/>
+    <kernel_clk_reset clk="board.kernel_clk" clk2x="board.kernel_clk2x" reset="board.kernel_reset"/>
+  </interfaces>
+</board>

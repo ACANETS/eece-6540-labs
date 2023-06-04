@@ -1,0 +1,130 @@
+<KERNEL_LIST>
+	<PROGRAM_GLOBAL_MEM_SIZE value="0" />
+	<ENABLE_HYPER_OPTIMIZATIONS value="0" />
+	<USE_SYNC_RESET value="0" />
+	<TOP_LEVEL_RESET_EXTENDER value="0" />
+	<ENABLE_STALL_LATENCY value="0" />
+	<ENABLE_ECC value="0" />
+	<GLOBAL_WRITE_LSU_IC_DATA_LATENESS value="0" />
+	<GLOBAL_READ_LSU_IC_DATA_LATENESS value="0" />
+	<GLOBAL_LSU_IC_WIDE_DATA_SLICING value="0" />
+	<ALLOW_HIGH_SPEED_FIFO_USAGE value="0" />
+	<KERNEL_BUNDLE name="hello_world" kname="hello_world" compute_units="1">
+	<KERNEL name="hello_world" kname="hello_world" filename="kernel_hdl/hello_world/hello_world_function_wrapper.sv" version="1" cosim_name="" enable_global_profiling="1" workgroup_invariant="1" workitem_invariant="0" has_global_atomics="0" num_vector_lanes="1" num_profiling_signals="0">
+		<RESOURCE_INFO>
+			<ID value="0" />
+			<AGGREGATE_STATIC_LOCAL_MEM_SIZE value="0" />
+			<MAX_WORK_GROUP_SIZE num="1" values="2147483647" />
+			<REQUIRED_WORK_GROUP_SIZE x="0" y="0" z="0" />
+			<FAST_RELAUNCH_DEPTH value="1" />
+			<USES_GLOBAL_WORK_OFFSET value="1" />
+		</RESOURCE_INFO>
+		<CONFIGURATION>
+			<INTERFACE port="clock_reset" type="clock"/>
+			<INTERFACE port="cra_irq" type="irq"/>
+			<INTERFACE port="cra" type="slave" cosim_name="hello_world_function_cra_slave" width="64" size="256" latency="0" />
+		</CONFIGURATION>
+		<REQUIREMENTS>
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/linux64/lib/dspba/Libraries/sv/base/dspba_library_ver.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_data_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_altera_syncram_wrapped.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_scfifo_wrapped.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ecc_decoder.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ecc_encoder.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ecc.svh" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_ll_ram_fifo.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_valid_fifo_counter.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_staging_reg.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_mid_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_latency_one_ram_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_latency_zero_ram_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_fifo_zero_width.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_high_speed_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_low_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_zero_latency_fifo.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fanout_pipeline.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_std_synchronizer_nocut.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_decr_threshold.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_tessellated_incr_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_reset_handler.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_lfsr.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_dspba_buffer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_printf_buffer_address_generator.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_top.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_permute_address.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_pipelined.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_enabled.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_basic_coalescer.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_simple.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_master.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_bursting_load_stores.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_non_aligned_write.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_read_cache.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_atomic.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_prefetch_block.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_wide_wrapper.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_streaming_prefetch.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_aligned_burst_coalesced_lsu.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_toggle_detect.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_debug_mem.v" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_write.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/lsu_burst_coalesced_pipelined_read.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_fifo_stall_valid_lookahead.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_parameter_assert.svh" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_global_load_store.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_burst_coalescer.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_coalescer_dynamic_timeout.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_data_aligner.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_read_cache.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_read_data_alignment.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_unaligned_controller.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_word_coalescer.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_write_data_alignment.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/hld_lsu_write_kernel_downstream.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_shift_register_no_reset.sv" />
+			<FILE name="$::env(INTELFPGAOCLSDKROOT)/ip/acl_clock2x_holder.v" />
+			<FILE name="kernel_hdl/hello_world/hello_world_function_wrapper.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_function.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_bb_B0.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_bb_B0_stall_region.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_i_llvm_fpga_mem_unnamed_0_hello_world0.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_i_llvm_fpga_printf_p1024i8_printf_addr_0.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_i_llvm_fpga_sync_buffer_i32_A000000Zssage_sync_buffer1_0.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_i_llvm_fpga_sync_buffer_i32_A000000Zessage_sync_buffer_0.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_B0_merge_reg.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_B0_branch.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_B0_merge.sv" />
+			<FILE name="kernel_hdl/hello_world/hello_world_function_cra_slave.sv" />
+		</REQUIREMENTS>
+		<DATA>
+			<INTERFACE port="unnamed_hello_world0_hello_world" cosim_name="" type="master" width="512" true_lsu_width="256" burstwidth="5" pipelined="true" addr_space="__global" aspace_id="0" optype="write" criticality="8" buffer_location="DDR" group_id="0" />
+		</DATA>
+		<KERNEL_ARGS>
+			<ARGUMENT name="thread_id_from_which_to_print_message" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="" access_qualifier="none" type_name="int" >
+		</ARGUMENT>
+			<ARGUMENT name="llvm.fpga.printf.buffer.start" cosim_name="" opencl_access_type="ACL_ARG_ADDR_GLOBAL" opencl_type_category="ACL_ARG_MEM_OBJ" size="8" type_qualifier="" access_qualifier="" type_name="" >
+		</ARGUMENT>
+			<ARGUMENT name="llvm.fpga.printf.buffer.size" cosim_name="" opencl_access_type="ACL_ARG_ADDR_NONE" opencl_type_category="ACL_ARG_BY_VALUE" size="4" type_qualifier="" access_qualifier="" type_name="" >
+		</ARGUMENT>
+		</KERNEL_ARGS>
+		<IPS>
+		</IPS>
+		<PRINTF_FORMAT_STRINGS>
+			<FORMAT_STRING id="0" string="(null)" />
+			<FORMAT_STRING id="1" string="Thread&#32;#%u:&#32;Hello&#32;from&#32;the&#32;Intel&#32;FPGA&#32;OpenCL&#32;Compiler!&#10;" />
+		</PRINTF_FORMAT_STRINGS>
+		<PRINTF_INTERFACES>
+			<INTERFACE port="printf_addr_hello_world" />
+		</PRINTF_INTERFACES>
+	</KERNEL>
+	</KERNEL_BUNDLE>
+	<GLOBAL_MEM_LATENCY kernel_side_mem_latency="8" arbitration_latency="4" />
+	<STRUCT_TYPE_DEFS>
+	</STRUCT_TYPE_DEFS>
+</KERNEL_LIST>

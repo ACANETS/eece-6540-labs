@@ -1,0 +1,69 @@
+Fitter Finalize Stage Report for afu_default
+Sun Jun  4 10:21:54 2023
+Quartus Prime Version 19.2.0 Build 57 06/24/2019 Patches 0.01rc SJ Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter HSLP Summary
+  3. Finalize Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------------+
+; Fitter HSLP Summary                                                             ;
++--------------------------------------------------------+-----------------+------+
+; Resource                                               ; Usage           ; %    ;
++--------------------------------------------------------+-----------------+------+
+;                                                        ;                 ;      ;
+; Programmable power technology high-speed tiles         ; 1,947 / 18,244  ; 11 % ;
+; Programmable power technology low-power tiles          ; 16,297 / 18,244 ; 89 % ;
+;     -- low-power tiles that are used by the design     ; 6,613 / 16,297  ; 41 % ;
+;     -- unused tiles (low-power)                        ; 9,684 / 16,297  ; 59 % ;
+;                                                        ;                 ;      ;
+; Programmable power technology high-speed LAB tiles     ; 1,606 / 13,898  ; 12 % ;
+; Programmable power technology low-power LAB tiles      ; 12,292 / 13,898 ; 88 % ;
+;     -- low-power LAB tiles that are used by the design ; 6,088 / 12,292  ; 50 % ;
+;     -- unused LAB tiles (low-power)                    ; 6,204 / 12,292  ; 50 % ;
+;                                                        ;                 ;      ;
++--------------------------------------------------------+-----------------+------+
+
+
++-------------------+
+; Finalize Messages ;
++-------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 19.2.0 Build 57 06/24/2019 Patches 0.01rc SJ Pro Edition
+    Info: Processing started: Sun Jun  4 09:58:51 2023
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off dcp -c afu_default
+Info: Using INI file /home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/build/quartus.ini
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = dcp
+Info: Revision = afu_default
+Info (11888): Total time spent on timing analysis during Post-Routing is 0.07 seconds.
+Info (16557): Fitter post-fit operations ending: elapsed time is 00:03:21
+
+

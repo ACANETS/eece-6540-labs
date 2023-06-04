@@ -1,0 +1,149 @@
+OpenCL Auto Migration Report
+
+To disable auto migration compile with flag: --no-auto-migrate
+
+Alternatively, you can enable/disable individual fixes
+by adding them to the include/exclude field in board_spec.xml.
+
+----------- Platform ---------
+| Board pac_a10 with auto migration type a10_ref and 
+| board_spec version 18.1 has the following properties:
+|   family = ARRIA 10
+|   flow = QHD - Partial Reconfiguration
+|   host = PCIe
+|   name = a10_ref
+|   pgm = Partial Reconfiguration
+|   version = 18.1
+------------------------------
+
+----------- Fixes To Apply ---------
+| pre_skipbak
+------------------------------------
+
+-------- Skipping BAK flow - Copy-Over (name: pre_skipbak) ----------
+Info: *******************************************************************
+Info: Running Quartus Prime Shell
+    Info: Version 19.2.0 Build 57 06/24/2019 Patches 0.01rc SJ Pro Edition
+    Info: Copyright (C) 2019  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sun Jun  4 09:53:51 2023
+Info: Command: quartus_sh -t /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/migrate/pre_skipbak/pre_skipbak.tcl a10_ref pac_a10 -1
+Info: Quartus(args): a10_ref pac_a10 -1
+Info: Using INI file /home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/quartus.ini
+Error (23035): Tcl error: couldn't read file "scripts/qar_ip_files.tcl": no such file or directory
+    while executing
+"source "scripts/qar_ip_files.tcl""
+    (procedure "get_pr_base_id" line 2)
+    invoked from within
+"get_pr_base_id"
+    (procedure "get_cache_dir" line 3)
+    invoked from within
+"get_cache_dir $platform $board_variant $pr_base_id $version"
+    (procedure "preamble" line 3)
+    invoked from within
+"preamble $platform $board_variant $pr_base_id $quartus(version) 0"
+    invoked from within
+"set tmp_dir [preamble $platform $board_variant $pr_base_id $quartus(version) 0]"
+    (file "/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/migrate/pre_skipbak/pre_skipbak.tcl" line 6)
+------------------------------------------------
+couldn't read file "scripts/qar_ip_files.tcl": no such file or directory
+    while executing
+"source "scripts/qar_ip_files.tcl""
+    (procedure "get_pr_base_id" line 2)
+    invoked from within
+"get_pr_base_id"
+    (procedure "get_cache_dir" line 3)
+    invoked from within
+"get_cache_dir $platform $board_variant $pr_base_id $version"
+    (procedure "preamble" line 3)
+    invoked from within
+"preamble $platform $board_variant $pr_base_id $quartus(version) 0"
+    invoked from within
+"set tmp_dir [preamble $platform $board_variant $pr_base_id $quartus(version) 0]"
+    (file "/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/migrate/pre_skipbak/pre_skipbak.tcl" line 6)
+------------------------------------------------
+Error (23031): Evaluation of Tcl script /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/migrate/pre_skipbak/pre_skipbak.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 2 errors, 0 warnings
+    Error: Peak virtual memory: 1005 megabytes
+    Error: Processing ended: Sun Jun  4 09:53:52 2023
+    Error: Elapsed time: 00:00:01
+------------------------------
+
+Post-Compile Automigration Report
+----------- Fixes To Apply ---------
+| post_skipbak
+------------------------------------
+
+-------- Skipping BAK flow - Copy-Back (name: post_skipbak) ----------
+Info: *******************************************************************
+Info: Running Quartus Prime Shell
+    Info: Version 19.2.0 Build 57 06/24/2019 Patches 0.01rc SJ Pro Edition
+    Info: Copyright (C) 2019  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sun Jun  4 10:27:29 2023
+Info: Command: quartus_sh -t /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/migrate/post_skipbak/post_skipbak.tcl a10_ref pac_a10 -1
+Info: Quartus(args): a10_ref pac_a10 -1
+Info: Using INI file /home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/quartus.ini
+Error (23035): Tcl error: couldn't read file "scripts/qar_ip_files.tcl": no such file or directory
+    while executing
+"source "scripts/qar_ip_files.tcl""
+    (procedure "get_pr_base_id" line 2)
+    invoked from within
+"get_pr_base_id"
+    (procedure "get_cache_dir" line 3)
+    invoked from within
+"get_cache_dir $platform $board_variant $pr_base_id $version"
+    (procedure "preamble" line 3)
+    invoked from within
+"preamble $platform $board_variant $pr_base_id $quartus(version)"
+    invoked from within
+"set tmp_dir [preamble $platform $board_variant $pr_base_id $quartus(version)]"
+    (file "/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/migrate/post_skipbak/post_skipbak.tcl" line 6)
+------------------------------------------------
+couldn't read file "scripts/qar_ip_files.tcl": no such file or directory
+    while executing
+"source "scripts/qar_ip_files.tcl""
+    (procedure "get_pr_base_id" line 2)
+    invoked from within
+"get_pr_base_id"
+    (procedure "get_cache_dir" line 3)
+    invoked from within
+"get_cache_dir $platform $board_variant $pr_base_id $version"
+    (procedure "preamble" line 3)
+    invoked from within
+"preamble $platform $board_variant $pr_base_id $quartus(version)"
+    invoked from within
+"set tmp_dir [preamble $platform $board_variant $pr_base_id $quartus(version)]"
+    (file "/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/migrate/post_skipbak/post_skipbak.tcl" line 6)
+------------------------------------------------
+Error (23031): Evaluation of Tcl script /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/ip/board/migrate/post_skipbak/post_skipbak.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 2 errors, 0 warnings
+    Error: Peak virtual memory: 1005 megabytes
+    Error: Processing ended: Sun Jun  4 10:27:29 2023
+    Error: Elapsed time: 00:00:00
+------------------------------
+

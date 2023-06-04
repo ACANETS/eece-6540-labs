@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altera="http://www.altera.com/XMLSchema/Qsys/SystemTree">
+  <instanceKey xsi:type="xs:string">ase_address_span_extender_0</instanceKey>
+  <instanceData xsi:type="data">
+    <parameters></parameters>
+    <interconnectAssignments></interconnectAssignments>
+    <className>ase_address_span_extender_0</className>
+    <version>1.0</version>
+    <name>ase_address_span_extender_0</name>
+    <uniqueName>ase_address_span_extender_0</uniqueName>
+    <nonce>0</nonce>
+    <incidentConnections></incidentConnections>
+  </instanceData>
+  <children>
+    <node>
+      <instanceKey xsi:type="xs:string">address_span_extender_0</instanceKey>
+      <instanceData xsi:type="data">
+        <parameters>
+          <parameter>
+            <name>BURSTCOUNT_WIDTH</name>
+            <value>4</value>
+          </parameter>
+          <parameter>
+            <name>BYTEENABLE_WIDTH</name>
+            <value>64</value>
+          </parameter>
+          <parameter>
+            <name>CNTL_ADDRESS_WIDTH</name>
+            <value>1</value>
+          </parameter>
+          <parameter>
+            <name>DATA_WIDTH</name>
+            <value>512</value>
+          </parameter>
+          <parameter>
+            <name>DATA_WORD_WIDTH</name>
+            <value>64</value>
+          </parameter>
+          <parameter>
+            <name>ENABLE_SLAVE_PORT</name>
+            <value>true</value>
+          </parameter>
+          <parameter>
+            <name>MASTER_ADDRESS_DEF</name>
+            <value>0</value>
+          </parameter>
+          <parameter>
+            <name>MASTER_ADDRESS_SPAN</name>
+            <value>256 terabytes</value>
+          </parameter>
+          <parameter>
+            <name>MASTER_ADDRESS_WIDTH</name>
+            <value>48</value>
+          </parameter>
+          <parameter>
+            <name>MAX_BURST_BYTES</name>
+            <value>512</value>
+          </parameter>
+          <parameter>
+            <name>MAX_BURST_WORDS</name>
+            <value>8</value>
+          </parameter>
+          <parameter>
+            <name>MAX_PENDING_READS</name>
+            <value>16</value>
+          </parameter>
+          <parameter>
+            <name>SLAVE_ADDRESS_SHIFT</name>
+            <value>6</value>
+          </parameter>
+          <parameter>
+            <name>SLAVE_ADDRESS_SPAN</name>
+            <value>4 kilobytes</value>
+          </parameter>
+          <parameter>
+            <name>SLAVE_ADDRESS_WIDTH</name>
+            <value>6</value>
+          </parameter>
+          <parameter>
+            <name>SUB_WINDOW_COUNT</name>
+            <value>1</value>
+          </parameter>
+          <parameter>
+            <name>SUB_WINDOW_SPAN</name>
+            <value>4 kilobytes</value>
+          </parameter>
+          <parameter>
+            <name>SYNC_RESET</name>
+            <value>0</value>
+          </parameter>
+        </parameters>
+        <interconnectAssignments></interconnectAssignments>
+        <className>altera_address_span_extender</className>
+        <version>19.1</version>
+        <name>address_span_extender_0</name>
+        <uniqueName>ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi</uniqueName>
+        <nonce>0</nonce>
+        <incidentConnections></incidentConnections>
+        <path>ase_address_span_extender_0.address_span_extender_0</path>
+      </instanceData>
+      <children></children>
+    </node>
+  </children>
+</node>

@@ -1,0 +1,47 @@
+{
+  "columns":
+  ["", "Pipelined", "II", "Speculated iterations", "Details"]
+  , "children":
+  [
+    {
+      "name":"Kernel: hello_world"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"device/hello_world.cl"
+            , "line":24
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"Fmax bottlenck block: None"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+Fitter Status : Successful - Sun Jun  4 10:22:28 2023
+Quartus Prime Version : 19.2.0 Build 57 06/24/2019 Patches 0.01rc SJ Pro Edition
+Revision Name : afu_default
+Top-level Entity Name : dcp_top
+Family : Arria 10
+Device : 10AX115N2F40E2LG
+Timing Models : Final
+Logic utilization (in ALMs) : 61,590 / 427,200 ( 14 % )
+Total registers : 105245
+Total pins : 310 / 826 ( 38 % )
+Total virtual pins : 0
+Total block memory bits : 2,218,856 / 55,562,240 ( 4 % )
+Total RAM Blocks : 332 / 2,713 ( 12 % )
+Total DSP Blocks : 0 / 1,518 ( 0 % )
+Total HSSI RX channels : 12 / 48 ( 25 % )
+Total HSSI TX channels : 12 / 48 ( 25 % )
+Total PLLs : 25 / 112 ( 22 % )

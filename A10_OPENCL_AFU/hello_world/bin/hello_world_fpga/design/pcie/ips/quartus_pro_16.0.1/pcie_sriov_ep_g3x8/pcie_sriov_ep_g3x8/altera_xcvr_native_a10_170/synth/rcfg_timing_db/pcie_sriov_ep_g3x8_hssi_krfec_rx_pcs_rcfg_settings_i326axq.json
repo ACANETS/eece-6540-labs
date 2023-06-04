@@ -1,0 +1,15 @@
+{ 
+  "configurations" : [
+    { 
+      "name" : "0",
+      "parameters" :{
+      }
+    },
+    { 
+      "name" : "1",
+      "parameters" :{
+      }
+    }
+  ]
+}
+

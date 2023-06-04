@@ -1,0 +1,172 @@
+{
+  "51214760":
+  {
+    "nodes":
+    [
+      {
+        "name":"hello_world.B0"
+        , "id":51412464
+        , "start":"0"
+        , "end":"5"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"thread_id_from_which_to_print_message"
+            , "id":57286528
+            , "start":"1"
+            , "end":"1"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Input Synchronization for 'thread_id_from_which_to_print_message'"
+                , "Start Cycle":"1"
+                , "Latency":"0"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Compare"
+            , "id":57427952
+            , "start":"1"
+            , "end":"1"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"32-bit Integer Compare"
+                , "Start Cycle":"1"
+                , "Latency":"0"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"device/hello_world.cl"
+                  , "line":28
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"printf"
+            , "id":54103232
+            , "start":"1"
+            , "end":"3"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"printf"
+                , "Start Cycle":"1"
+                , "Latency":"2"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"device/hello_world.cl"
+                  , "line":29
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"thread_id_from_which_to_print_message"
+            , "id":57212096
+            , "start":"3"
+            , "end":"3"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Input Synchronization for 'thread_id_from_which_to_print_message'"
+                , "Start Cycle":"3"
+                , "Latency":"0"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"<<"
+            , "id":57427600
+            , "start":"3"
+            , "end":"3"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"256-bit Left Shift"
+                , "Constant Operand":"32 (0x20)"
+                , "Start Cycle":"3"
+                , "Latency":"0"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Or"
+            , "id":57414368
+            , "start":"3"
+            , "end":"3"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"256-bit Or"
+                , "Constant Operand":"1 (0x1)"
+                , "Start Cycle":"3"
+                , "Latency":"0"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"ST"
+            , "id":57467440
+            , "start":"3"
+            , "end":"5"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Store"
+                , "Width":"256 bits"
+                , "LSU Style":"Burst-coalesced"
+                , "Stall-free":"No"
+                , "Global Memory":"Yes"
+                , "Start Cycle":"3"
+                , "Latency":"2"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"device/hello_world.cl"
+                  , "line":29
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+    ]
+    , "links":
+    [
+    ]
+  }
+}

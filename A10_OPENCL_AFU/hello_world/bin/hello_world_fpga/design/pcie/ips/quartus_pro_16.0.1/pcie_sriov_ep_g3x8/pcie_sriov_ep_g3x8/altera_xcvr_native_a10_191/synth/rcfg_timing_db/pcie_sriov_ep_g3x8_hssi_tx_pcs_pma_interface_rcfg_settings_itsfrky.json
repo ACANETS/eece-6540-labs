@@ -1,0 +1,55 @@
+{ 
+  "configurations" : [
+    { 
+      "name" : "0",
+      "parameters" :{
+        "bypass_pma_txelecidle" : "false",
+        "channel_operation_mode" : "tx_rx_pair_enabled",
+        "lpbk_en" : "disable",
+        "master_clk_sel" : "master_tx_pma_clk",
+        "pcie_sub_prot_mode_tx" : "pipe_g3",
+        "pldif_datawidth_mode" : "pldif_data_10bit",
+        "pma_dw_tx" : "pcie_g3_dyn_dw_tx",
+        "pma_if_dft_en" : "dft_dis",
+        "pmagate_en" : "pmagate_dis",
+        "prbs_clken" : "prbs_clk_dis",
+        "prbs_gen_pat" : "prbs_gen_dis",
+        "prbs9_dwidth" : "prbs9_64b",
+        "prot_mode_tx" : "eightg_g3_pcie_g3_hip_mode_tx",
+        "sq_wave_num" : "sq_wave_default",
+        "sqwgen_clken" : "sqwgen_clk_dis",
+        "sup_mode" : "user_mode",
+        "tx_dyn_polarity_inversion" : "tx_dyn_polinv_dis",
+        "tx_pma_data_sel" : "pcie_gen3",
+        "tx_static_polarity_inversion" : "tx_stat_polinv_dis",
+        "reconfig_settings" : "{}"
+      }
+    },
+    { 
+      "name" : "1",
+      "parameters" :{
+        "bypass_pma_txelecidle" : "true",
+        "channel_operation_mode" : "tx_rx_pair_enabled",
+        "lpbk_en" : "disable",
+        "master_clk_sel" : "master_tx_pma_clk",
+        "pcie_sub_prot_mode_tx" : "other_prot_mode",
+        "pldif_datawidth_mode" : "pldif_data_10bit",
+        "pma_dw_tx" : "pma_10b_tx",
+        "pma_if_dft_en" : "dft_dis",
+        "pmagate_en" : "pmagate_dis",
+        "prbs_clken" : "prbs_clk_dis",
+        "prbs_gen_pat" : "prbs_gen_dis",
+        "prbs9_dwidth" : "prbs9_64b",
+        "prot_mode_tx" : "eightg_basic_mode_tx",
+        "sq_wave_num" : "sq_wave_default",
+        "sqwgen_clken" : "sqwgen_clk_dis",
+        "sup_mode" : "user_mode",
+        "tx_dyn_polarity_inversion" : "tx_dyn_polinv_dis",
+        "tx_pma_data_sel" : "eight_g_pcs",
+        "tx_static_polarity_inversion" : "tx_stat_polinv_dis",
+        "reconfig_settings" : "{}"
+      }
+    }
+  ]
+}
+

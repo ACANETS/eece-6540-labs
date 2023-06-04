@@ -1,0 +1,27 @@
+##
+## This file has been generated automatically by afu_platform_config.
+## Do not edit it by hand.
+##
+## Platform: a10_gx_pac_hssi
+## AFU top-level interface: ccip_std_afu_avalon_mm_legacy_wires
+##
+
+namespace eval platform_cfg {
+    variable PLATFORM_CLASS_NAME "a10_gx_pac_hssi"
+
+    # These top-level port classes are provided
+    variable PLATFORM_PROVIDES_LOCAL_MEMORY 1
+    variable PLATFORM_PROVIDES_CLOCKS 1
+    variable PLATFORM_PROVIDES_CCI_P 1
+    variable PLATFORM_PROVIDES_POWER 1
+    variable PLATFORM_PROVIDES_ERROR 1
+
+    # These top-level ports are passed from the platform to the AFU
+    variable AFU_TOP_REQUIRES_LOCAL_MEMORY_AVALON_MM_LEGACY_WIRES_2BANK 1
+    variable AFU_TOP_REQUIRES_CLOCKS_PCLK3_USR2 1
+    variable AFU_TOP_REQUIRES_CCI_P_STRUCT 1
+    variable AFU_TOP_REQUIRES_POWER_2BIT 1
+    variable AFU_TOP_REQUIRES_ERROR_1BIT 1
+}
+
+set_global_assignment -name SOURCE_TCL_SCRIPT_FILE platform_if/par/platform_if_addenda.qsf

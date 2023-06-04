@@ -1,0 +1,25 @@
+Info: *******************************************************************
+Info: Running Quartus Prime Shell
+    Info: Version 19.2.0 Build 57 06/24/2019 Patches 0.01rc SJ Pro Edition
+    Info: Copyright (C) 2019  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sun Jun  4 10:27:31 2023
+Info: Command: quartus_sh -t /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/share/lib/tcl/quartus_compile_report.tcl aoc dcp afu_default /home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/reports/lib/json/quartus.json 0 293 10000 293.08 hello_world,0
+Info: Quartus(args): aoc dcp afu_default /home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/reports/lib/json/quartus.json 0 293 10000 293.08 hello_world,0
+Info: Using INI file /home/u192806/A10_OPENCL_AFU/v1.2.1/hello_world/bin/hello_world_fpga/quartus.ini
+Generating OpenCL report failed with the following error message:
+ERROR: Can't load report data for revision name: afu_default. Make sure the report database exists for the specified revision name.
+
+Skipping report generation.

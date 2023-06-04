@@ -1,0 +1,108 @@
+{
+  "performanceSummary":
+  {
+    "name":"Kernel Summary"
+    , "columns":
+    ["Kernel Name", "Kernel Type", "Autorun", "Workgroup Size", "# Compute Units"]
+    , "children":
+    [
+      {
+        "name":"hello_world"
+        , "data":
+        [
+          "NDRange"
+          , "No"
+          , "n/a"
+          , 1
+        ]
+        , "details":
+        [
+          {
+            "type":"text"
+            , "text":"Kernel type: NDRange"
+          }
+          , {
+            "type":"text"
+            , "text":"The kernel does not use any work-group information (such as get_local_id() or get_group_id()).Local work-group size will be automatically modified to match global work-group size on launch.This is a hardware optimization."
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"device/hello_world.cl"
+              , "line":24
+            }
+          ]
+        ]
+      }
+    ]
+  }
+  , "estimatedResources":
+  {
+    "name":"Estimated Resource Usage"
+    , "columns":
+    ["Kernel Name", "ALUTs ", "FFs  ", "RAMs ", "DSPs ", "MLABs"]
+    , "children":
+    [
+      {
+        "name":"hello_world"
+        , "data":
+        [1693, 4378, 0, 0, 41]
+        , "debug":
+        [
+          [
+            {
+              "filename":"device/hello_world.cl"
+              , "line":24
+            }
+          ]
+        ]
+      }
+      , {
+        "name":"Global Interconnect"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [1289, 6591, 26, 0, 0]
+      }
+      , {
+        "name":"Board Interface"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [134500, 172452, 397, 0, 0]
+      }
+      , {
+        "name":"System description ROM"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [0, 67, 2, 0, 0]
+      }
+      , {
+        "name":"Total"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [137482, 183488, 425, 0, 41]
+        , "data_percent":
+        [16.0911, 10.7378, 15.6653, 0]
+      }
+      , {
+        "name":"Available"
+        , "classes":
+        ["summary-highlight", "nohover"]
+        , "data":
+        [854400, 1708800, 2713, 1518, 0]
+      }
+    ]
+  }
+  , "compileWarnings":
+  {
+    "name":"Compile Warnings"
+    , "children":
+    [
+    ]
+  }
+}

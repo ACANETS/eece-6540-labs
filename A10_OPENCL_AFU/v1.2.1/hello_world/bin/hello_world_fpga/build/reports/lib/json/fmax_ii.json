@@ -1,0 +1,42 @@
+{
+  "basicblocks":
+  {
+    "hello_world.B0":
+    {
+      "name":"hello_world.B0"
+      , "target_fmax":"Not specified"
+      , "target_ii":"Not specified"
+      , "achieved_fmax":"240.0"
+      , "achieved_ii":1
+      , "latency":5
+      , "max_interleaving":1
+      , "is_fmax_bottleneck":"No"
+      , "is_loop_header":"No"
+      , "is_single_block_loop":"No"
+      , "loop_layer":0
+      , "loop_location":
+      {
+      }
+    }
+  }
+  , "functions":
+  {
+    "hello_world":
+    {
+      "debug":
+      [
+        {
+          "filename":"device/hello_world.cl"
+          , "line":24
+        }
+      ]
+      , "loop_hierachy":
+      {
+        "hello_world__no_loop":
+        [
+          "hello_world.B0"
+        ]
+      }
+    }
+  }
+}

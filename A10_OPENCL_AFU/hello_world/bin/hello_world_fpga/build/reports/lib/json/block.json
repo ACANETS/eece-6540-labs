@@ -1,0 +1,222 @@
+{
+  "3372977680":
+  {
+    "nodes":
+    [
+      {
+        "name":"printf"
+        , "id":3373897088
+        , "start":"1"
+        , "end":"3"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"printf"
+            , "Start Cycle":"1"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"device/hello_world.cl"
+              , "line":29
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"ST"
+        , "id":3373901472
+        , "start":"3"
+        , "end":"5"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Store"
+            , "Width":"256 bits"
+            , "LSU Style":"Burst-coalesced"
+            , "Stall-free":"No"
+            , "Global Memory":"Yes"
+            , "Start Cycle":"3"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"device/hello_world.cl"
+              , "line":29
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"thread_id_from_which_to_print_message"
+        , "id":3378852176
+        , "start":"1"
+        , "end":"1"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input Synchronization for 'thread_id_from_which_to_print_message'"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"thread_id_from_which_to_print_message"
+        , "id":3378992560
+        , "start":"3"
+        , "end":"3"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input Synchronization for 'thread_id_from_which_to_print_message'"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":3378992912
+        , "start":"1"
+        , "end":"1"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Compare"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"device/hello_world.cl"
+              , "line":28
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Or"
+        , "id":3378996864
+        , "start":"3"
+        , "end":"3"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"256-bit Or"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"<<"
+        , "id":3379002544
+        , "start":"3"
+        , "end":"3"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"256-bit Left Shift"
+            , "Constant Operand":"32 (0x20)"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":3378852176
+        , "to":3378992912
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3378992560
+        , "to":3379002544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3378992912
+        , "to":3373897088
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":3378992912
+        , "to":3373901472
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":3378996864
+        , "to":3373901472
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"256"
+          }
+        ]
+      }
+      , {
+        "from":3379002544
+        , "to":3378996864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"256"
+          }
+        ]
+      }
+    ]
+  }
+}

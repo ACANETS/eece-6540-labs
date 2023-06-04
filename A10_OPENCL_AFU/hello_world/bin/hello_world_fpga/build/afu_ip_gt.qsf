@@ -1,0 +1,61 @@
+# Compiler Assignments
+# ====================
+set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
+#set_global_assignment -name ENABLE_INTERMEDIATE_SNAPSHOTS ON
+set_global_assignment -name SEED 100
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name TOP_LEVEL_ENTITY dcp_top
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name ALLOW_ANY_RAM_SIZE_FOR_RECOGNITION ON
+set_global_assignment -name OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS OFF
+set_global_assignment -name USE_HIGH_SPEED_ADDER ON
+set_global_assignment -name MUX_RESTRUCTURE ON
+set_global_assignment -name VERILOG_MACRO "INCLUDE_DDR4=<None>"
+set_global_assignment -name VERILOG_MACRO "INCLUDE_ETHERNET=<None>"
+
+# Fileset
+# ================================
+set_global_assignment -name SYSTEMVERILOG_FILE ./bsp_pkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ./bsp_interface.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ./bsp_logic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ./ccip_std_afu.sv
+set_global_assignment -name VERILOG_FILE ./ip/freeze_wrapper.v
+set_global_assignment -name VERILOG_FILE ./ip/pr_region.v
+set_global_assignment -name VERILOG_FILE ./ip/kernel_mem_mm_bridge.v
+
+set_instance_assignment -name MAX_FANOUT 800 -to inst_ccip_interface_reg|inst_green_top|ccip_std_afu|u0|board_inst|cci_interface|mm_cci_bridge_0|*
+set_instance_assignment -name MAX_FANOUT 750 -to inst_ccip_interface_reg|ccip_std_afu|u0|board_inst|cci_interface|mm_cci_bridge_0|cci_requester_inst|dfifo_component|staging_reg|r_valid
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to inst_ccip_interface_reg|inst_green_top|ccip_std_afu|u0|board_inst|kernel_clk_generator|kernel_pll|altera_pll_i|twentynm_pll|outclk[0]
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to inst_ccip_interface_reg|inst_green_top|ccip_std_afu|u0|board_inst|kernel_clk_generator|kernel_pll|altera_pll_i|twentynm_pll|outclk[1]
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to "fpga_top|inst_green_bs|bsp_interface_inst|ccip_std_afu|bsp_logic_inst|board_inst|kernel_interface|kernel_interface|reset_controller_sw|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out"
+
+set_global_assignment -name SDC_FILE ./reset.sdc
+set_global_assignment -name SDC_FILE user_clock.sdc
+
+set_global_assignment -name GENERATE_PR_RBF_FILE ON
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
+
+# Partitions
+# ==========
+# root partition
+set_instance_assignment -name QDB_FILE_PARTITION dcp.qdb -to "|"
+
+# green region partition
+set_instance_assignment -name PARTITION green_region -to "fpga_top|inst_green_bs"
+set_instance_assignment -name PARTIAL_RECONFIGURATION_PARTITION ON -to "fpga_top|inst_green_bs"
+
+# kernel partition
+set_instance_assignment -name PARTITION kernel -to "fpga_top|inst_green_bs|freeze_wrapper_inst"
+set_instance_assignment -name PLACE_REGION "X17 Y0 X224 Y54;X44 Y55 X224 Y177;X17 Y178 X224 Y224" -to "fpga_top|inst_green_bs|freeze_wrapper_inst"
+set_instance_assignment -name ROUTE_REGION "X17 Y0 X224 Y55;X43 Y56 X224 Y176;X17 Y177 X224 Y224" -to "fpga_top|inst_green_bs|freeze_wrapper_inst"
+set_instance_assignment -name CORE_ONLY_PLACE_REGION OFF -to "fpga_top|inst_green_bs|freeze_wrapper_inst"
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to "fpga_top|inst_green_bs|freeze_wrapper_inst"
+
+# bsp_interface partition
+## import from generated constraints that are output from a10_rc_ocl_hpr_floorplan.py
+source a10_hpr_floorplan.qsf

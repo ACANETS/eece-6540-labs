@@ -1,0 +1,66 @@
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_TOOL_VERSION "19.2"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_TOP_LEVEL_COMPONENT_NAME "altera_address_span_extender"
+set_global_assignment -library "ase_address_span_extender_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "ase_address_span_extender_0.sopcinfo"]
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name SLD_INFO "QSYS_NAME ase_address_span_extender_0 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "ase_address_span_extender_0" -name MISC_FILE [file join $::quartus(qip_path) "ase_address_span_extender_0.cmp"]
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_TARGETED_DEVICE_FAMILY "Arria 10"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_GENERATED_DEVICE_FAMILY "{Arria 10}"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "ase_address_span_extender_0" -name MISC_FILE [file join $::quartus(qip_path) "../ase_address_span_extender_0.ip"]
+
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_NAME "YXNlX2FkZHJlc3Nfc3Bhbl9leHRlbmRlcl8wX2FsdGVyYV9hZGRyZXNzX3NwYW5fZXh0ZW5kZXJfMTkxX3oyaWN3cWk="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_DISPLAY_NAME "QWRkcmVzcyBTcGFuIEV4dGVuZGVyIEludGVsIEZQR0EgSVA="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_VERSION "MTkuMQ=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_DESCRIPTION "Q3JlYXRlcyBhIHdpbmRvd2VkIGJyaWRnZSB0byBhbGxvdyBtYXN0ZXJzIHRvIGFjY2VzcyBhIGxhcmdlciBhZGRyZXNzIG1hcC4="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "REFUQV9XSURUSA==::NTEy::RGF0YXBhdGggV2lkdGg="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "QllURUVOQUJMRV9XSURUSA==::NjQ=::Qnl0ZWVuYWJsZSBXaWR0aA=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "REFUQV9XT1JEX1dJRFRI::NjQ=::RGF0YSBXb3JkIFdpZHRo"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "TUFTVEVSX0FERFJFU1NfV0lEVEg=::NDg=::RXhwYW5kZWQgTWFzdGVyIEJ5dGUgQWRkcmVzcyBXaWR0aA=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "TUFTVEVSX0FERFJFU1NfU1BBTg==::MjU2IHRlcmFieXRlcw==::RXhwYW5kZWQgTWFzdGVyIEFkZHJlc3MgU3Bhbg=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "U0xBVkVfQUREUkVTU19XSURUSA==::Ng==::U2xhdmUgV29yZCBBZGRyZXNzIFdpZHRo"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "U0xBVkVfQUREUkVTU19TUEFO::NCBraWxvYnl0ZXM=::U2xhdmUgQWRkcmVzcyBTcGFu"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "U0xBVkVfQUREUkVTU19TSElGVA==::Ng==::U2xhdmUgQWRkcmVzcyBTaGlmdA=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "QlVSU1RDT1VOVF9XSURUSA==::NA==::QnVyc3Rjb3VudCBXaWR0aA=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "TUFYX0JVUlNUX1dPUkRT::OA==::TWF4aW11bSBidXJzdA=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "TUFYX0JVUlNUX0JZVEVT::NTEy::TWF4aW11bSBidXJzdA=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "Q05UTF9BRERSRVNTX1dJRFRI::MQ==::Q29udHJvbCBzbGF2ZSBhZGRyZXNzIHdpZHRo"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "U1VCX1dJTkRPV19DT1VOVA==::MQ==::TnVtYmVyIG9mIHN1Yi13aW5kb3dz"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "TUFTVEVSX0FERFJFU1NfREVG::MA==::U3ViLXdpbmRvdyBvZmZzZXQ="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "RU5BQkxFX1NMQVZFX1BPUlQ=::dHJ1ZQ==::RW5hYmxlIFNsYXZlIENvbnRyb2wgUG9ydA=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "U1VCX1dJTkRPV19TUEFO::NCBraWxvYnl0ZXM=::U3ViIHdpbmRvdyBzcGFu"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "TUFYX1BFTkRJTkdfUkVBRFM=::MTY=::TWF4aW11bSBQZW5kaW5nIFJlYWRz"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_PARAMETER "U1lOQ19SRVNFVA==::MA==::VXNlIHN5bmNocm9ub3VzIHJlc2V0cw=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL0JyaWRnZXMgYW5kIEFkYXB0b3JzL01lbW9yeSBNYXBwZWQ="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL213aDE0MDk5NjAxODE2NDEvbXdoMTQwOTk1OTI2MTAwNw=="
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL2hjbzE0MTY4MzYxNDU1NTUvaGNvMTQxNjgzNjY1MzIyMQ=="
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_NAME "YXNlX2FkZHJlc3Nfc3Bhbl9leHRlbmRlcl8w"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::QXJyaWEgMTA=::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBBWDExNU4yRjQwRTJMRw==::QXV0byBERVZJQ0U="
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Mg==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19SQVRF::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19DTE9DS19ET01BSU4=::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_PARAMETER "QVVUT19DTE9DS19SRVNFVF9ET01BSU4=::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "ase_address_span_extender_0" -library "ase_address_span_extender_0" -name IP_COMPONENT_PARAMETER "QVVUT19FWFBBTkRFRF9NQVNURVJfQUREUkVTU19XSURUSA==::LTE=::QXV0byBBRERSRVNTX1dJRFRI"
+
+
+set_global_assignment -library "altera_address_span_extender_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_address_span_extender_191/synth/ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi.sv"]
+set_global_assignment -library "ase_address_span_extender_0" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/ase_address_span_extender_0.v"]
+
+
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_TOOL_NAME "altera_address_span_extender"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_TOOL_VERSION "19.1"
+set_global_assignment -entity "ase_address_span_extender_0_altera_address_span_extender_191_z2icwqi" -library "altera_address_span_extender_191" -name IP_TOOL_ENV "QsysPrimePro"
+

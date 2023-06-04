@@ -1,0 +1,21 @@
+Compiler Command: aoc device/hello_world.cl -o bin/hello_world_fpga.aocx -board=pac_a10
+
+!===========================================================================
+! The report below may be inaccurate. A more comprehensive           
+! resource usage report can be found at hello_world_fpga/reports/report.html    
+!===========================================================================
+
++--------------------------------------------------------------------+
+; Estimated Resource Usage Summary                                   ;
++----------------------------------------+---------------------------+
+; Resource                               + Usage                     ;
++----------------------------------------+---------------------------+
+; Logic utilization                      ;   25%                     ;
+; ALUTs                                  ;   16%                     ;
+; Dedicated logic registers              ;   11%                     ;
+; Memory blocks                          ;   16%                     ;
+; DSP blocks                             ;    0%                     ;
++----------------------------------------+---------------------------;
+System name: hello_world_fpga
+
+

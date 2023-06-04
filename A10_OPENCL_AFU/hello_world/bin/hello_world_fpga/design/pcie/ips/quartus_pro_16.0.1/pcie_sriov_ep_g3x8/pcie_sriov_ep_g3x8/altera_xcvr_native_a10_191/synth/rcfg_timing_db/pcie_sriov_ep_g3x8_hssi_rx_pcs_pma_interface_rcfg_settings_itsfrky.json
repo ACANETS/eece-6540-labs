@@ -1,0 +1,59 @@
+{ 
+  "configurations" : [
+    { 
+      "name" : "0",
+      "parameters" :{
+        "block_sel" : "eight_g_pcs",
+        "channel_operation_mode" : "tx_rx_pair_enabled",
+        "clkslip_sel" : "pld",
+        "lpbk_en" : "disable",
+        "master_clk_sel" : "master_rx_pma_clk",
+        "pldif_datawidth_mode" : "pldif_data_10bit",
+        "pma_dw_rx" : "pcie_g3_dyn_dw_rx",
+        "pma_if_dft_en" : "dft_dis",
+        "pma_if_dft_val" : "dft_0",
+        "prbs_clken" : "prbs_clk_dis",
+        "prbs_ver" : "prbs_off",
+        "prbs9_dwidth" : "prbs9_64b",
+        "prot_mode_rx" : "eightg_g3_pcie_g3_hip_mode_rx",
+        "rx_dyn_polarity_inversion" : "rx_dyn_polinv_dis",
+        "rx_lpbk_en" : "lpbk_dis",
+        "rx_prbs_force_signal_ok" : "force_sig_ok",
+        "rx_prbs_mask" : "prbsmask128",
+        "rx_prbs_mode" : "teng_mode",
+        "rx_signalok_signaldet_sel" : "sel_sig_det",
+        "rx_static_polarity_inversion" : "rx_stat_polinv_dis",
+        "sup_mode" : "user_mode",
+        "reconfig_settings" : "{}"
+      }
+    },
+    { 
+      "name" : "1",
+      "parameters" :{
+        "block_sel" : "eight_g_pcs",
+        "channel_operation_mode" : "tx_rx_pair_enabled",
+        "clkslip_sel" : "pld",
+        "lpbk_en" : "disable",
+        "master_clk_sel" : "master_rx_pma_clk",
+        "pldif_datawidth_mode" : "pldif_data_10bit",
+        "pma_dw_rx" : "pma_10b_rx",
+        "pma_if_dft_en" : "dft_dis",
+        "pma_if_dft_val" : "dft_0",
+        "prbs_clken" : "prbs_clk_dis",
+        "prbs_ver" : "prbs_off",
+        "prbs9_dwidth" : "prbs9_64b",
+        "prot_mode_rx" : "eightg_basic_mode_rx",
+        "rx_dyn_polarity_inversion" : "rx_dyn_polinv_dis",
+        "rx_lpbk_en" : "lpbk_dis",
+        "rx_prbs_force_signal_ok" : "force_sig_ok",
+        "rx_prbs_mask" : "prbsmask128",
+        "rx_prbs_mode" : "teng_mode",
+        "rx_signalok_signaldet_sel" : "sel_sig_det",
+        "rx_static_polarity_inversion" : "rx_stat_polinv_dis",
+        "sup_mode" : "user_mode",
+        "reconfig_settings" : "{}"
+      }
+    }
+  ]
+}
+
