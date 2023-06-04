@@ -1,0 +1,296 @@
+
+########################################################################
+#      Date:           Sun Jun  4 09:53:02 PDT 2023
+#    Job ID:           41973.v-qsvr-fpga.aidevcloud
+#      User:           u192806
+# Resources:           neednodes=s001-n137:ppn=2,nodes=s001-n137:ppn=2,walltime=06:00:00
+########################################################################
+
+sourcing /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/inteldevstack/init_env.sh
+export QUARTUS_HOME=/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/quartus
+export OPAE_PLATFORM_ROOT=/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/inteldevstack/a10_gx_pac_ias_1_2_1_pv
+export AOCL_BOARD_PACKAGE_ROOT=/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp
+Adding $OPAE_PLATFORM_ROOT/bin to PATH
+export INTELFPGAOCLSDKROOT=/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld
+export ALTERAOCLSDKROOT=/glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld
+Adding $QUARTUS_HOME/bin to PATH
+source /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/init_opencl.sh
+
+sourcing /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/init_opencl.sh
+INTELFPGAOCLSDKROOT is set to /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld. Using that.
+
+Will use $QUARTUS_ROOTDIR_OVERRIDE= /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/quartus  to find Quartus
+
+Adding /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/bin to PATH
+Adding /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/linux64/lib to LD_LIBRARY_PATH
+Adding /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/host/linux64/lib to LD_LIBRARY_PATH
+Adding /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp/linux64/lib to LD_LIBRARY_PATH
+
+exporting basic building blocks env-variable settings
+
+Putting python2 in the search path - required for Arria 10 development stack
+--------------------------------------------------------------------
+ICD System Diagnostics                                              
+--------------------------------------------------------------------
+
+Using the following location for ICD installation: 
+	/etc/OpenCL/vendors
+
+Found 2 icd entry at that location:
+	/etc/OpenCL/vendors/Altera.icd
+	/etc/OpenCL/vendors/Intel_FPGA_SSG_Emulator.icd
+
+the following OpenCL libraries are referenced in the icd files:
+	libalteracl.so
+	libintelocl_emu.so
+
+checking LD_LIBRARY_PATH for registered libraries:
+	libalteracl.so was registered on the system at /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/host/linux64/lib
+	libintelocl_emu.so was registered on the system at /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/host/linux64/lib
+
+Using the following location for fcd installations:
+	/opt/Intel/OpenCL/Boards
+
+Found 1 fcd entry at that location:
+	/opt/Intel/OpenCL/Boards/dcp_bsp.fcd
+
+the following OpenCL libraries are referenced in the fcd files:
+	/opt/a10/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp/linux64/lib/libintel_opae_mmd.so
+
+checking LD_LIBRARY_PATH for registered libraries:
+	/opt/a10/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp/linux64/lib/libintel_opae_mmd.so was registered on the system.
+
+Number of Platforms = 2 
+	1. Intel(R) FPGA SDK for OpenCL(TM)                             | Intel(R) Corporation           | OpenCL 1.0 Intel(R) FPGA SDK for OpenCL(TM), Version 19.4
+	2. Intel(R) FPGA Emulation Platform for OpenCL(TM)              | Intel(R) Corporation           | OpenCL 1.0 Intel(R) FPGA SDK for OpenCL(TM), Version 19.2
+--------------------------------------------------------------------
+ICD diagnostics PASSED                                              
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+BSP Diagnostics                                                     
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Device Name:
+acl0
+
+BSP Install Location:
+/opt/a10/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp
+
+Vendor: Intel Corp
+
+Physical Dev Name   Status            Information
+
+pac_ee00000         Passed            Intel PAC Platform (pac_ee00000)
+                                      PCIe 59:00.0
+                                      FPGA temperature = 46 degrees C.
+
+DIAGNOSTIC_PASSED
+--------------------------------------------------------------------
+
+Call "aocl diagnose <device-names>" to run diagnose for specified devices
+Call "aocl diagnose all" to run diagnose for all devices
+
+Running in Emulation Mode:
+aoc: Cached files in /var/tmp/aocl/ may be used to reduce compilation time
+You are now compiling the full flow!!
+aoc: Selected target board 
+aoc: OpenCL kernel compilation completed successfully.
+aoc: Linking Object files....
+aoc: Compiling for Emulation ....
+aoc: Emulator Compilation completed successfully.
+Emulator flow is successful.
+To execute emulated kernel, ensure host code selects the Intel(R) FPGA OpenCL
+emulator platform.
+Querying platform for info:
+==========================
+CL_PLATFORM_NAME                         = Intel(R) FPGA Emulation Platform for OpenCL(TM)
+CL_PLATFORM_VENDOR                       = Intel(R) Corporation
+CL_PLATFORM_VERSION                      = OpenCL 1.0 Intel(R) FPGA SDK for OpenCL(TM), Version 19.2
+
+Querying device for info:
+========================
+CL_DEVICE_NAME                           = Intel(R) FPGA Emulation Device
+CL_DEVICE_VENDOR                         = Intel(R) Corporation
+CL_DEVICE_VENDOR_ID                      = 4466
+CL_DEVICE_VERSION                        = OpenCL 1.0 
+CL_DRIVER_VERSION                        = 2019.8.12.0
+CL_DEVICE_ADDRESS_BITS                   = 64
+CL_DEVICE_AVAILABLE                      = true
+CL_DEVICE_ENDIAN_LITTLE                  = true
+CL_DEVICE_GLOBAL_MEM_CACHE_SIZE          = 262144
+CL_DEVICE_GLOBAL_MEM_CACHELINE_SIZE      = 64
+CL_DEVICE_GLOBAL_MEM_SIZE                = 201384529920
+CL_DEVICE_IMAGE_SUPPORT                  = false
+CL_DEVICE_LOCAL_MEM_SIZE                 = 262144
+CL_DEVICE_MAX_CLOCK_FREQUENCY            = 2100
+CL_DEVICE_MAX_COMPUTE_UNITS              = 64
+CL_DEVICE_MAX_CONSTANT_ARGS              = 480
+CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE       = 131072
+CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS       = 3
+CL_DEVICE_MEM_BASE_ADDR_ALIGN            = 1024
+CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE       = 128
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR    = 1
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT   = 1
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT     = 1
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_LONG    = 1
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_FLOAT   = 1
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_DOUBLE  = 1
+Command queue out of order?              = true
+Command queue profiling enabled?         = true
+Using AOCX: hello_world.aocx
+
+Kernel initialization is complete.
+Launching the kernel...
+
+Thread #2: Hello from the Intel FPGA OpenCL Compiler!
+
+Kernel execution is complete.
+
+Running in FPGA Hardware Mode:
+aoc: Running OpenCL parser....
+aoc: OpenCL parser completed 
+aoc: Linking Object files....
+aoc: Optimizing and doing static analysis of code...
+aoc: First stage compilation completed successfully.
+aoc: Compiling for FPGA. This process may take several hours to complete.  Prior to performing this compile, be sure to check the reports to ensure the design will meet your performance targets.  If the reports indicate performance targets are not being met, code edits may be required.  Please refer to the Intel FPGA SDK for OpenCL Best Practices Guide for information on performance tuning applications for FPGAs.
+Board list:
+  pac_a10
+     Board Package: /opt/a10/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp
+
+--------------------------------------------------------------------
+ICD System Diagnostics                                              
+--------------------------------------------------------------------
+
+Using the following location for ICD installation: 
+	/etc/OpenCL/vendors
+
+Found 2 icd entry at that location:
+	/etc/OpenCL/vendors/Altera.icd
+	/etc/OpenCL/vendors/Intel_FPGA_SSG_Emulator.icd
+
+the following OpenCL libraries are referenced in the icd files:
+	libalteracl.so
+	libintelocl_emu.so
+
+checking LD_LIBRARY_PATH for registered libraries:
+	libalteracl.so was registered on the system at /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/host/linux64/lib
+	libintelocl_emu.so was registered on the system at /glob/development-tools/versions/fpgasupportstack/a10/1.2.1/intelFPGA_pro/hld/host/linux64/lib
+
+Using the following location for fcd installations:
+	/opt/Intel/OpenCL/Boards
+
+Found 1 fcd entry at that location:
+	/opt/Intel/OpenCL/Boards/dcp_bsp.fcd
+
+the following OpenCL libraries are referenced in the fcd files:
+	/opt/a10/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp/linux64/lib/libintel_opae_mmd.so
+
+checking LD_LIBRARY_PATH for registered libraries:
+	/opt/a10/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp/linux64/lib/libintel_opae_mmd.so was registered on the system.
+
+Number of Platforms = 2 
+	1. Intel(R) FPGA SDK for OpenCL(TM)                             | Intel(R) Corporation           | OpenCL 1.0 Intel(R) FPGA SDK for OpenCL(TM), Version 19.4
+	2. Intel(R) FPGA Emulation Platform for OpenCL(TM)              | Intel(R) Corporation           | OpenCL 1.0 Intel(R) FPGA SDK for OpenCL(TM), Version 19.2
+--------------------------------------------------------------------
+ICD diagnostics PASSED                                              
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+BSP Diagnostics                                                     
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Device Name:
+acl0
+
+BSP Install Location:
+/opt/a10/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp
+
+Vendor: Intel Corp
+
+Physical Dev Name   Status            Information
+
+pac_ee00000         Passed            Intel PAC Platform (pac_ee00000)
+                                      PCIe 59:00.0
+                                      FPGA temperature = 46 degrees C.
+
+DIAGNOSTIC_PASSED
+--------------------------------------------------------------------
+
+Call "aocl diagnose <device-names>" to run diagnose for specified devices
+Call "aocl diagnose all" to run diagnose for all devices
+
+Converting to unsigned .aocx:
+The script assumes the PACsign and Intel Acceleration Stack environment is setup. If not run the command : <stack_installation_path>/init_env.sh
+hsm_manager=openssl_manager
+aocx filename/path=hello_world_fpga.aocx
+root_public_key=NULL
+csk_public_key=NULL
+output filename/path=hello_world_fpga_unsigned.aocx
+null=1
+openssl hsm_manager_options=openssl_manager 
+input path =.
+input filename =hello_world_fpga.aocx
+output path =.
+output filename =hello_world_fpga_unsigned.aocx
+Extracted the filename as hello_world_fpga_unsigned 
+1. Extracted the bin from the aocx 
+2. Extracted the gzip compressed GBS file from the .bin
+3. Uncompressed .gz it to get the GBS file
+Initiating PACSign tool to sign the GBS. This process will take a couple of minutes...
+Creating unsigned aocx file by signing a NULL key 
+No root key specified.  Generate unsigned bitstream? Y = yes, N = no: No CSK specified.  Generate unsigned bitstream? Y = yes, N = no: 4. Signed the GBS 
+5. Compressed the gbs file 
+6. Added the signed gzip file to fpga.bin 
+7. Added the fpga.bin file back into aocx file
+The signed file hello_world_fpga_unsigned.aocx has been generated. Use the command aocl program <device_name> <filename>.aocx to program it on the FPGA card
+aocl program: Running program from /opt/a10/inteldevstack/a10_gx_pac_ias_1_2_1_pv/opencl/opencl_bsp/linux64/libexec
+Program succeed. 
+Querying platform for info:
+==========================
+CL_PLATFORM_NAME                         = Intel(R) FPGA SDK for OpenCL(TM)
+CL_PLATFORM_VENDOR                       = Intel(R) Corporation
+CL_PLATFORM_VERSION                      = OpenCL 1.0 Intel(R) FPGA SDK for OpenCL(TM), Version 19.4
+
+Querying device for info:
+========================
+CL_DEVICE_NAME                           = pac_a10 : Intel PAC Platform (pac_ee00000)
+CL_DEVICE_VENDOR                         = Intel Corp
+CL_DEVICE_VENDOR_ID                      = 4466
+CL_DEVICE_VERSION                        = OpenCL 1.0 Intel(R) FPGA SDK for OpenCL(TM), Version 19.4
+CL_DRIVER_VERSION                        = 19.4
+CL_DEVICE_ADDRESS_BITS                   = 64
+CL_DEVICE_AVAILABLE                      = true
+CL_DEVICE_ENDIAN_LITTLE                  = true
+CL_DEVICE_GLOBAL_MEM_CACHE_SIZE          = 32768
+CL_DEVICE_GLOBAL_MEM_CACHELINE_SIZE      = 0
+CL_DEVICE_GLOBAL_MEM_SIZE                = 8589933568
+CL_DEVICE_IMAGE_SUPPORT                  = false
+CL_DEVICE_LOCAL_MEM_SIZE                 = 16384
+CL_DEVICE_MAX_CLOCK_FREQUENCY            = 1000
+CL_DEVICE_MAX_COMPUTE_UNITS              = 1
+CL_DEVICE_MAX_CONSTANT_ARGS              = 8
+CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE       = 2147483392
+CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS       = 3
+CL_DEVICE_MEM_BASE_ADDR_ALIGN            = 8192
+CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE       = 1024
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_CHAR    = 4
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_SHORT   = 2
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_INT     = 1
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_LONG    = 1
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_FLOAT   = 1
+CL_DEVICE_PREFERRED_VECTOR_WIDTH_DOUBLE  = 0
+Command queue out of order?              = true
+Command queue profiling enabled?         = true
+Using AOCX: hello_world.aocx
+
+Kernel initialization is complete.
+Launching the kernel...
+
+Thread #2: Hello from the Intel FPGA OpenCL Compiler!
+
+Kernel execution is complete.
+
+########################################################################
+# End of output for job 41973.v-qsvr-fpga.aidevcloud
+# Date: Sun Jun  4 10:28:01 PDT 2023
+########################################################################
+
