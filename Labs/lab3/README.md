@@ -8,7 +8,7 @@ Then you will proceed to Module 1 "Introduction to oneAPI and SYCL" and Module 2
 
 You do __not__ need to complete the lab exercises in these modules. Please capture screenshots once you complete the modules.
 
-__NOTE:__ you might encounter a path error when launching Module 2. If that happens, please navigate to "oneAPI_Essentials/02_SYCL_Program_Structure/SYCL_Program_Structure.ipynb" on the file explore panel on your jupyter notebook page.
+__NOTE:__ you might encounter a path error when launching Module 2. If that happens, please navigate to "oneAPI_Essentials/02_SYCL_Program_Structure/SYCL_Program_Structure.ipynb" using the file explore panel on your jupyter notebook page.
 
 ## Part 1: Build and Execute a DPC++ Program on DevCloud using CPU, GPU or FPGA
 
