@@ -1,8 +1,14 @@
 # EECE.4510/5510 Heterogeneous Computing - Lab 3
 
-## Part 0: Practice JupyterLab and Notebooks
+## Part 0: Practice Jupyter Notebooks and oneAPI Base Training Modules 0-2
 
-We will use Jupyter to run the experiments in this lab. JupyterLab and its notebooks provide a web-based interface to interact with the Intel Developer Cloud environment. It is an option for those who are not keen with Terminals and command lines. Please follow through the Intel oneAPI Base Training Module 0 at (https://devcloud.intel.com/oneapi/get_started/baseTrainingModules/) to learn how to use Jupyter notebooks.
+We will use Jupyter to run the some training modules in this lab. JupyterLab and its notebooks provide a web-based interface to interact with the Intel Developer Cloud environment. It is an option for those who are not keen with Terminals and command lines. Please follow through the Intel oneAPI Base Training Module 0 at (https://devcloud.intel.com/oneapi/get_started/baseTrainingModules/) to learn how to use Jupyter notebooks. You will need to login using registered user credentials.
+
+Then you will proceed to Module 1 "Introduction to oneAPI and SYCL" and Module 2 "SYCL* Program Structure".
+
+You do __not__ need to complete the lab exercises in these modules. Please capture screenshots once you complete the modules.
+
+__NOTE:__ you might encounter a path error when launching Module 2. If that happens, please navigate to "oneAPI_Essentials/02_SYCL_Program_Structure/SYCL_Program_Structure.ipynb" on the file explore panel on your jupyter notebook page.
 
 ## Part 1: Build and Execute a DPC++ Program on DevCloud using CPU, GPU or FPGA
 
