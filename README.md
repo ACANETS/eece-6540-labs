@@ -30,6 +30,13 @@ You need to be able to SSH into DevCloud before proceeding with the following st
 ### On Head Node
 Once you have set up the SSH key to access, you should be able to login the headnode (identified as "login-2").
 
+First, you need to add the following lines to the end of your .bashrc file such that the later scripts can be found in your search path.
+```
+if [ -f /data/intel_fpga/devcloudLoginToolSetup.sh ]; then
+    source /data/intel_fpga/devcloudLoginToolSetup.sh
+fi
+```
+
 On the head node, you need to run the following command to select a compute node that supports OpenCL or OneAPI 
 
 ```
