@@ -47,7 +47,7 @@ Run the devcloud_login function and connect to an Arria 10 capable node. This fu
 
 <img src="https://user-images.githubusercontent.com/59750149/83576210-129e0280-a4e6-11ea-8f32-46af9ff40a4d.png" alt="image" width=70% />
 
-Select option 1 or option 5 and connect to an Arria 10 ready compute node.
+Select option 1) ("Arria 10 PAC Compilation and Programming - RTL AFU, OpenCL") then option 1) ("1.2.1") and connect to an Arria 10 ready compute node for building OpenCL code.
 
 Once on this node, run tools_setup. 
 
@@ -55,7 +55,7 @@ Once on this node, run tools_setup.
 tools_setup
 ```
 
-Select the Arria 10 PAC Compilation and Programming - RTL AFU, OpenCL option version 1.2.1.
+Select option 5) the Arria 10 PAC Compilation and Programming - RTL AFU, OpenCL option (version 1.2.1).
 
 Make working directory
 
