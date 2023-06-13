@@ -17,11 +17,11 @@ Launch the appropriate jupyter notebook to work on Part 1: Sub-groups. EECE.5510
 
 ## Part 1: Sub-groups
 
-You will need to complete the exercises on sub-groups in the [Jupyter notebook] (Sub_Groups.ipynb) Please note the questions raised in the notebook and answer them in your report. In addition, please take screenshots of your completed exercises and include them in your report as well.
+You will need to complete the exercises on sub-groups in the [Jupyter notebook](Sub_Groups.ipynb) Please note the questions raised in the notebook and answer them in your report. In addition, please take screenshots of your completed exercises and include them in your report as well.
 
 ## Part 2 [EECE.5510 Only]: Performance Evaluation using Intel VTune Profiler.
 
-For EECE.5510 students, you also need to complete the exercises on Intel VTune Profiler in the [Jupyter notebook] (Intel_VTune_Profiler.ipynb) Answer the questions and include the screenshots in your report.
+For EECE.5510 students, you also need to complete the exercises on Intel VTune Profiler in the [Jupyter notebook](Intel_VTune_Profiler.ipynb) Answer the questions and include the screenshots in your report.
 
 
 
