@@ -10,7 +10,8 @@ To launch JupyterLab, please follow this link and login using your credentials t
 
 Then you will need to navigate the "File Browser" to the left of your main Launcher page. You will start from your home directory and proceed to locate the top level of our lab repository that you checked out before. 
 ![File Browser Panel](FileBrowser-JupyterLab.png)
-Then you will navigate to "Labs/lab4" foler where you will see the following files from the File Browser panel.
+
+Then you will navigate to "Labs/lab4" foler where you will see the jupyter notebooks from the File Browser panel.
 
 Launch the appropriate jupyter notebook to work on Part 1: Sub-groups. EECE.5510 students will also need to work on Part 2: Profiling with Intel VTune.
 
