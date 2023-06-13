@@ -8,8 +8,9 @@ In this lab, we use JupyterLab* to learn about how oneAPI can solve the challeng
 To launch JupyterLab, please follow this link and login using your credentials to Intel Developer Cloud.
 [Launch JupyterLab on Intel DevCloud](https://jupyter.oneapi.devcloud.intel.com/hub/login?next=/lab/tree/Welcome.ipynb?reset).
 
-Then you will need to navigate the "File Browser" to the left of your main Launcher page. You will start from your home directory and proceed to locate the top level of our lab repository that you checked out before. 
-<img src="FileBrowser-JupyterLab.png"  width="20%" height="20%">
+Then you will need to navigate the "File Browser" to the left of your main Launcher page. You will start from your home directory and proceed to locate the top level of our lab repository that you checked out before.
+
+<img src="FileBrowser-JupyterLab.png"  width="30%" height="30%">
 
 Then you will navigate to "Labs/lab4" foler where you will see the jupyter notebooks from the File Browser panel.
 
